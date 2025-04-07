@@ -1,0 +1,853 @@
+[
+  {
+    "country": "Argentina",
+    "iso": "AR",
+    "carriers": [
+      {
+        "name": "Claro Argentina",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*611#",
+            "description": "Prepaid Balance/Options Menu",
+            "notes": "Primary USSD menu for prepaid."
+          },
+          {
+            "code": "*611",
+            "description": "Call Customer Service"
+          }
+        ]
+      },
+      {
+        "name": "Movistar Argentina (Telefónica)",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*444#",
+            "description": "Prepaid Balance Check",
+            "notes": "Commonly cited for prepaid."
+          },
+          {
+            "code": "*611",
+            "description": "Call Customer Service / Automated System"
+          }
+        ]
+      },
+      {
+        "name": "Personal (Telecom Argentina)",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*150",
+            "description": "Check Prepaid Balance / Options",
+            "notes": "Commonly used for prepaid."
+          },
+          {
+            "code": "*111",
+            "description": "Call Customer Service"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Bolivia",
+    "iso": "BO",
+    "carriers": [
+      {
+        "name": "Entel",
+        "type": "MNO (State-owned)",
+        "ussd_codes": [
+          {
+            "code": "*105#",
+            "description": "Check Prepaid Balance ('Crédito')",
+            "notes": "Primary balance code."
+          },
+          {
+            "code": "*10#",
+            "description": "Main Service Menu"
+          }
+        ]
+      },
+      {
+        "name": "Tigo (Millicom)",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*123#",
+            "description": "Main Service Menu / Balance Check"
+          },
+          {
+            "code": "*511#",
+            "description": "Check Prepaid Balance"
+          }
+        ]
+      },
+      {
+        "name": "Viva (Nuevatel)",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*109#",
+            "description": "Check Prepaid Balance"
+          },
+          {
+            "code": "*511",
+            "description": "Call Prepaid Service/Balance IVR"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Brazil",
+    "iso": "BR",
+    "carriers": [
+      {
+        "name": "Vivo (Telefônica Brasil)",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*8486",
+            "description": "Call Customer Service (from Vivo number)"
+          },
+          {
+            "code": "*5005",
+            "description": "Call Prepaid Balance IVR"
+          },
+           {
+            "code": "*8000",
+            "description": "Check Prepaid Balance (May trigger SMS/Voice)"
+           }
+        ]
+      },
+      {
+        "name": "Claro Brasil (América Móvil)",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*1052#",
+            "description": "Main Service Menu"
+          },
+          {
+            "code": "*544#",
+            "description": "Check Prepaid Balance ('Saldo')",
+             "notes": "May lead to a menu."
+          }
+        ]
+      },
+      {
+        "name": "TIM Brasil",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*144#",
+            "description": "Main Service Menu"
+          },
+          {
+            "code": "*222#",
+            "description": "Check Prepaid Balance ('Saldo')"
+          },
+           {
+            "code": "*144",
+             "description": "Call Customer Service"
+           }
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Chile",
+    "iso": "CL",
+    "carriers": [
+      {
+        "name": "Entel",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*103#",
+            "description": "Check Prepaid Balance / Options"
+          },
+          {
+            "code": "*103",
+            "description": "Call Customer Service (Prepaid)"
+          }
+        ]
+      },
+      {
+        "name": "Movistar Chile (Telefónica)",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*305#",
+            "description": "Check Prepaid Balance ('Saldo')"
+          },
+          {
+            "code": "*103",
+            "description": "Call Customer Service"
+          }
+        ]
+      },
+      {
+        "name": "Claro Chile (América Móvil)",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*103#",
+            "description": "Check Prepaid Balance / Options"
+          },
+          {
+            "code": "*103",
+            "description": "Call Customer Service"
+          }
+        ]
+      },
+      {
+        "name": "WOM",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*103#",
+            "description": "Check Prepaid Balance / Options"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Colombia",
+    "iso": "CO",
+    "carriers": [
+      {
+        "name": "Claro Colombia (América Móvil)",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*611",
+            "description": "Call Customer Service / Main Menu"
+          },
+          {
+            "code": "*103#",
+            "description": "Check Prepaid Balance ('Saldo')"
+          }
+        ]
+      },
+      {
+        "name": "Movistar Colombia (Telefónica)",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*611",
+            "description": "Call Customer Service / Main Menu"
+          },
+          {
+            "code": "*100#",
+            "description": "Prepaid Menu / Balance Check"
+          }
+        ]
+      },
+      {
+        "name": "Tigo Colombia (Millicom)",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*300",
+            "description": "Call Customer Service / Main Menu"
+          },
+          {
+            "code": "*10#",
+            "description": "Check Prepaid Balance ('Saldo')"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Ecuador",
+    "iso": "EC",
+    "carriers": [
+      {
+        "name": "Claro Ecuador (América Móvil)",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*611",
+            "description": "Call Customer Service / Menu"
+          },
+          {
+            "code": "*123#",
+            "description": "Check Prepaid Balance ('Saldo')"
+          }
+        ]
+      },
+      {
+        "name": "Movistar Ecuador (Telefónica)",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*100#",
+            "description": "Check Prepaid Balance / Menu"
+          },
+          {
+            "code": "*001",
+            "description": "Call Customer Service"
+          }
+        ]
+      },
+      {
+        "name": "CNT EP",
+        "type": "MNO (State-owned)",
+        "ussd_codes": [
+          {
+            "code": "*611",
+            "description": "Call Customer Service / Menu"
+          },
+          {
+            "code": "*777#",
+            "description": "Check Prepaid Balance"
+          }
+        ]
+      }
+    ]
+  },
+   {
+    "country": "French Guiana",
+    "iso": "GF",
+     "carriers": [
+       {
+         "name": "Orange Caraïbe",
+         "type": "MNO",
+         "ussd_codes": [
+           {
+             "code": "#123#",
+             "description": "Check Prepaid Balance ('Suivi Conso')",
+             "notes": "Standard Orange code."
+           },
+           {
+             "code": "222",
+             "description": "Call Prepaid Balance IVR"
+           }
+         ]
+       },
+       {
+         "name": "Digicel",
+         "type": "MNO",
+         "ussd_codes": [
+           {
+             "code": "*120#",
+             "description": "Check Prepaid Balance"
+           },
+           {
+             "code": "111",
+             "description": "Call Customer Service"
+           }
+         ]
+       }
+     ],
+     "notes": "Overseas department of France."
+   },
+  {
+    "country": "Guyana",
+    "iso": "GY",
+    "carriers": [
+      {
+        "name": "GTT (Guyana Telephone and Telegraph)",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*100#",
+            "description": "Check Prepaid Balance / Options"
+          }
+        ]
+      },
+      {
+        "name": "Digicel Guyana",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*120#",
+            "description": "Check Prepaid Balance"
+          },
+          {
+            "code": "*100#",
+            "description": "Main Service Menu"
+          },
+          {
+            "code": "100",
+            "description": "Call Customer Service"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Paraguay",
+    "iso": "PY",
+    "carriers": [
+      {
+        "name": "Tigo (Millicom)",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*111#",
+            "description": "Check Prepaid Balance / Menu"
+          },
+          {
+            "code": "*222#",
+            "description": "Check Prepaid Balance ('Saldo')"
+          }
+        ]
+      },
+      {
+        "name": "Claro Paraguay (América Móvil)",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*111#",
+            "description": "Check Prepaid Balance / Menu"
+          },
+          {
+            "code": "*99",
+            "description": "Call Balance IVR"
+          }
+        ]
+      },
+      {
+        "name": "Personal Paraguay (Telecom Argentina)",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*111",
+            "description": "Call Customer Service / Balance IVR"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Peru",
+    "iso": "PE",
+    "carriers": [
+      {
+        "name": "Claro Peru (América Móvil)",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*777#",
+            "description": "Check Prepaid Balance ('Saldo')"
+          },
+          {
+            "code": "*611",
+            "description": "Call Customer Service"
+          }
+        ]
+      },
+      {
+        "name": "Movistar Peru (Telefónica)",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*515#",
+            "description": "Check Prepaid Balance ('Saldo')"
+          },
+          {
+            "code": "*102",
+            "description": "Call Customer Service"
+          }
+        ]
+      },
+      {
+        "name": "Entel Peru",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*123#",
+            "description": "Check Prepaid Balance / Menu"
+          },
+           {
+            "code": "123",
+            "description": "Call Customer Service"
+           }
+        ]
+      },
+      {
+        "name": "Bitel (Viettel)",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*121#",
+            "description": "Check Prepaid Balance"
+          },
+          {
+            "code": "*9090#",
+            "description": "Main Service Menu"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Suriname",
+    "iso": "SR",
+    "carriers": [
+      {
+        "name": "Telesur (Telecommunicatiebedrijf Suriname)",
+        "type": "MNO (State-owned)",
+        "ussd_codes": [
+          {
+            "code": "*100#",
+            "description": "Check Prepaid Balance / Menu"
+          }
+        ]
+      },
+      {
+        "name": "Digicel Suriname",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*120#",
+            "description": "Check Prepaid Balance"
+          },
+          {
+            "code": "*100#",
+            "description": "Main Service Menu"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Uruguay",
+    "iso": "UY",
+    "carriers": [
+      {
+        "name": "Antel",
+        "type": "MNO (State-owned)",
+        "ussd_codes": [
+          {
+            "code": "*611",
+            "description": "Call Customer Service / Balance"
+          },
+          {
+            "code": "*222#",
+            "description": "Check Prepaid Balance ('Saldo')"
+          }
+        ]
+      },
+      {
+        "name": "Movistar Uruguay (Telefónica)",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*611",
+            "description": "Call Customer Service / Balance"
+          },
+          {
+            "code": "*725",
+            "description": "Check Prepaid Balance ('Saldo')"
+          }
+        ]
+      },
+      {
+        "name": "Claro Uruguay (América Móvil)",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*611",
+            "description": "Call Customer Service / Balance"
+          },
+          {
+            "code": "*111#",
+            "description": "Prepaid Menu / Balance Check"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Venezuela",
+    "iso": "VE",
+    "carriers": [
+      {
+        "name": "Movilnet",
+        "type": "MNO (State-owned)",
+        "ussd_codes": [
+          {
+            "code": "*611",
+            "description": "Call Customer Service / Balance"
+          },
+          {
+            "code": "*5",
+            "description": "Check Prepaid Balance ('Saldo')"
+          }
+        ]
+      },
+      {
+        "name": "Movistar Venezuela (Telefónica)",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*144#",
+            "description": "Check Balance / Options"
+          },
+          {
+            "code": "*811",
+             "description": "Call Customer Service"
+          }
+        ]
+      },
+      {
+        "name": "Digitel",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "121",
+            "description": "Call Customer Service / Balance IVR"
+          },
+          {
+            "code": "*123#",
+            "description": "Check Prepaid Balance ('Saldo')"
+          }
+        ]
+      }
+    ]
+  },
+  // --- Caribbean Examples ---
+  {
+    "country": "Jamaica",
+    "iso": "JM",
+    "carriers": [
+      {
+        "name": "Digicel Jamaica",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*120#",
+            "description": "Check Prepaid Balance"
+          },
+          {
+            "code": "*147#",
+            "description": "Main Service Menu (e.g., for plans)"
+          },
+          {
+             "code": "*140#",
+             "description": "Data Balance Check"
+          },
+          {
+            "code": "100",
+            "description": "Call Customer Service"
+          }
+        ]
+      },
+      {
+        "name": "Flow Jamaica (Liberty Latin America)",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*120#",
+            "description": "Check Prepaid Balance"
+          },
+           {
+             "code": "*129#",
+             "description": "Main Service Menu"
+           },
+          {
+            "code": "100",
+            "description": "Call Customer Service"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Dominican Republic",
+    "iso": "DO",
+    "carriers": [
+      {
+        "name": "Claro Dominican Republic",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*111#",
+            "description": "Prepaid Menu / Balance Check"
+          },
+          {
+            "code": "*111*1*1#",
+             "description": "Direct Prepaid Balance Check"
+          }
+        ]
+      },
+      {
+        "name": "Altice Dominicana",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*100",
+             "description": "Call Balance IVR"
+          },
+           {
+             "code": "*131#",
+             "description": "Check Prepaid Balance"
+           }
+        ]
+      },
+       {
+         "name": "Viva",
+         "type": "MNO",
+         "ussd_codes": [
+           {
+             "code": "*123#",
+             "description": "Check Prepaid Balance"
+           },
+            {
+              "code": "*888",
+              "description": "Call Balance IVR/Customer Service"
+            }
+         ]
+       }
+    ]
+  },
+   {
+     "country": "Trinidad and Tobago",
+     "iso": "TT",
+     "carriers": [
+       {
+         "name": "Digicel Trinidad & Tobago",
+         "type": "MNO",
+         "ussd_codes": [
+           {
+             "code": "*120#",
+             "description": "Check Prepaid Balance"
+           },
+           {
+             "code": "*147#",
+             "description": "Main Service Menu"
+           }
+         ]
+       },
+       {
+         "name": "Bmobile (TSTT)",
+         "type": "MNO",
+         "ussd_codes": [
+           {
+             "code": "*123",
+             "description": "Check Prepaid Balance (Call IVR)"
+           },
+           {
+             "code": "*120#",
+             "description": "Check Prepaid Balance (May work)"
+           }
+         ]
+       }
+     ]
+   },
+    {
+      "country": "Barbados",
+      "iso": "BB",
+      "carriers": [
+        {
+          "name": "Digicel Barbados",
+          "type": "MNO",
+          "ussd_codes": [
+            {
+              "code": "*120#",
+              "description": "Check Prepaid Balance"
+            },
+            {
+              "code": "*147#",
+              "description": "Main Service Menu"
+            }
+          ]
+        },
+        {
+          "name": "Flow Barbados (Liberty Latin America)",
+          "type": "MNO",
+          "ussd_codes": [
+            {
+              "code": "*120#",
+              "description": "Check Prepaid Balance"
+            },
+             {
+              "code": "*129#",
+              "description": "Main Service Menu"
+             }
+          ]
+        }
+      ]
+    },
+     {
+       "country": "Cuba",
+       "iso": "CU",
+       "carriers": [
+         {
+           "name": "ETECSA (Cubacel)",
+           "type": "MNO (State-owned)",
+           "ussd_codes": [
+             {
+               "code": "*222#",
+               "description": "Check Prepaid Balance ('Saldo')"
+             },
+             {
+               "code": "*666",
+               "description": "Check Own Number"
+             },
+             {
+                "code": "*133#",
+                "description": "Data Plan Menu"
+             }
+           ]
+         }
+       ]
+     },
+     {
+       "country": "Puerto Rico",
+       "iso": "PR",
+       "carriers": [
+          {
+             "name": "Liberty Mobile (Formerly AT&T)",
+             "type": "MNO",
+             "ussd_codes": [
+                 {
+                     "code": "*3282#",
+                     "description": "Check data and messaging usage (*DATA#)",
+                     "notes": "Inherited from AT&T."
+                 },
+                 {
+                     "code": "611",
+                     "description": "Call Customer Service / Automated System"
+                 }
+             ]
+           },
+          {
+             "name": "T-Mobile Puerto Rico",
+             "type": "MNO",
+             "ussd_codes": [
+                 {
+                     "code": "#932#",
+                     "description": "Check data usage (#WEB#)",
+                     "notes": "Same as T-Mobile US."
+                 },
+                 {
+                     "code": "611",
+                     "description": "Call Customer Service / Automated System"
+                 }
+             ]
+           },
+            {
+              "name": "Claro Puerto Rico",
+              "type": "MNO",
+              "ussd_codes": [
+                  {
+                      "code": "*611",
+                      "description": "Call Customer Service"
+                  },
+                   {
+                       "code": "*123#",
+                       "description": "Check Prepaid Balance ('Saldo')"
+                   }
+              ]
+            }
+       ],
+       "notes": "US Territory, carriers often mirror US operations."
+     }
+]

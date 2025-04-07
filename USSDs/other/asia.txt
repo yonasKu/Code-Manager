@@ -1,0 +1,1327 @@
+[
+  {
+    "country": "Afghanistan",
+    "iso": "AF",
+    "institutions": [
+      {
+        "name": "Da Afghanistan Bank (Central Bank)",
+        "phone": "+93 20 210 0301",
+        "website": "https://dab.gov.af/"
+      },
+      {
+        "name": "Azizi Bank",
+        "phone": "+93 799 999 910",
+        "website": "https://www.azizibank.af/"
+      },
+      {
+        "name": "Afghanistan International Bank (AIB)",
+        "phone": "+93 20 255 0255",
+        "website": "https://aib.af/"
+      },
+      {
+        "name": "Pashtany Bank",
+        "phone": "+93 20 210 3514",
+        "website": "https://pashtanybank.com.af/"
+      }
+    ],
+    "notes": "Banking situation is complex and subject to change. Verify locally."
+  },
+  {
+    "country": "Armenia",
+    "iso": "AM",
+    "institutions": [
+      {
+        "name": "Central Bank of Armenia",
+        "phone": "+374 10 583 841",
+        "website": "https://www.cba.am/"
+      },
+      {
+        "name": "Ameriabank",
+        "phone": "+374 10 561 111",
+        "website": "https://ameriabank.am/"
+      },
+      {
+        "name": "Ardshinbank",
+        "phone": "+374 12 222 222",
+        "website": "https://www.ardshinbank.am/"
+      },
+      {
+        "name": "ACBA BANK",
+        "phone": "+374 10 318 888",
+        "website": "https://www.acba.am/"
+      }
+    ]
+  },
+  {
+    "country": "Azerbaijan",
+    "iso": "AZ",
+    "institutions": [
+      {
+        "name": "Central Bank of the Republic of Azerbaijan",
+        "phone": "+994 12 493 11 22",
+        "website": "https://www.cbar.az/"
+      },
+      {
+        "name": "International Bank of Azerbaijan (ABB)",
+        "phone": "+994 12 937",
+        "website": "https://abb-bank.az/"
+      },
+      {
+        "name": "Kapital Bank",
+        "phone": "+994 12 196",
+        "website": "https://kapitalbank.az/"
+      },
+      {
+        "name": "Pasha Bank",
+        "phone": "+994 12 496 50 00",
+        "website": "https://www.pashabank.az/"
+      }
+    ]
+  },
+  {
+    "country": "Bahrain",
+    "iso": "BH",
+    "institutions": [
+      {
+        "name": "Central Bank of Bahrain",
+        "phone": "+973 1754 7777",
+        "website": "https://www.cbb.gov.bh/"
+      },
+      {
+        "name": "National Bank of Bahrain (NBB)",
+        "phone": "+973 1722 8800",
+        "website": "https://www.nbbonline.com/"
+      },
+      {
+        "name": "Bank of Bahrain and Kuwait (BBK)",
+        "phone": "+973 1722 3388",
+        "website": "https://www.bbkonline.com/"
+      },
+      {
+        "name": "Ahli United Bank (AUB)",
+        "phone": "+973 1758 5858",
+        "website": "https://www.ahliunited.com/bh/"
+      }
+    ]
+  },
+  {
+    "country": "Bangladesh",
+    "iso": "BD",
+    "institutions": [
+      {
+        "name": "Bangladesh Bank (Central Bank)",
+        "phone": "+880 2 953 0101",
+        "website": "https://www.bb.org.bd/"
+      },
+      {
+        "name": "Sonali Bank Limited",
+        "phone": "+880 2 955 0426",
+        "website": "https://www.sonalibank.com.bd/"
+      },
+      {
+        "name": "Islami Bank Bangladesh Limited",
+        "phone": "+880 2 956 3040",
+        "website": "https://www.islamibankbd.com/"
+      },
+      {
+        "name": "BRAC Bank Limited",
+        "phone": "16221 (Local)",
+        "website": "https://www.bracbank.com/"
+      }
+    ]
+  },
+  {
+    "country": "Bhutan",
+    "iso": "BT",
+    "institutions": [
+      {
+        "name": "Royal Monetary Authority of Bhutan",
+        "phone": "+975 2 323 110",
+        "website": "https://www.rma.org.bt/"
+      },
+      {
+        "name": "Bank of Bhutan Limited (BoB)",
+        "phone": "+975 2 334 333",
+        "website": "https://www.bob.bt/"
+      },
+      {
+        "name": "Bhutan National Bank Limited (BNBL)",
+        "phone": "+975 2 328 577",
+        "website": "https://www.bnb.bt/"
+      },
+      {
+        "name": "Druk PNB Bank Limited",
+        "phone": "+975 2 324 497",
+        "website": "https://www.drukpnbbank.bt/"
+      }
+    ]
+  },
+  {
+    "country": "Brunei",
+    "iso": "BN",
+    "institutions": [
+      {
+        "name": "Brunei Darussalam Central Bank (BDCB)",
+        "phone": "+673 238 8388",
+        "website": "https://www.bdcb.gov.bn/"
+      },
+      {
+        "name": "Bank Islam Brunei Darussalam (BIBD)",
+        "phone": "+673 223 8181",
+        "website": "https://www.bibd.com.bn/"
+      },
+      {
+        "name": "Baiduri Bank",
+        "phone": "+673 245 4344",
+        "website": "https://www.baiduri.com.bn/"
+      },
+      {
+        "name": "Standard Chartered Bank Brunei",
+        "phone": "+673 265 8000",
+        "website": "https://www.sc.com/bn/"
+      }
+    ]
+  },
+  {
+    "country": "Cambodia",
+    "iso": "KH",
+    "institutions": [
+      {
+        "name": "National Bank of Cambodia",
+        "phone": "+855 23 722 563",
+        "website": "https://www.nbc.gov.kh/"
+      },
+      {
+        "name": "ACLEDA Bank Plc.",
+        "phone": "+855 23 994 444",
+        "website": "https://www.acledabank.com.kh/"
+      },
+      {
+        "name": "Canadia Bank",
+        "phone": "+855 23 868 222",
+        "website": "https://www.canadiabank.com.kh/"
+      },
+      {
+        "name": "ABA Bank (Member of National Bank of Canada Group)",
+        "phone": "+855 23 225 333",
+        "website": "https://www.ababank.com/"
+      }
+    ]
+  },
+  {
+    "country": "China",
+    "iso": "CN",
+    "institutions": [
+      {
+        "name": "People's Bank of China",
+        "phone": "+86 10 6619 4114",
+        "website": "http://www.pbc.gov.cn/"
+      },
+      {
+        "name": "Industrial and Commercial Bank of China (ICBC)",
+        "phone": "+86 95588",
+        "website": "https://www.icbc.com.cn/"
+      },
+      {
+        "name": "China Construction Bank (CCB)",
+        "phone": "+86 95533",
+        "website": "http://www.ccb.com/"
+      },
+      {
+        "name": "Agricultural Bank of China (ABC)",
+        "phone": "+86 95599",
+        "website": "http://www.abchina.com/"
+      }
+    ]
+  },
+  {
+    "country": "Cyprus",
+    "iso": "CY",
+    "institutions": [
+      {
+        "name": "Central Bank of Cyprus",
+        "phone": "+357 22 714 100",
+        "website": "https://www.centralbank.cy/"
+      },
+      {
+        "name": "Bank of Cyprus",
+        "phone": "+357 800 00 800",
+        "website": "https://www.bankofcyprus.com/"
+      },
+      {
+        "name": "Hellenic Bank",
+        "phone": "+357 8000 9999",
+        "website": "https://www.hellenicbank.com/"
+      },
+       {
+        "name": "AstroBank",
+        "phone": "+357 22 575 555",
+        "website": "https://www.astrobank.com/"
+       }
+    ],
+    "notes": "Eurozone member. Geographically complex; this refers to the Republic of Cyprus."
+  },
+  {
+    "country": "East Timor (Timor-Leste)",
+    "iso": "TL",
+    "institutions": [
+      {
+        "name": "Banco Central de Timor-Leste",
+        "phone": "+670 331 3710",
+        "website": "https://www.bancocentral.tl/"
+      },
+      {
+        "name": "Banco Nacional de Comércio de Timor-Leste (BNCTL)",
+        "phone": "+670 331 0033",
+        "website": "https://www.bnctl.tl/"
+      },
+      {
+        "name": "Bank Mandiri Timor Leste Branch",
+        "phone": "+670 331 1600",
+        "website": "https://bankmandiri.co.id/"
+      },
+      {
+        "name": "ANZ Timor-Leste",
+        "phone": "+670 331 2480",
+        "website": "https://institutional.anz.com/countries/timor-leste"
+      }
+    ],
+    "notes": "Uses the US Dollar as official currency."
+  },
+  {
+    "country": "Georgia",
+    "iso": "GE",
+    "institutions": [
+      {
+        "name": "National Bank of Georgia",
+        "phone": "+995 32 240 64 06",
+        "website": "https://nbg.gov.ge/"
+      },
+      {
+        "name": "TBC Bank",
+        "phone": "+995 32 227 27 27",
+        "website": "https://www.tbcbank.ge/"
+      },
+      {
+        "name": "Bank of Georgia",
+        "phone": "+995 32 244 44 44",
+        "website": "https://bankofgeorgia.ge/"
+      },
+      {
+        "name": "Liberty Bank",
+        "phone": "+995 32 255 55 00",
+        "website": "https://libertybank.ge/"
+      }
+    ]
+  },
+  {
+    "country": "Hong Kong",
+    "iso": "HK",
+    "institutions": [
+      {
+        "name": "Hong Kong Monetary Authority (HKMA)",
+        "phone": "+852 2878 8196",
+        "website": "https://www.hkma.gov.hk/"
+      },
+      {
+        "name": "HSBC Hong Kong",
+        "phone": "+852 2233 3000",
+        "website": "https://www.hsbc.com.hk/"
+      },
+      {
+        "name": "Standard Chartered Bank (Hong Kong)",
+        "phone": "+852 2886 8888",
+        "website": "https://www.sc.com/hk/"
+      },
+      {
+        "name": "Bank of China (Hong Kong)",
+        "phone": "+852 3988 2388",
+        "website": "https://www.bochk.com/"
+      }
+    ],
+    "notes": "Special Administrative Region of China with its own currency (HKD) pegged to USD."
+  },
+  {
+    "country": "India",
+    "iso": "IN",
+    "institutions": [
+      {
+        "name": "Reserve Bank of India",
+        "phone": "+91 22 2266 1602",
+        "website": "https://www.rbi.org.in/"
+      },
+      {
+        "name": "State Bank of India (SBI)",
+        "phone": "+91 1800 1234",
+        "website": "https://www.onlinesbi.sbi/"
+      },
+      {
+        "name": "HDFC Bank",
+        "phone": "+91 22 6160 6161",
+        "website": "https://www.hdfcbank.com/"
+      },
+      {
+        "name": "ICICI Bank",
+        "phone": "+91 1800 1080",
+        "website": "https://www.icicibank.com/"
+      }
+    ]
+  },
+  {
+    "country": "Indonesia",
+    "iso": "ID",
+    "institutions": [
+      {
+        "name": "Bank Indonesia (Central Bank)",
+        "phone": "+62 21 131 (Contact Center)",
+        "website": "https://www.bi.go.id/"
+      },
+      {
+        "name": "Bank Mandiri",
+        "phone": "+62 14000",
+        "website": "https://bankmandiri.co.id/"
+      },
+      {
+        "name": "Bank Rakyat Indonesia (BRI)",
+        "phone": "+62 14017 / 1500017",
+        "website": "https://bri.co.id/"
+      },
+      {
+        "name": "Bank Central Asia (BCA)",
+        "phone": "+62 1500888",
+        "website": "https://www.bca.co.id/"
+      }
+    ]
+  },
+  {
+    "country": "Iran",
+    "iso": "IR",
+    "institutions": [
+      {
+        "name": "Central Bank of the Islamic Republic of Iran",
+        "phone": "+98 21 64461",
+        "website": "https://www.cbi.ir/"
+      },
+      {
+        "name": "Bank Melli Iran",
+        "phone": "+98 21 64140",
+        "website": "https://bmi.ir/"
+      },
+      {
+        "name": "Bank Saderat Iran",
+        "phone": "+98 21 84281",
+        "website": "https://www.bsi.ir/"
+      },
+      {
+        "name": "Bank Mellat",
+        "phone": "+98 21 81300",
+        "website": "https://www.bankmellat.ir/"
+      }
+    ],
+    "notes": "Sanctions may affect international access and services."
+  },
+  {
+    "country": "Iraq",
+    "iso": "IQ",
+    "institutions": [
+      {
+        "name": "Central Bank of Iraq",
+        "phone": "+964 790 192 8807",
+        "website": "https://cbi.iq/"
+      },
+      {
+        "name": "Rafidain Bank",
+        "phone": "+964 1 818 7001",
+        "website": "https://www.rafidain-bank.gov.iq/"
+      },
+      {
+        "name": "Rasheed Bank",
+        "phone": "N/A",
+        "website": "http://www.rasheedbank.gov.iq/"
+      },
+      {
+        "name": "Trade Bank of Iraq (TBI)",
+        "phone": "+964 790 194 3559",
+        "website": "https://www.tbi.com.iq/"
+      }
+    ]
+  },
+  {
+    "country": "Israel",
+    "iso": "IL",
+    "institutions": [
+      {
+        "name": "Bank of Israel",
+        "phone": "+972 2 655 2211",
+        "website": "https://www.boi.org.il/"
+      },
+      {
+        "name": "Bank Leumi",
+        "phone": "+972 3 514 8111",
+        "website": "https://www.leumi.co.il/"
+      },
+      {
+        "name": "Bank Hapoalim",
+        "phone": "+972 3 650 0000",
+        "website": "https://www.bankhapoalim.co.il/"
+      },
+      {
+        "name": "Mizrahi-Tefahot Bank",
+        "phone": "+972 76 804 0404",
+        "website": "https://www.mizrahi-tefahot.co.il/"
+      }
+    ]
+  },
+  {
+    "country": "Japan",
+    "iso": "JP",
+    "institutions": [
+      {
+        "name": "Bank of Japan",
+        "phone": "+81 3 3279 1111",
+        "website": "https://www.boj.or.jp/"
+      },
+      {
+        "name": "Mitsubishi UFJ Financial Group (MUFG)",
+        "phone": "+81 3 3240 8111 (HQ)",
+        "website": "https://www.mufg.jp/"
+      },
+      {
+        "name": "Sumitomo Mitsui Financial Group (SMBC)",
+        "phone": "+81 3 3282 8111 (HQ)",
+        "website": "https://www.smfg.co.jp/"
+      },
+      {
+        "name": "Mizuho Financial Group",
+        "phone": "+81 3 5224 1111 (HQ)",
+        "website": "https://www.mizuho-fg.co.jp/"
+      }
+    ]
+  },
+  {
+    "country": "Jordan",
+    "iso": "JO",
+    "institutions": [
+      {
+        "name": "Central Bank of Jordan",
+        "phone": "+962 6 463 0301",
+        "website": "https://www.cbj.gov.jo/"
+      },
+      {
+        "name": "Arab Bank",
+        "phone": "+962 6 560 0000",
+        "website": "https://www.arabbank.jo/"
+      },
+      {
+        "name": "Housing Bank for Trade and Finance (HBTF)",
+        "phone": "+962 6 520 0400",
+        "website": "https://www.hbtf.com/"
+      },
+      {
+        "name": "Bank of Jordan",
+        "phone": "+962 6 560 9200",
+        "website": "https://www.bankofjordan.com.jo/"
+      }
+    ]
+  },
+  {
+    "country": "Kazakhstan",
+    "iso": "KZ",
+    "institutions": [
+      {
+        "name": "National Bank of Kazakhstan",
+        "phone": "+7 727 270 45 91",
+        "website": "https://www.nationalbank.kz/"
+      },
+      {
+        "name": "Halyk Bank",
+        "phone": "+7 727 259 07 77",
+        "website": "https://halykbank.kz/"
+      },
+      {
+        "name": "Kaspi Bank",
+        "phone": "9999 (Mobile)",
+        "website": "https://kaspi.kz/"
+      },
+      {
+        "name": "ForteBank",
+        "phone": "7575 (Mobile)",
+        "website": "https://forte.kz/"
+      }
+    ]
+  },
+  {
+    "country": "Kuwait",
+    "iso": "KW",
+    "institutions": [
+      {
+        "name": "Central Bank of Kuwait",
+        "phone": "+965 181 4444",
+        "website": "https://www.cbk.gov.kw/"
+      },
+      {
+        "name": "National Bank of Kuwait (NBK)",
+        "phone": "+965 180 1801",
+        "website": "https://www.nbk.com/"
+      },
+      {
+        "name": "Kuwait Finance House (KFH)",
+        "phone": "+965 180 3333",
+        "website": "https://www.kfh.com/"
+      },
+      {
+        "name": "Burgan Bank",
+        "phone": "+965 180 4080",
+        "website": "https://www.burgan.com/"
+      }
+    ]
+  },
+  {
+    "country": "Kyrgyzstan",
+    "iso": "KG",
+    "institutions": [
+      {
+        "name": "National Bank of the Kyrgyz Republic",
+        "phone": "+996 312 61 06 88",
+        "website": "https://www.nbkr.kg/"
+      },
+      {
+        "name": "Optima Bank",
+        "phone": "+996 312 90 59 59",
+        "website": "https://www.optimabank.kg/"
+      },
+      {
+        "name": "RSK Bank",
+        "phone": "+996 312 91 11 11",
+        "website": "https://www.rsk.kg/"
+      },
+      {
+        "name": "Demir Kyrgyz International Bank (DKIB)",
+        "phone": "+996 312 61 06 10",
+        "website": "https://www.demirbank.kg/"
+      }
+    ]
+  },
+  {
+    "country": "Laos",
+    "iso": "LA",
+    "institutions": [
+      {
+        "name": "Bank of the Lao P.D.R.",
+        "phone": "+856 21 213 200",
+        "website": "https://www.bol.gov.la/"
+      },
+      {
+        "name": "Banque Pour Le Commerce Exterieur Lao Public (BCEL)",
+        "phone": "+856 21 213 200",
+        "website": "https://www.bcel.com.la/"
+      },
+      {
+        "name": "Lao Development Bank (LDB)",
+        "phone": "+856 21 213 400",
+        "website": "https://www.ldb.com.la/"
+      },
+      {
+        "name": "ACLEDA Bank Lao Ltd.",
+        "phone": "+856 21 264 998",
+        "website": "https://www.acledabank.com.la/"
+      }
+    ]
+  },
+  {
+    "country": "Lebanon",
+    "iso": "LB",
+    "institutions": [
+      {
+        "name": "Banque du Liban",
+        "phone": "+961 1 750 000",
+        "website": "https://www.bdl.gov.lb/"
+      },
+      {
+        "name": "Bank Audi",
+        "phone": "+961 1 212 120",
+        "website": "https://www.bankaudi.com.lb/"
+      },
+      {
+        "name": "BLOM Bank",
+        "phone": "+961 1 743 333",
+        "website": "https://www.blombank.com/"
+      },
+      {
+        "name": "Byblos Bank",
+        "phone": "+961 1 205 050",
+        "website": "https://www.byblosbank.com/"
+      }
+    ],
+    "notes": "Facing significant economic crisis impacting the banking sector."
+  },
+  {
+    "country": "Macau",
+    "iso": "MO",
+    "institutions": [
+      {
+        "name": "Autoridade Monetária de Macau / Monetary Authority of Macao",
+        "phone": "+853 2856 8288",
+        "website": "https://www.amcm.gov.mo/"
+      },
+      {
+        "name": "Bank of China Macau Branch",
+        "phone": "+853 888 95566",
+        "website": "https://www.bocmacau.com/"
+      },
+      {
+        "name": "Industrial and Commercial Bank of China (Macau) Limited",
+        "phone": "+853 889 95588",
+        "website": "https://www.icbc.com.mo/"
+      },
+      {
+        "name": "Tai Fung Bank Limited",
+        "phone": "+853 2833 5566",
+        "website": "https://www.taifungbank.com/"
+      }
+    ],
+    "notes": "Special Administrative Region of China."
+  },
+  {
+    "country": "Malaysia",
+    "iso": "MY",
+    "institutions": [
+      {
+        "name": "Bank Negara Malaysia (Central Bank)",
+        "phone": "+60 3 2698 8044",
+        "website": "https://www.bnm.gov.my/"
+      },
+      {
+        "name": "Maybank (Malayan Banking Berhad)",
+        "phone": "+60 3 1 300 88 6688",
+        "website": "https://www.maybank2u.com.my/"
+      },
+      {
+        "name": "CIMB Bank",
+        "phone": "+60 3 6204 7788",
+        "website": "https://www.cimb.com.my/"
+      },
+      {
+        "name": "Public Bank Berhad",
+        "phone": "+60 3 2176 6000",
+        "website": "https://www.pbebank.com/"
+      }
+    ]
+  },
+  {
+    "country": "Maldives",
+    "iso": "MV",
+    "institutions": [
+      {
+        "name": "Maldives Monetary Authority",
+        "phone": "+960 331 2343",
+        "website": "https://www.mma.gov.mv/"
+      },
+      {
+        "name": "Bank of Maldives (BML)",
+        "phone": "+960 333 0200",
+        "website": "https://www.bankofmaldives.com.mv/"
+      },
+      {
+        "name": "Maldives Islamic Bank (MIB)",
+        "phone": "+960 332 5555",
+        "website": "https://mib.com.mv/"
+      },
+      {
+        "name": "Commercial Bank of Maldives",
+        "phone": "+960 333 2668",
+        "website": "https://www.cbmmv.com/"
+      }
+    ]
+  },
+  {
+    "country": "Mongolia",
+    "iso": "MN",
+    "institutions": [
+      {
+        "name": "The Bank of Mongolia (Mongolbank)",
+        "phone": "+976 11 322 847",
+        "website": "https://www.mongolbank.mn/"
+      },
+      {
+        "name": "Khan Bank",
+        "phone": "+976 1800 1917",
+        "website": "https://www.khanbank.com/"
+      },
+      {
+        "name": "Golomt Bank",
+        "phone": "+976 1800 1646",
+        "website": "https://www.golomtbank.com/"
+      },
+      {
+        "name": "Trade and Development Bank of Mongolia (TDB)",
+        "phone": "+976 7013 1973",
+        "website": "https://www.tdbm.mn/"
+      }
+    ]
+  },
+  {
+    "country": "Myanmar (Burma)",
+    "iso": "MM",
+    "institutions": [
+      {
+        "name": "Central Bank of Myanmar",
+        "phone": "+95 67 418 526",
+        "website": "https://www.cbm.gov.mm/"
+      },
+      {
+        "name": "Kanbawza Bank (KBZ Bank)",
+        "phone": "+95 995 101 8555",
+        "website": "https://kbzbank.com/"
+      },
+      {
+        "name": "Ayeyarwady Bank (AYA Bank)",
+        "phone": "+95 1 534 534",
+        "website": "https://www.ayabank.com/"
+      },
+      {
+        "name": "Myanma Economic Bank (MEB)",
+        "phone": "N/A",
+        "website": "N/A"
+      }
+    ],
+     "notes": "Information and accessibility may be limited."
+  },
+  {
+    "country": "Nepal",
+    "iso": "NP",
+    "institutions": [
+      {
+        "name": "Nepal Rastra Bank (Central Bank)",
+        "phone": "+977 1 441 1250",
+        "website": "https://www.nrb.org.np/"
+      },
+      {
+        "name": "Nabil Bank Limited",
+        "phone": "+977 1 422 7181",
+        "website": "https://www.nabilbank.com/"
+      },
+      {
+        "name": "Nepal Investment Mega Bank Ltd. (NIMB)",
+        "phone": "+977 1 424 2530",
+        "website": "https://www.nimb.com.np/"
+      },
+      {
+        "name": "Global IME Bank Ltd.",
+        "phone": "+977 1 422 5690",
+        "website": "https://globalimebank.com/"
+      }
+    ]
+  },
+  {
+    "country": "North Korea",
+    "iso": "KP",
+    "institutions": [
+      {
+        "name": "Central Bank of the Democratic People's Republic of Korea",
+        "phone": "N/A",
+        "website": "N/A"
+      },
+      {
+        "name": "Foreign Trade Bank of the DPRK",
+        "phone": "N/A",
+        "website": "N/A"
+      }
+    ],
+    "notes": "Highly restricted and opaque banking system. Reliable information is scarce."
+  },
+  {
+    "country": "Oman",
+    "iso": "OM",
+    "institutions": [
+      {
+        "name": "Central Bank of Oman",
+        "phone": "+968 24 798 177",
+        "website": "https://www.cbo.gov.om/"
+      },
+      {
+        "name": "Bank Muscat",
+        "phone": "+968 2479 5555",
+        "website": "https://www.bankmuscat.com/"
+      },
+      {
+        "name": "National Bank of Oman (NBO)",
+        "phone": "+968 2477 8888",
+        "website": "https://www.nbo.om/"
+      },
+      {
+        "name": "BankDhofar",
+        "phone": "+968 2479 0466",
+        "website": "https://www.bankdhofar.com/"
+      }
+    ]
+  },
+  {
+    "country": "Pakistan",
+    "iso": "PK",
+    "institutions": [
+      {
+        "name": "State Bank of Pakistan",
+        "phone": "+92 21 111 727 111",
+        "website": "https://www.sbp.org.pk/"
+      },
+      {
+        "name": "Habib Bank Limited (HBL)",
+        "phone": "+92 21 111 111 425",
+        "website": "https://www.hbl.com/"
+      },
+      {
+        "name": "National Bank of Pakistan (NBP)",
+        "phone": "+92 21 111 627 627",
+        "website": "https://www.nbp.com.pk/"
+      },
+      {
+        "name": "MCB Bank Limited",
+        "phone": "+92 42 111 000 622",
+        "website": "https://www.mcb.com.pk/"
+      }
+    ]
+  },
+  {
+    "country": "Palestine",
+    "iso": "PS",
+    "institutions": [
+      {
+        "name": "Palestine Monetary Authority",
+        "phone": "+970 2 241 5250",
+        "website": "https://www.pma.ps/"
+      },
+      {
+        "name": "Bank of Palestine",
+        "phone": "+970 2 294 6400",
+        "website": "https://www.bankofpalestine.com/"
+      },
+      {
+        "name": "Palestine Investment Bank",
+        "phone": "+970 2 241 0400",
+        "website": "https://www.pib.ps/"
+      },
+      {
+        "name": "Quds Bank",
+        "phone": "+970 2 295 0033",
+        "website": "https://www.qudsbank.ps/"
+      }
+    ]
+  },
+  {
+    "country": "Philippines",
+    "iso": "PH",
+    "institutions": [
+      {
+        "name": "Bangko Sentral ng Pilipinas (Central Bank)",
+        "phone": "+63 2 8708 7701",
+        "website": "https://www.bsp.gov.ph/"
+      },
+      {
+        "name": "BDO Unibank",
+        "phone": "+63 2 8631 8000",
+        "website": "https://www.bdo.com.ph/"
+      },
+      {
+        "name": "Metropolitan Bank & Trust Company (Metrobank)",
+        "phone": "+63 2 8870 0700",
+        "website": "https://www.metrobank.com.ph/"
+      },
+      {
+        "name": "Bank of the Philippine Islands (BPI)",
+        "phone": "+63 2 889 10000",
+        "website": "https://www.bpi.com.ph/"
+      }
+    ]
+  },
+  {
+    "country": "Qatar",
+    "iso": "QA",
+    "institutions": [
+      {
+        "name": "Qatar Central Bank",
+        "phone": "+974 4495 5555",
+        "website": "https://www.qcb.gov.qa/"
+      },
+      {
+        "name": "Qatar National Bank (QNB)",
+        "phone": "+974 4440 7777",
+        "website": "https://www.qnb.com/"
+      },
+      {
+        "name": "Commercial Bank of Qatar (CBQ)",
+        "phone": "+974 4449 0000",
+        "website": "https://www.cbq.qa/"
+      },
+      {
+        "name": "Doha Bank",
+        "phone": "+974 4015 0000",
+        "website": "https://dohabank.com/"
+      }
+    ]
+  },
+  {
+    "country": "Saudi Arabia",
+    "iso": "SA",
+    "institutions": [
+      {
+        "name": "Saudi Central Bank (SAMA)",
+        "phone": "+966 11 463 3000",
+        "website": "https://www.sama.gov.sa/"
+      },
+      {
+        "name": "Saudi National Bank (SNB - formerly NCB/Samba)",
+        "phone": "+966 92000 1000",
+        "website": "https://www.alahli.com/"
+      },
+      {
+        "name": "Al Rajhi Bank",
+        "phone": "+966 92000 3344",
+        "website": "https://www.alrajhibank.com.sa/"
+      },
+      {
+        "name": "Riyad Bank",
+        "phone": "+966 92000 2470",
+        "website": "https://www.riyadbank.com/"
+      }
+    ]
+  },
+  {
+    "country": "Singapore",
+    "iso": "SG",
+    "institutions": [
+      {
+        "name": "Monetary Authority of Singapore (MAS)",
+        "phone": "+65 6225 5577",
+        "website": "https://www.mas.gov.sg/"
+      },
+      {
+        "name": "DBS Bank",
+        "phone": "+65 1800 111 1111",
+        "website": "https://www.dbs.com.sg/"
+      },
+      {
+        "name": "Oversea-Chinese Banking Corporation (OCBC)",
+        "phone": "+65 1800 363 3333",
+        "website": "https://www.ocbc.com/"
+      },
+      {
+        "name": "United Overseas Bank (UOB)",
+        "phone": "+65 1800 222 2121",
+        "website": "https://www.uob.com.sg/"
+      }
+    ]
+  },
+  {
+    "country": "South Korea",
+    "iso": "KR",
+    "institutions": [
+      {
+        "name": "Bank of Korea",
+        "phone": "+82 2 759 4114",
+        "website": "https://www.bok.or.kr/"
+      },
+      {
+        "name": "KB Kookmin Bank",
+        "phone": "+82 1588 9999",
+        "website": "https://www.kbstar.com/"
+      },
+      {
+        "name": "Shinhan Bank",
+        "phone": "+82 1577 8000",
+        "website": "https://www.shinhan.com/"
+      },
+      {
+        "name": "Woori Bank",
+        "phone": "+82 1588 5000",
+        "website": "https://www.wooribank.com/"
+      }
+    ]
+  },
+  {
+    "country": "Sri Lanka",
+    "iso": "LK",
+    "institutions": [
+      {
+        "name": "Central Bank of Sri Lanka",
+        "phone": "+94 11 247 7000",
+        "website": "https://www.cbsl.gov.lk/"
+      },
+      {
+        "name": "Bank of Ceylon",
+        "phone": "+94 11 244 6790",
+        "website": "https://boc.lk/"
+      },
+      {
+        "name": "Commercial Bank of Ceylon PLC",
+        "phone": "+94 11 248 6000",
+        "website": "https://www.combank.lk/"
+      },
+      {
+        "name": "Hatton National Bank PLC (HNB)",
+        "phone": "+94 11 246 2462",
+        "website": "https://www.hnb.net/"
+      }
+    ]
+  },
+  {
+    "country": "Syria",
+    "iso": "SY",
+    "institutions": [
+      {
+        "name": "Central Bank of Syria",
+        "phone": "+963 11 221 6800",
+        "website": "http://cb.gov.sy/"
+      },
+      {
+        "name": "Commercial Bank of Syria",
+        "phone": "+963 11 221 8890",
+        "website": "http://www.cbs-bank.sy/"
+      },
+      {
+        "name": "Real Estate Bank",
+        "phone": "+963 11 221 8602",
+        "website": "N/A"
+      }
+    ],
+    "notes": "Banking sector heavily impacted by conflict and sanctions."
+  },
+  {
+    "country": "Taiwan",
+    "iso": "TW",
+    "institutions": [
+      {
+        "name": "Central Bank of the Republic of China (Taiwan)",
+        "phone": "+886 2 2393 6161",
+        "website": "https://www.cbc.gov.tw/"
+      },
+      {
+        "name": "Bank of Taiwan",
+        "phone": "+886 2 2349 3456",
+        "website": "https://www.bot.com.tw/"
+      },
+      {
+        "name": "CTBC Bank",
+        "phone": "+886 800 024 365",
+        "website": "https://www.ctbcbank.com/"
+      },
+      {
+        "name": "Mega International Commercial Bank",
+        "phone": "+886 2 2563 3355",
+        "website": "https://www.megabank.com.tw/"
+      }
+    ],
+    "notes": "Referenced using common name used in international finance."
+  },
+  {
+    "country": "Tajikistan",
+    "iso": "TJ",
+    "institutions": [
+      {
+        "name": "National Bank of Tajikistan",
+        "phone": "+992 44 600 3103",
+        "website": "https://nbt.tj/"
+      },
+      {
+        "name": "Amonatbonk (State Savings Bank)",
+        "phone": "+992 44 600 90 24",
+        "website": "https://www.amonatbonk.tj/"
+      },
+      {
+        "name": "Orienbank",
+        "phone": "+992 44 600 00 00",
+        "website": "https://www.orienbank.tj/"
+      },
+      {
+        "name": "Esсhata Bank",
+        "phone": "+992 3422 43093",
+        "website": "https://eskhata.com/"
+      }
+    ]
+  },
+  {
+    "country": "Thailand",
+    "iso": "TH",
+    "institutions": [
+      {
+        "name": "Bank of Thailand",
+        "phone": "+66 2 283 5353",
+        "website": "https://www.bot.or.th/"
+      },
+      {
+        "name": "Bangkok Bank",
+        "phone": "+66 1333",
+        "website": "https://www.bangkokbank.com/"
+      },
+      {
+        "name": "Krung Thai Bank (KTB)",
+        "phone": "+66 2 111 1111",
+        "website": "https://krungthai.com/"
+      },
+      {
+        "name": "Siam Commercial Bank (SCB)",
+        "phone": "+66 2 777 7777",
+        "website": "https://www.scb.co.th/"
+      }
+    ]
+  },
+  {
+    "country": "Turkey",
+    "iso": "TR",
+    "institutions": [
+      {
+        "name": "Türkiye Cumhuriyet Merkez Bankası (Central Bank)",
+        "phone": "+90 312 507 50 00",
+        "website": "https://www.tcmb.gov.tr/"
+      },
+      {
+        "name": "Ziraat Bankası",
+        "phone": "+90 850 258 00 00",
+        "website": "https://www.ziraatbank.com.tr/"
+      },
+      {
+        "name": "Türkiye İş Bankası",
+        "phone": "+90 850 724 07 24",
+        "website": "https://www.isbank.com.tr/"
+      },
+      {
+        "name": "Garanti BBVA",
+        "phone": "+90 444 0 333",
+        "website": "https://www.garantibbva.com.tr/"
+      }
+    ],
+    "notes": "Also considered partly European."
+  },
+  {
+    "country": "Turkmenistan",
+    "iso": "TM",
+    "institutions": [
+      {
+        "name": "Central Bank of Turkmenistan",
+        "phone": "+993 12 38 10 27",
+        "website": "https://www.cbt.tm/"
+      },
+      {
+        "name": "State Bank for Foreign Economic Affairs of Turkmenistan (Vnesheconombank)",
+        "phone": "+993 12 40 60 40",
+        "website": "https://www.tfeb.gov.tm/"
+      },
+      {
+        "name": "Dayhanbank",
+        "phone": "+993 12 38 02 12",
+        "website": "https://dayhanbank.gov.tm/"
+      },
+      {
+        "name": "Halkbank",
+        "phone": "+993 12 44 47 51",
+        "website": "https://halkbank.gov.tm/"
+      }
+    ],
+     "notes": "Banking information can be limited."
+  },
+  {
+    "country": "United Arab Emirates",
+    "iso": "AE",
+    "institutions": [
+      {
+        "name": "Central Bank of the UAE",
+        "phone": "+971 2 665 2220",
+        "website": "https://www.centralbank.ae/"
+      },
+      {
+        "name": "First Abu Dhabi Bank (FAB)",
+        "phone": "+971 600 525500",
+        "website": "https://www.bankfab.com/"
+      },
+      {
+        "name": "Emirates NBD",
+        "phone": "+971 600 540000",
+        "website": "https://www.emiratesnbd.com/"
+      },
+      {
+        "name": "Abu Dhabi Commercial Bank (ADCB)",
+        "phone": "+971 600 502030",
+        "website": "https://www.adcb.com/"
+      }
+    ]
+  },
+  {
+    "country": "Uzbekistan",
+    "iso": "UZ",
+    "institutions": [
+      {
+        "name": "Central Bank of the Republic of Uzbekistan",
+        "phone": "+998 71 212 60 01",
+        "website": "https://cbu.uz/"
+      },
+      {
+        "name": "National Bank for Foreign Economic Activity (NBU)",
+        "phone": "+998 78 148 00 10",
+        "website": "https://nbu.uz/"
+      },
+      {
+        "name": "Uzpromstroybank (SQB)",
+        "phone": "+998 71 200 43 43",
+        "website": "https://sqb.uz/"
+      },
+      {
+        "name": "Asakabank",
+        "phone": "+998 71 120 80 00",
+        "website": "https://asakabank.uz/"
+      }
+    ]
+  },
+  {
+    "country": "Vietnam",
+    "iso": "VN",
+    "institutions": [
+      {
+        "name": "State Bank of Vietnam",
+        "phone": "+84 24 3825 5584",
+        "website": "https://www.sbv.gov.vn/"
+      },
+      {
+        "name": "Vietcombank",
+        "phone": "+84 1900 54 54 13",
+        "website": "https://portal.vietcombank.com.vn/"
+      },
+      {
+        "name": "VietinBank",
+        "phone": "+84 1900 558 868",
+        "website": "https://www.vietinbank.vn/"
+      },
+      {
+        "name": "BIDV (Bank for Investment and Development of Vietnam)",
+        "phone": "+84 1900 9247",
+        "website": "https://www.bidv.com.vn/"
+      }
+    ]
+  },
+  {
+    "country": "Yemen",
+    "iso": "YE",
+    "institutions": [
+      {
+        "name": "Central Bank of Yemen",
+        "phone": "+967 1 274 378",
+        "website": "https://centralbank.gov.ye/"
+      },
+      {
+        "name": "CAC Bank",
+        "phone": "+967 1 538 888",
+        "website": "https://www.cacbank.com.ye/"
+      },
+      {
+        "name": "Yemen Commercial Bank",
+        "phone": "+967 1 274 242",
+        "website": "https://www.ycb.com.ye/"
+      },
+      {
+        "name": "Tadhamon Bank",
+        "phone": "+967 800 1010",
+        "website": "https://tadhamonbank.com/"
+      }
+    ],
+    "notes": "Banking system heavily impacted by conflict. Information may be difficult to verify."
+  }
+]

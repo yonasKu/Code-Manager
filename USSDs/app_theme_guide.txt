@@ -1,0 +1,321 @@
+# USSD CODE MANAGER - COLOR THEME & BRANDING GUIDE
+
+## BRAND IDENTITY
+
+### Primary Brand Colors
+- **Primary Blue**: #34729C (Ocean Blue)
+  - RGB: 52, 114, 156
+  - HSL: 205°, 50%, 41%
+  
+- **Accent Blue**: #4C6DF0 (Electric Blue)
+  - RGB: 76, 109, 240
+  - HSL: 228°, 86%, 62%
+
+### Brand Personality
+- Professional yet approachable
+- Trustworthy and reliable
+- Modern and tech-forward
+- Clear and accessible
+
+### Logo Concept
+- Stylized phone dial pad with USSD symbol
+- Gradient from #34729C to #4C6DF0
+- Simple, recognizable icon that works at all sizes
+- Minimal design that remains legible in small formats
+
+## LIGHT THEME COLOR PALETTE
+
+### Primary Colors
+- **Primary Background**: #FFFFFF
+- **Secondary Background**: #F0F5FA
+- **Primary Blue**: #34729C
+- **Accent Blue**: #4C6DF0
+- **Gradient Blue**: Linear gradient from #34729C to #4C6DF0
+
+### Text Colors
+- **Primary Text**: #1A2237 (Dark Navy)
+- **Secondary Text**: #526580 (Slate Blue)
+- **Tertiary Text**: #768CA3 (Light Slate)
+- **Disabled Text**: #BBC7D4 (Gray Blue)
+
+### UI Element Colors
+- **Card Background**: #FFFFFF
+- **Card Border**: #E4ECF4
+- **Card Shadow**: rgba(52, 114, 156, 0.08)
+- **Divider**: #E4ECF4
+
+### Functional Colors
+- **Success**: #23A86D (Emerald Green)
+- **Warning**: #F9A826 (Amber)
+- **Error**: #E63946 (Crimson)
+- **Info**: #4C6DF0 (Electric Blue)
+- **Highlight**: #B6E1FF (Light Blue Highlight)
+
+### Button Colors
+- **Primary Button**: #34729C
+  - **Hover**: #2A5C7E
+  - **Pressed**: #1F455F
+  - **Text**: #FFFFFF
+  
+- **Secondary Button**: #4C6DF0
+  - **Hover**: #3D57D1
+  - **Pressed**: #2E44AF
+  - **Text**: #FFFFFF
+  
+- **Tertiary Button**: transparent
+  - **Border**: #34729C
+  - **Text**: #34729C
+  - **Hover Background**: rgba(52, 114, 156, 0.05)
+
+### Input Fields
+- **Background**: #F8FAFC
+- **Border**: #D0DCE7
+- **Focus Border**: #4C6DF0
+- **Placeholder Text**: #98AABE
+
+## DARK THEME COLOR PALETTE
+
+### Primary Colors
+- **Primary Background**: #121820
+- **Secondary Background**: #1D2733
+- **Primary Blue**: #5E99C2 (Lighter Ocean Blue)
+- **Accent Blue**: #7990F5 (Lighter Electric Blue)
+- **Gradient Blue**: Linear gradient from #5E99C2 to #7990F5
+
+### Text Colors
+- **Primary Text**: #ECF2F8 (Off-White)
+- **Secondary Text**: #B6C5D6 (Light Blue Gray)
+- **Tertiary Text**: #8598AD (Medium Blue Gray)
+- **Disabled Text**: #5A6980 (Dark Blue Gray)
+
+### UI Element Colors
+- **Card Background**: #1D2733
+- **Card Border**: #2D3A4A
+- **Card Shadow**: rgba(12, 20, 28, 0.5)
+- **Divider**: #2D3A4A
+
+### Functional Colors
+- **Success**: #4CC38A (Mint Green)
+- **Warning**: #FFBB50 (Light Amber)
+- **Error**: #F27285 (Soft Red)
+- **Info**: #7990F5 (Light Electric Blue)
+- **Highlight**: #1E3A52 (Dark Blue Highlight)
+
+### Button Colors
+- **Primary Button**: #5E99C2
+  - **Hover**: #4D87B0
+  - **Pressed**: #3D739A
+  - **Text**: #FFFFFF
+  
+- **Secondary Button**: #7990F5
+  - **Hover**: #6277DE
+  - **Pressed**: #4E63CA
+  - **Text**: #FFFFFF
+  
+- **Tertiary Button**: transparent
+  - **Border**: #5E99C2
+  - **Text**: #5E99C2
+  - **Hover Background**: rgba(94, 153, 194, 0.1)
+
+### Input Fields
+- **Background**: #2D3A4A
+- **Border**: #3D4B5C
+- **Focus Border**: #7990F5
+- **Placeholder Text**: #63768B
+
+## TYPOGRAPHY
+
+### Font Family
+- **Primary**: 'SF Pro Display', 'Roboto', sans-serif
+- **Secondary/Monospace**: 'SF Mono', 'Roboto Mono', monospace (for USSD codes)
+
+### Font Sizes
+- **Headings**:
+  - H1: 24sp/Bold
+  - H2: 20sp/Bold
+  - H3: 18sp/Medium
+  - H4: 16sp/Medium
+  
+- **Body**:
+  - Large: 16sp/Regular
+  - Normal: 14sp/Regular
+  - Small: 12sp/Regular
+  
+- **USSD Codes**: 18sp/Monospace/Medium
+
+### Line Heights
+- Headings: 1.2
+- Body: 1.5
+- USSD Codes: 1.0
+
+## COMPONENT STYLING
+
+### Cards
+- **Light Theme**:
+  - Background: #FFFFFF
+  - Border: 1px solid #E4ECF4
+  - Border Radius: 12px
+  - Shadow: 0 2px 8px rgba(52, 114, 156, 0.08)
+  
+- **Dark Theme**:
+  - Background: #1D2733
+  - Border: 1px solid #2D3A4A
+  - Border Radius: 12px
+  - Shadow: 0 2px 8px rgba(12, 20, 28, 0.5)
+
+### Buttons
+- Border Radius: 8px
+- Height: 48px (standard), 40px (compact)
+- Padding: 12px 16px (standard)
+- Text Style: 14sp/Medium
+- Transition: 0.2s ease-in-out
+
+### Icons
+- Line weight: 1.5px
+- Size: 24px (standard), 20px (compact)
+- Primary color: #34729C (Light) / #5E99C2 (Dark)
+- Secondary color: #4C6DF0 (Light) / #7990F5 (Dark)
+
+### Navigation Bar
+- **Light Theme**:
+  - Background: #FFFFFF
+  - Selected Icon: #34729C
+  - Unselected Icon: #BBC7D4
+  
+- **Dark Theme**:
+  - Background: #121820
+  - Selected Icon: #5E99C2
+  - Unselected Icon: #5A6980
+
+### Status Bar
+- **Light Theme**: Light content on primary gradient background
+- **Dark Theme**: Dark content on #121820 background
+
+## UI ELEMENT SPECIFIC STYLING
+
+### USSD Code Display
+- **Light Theme**:
+  - Background: #F0F5FA
+  - Border: 1px solid #D0DCE7
+  - Text: #1A2237 (Monospace)
+  - Special Characters: #4C6DF0
+  
+- **Dark Theme**:
+  - Background: #1D2733
+  - Border: 1px solid #2D3A4A
+  - Text: #ECF2F8 (Monospace)
+  - Special Characters: #7990F5
+
+### Quick Access Buttons
+- Circular buttons with gradient background
+- Icon: #FFFFFF
+- Size: 56px diameter
+- Shadow: 0 2px 8px rgba(52, 114, 156, 0.15)
+
+### Category Icons
+- Filled style
+- Size: 32px
+- Primary color with 10% transparent background circle
+- Animation: Subtle scale on press (1.0 to 1.05)
+
+### Search Bar
+- **Light Theme**:
+  - Background: #F0F5FA
+  - Border: 1px solid #E4ECF4
+  - Icon: #768CA3
+  
+- **Dark Theme**:
+  - Background: #1D2733
+  - Border: 1px solid #2D3A4A
+  - Icon: #8598AD
+
+### Toggle Switches
+- **Light Theme**:
+  - Off: #BBC7D4 (track), #FFFFFF (thumb)
+  - On: #34729C (track), #FFFFFF (thumb)
+  
+- **Dark Theme**:
+  - Off: #3D4B5C (track), #5A6980 (thumb)
+  - On: #5E99C2 (track), #FFFFFF (thumb)
+
+## ANIMATION & TRANSITIONS
+
+### Transition Types
+- Button press: 0.1s ease-out
+- Screen transitions: 0.3s ease-in-out
+- List item animations: 0.2s ease
+- Loader animations: Infinite 1.5s linear
+
+### Animation Guidelines
+- Subtle, purpose-driven animations
+- Use motion to communicate state changes
+- Keep animations under 400ms for responsiveness
+- Use spring physics for natural movement
+
+### Key Animations
+- Code execution loading: Pulse animation with primary colors
+- Success/error feedback: Gentle bounce effect
+- Category switching: Slide transition
+- Bottom navigation: Fade combined with small vertical shift
+
+## DESIGN EXAMPLES
+
+### Gradient Header
+```
+┌─────────────────────────────────┐
+│                          🔔  👤  │
+│ USSD Manager                     │
+│                                  │
+│                                  │
+└─────────────────────────────────┘
+```
+- Background: Linear gradient from #34729C to #4C6DF0
+- Text: #FFFFFF
+- Height: 160px (collapsed: 64px)
+- Icons: #FFFFFF
+
+### Primary Action Button
+```
+┌─────────────────────────────────┐
+│          EXECUTE CODE            │
+└─────────────────────────────────┘
+```
+- Background: #34729C (Light) / #5E99C2 (Dark)
+- Text: #FFFFFF
+- Height: 52px
+- Border Radius: 8px
+- Shadow: 0 2px 8px rgba(52, 114, 156, 0.2)
+
+### Code Display Card
+```
+┌─────────────────────────────────┐
+│           **21*number#           │
+└─────────────────────────────────┘
+```
+- Background: #F0F5FA (Light) / #1D2733 (Dark)
+- Text: Monospace, #1A2237 (Light) / #ECF2F8 (Dark)
+- Special Characters (*,#): #4C6DF0 (Light) / #7990F5 (Dark)
+- Parameters (number): #E63946 (Light) / #F27285 (Dark), italic
+- Padding: 16px
+- Border Radius: 8px
+
+## ACCESSIBILITY CONSIDERATIONS
+
+### Color Contrast
+- All text meets WCAG AA standards (4.5:1 for normal text, 3:1 for large text)
+- Interactive elements have distinct focus states
+- Critical information never conveyed by color alone
+
+### Text Sizing
+- All text can scale up to 200% without breaking layouts
+- Minimum touch target size of 44x44 pixels
+
+### Dark Mode Implementation
+- True dark mode (not just inverted colors)
+- Reduced brightness for eye comfort
+- Careful use of dark blues instead of pure black for less eye strain
+
+### Alternative Interactions
+- Voice control support for code execution
+- Haptic feedback for button presses
+- Screen reader friendly labels for all interactive elements

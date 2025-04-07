@@ -1,0 +1,1269 @@
+[
+  {
+    "country": "Albania",
+    "iso": "AL",
+    "institutions": [
+      {
+        "name": "Banka e Shqipërisë (Bank of Albania)",
+        "phone": "+355 4 222 3556",
+        "website": "https://www.bankofalbania.org/"
+      },
+      {
+        "name": "BKT (Banka Kombëtare Tregtare)",
+        "phone": "+355 4 226 6288",
+        "website": "https://www.bkt.com.al/"
+      },
+      {
+        "name": "Raiffeisen Bank Albania",
+        "phone": "+355 4 238 1381",
+        "website": "https://www.raiffeisen.al/"
+      },
+      {
+        "name": "Intesa Sanpaolo Bank Albania",
+        "phone": "+355 4 227 6000",
+        "website": "https://www.intesasanpaolobank.al/"
+      }
+    ]
+  },
+  {
+    "country": "Andorra",
+    "iso": "AD",
+    "institutions": [
+      {
+        "name": "Autoritat Financera Andorrana (AFA - Regulator)",
+        "phone": "+376 808 898",
+        "website": "https://www.afa.ad/"
+      },
+      {
+        "name": "Andbank",
+        "phone": "+376 873 333",
+        "website": "https://www.andbank.com/"
+      },
+      {
+        "name": "Crèdit Andorrà",
+        "phone": "+376 888 888",
+        "website": "https://www.creditandorragroup.ad/"
+      },
+      {
+        "name": "MoraBanc",
+        "phone": "+376 884 884",
+        "website": "https://www.morabanc.ad/"
+      }
+    ],
+    "notes": "Uses the Euro but is not formally part of the Eurozone/EU."
+  },
+  {
+    "country": "Austria",
+    "iso": "AT",
+    "institutions": [
+      {
+        "name": "Oesterreichische Nationalbank (OeNB - Central Bank)",
+        "phone": "+43 1 404 20 0",
+        "website": "https://www.oenb.at/"
+      },
+      {
+        "name": "Erste Group Bank AG",
+        "phone": "+43 5 0100 - 20111",
+        "website": "https://www.erstegroup.com/"
+      },
+      {
+        "name": "Raiffeisen Bank International AG (RBI)",
+        "phone": "+43 1 71707 0",
+        "website": "https://www.rbinternational.com/"
+      },
+      {
+        "name": "UniCredit Bank Austria AG",
+        "phone": "+43 5 05 05 0",
+        "website": "https://www.bankaustria.at/"
+      }
+    ],
+    "notes": "Eurozone member."
+  },
+  {
+    "country": "Belarus",
+    "iso": "BY",
+    "institutions": [
+      {
+        "name": "National Bank of the Republic of Belarus",
+        "phone": "+375 17 306 00 02",
+        "website": "https://www.nbrb.by/"
+      },
+      {
+        "name": "Belarusbank",
+        "phone": "+375 17 309 00 05",
+        "website": "https://belarusbank.by/"
+      },
+      {
+        "name": "Belagroprombank",
+        "phone": "+375 17 218 57 77",
+        "website": "https://www.belapb.by/"
+      },
+      {
+        "name": "Priorbank (Raiffeisen Group)",
+        "phone": "+375 17 289 90 90",
+        "website": "https://www.priorbank.by/"
+      }
+    ]
+  },
+  {
+    "country": "Belgium",
+    "iso": "BE",
+    "institutions": [
+      {
+        "name": "Nationale Bank van België / Banque Nationale de Belgique",
+        "phone": "+32 2 221 21 11",
+        "website": "https://www.nbb.be/"
+      },
+      {
+        "name": "BNP Paribas Fortis",
+        "phone": "+32 2 762 20 00",
+        "website": "https://www.bnpparibasfortis.be/"
+      },
+      {
+        "name": "KBC Bank",
+        "phone": "+32 78 15 21 53",
+        "website": "https://www.kbc.be/"
+      },
+      {
+        "name": "ING Belgium",
+        "phone": "+32 2 464 60 04",
+        "website": "https://www.ing.be/"
+      }
+    ],
+    "notes": "Eurozone member."
+  },
+  {
+    "country": "Bosnia and Herzegovina",
+    "iso": "BA",
+    "institutions": [
+      {
+        "name": "Centralna banka Bosne i Hercegovine",
+        "phone": "+387 33 278 100",
+        "website": "https://www.cbbh.ba/"
+      },
+      {
+        "name": "UniCredit Bank d.d. Mostar",
+        "phone": "+387 36 356 111",
+        "website": "https://www.unicredit.ba/"
+      },
+      {
+        "name": "Raiffeisen BANK d.d. Bosna i Hercegovina",
+        "phone": "+387 33 755 010",
+        "website": "https://raiffeisenbank.ba/"
+      },
+      {
+        "name": "Intesa Sanpaolo Banka d.d. Bosna i Hercegovina",
+        "phone": "+387 33 497 500",
+        "website": "https://www.intesasanpaolobanka.ba/"
+      }
+    ],
+    "notes": "Uses the Convertible Mark (BAM), pegged to the Euro."
+  },
+  {
+    "country": "Bulgaria",
+    "iso": "BG",
+    "institutions": [
+      {
+        "name": "Българска народна банка (Bulgarian National Bank)",
+        "phone": "+359 2 91459",
+        "website": "https://www.bnb.bg/"
+      },
+      {
+        "name": "UniCredit Bulbank",
+        "phone": "+359 700 18484",
+        "website": "https://www.unicreditbulbank.bg/"
+      },
+      {
+        "name": "DSK Bank (OTP Group)",
+        "phone": "+359 700 10 375",
+        "website": "https://dskbank.bg/"
+      },
+      {
+        "name": "United Bulgarian Bank (UBB - KBC Group)",
+        "phone": "+359 700 117 17",
+        "website": "https://www.ubb.bg/"
+      }
+    ],
+    "notes": "Uses the Bulgarian Lev (BGN), pegged to the Euro. Aims to join Eurozone."
+  },
+  {
+    "country": "Croatia",
+    "iso": "HR",
+    "institutions": [
+      {
+        "name": "Hrvatska narodna banka (Croatian National Bank)",
+        "phone": "+385 1 4564 555",
+        "website": "https://www.hnb.hr/"
+      },
+      {
+        "name": "Zagrebačka banka (UniCredit Group)",
+        "phone": "+385 1 3773 333",
+        "website": "https://www.zaba.hr/"
+      },
+      {
+        "name": "Privredna banka Zagreb (PBZ - Intesa Sanpaolo)",
+        "phone": "+385 1 636 0000",
+        "website": "https://www.pbz.hr/"
+      },
+      {
+        "name": "Erste&Steiermärkische Bank d.d.",
+        "phone": "+385 72 37 1000",
+        "website": "https://www.erstebank.hr/"
+      }
+    ],
+    "notes": "Eurozone member (joined 2023)."
+  },
+  {
+    "country": "Cyprus",
+    "iso": "CY",
+    "institutions": [
+      {
+        "name": "Κεντρική Τράπεζα της Κύπρου (Central Bank of Cyprus)",
+        "phone": "+357 22 714 100",
+        "website": "https://www.centralbank.cy/"
+      },
+      {
+        "name": "Bank of Cyprus",
+        "phone": "+357 800 00 800",
+        "website": "https://www.bankofcyprus.com/"
+      },
+      {
+        "name": "Hellenic Bank",
+        "phone": "+357 8000 9999",
+        "website": "https://www.hellenicbank.com/"
+      },
+      {
+        "name": "RCB Bank Ltd",
+        "phone": "+357 25 355 722",
+        "website": "https://www.rcbcy.com/"
+      }
+    ],
+    "notes": "Eurozone member."
+  },
+  {
+    "country": "Czech Republic",
+    "iso": "CZ",
+    "institutions": [
+      {
+        "name": "Česká národní banka (Czech National Bank)",
+        "phone": "+420 224 411 111",
+        "website": "https://www.cnb.cz/"
+      },
+      {
+        "name": "Česká spořitelna (Erste Group)",
+        "phone": "+420 800 207 207",
+        "website": "https://www.csas.cz/"
+      },
+      {
+        "name": "ČSOB (KBC Group)",
+        "phone": "+420 800 300 300",
+        "website": "https://www.csob.cz/"
+      },
+      {
+        "name": "Komerční banka (Société Générale Group)",
+        "phone": "+420 800 521 521",
+        "website": "https://www.kb.cz/"
+      }
+    ]
+  },
+  {
+    "country": "Denmark",
+    "iso": "DK",
+    "institutions": [
+      {
+        "name": "Danmarks Nationalbank",
+        "phone": "+45 33 63 63 63",
+        "website": "https://www.nationalbanken.dk/"
+      },
+      {
+        "name": "Danske Bank",
+        "phone": "+45 70 12 34 56",
+        "website": "https://danskebank.dk/"
+      },
+      {
+        "name": "Nordea Danmark",
+        "phone": "+45 70 33 33 33",
+        "website": "https://www.nordea.dk/"
+      },
+      {
+        "name": "Jyske Bank",
+        "phone": "+45 89 89 89 89",
+        "website": "https://www.jyskebank.dk/"
+      }
+    ]
+  },
+  {
+    "country": "Estonia",
+    "iso": "EE",
+    "institutions": [
+      {
+        "name": "Eesti Pank (Bank of Estonia)",
+        "phone": "+372 668 0719",
+        "website": "https://www.eestipank.ee/"
+      },
+      {
+        "name": "Swedbank AS",
+        "phone": "+372 6 310 310",
+        "website": "https://www.swedbank.ee/"
+      },
+      {
+        "name": "SEB Pank",
+        "phone": "+372 6 655 100",
+        "website": "https://www.seb.ee/"
+      },
+      {
+        "name": "LHV Pank",
+        "phone": "+372 6 800 400",
+        "website": "https://www.lhv.ee/"
+      }
+    ],
+    "notes": "Eurozone member."
+  },
+  {
+    "country": "Finland",
+    "iso": "FI",
+    "institutions": [
+      {
+        "name": "Suomen Pankki – Finlands Bank",
+        "phone": "+358 9 1831",
+        "website": "https://www.suomenpankki.fi/"
+      },
+      {
+        "name": "Nordea Bank Abp (HQ)",
+        "phone": "+358 200 3000",
+        "website": "https://www.nordea.fi/"
+      },
+      {
+        "name": "OP Financial Group (Osuuspankki)",
+        "phone": "+358 100 0500",
+        "website": "https://www.op.fi/"
+      },
+      {
+        "name": "Danske Bank Finland",
+        "phone": "+358 200 2580",
+        "website": "https://danskebank.fi/"
+      }
+    ],
+    "notes": "Eurozone member."
+  },
+  {
+    "country": "France",
+    "iso": "FR",
+    "institutions": [
+      {
+        "name": "Banque de France",
+        "phone": "+33 1 42 92 42 92",
+        "website": "https://www.banque-france.fr/"
+      },
+      {
+        "name": "BNP Paribas",
+        "phone": "+33 1 42 98 12 34 (HQ)",
+        "website": "https://group.bnpparibas/"
+      },
+      {
+        "name": "Crédit Agricole",
+        "phone": "+33 1 43 23 52 02 (HQ)",
+        "website": "https://www.credit-agricole.com/"
+      },
+      {
+        "name": "Société Générale",
+        "phone": "+33 1 42 14 20 00 (HQ)",
+        "website": "https://www.societegenerale.com/"
+      }
+    ],
+    "notes": "Eurozone member."
+  },
+  {
+    "country": "Georgia",
+    "iso": "GE",
+    "institutions": [
+      {
+        "name": "National Bank of Georgia",
+        "phone": "+995 32 240 64 06",
+        "website": "https://nbg.gov.ge/"
+      },
+      {
+        "name": "TBC Bank",
+        "phone": "+995 32 227 27 27",
+        "website": "https://www.tbcbank.ge/"
+      },
+      {
+        "name": "Bank of Georgia",
+        "phone": "+995 32 244 44 44",
+        "website": "https://bankofgeorgia.ge/"
+      },
+      {
+        "name": "Liberty Bank",
+        "phone": "+995 32 255 55 00",
+        "website": "https://libertybank.ge/"
+      }
+    ]
+  },
+  {
+    "country": "Germany",
+    "iso": "DE",
+    "institutions": [
+      {
+        "name": "Deutsche Bundesbank",
+        "phone": "+49 69 9566 0",
+        "website": "https://www.bundesbank.de/"
+      },
+      {
+        "name": "Deutsche Bank",
+        "phone": "+49 69 910 10000",
+        "website": "https://www.db.com/"
+      },
+      {
+        "name": "Commerzbank",
+        "phone": "+49 69 136 20",
+        "website": "https://www.commerzbank.de/"
+      },
+      {
+        "name": "DZ Bank",
+        "phone": "+49 69 7447 01",
+        "website": "https://www.dzbank.de/"
+      }
+    ],
+    "notes": "Eurozone member."
+  },
+  {
+    "country": "Greece",
+    "iso": "GR",
+    "institutions": [
+      {
+        "name": "Bank of Greece (Τράπεζα της Ελλάδος)",
+        "phone": "+30 210 320 1111",
+        "website": "https://www.bankofgreece.gr/"
+      },
+      {
+        "name": "Piraeus Bank (Τράπεζα Πειραιώς)",
+        "phone": "+30 210 328 8000",
+        "website": "https://www.piraeusbank.gr/"
+      },
+      {
+        "name": "National Bank of Greece (Εθνική Τράπεζα)",
+        "phone": "+30 210 334 1000",
+        "website": "https://www.nbg.gr/"
+      },
+      {
+        "name": "Alpha Bank",
+        "phone": "+30 210 326 0000",
+        "website": "https://www.alpha.gr/"
+      }
+    ],
+    "notes": "Eurozone member."
+  },
+  {
+    "country": "Hungary",
+    "iso": "HU",
+    "institutions": [
+      {
+        "name": "Magyar Nemzeti Bank (Hungarian National Bank)",
+        "phone": "+36 1 428 2600",
+        "website": "https://www.mnb.hu/"
+      },
+      {
+        "name": "OTP Bank",
+        "phone": "+36 1 366 6333",
+        "website": "https://www.otpbank.hu/"
+      },
+      {
+        "name": "K&H Bank (KBC Group)",
+        "phone": "+36 1 335 3355",
+        "website": "https://www.kh.hu/"
+      },
+      {
+        "name": "Erste Bank Hungary",
+        "phone": "+36 1 298 0222",
+        "website": "https://www.erstebank.hu/"
+      }
+    ]
+  },
+  {
+    "country": "Iceland",
+    "iso": "IS",
+    "institutions": [
+      {
+        "name": "Seðlabanki Íslands (Central Bank of Iceland)",
+        "phone": "+354 569 9600",
+        "website": "https://www.sedlabanki.is/"
+      },
+      {
+        "name": "Landsbankinn",
+        "phone": "+354 410 4000",
+        "website": "https://www.landsbankinn.is/"
+      },
+      {
+        "name": "Íslandsbanki",
+        "phone": "+354 440 4000",
+        "website": "https://www.islandsbanki.is/"
+      },
+      {
+        "name": "Arion banki",
+        "phone": "+354 444 7000",
+        "website": "https://www.arionbanki.is/"
+      }
+    ]
+  },
+  {
+    "country": "Ireland",
+    "iso": "IE",
+    "institutions": [
+      {
+        "name": "Central Bank of Ireland",
+        "phone": "+353 1 224 6000",
+        "website": "https://www.centralbank.ie/"
+      },
+      {
+        "name": "Bank of Ireland",
+        "phone": "+353 1 661 5933 (HQ)",
+        "website": "https://www.bankofireland.com/"
+      },
+      {
+        "name": "Allied Irish Banks (AIB)",
+        "phone": "+353 1 660 0311 (HQ)",
+        "website": "https://aib.ie/"
+      },
+      {
+        "name": "Permanent TSB",
+        "phone": "+353 1 212 4101",
+        "website": "https://www.permanenttsb.ie/"
+      }
+    ],
+    "notes": "Eurozone member."
+  },
+  {
+    "country": "Italy",
+    "iso": "IT",
+    "institutions": [
+      {
+        "name": "Banca d'Italia",
+        "phone": "+39 06 47921",
+        "website": "https://www.bancaditalia.it/"
+      },
+      {
+        "name": "Intesa Sanpaolo",
+        "phone": "+39 800 303 303",
+        "website": "https://www.intesasanpaolo.com/"
+      },
+      {
+        "name": "UniCredit",
+        "phone": "+39 800 57 57 57",
+        "website": "https://www.unicredit.it/"
+      },
+      {
+        "name": "Banco BPM",
+        "phone": "+39 02 77001",
+        "website": "https://www.bancobpm.it/"
+      }
+    ],
+    "notes": "Eurozone member."
+  },
+   {
+    "country": "Kosovo",
+    "iso": "XK",
+    "institutions": [
+      {
+        "name": "Banka Qendrore e Republikës së Kosovës (Central Bank)",
+        "phone": "+383 38 222 055",
+        "website": "https://bqk-kos.org/"
+      },
+       {
+        "name": "Raiffeisen Bank Kosovo",
+        "phone": "+383 38 222 222",
+        "website": "https://www.raiffeisen-kosovo.com/"
+       },
+       {
+        "name": "ProCredit Bank Kosovo",
+        "phone": "+383 38 555 555",
+        "website": "https://www.procreditbank-kos.com/"
+       },
+       {
+        "name": "Banka Kombëtare Tregtare (BKT) Kosovë",
+        "phone": "+383 38 666 666",
+        "website": "https://www.bkt-ks.com/"
+       }
+    ],
+    "notes": "Uses the Euro unilaterally."
+  },
+  {
+    "country": "Latvia",
+    "iso": "LV",
+    "institutions": [
+      {
+        "name": "Latvijas Banka",
+        "phone": "+371 6702 2300",
+        "website": "https://www.bank.lv/"
+      },
+      {
+        "name": "Swedbank Latvija",
+        "phone": "+371 67 444 444",
+        "website": "https://www.swedbank.lv/"
+      },
+      {
+        "name": "SEB banka",
+        "phone": "+371 2666 8777",
+        "website": "https://www.seb.lv/"
+      },
+      {
+        "name": "Citadele banka",
+        "phone": "+371 6701 0000",
+        "website": "https://www.citadele.lv/"
+      }
+    ],
+    "notes": "Eurozone member."
+  },
+  {
+    "country": "Liechtenstein",
+    "iso": "LI",
+    "institutions": [
+      {
+        "name": "Finanzmarktaufsicht Liechtenstein (FMA - Regulator)",
+        "phone": "+423 236 73 73",
+        "website": "https://www.fma-li.li/"
+      },
+      {
+        "name": "LGT Bank",
+        "phone": "+423 235 11 22",
+        "website": "https://www.lgt.li/"
+      },
+      {
+        "name": "Liechtensteinische Landesbank (LLB)",
+        "phone": "+423 236 88 11",
+        "website": "https://www.llb.li/"
+      },
+      {
+        "name": "VP Bank",
+        "phone": "+423 235 66 55",
+        "website": "https://www.vpbank.com/"
+      }
+    ],
+    "notes": "Uses the Swiss Franc (CHF)."
+  },
+  {
+    "country": "Lithuania",
+    "iso": "LT",
+    "institutions": [
+      {
+        "name": "Lietuvos bankas (Bank of Lithuania)",
+        "phone": "+370 5 268 0029",
+        "website": "https://www.lb.lt/"
+      },
+      {
+        "name": "Swedbank Lithuania",
+        "phone": "+370 5 268 4444",
+        "website": "https://www.swedbank.lt/"
+      },
+      {
+        "name": "SEB bankas",
+        "phone": "+370 5 268 2800",
+        "website": "https://www.seb.lt/"
+      },
+      {
+        "name": "Luminor Bank AS Lithuanian branch",
+        "phone": "+370 5 239 3444",
+        "website": "https://www.luminor.lt/"
+      }
+    ],
+    "notes": "Eurozone member."
+  },
+  {
+    "country": "Luxembourg",
+    "iso": "LU",
+    "institutions": [
+      {
+        "name": "Banque centrale du Luxembourg",
+        "phone": "+352 4774 1",
+        "website": "https://www.bcl.lu/"
+      },
+      {
+        "name": "Banque Internationale à Luxembourg (BIL)",
+        "phone": "+352 4590 1",
+        "website": "https://www.bil.com/"
+      },
+      {
+        "name": "BGL BNP Paribas",
+        "phone": "+352 42 42 2000",
+        "website": "https://www.bgl.lu/"
+      },
+      {
+        "name": "Spuerkeess (Banque et Caisse d'Épargne de l'État)",
+        "phone": "+352 4015 1",
+        "website": "https://www.spuerkeess.lu/"
+      }
+    ],
+    "notes": "Eurozone member. Major financial center with many international banks."
+  },
+  {
+    "country": "Malta",
+    "iso": "MT",
+    "institutions": [
+      {
+        "name": "Bank Ċentrali ta’ Malta (Central Bank of Malta)",
+        "phone": "+356 2550 0000",
+        "website": "https://www.centralbankmalta.org/"
+      },
+      {
+        "name": "Bank of Valletta (BOV)",
+        "phone": "+356 2131 2020",
+        "website": "https://www.bov.com/"
+      },
+      {
+        "name": "HSBC Bank Malta p.l.c.",
+        "phone": "+356 2148 9100",
+        "website": "https://www.hsbc.com.mt/"
+      },
+      {
+        "name": "APS Bank plc",
+        "phone": "+356 2122 6644",
+        "website": "https://www.apsbank.com.mt/"
+      }
+    ],
+    "notes": "Eurozone member."
+  },
+  {
+    "country": "Moldova",
+    "iso": "MD",
+    "institutions": [
+      {
+        "name": "Banca Națională a Moldovei",
+        "phone": "+373 22 409 000",
+        "website": "https://www.bnm.md/"
+      },
+      {
+        "name": "Moldova Agroindbank (MAIB)",
+        "phone": "+373 22 268 999",
+        "website": "https://www.maib.md/"
+      },
+      {
+        "name": "Moldindconbank",
+        "phone": "+373 22 576 767",
+        "website": "https://www.micb.md/"
+      },
+      {
+        "name": "Victoriabank (Banca Transilvania Group)",
+        "phone": "+373 22 210 202",
+        "website": "https://www.victoriabank.md/"
+      }
+    ]
+  },
+  {
+    "country": "Monaco",
+    "iso": "MC",
+    "institutions": [
+      {
+        "name": "Banque de France (Oversees Euro usage)",
+        "phone": "+33 1 42 92 42 92",
+        "website": "https://www.banque-france.fr/"
+      },
+      {
+        "name": "CFM Indosuez Wealth Management",
+        "phone": "+377 93 10 20 00",
+        "website": "https://www.cfm-indosuez.mc/"
+      },
+      {
+        "name": "Banque Havilland (Monaco) S.A.M.",
+        "phone": "+377 93 10 40 50",
+        "website": "https://www.banquehavilland.com/"
+      },
+       {
+        "name": "CMB Monaco (Mediobanca Group)",
+        "phone": "+377 93 15 77 77",
+        "website": "https://www.cmb.mc/"
+       }
+    ],
+    "notes": "Uses the Euro via agreement with France/EU. Focus on private banking."
+  },
+  {
+    "country": "Montenegro",
+    "iso": "ME",
+    "institutions": [
+      {
+        "name": "Centralna banka Crne Gore",
+        "phone": "+382 20 441 441",
+        "website": "https://www.cbcg.me/"
+      },
+      {
+        "name": "CKB (OTP Group)",
+        "phone": "+382 20 415 555",
+        "website": "https://www.ckb.me/"
+      },
+      {
+        "name": "Erste Bank AD Podgorica",
+        "phone": "+382 20 440 440",
+        "website": "https://www.erstebank.me/"
+      },
+      {
+        "name": "NLB Banka AD Podgorica",
+        "phone": "+382 20 415 000",
+        "website": "https://www.nlb.me/"
+      }
+    ],
+    "notes": "Uses the Euro unilaterally."
+  },
+  {
+    "country": "Netherlands",
+    "iso": "NL",
+    "institutions": [
+      {
+        "name": "De Nederlandsche Bank",
+        "phone": "+31 20 524 9111",
+        "website": "https://www.dnb.nl/"
+      },
+      {
+        "name": "ING Groep N.V.",
+        "phone": "+31 20 563 9111 (HQ)",
+        "website": "https://www.ing.com/"
+      },
+      {
+        "name": "Rabobank",
+        "phone": "+31 30 216 0000 (HQ)",
+        "website": "https://www.rabobank.nl/"
+      },
+      {
+        "name": "ABN AMRO Bank N.V.",
+        "phone": "+31 10 241 17 20 (HQ)",
+        "website": "https://www.abnamro.nl/"
+      }
+    ],
+    "notes": "Eurozone member."
+  },
+  {
+    "country": "North Macedonia",
+    "iso": "MK",
+    "institutions": [
+      {
+        "name": "Народна банка на Република Северна Македонија (National Bank)",
+        "phone": "+389 2 310 8108",
+        "website": "https://www.nbrm.mk/"
+      },
+      {
+        "name": "Komercijalna Banka AD Skopje",
+        "phone": "+389 2 316 8168",
+        "website": "https://kb.com.mk/"
+      },
+      {
+        "name": "Stopanska banka AD - Skopje (NBG Group)",
+        "phone": "+389 2 329 5295",
+        "website": "https://stb.com.mk/"
+      },
+      {
+        "name": "NLB Banka AD Skopje",
+        "phone": "+389 2 15 600",
+        "website": "https://www.nlb.mk/"
+      }
+    ]
+  },
+  {
+    "country": "Norway",
+    "iso": "NO",
+    "institutions": [
+      {
+        "name": "Norges Bank",
+        "phone": "+47 22 31 60 00",
+        "website": "https://www.norges-bank.no/"
+      },
+      {
+        "name": "DNB Bank ASA",
+        "phone": "+47 915 04800",
+        "website": "https://www.dnb.no/"
+      },
+      {
+        "name": "SpareBank 1 Gruppen",
+        "phone": "+47 915 02480",
+        "website": "https://www.sparebank1.no/"
+      },
+      {
+        "name": "Nordea Bank Abp, filial i Norge",
+        "phone": "+47 23 20 60 01",
+        "website": "https://www.nordea.no/"
+      }
+    ]
+  },
+  {
+    "country": "Poland",
+    "iso": "PL",
+    "institutions": [
+      {
+        "name": "Narodowy Bank Polski (NBP)",
+        "phone": "+48 22 185 10 00",
+        "website": "https://www.nbp.pl/"
+      },
+      {
+        "name": "PKO Bank Polski",
+        "phone": "+48 800 302 302",
+        "website": "https://www.pkobp.pl/"
+      },
+      {
+        "name": "Bank Pekao S.A.",
+        "phone": "+48 22 591 22 32",
+        "website": "https://www.pekao.com.pl/"
+      },
+      {
+        "name": "Santander Bank Polska",
+        "phone": "+48 61 81 19999",
+        "website": "https://www.santander.pl/"
+      }
+    ]
+  },
+  {
+    "country": "Portugal",
+    "iso": "PT",
+    "institutions": [
+      {
+        "name": "Banco de Portugal",
+        "phone": "+351 21 313 0000",
+        "website": "https://www.bportugal.pt/"
+      },
+      {
+        "name": "Caixa Geral de Depósitos (CGD)",
+        "phone": "+351 21 790 5000",
+        "website": "https://www.cgd.pt/"
+      },
+      {
+        "name": "Millennium BCP",
+        "phone": "+351 21 005 24 24",
+        "website": "https://www.millenniumbcp.pt/"
+      },
+      {
+        "name": "Santander Totta",
+        "phone": "+351 21 780 73 64",
+        "website": "https://www.santander.pt/"
+      }
+    ],
+    "notes": "Eurozone member."
+  },
+  {
+    "country": "Romania",
+    "iso": "RO",
+    "institutions": [
+      {
+        "name": "Banca Națională a României",
+        "phone": "+40 21 312 4375",
+        "website": "https://www.bnr.ro/"
+      },
+      {
+        "name": "Banca Transilvania",
+        "phone": "+40 264 308 028",
+        "website": "https://www.bancatransilvania.ro/"
+      },
+      {
+        "name": "BCR (Banca Comercială Română - Erste Group)",
+        "phone": "+40 800 801 227",
+        "website": "https://www.bcr.ro/"
+      },
+      {
+        "name": "BRD - Groupe Société Générale",
+        "phone": "+40 21 302 61 61",
+        "website": "https://www.brd.ro/"
+      }
+    ]
+  },
+  {
+    "country": "Russia",
+    "iso": "RU",
+    "institutions": [
+      {
+        "name": "Банк России (Bank of Russia)",
+        "phone": "+7 495 771 91 00",
+        "website": "https://www.cbr.ru/"
+      },
+      {
+        "name": "Sberbank (Сбербанк)",
+        "phone": "+7 495 500 55 50 / 900 (Mobile)",
+        "website": "https://www.sberbank.ru/"
+      },
+      {
+        "name": "VTB Bank (Банк ВТБ)",
+        "phone": "+7 495 777 24 24 / 1000 (Mobile)",
+        "website": "https://www.vtb.ru/"
+      },
+      {
+        "name": "Gazprombank (Газпромбанк)",
+        "phone": "+7 495 913 74 74",
+        "website": "https://www.gazprombank.ru/"
+      }
+    ]
+  },
+  {
+    "country": "San Marino",
+    "iso": "SM",
+    "institutions": [
+      {
+        "name": "Banca Centrale della Repubblica di San Marino",
+        "phone": "+378 0549 882 325",
+        "website": "https://www.bcsm.sm/"
+      },
+      {
+        "name": "Cassa di Risparmio della Repubblica di San Marino",
+        "phone": "+378 0549 872 344",
+        "website": "https://www.carisp.sm/"
+      },
+      {
+        "name": "Banca Agricola Commerciale",
+        "phone": "+378 0549 871 111",
+        "website": "https://www.bac.sm/"
+      },
+      {
+        "name": "Banca di San Marino S.p.A.",
+        "phone": "+378 0549 873 411",
+        "website": "https://www.bsm.sm/"
+      }
+    ],
+    "notes": "Uses the Euro via agreement with the EU/Italy."
+  },
+  {
+    "country": "Serbia",
+    "iso": "RS",
+    "institutions": [
+      {
+        "name": "Народна банка Србије (National Bank of Serbia)",
+        "phone": "+381 11 302 7100",
+        "website": "https://nbs.rs/"
+      },
+      {
+        "name": "Banca Intesa Beograd",
+        "phone": "+381 11 310 88 88",
+        "website": "https://www.bancaintesa.rs/"
+      },
+      {
+        "name": "OTP banka Srbija",
+        "phone": "+381 700 484 484",
+        "website": "https://www.otpbanka.rs/"
+      },
+      {
+        "name": "Raiffeisen banka a.d. Beograd",
+        "phone": "+381 11 320 21 00",
+        "website": "https://www.raiffeisenbank.rs/"
+      }
+    ]
+  },
+  {
+    "country": "Slovakia",
+    "iso": "SK",
+    "institutions": [
+      {
+        "name": "Národná banka Slovenska",
+        "phone": "+421 2 5787 1111",
+        "website": "https://www.nbs.sk/"
+      },
+      {
+        "name": "Slovenská sporiteľňa (Erste Group)",
+        "phone": "+421 850 111 888",
+        "website": "https://www.slsp.sk/"
+      },
+      {
+        "name": "VÚB banka (Intesa Sanpaolo)",
+        "phone": "+421 850 123 000",
+        "website": "https://www.vub.sk/"
+      },
+      {
+        "name": "Tatra banka (Raiffeisen Group)",
+        "phone": "+421 2 5919 1000",
+        "website": "https://www.tatrabanka.sk/"
+      }
+    ],
+    "notes": "Eurozone member."
+  },
+  {
+    "country": "Slovenia",
+    "iso": "SI",
+    "institutions": [
+      {
+        "name": "Banka Slovenije",
+        "phone": "+386 1 471 9000",
+        "website": "https://www.bsi.si/"
+      },
+      {
+        "name": "NLB d.d. (Nova Ljubljanska banka)",
+        "phone": "+386 1 477 2000",
+        "website": "https://www.nlb.si/"
+      },
+      {
+        "name": "SKB banka d.d. Ljubljana (OTP Group)",
+        "phone": "+386 1 471 55 55",
+        "website": "https://www.skb.si/"
+      },
+      {
+        "name": "NKBM d.d. (Nova KBM - OTP Group)",
+        "phone": "+386 2 229 22 90",
+        "website": "https://www.nkbm.si/"
+      }
+    ],
+    "notes": "Eurozone member."
+  },
+  {
+    "country": "Spain",
+    "iso": "ES",
+    "institutions": [
+      {
+        "name": "Banco de España",
+        "phone": "+34 91 338 5000",
+        "website": "https://www.bde.es/"
+      },
+      {
+        "name": "Banco Santander",
+        "phone": "+34 91 289 00 00 (HQ)",
+        "website": "https://www.santander.com/"
+      },
+      {
+        "name": "BBVA (Banco Bilbao Vizcaya Argentaria)",
+        "phone": "+34 91 374 62 01 (HQ)",
+        "website": "https://www.bbva.com/"
+      },
+      {
+        "name": "CaixaBank",
+        "phone": "+34 93 404 60 00 (HQ)",
+        "website": "https://www.caixabank.com/"
+      }
+    ],
+    "notes": "Eurozone member."
+  },
+  {
+    "country": "Sweden",
+    "iso": "SE",
+    "institutions": [
+      {
+        "name": "Sveriges Riksbank",
+        "phone": "+46 8 787 00 00",
+        "website": "https://www.riksbank.se/"
+      },
+      {
+        "name": "Skandinaviska Enskilda Banken (SEB)",
+        "phone": "+46 771 365 365",
+        "website": "https://seb.se/"
+      },
+      {
+        "name": "Svenska Handelsbanken",
+        "phone": "+46 771 77 88 99",
+        "website": "https://www.handelsbanken.se/"
+      },
+      {
+        "name": "Swedbank",
+        "phone": "+46 771 22 11 22",
+        "website": "https://www.swedbank.se/"
+      }
+    ]
+  },
+  {
+    "country": "Switzerland",
+    "iso": "CH",
+    "institutions": [
+      {
+        "name": "Schweizerische Nationalbank / Banque Nationale Suisse",
+        "phone": "+41 58 631 00 00",
+        "website": "https://www.snb.ch/"
+      },
+      {
+        "name": "UBS Group AG",
+        "phone": "+41 44 234 11 11 (HQ)",
+        "website": "https://www.ubs.com/"
+      },
+      {
+        "name": "Credit Suisse (acquired by UBS)",
+        "phone": "+41 848 880 840",
+        "website": "https://www.credit-suisse.com/"
+      },
+      {
+        "name": "Raiffeisen Switzerland",
+        "phone": "+41 71 225 88 88 (HQ)",
+        "website": "https://www.raiffeisen.ch/"
+      }
+    ]
+  },
+  {
+    "country": "Turkey",
+    "iso": "TR",
+    "institutions": [
+      {
+        "name": "Türkiye Cumhuriyet Merkez Bankası (Central Bank)",
+        "phone": "+90 312 507 50 00",
+        "website": "https://www.tcmb.gov.tr/"
+      },
+      {
+        "name": "Ziraat Bankası",
+        "phone": "+90 850 258 00 00",
+        "website": "https://www.ziraatbank.com.tr/"
+      },
+      {
+        "name": "Türkiye İş Bankası",
+        "phone": "+90 850 724 07 24",
+        "website": "https://www.isbank.com.tr/"
+      },
+      {
+        "name": "Garanti BBVA",
+        "phone": "+90 444 0 333",
+        "website": "https://www.garantibbva.com.tr/"
+      }
+    ]
+  },
+  {
+    "country": "Ukraine",
+    "iso": "UA",
+    "institutions": [
+      {
+        "name": "Національний банк України (National Bank of Ukraine)",
+        "phone": "+380 44 253 01 80",
+        "website": "https://bank.gov.ua/"
+      },
+      {
+        "name": "PrivatBank (ПриватБанк)",
+        "phone": "3700 (Mobile)",
+        "website": "https://privatbank.ua/"
+      },
+      {
+        "name": "Oschadbank (Ощадбанк)",
+        "phone": "+380 800 210 800",
+        "website": "https://www.oschadbank.ua/"
+      },
+      {
+        "name": "Raiffeisen Bank Aval",
+        "phone": "+380 800 500 500",
+        "website": "https://raiffeisen.ua/"
+      }
+    ]
+  },
+  {
+    "country": "United Kingdom",
+    "iso": "GB",
+    "institutions": [
+      {
+        "name": "Bank of England",
+        "phone": "+44 20 3461 4444",
+        "website": "https://www.bankofengland.co.uk/"
+      },
+      {
+        "name": "HSBC UK",
+        "phone": "+44 3457 404 404",
+        "website": "https://www.hsbc.co.uk/"
+      },
+      {
+        "name": "Barclays",
+        "phone": "+44 345 734 5345",
+        "website": "https://www.barclays.co.uk/"
+      },
+      {
+        "name": "Lloyds Bank",
+        "phone": "+44 345 300 0000",
+        "website": "https://www.lloydsbank.com/"
+      }
+    ]
+  },
+   {
+    "country": "Vatican City",
+    "iso": "VA",
+    "institutions": [
+       {
+        "name": "Institute for the Works of Religion (IOR - Often called the Vatican Bank)",
+        "phone": "+39 06 6989 3300",
+        "website": "https://www.ior.va/"
+       },
+       {
+        "name": "Administration of the Patrimony of the Apostolic See (APSA)",
+        "phone": "N/A",
+        "website": "N/A"
+       }
+    ],
+    "notes": "Uses the Euro via agreement with Italy/EU. Highly specialized financial institutions, not typical commercial banking."
+   }
+]

@@ -1,0 +1,308 @@
+# USSD CODE MANAGER - USER FLOW DESIGN
+
+## NAVIGATION PRINCIPLES
+
+### Core Navigation Philosophy
+1. **Three-Click Maximum**: Users should reach any function within three clicks/taps
+2. **Context Awareness**: Predict user needs based on usage patterns and context
+3. **Task-Based Organization**: Structure around user goals, not technical categorization
+4. **Consistency**: Maintain navigation patterns across all screens
+5. **Escape Hatches**: Provide quick ways back to Home from any screen
+
+### Navigation Architecture
+```
+┌─────────────────────────────────────────────────────┐
+│                      HOME                           │
+└───────────┬─────────────┬─────────────┬─────────────┘
+            │             │             │             
+┌───────────▼─┐    ┌──────▼──────┐  ┌───▼───────────┐ 
+│  CATEGORIES  │    │ QUICK ACCESS│  │ EMERGENCY     │
+└───────────┬──┘    └──────┬──────┘  └───────────────┘
+            │             │             
+┌───────────▼─┐    ┌──────▼──────┐     
+│ CODE DETAILS │    │CODE EXECUTOR│    
+└──────────────┘    └─────────────┘    
+```
+
+## SIMPLIFIED USER FLOWS
+
+### 1. First-Time User Flow
+```
+START
+  │
+  ▼
+SPLASH SCREEN ─────┐
+  │                │
+  ▼                │
+ONBOARDING         │
+  │                │
+  ▼                │
+PERMISSIONS REQUEST │
+  │                │
+  ▼                │
+CARRIER DETECTION   │
+  │                │
+  ▼                │
+HOME DASHBOARD ◄────┘
+```
+
+**Optimization Points:**
+- Reduce onboarding to maximum 3 screens
+- Combine permissions into single request where possible
+- Allow skipping carrier detection with option to set later
+- Skip to Home after first permission if user selects "Skip"
+
+### 2. Primary User Flow (Daily Usage)
+```
+HOME DASHBOARD
+  │
+  ├─────────────┬──────────────┬─────────────┐
+  ▼             ▼              ▼             ▼
+QUICK ACCESS  SEARCH       CATEGORIES    RECENT CODES
+  │             │              │             │
+  │             └──────┬───────┘             │
+  │                    ▼                     │
+  │             CODE LIST SCREEN             │
+  │                    │                     │
+  └───────────┬────────┼─────────────────────┘
+              ▼        ▼
+       CODE EXECUTION  CODE DETAILS
+              │        │
+              └────────┘
+```
+
+**Optimization Points:**
+- Home screen immediately shows actionable quick access buttons
+- Recent codes accessible directly from home
+- Global search available from any screen via persistent icon
+- Code execution possible directly from list view (no need to open details)
+
+### 3. Emergency Access Flow
+```
+ANY SCREEN
+  │
+  ▼
+TAP EMERGENCY BUTTON
+  │
+  ▼
+LOCATION VERIFICATION (2 sec max)
+  │
+  ▼
+EMERGENCY NUMBERS VIEW
+  │
+  ▼
+ONE-TAP CALLING
+```
+
+**Optimization Points:**
+- Emergency access button persistent in UI (bottom nav or floating button)
+- Bypass all confirmation dialogs for emergency calls
+- Cache location data to avoid delays
+- Provide visual feedback during brief location check
+
+### 4. Code Execution Flow
+```
+CODE SELECTED
+  │
+  ├──────────────────┐
+  ▼                  │
+PARAMETER INPUT      │
+(if needed)          │
+  │                  │
+  ▼                  │
+EXECUTION PREVIEW    │
+  │                  │
+  ▼                  │
+TAP EXECUTE          │
+  │                  │
+  ▼                  │
+EXECUTION & WAITING  │
+  │                  │
+  ▼                  │
+RESULT DISPLAY       │
+  │                  │
+  ├──────────────────┘
+  ▼
+SAVE TO FAVORITES/HISTORY
+```
+
+**Optimization Points:**
+- Auto-populate parameters based on previous usage
+- Show real-time preview of final USSD code
+- Provide execution time estimate based on carrier
+- Offer single-tap re-execution option after viewing result
+
+## QUICK ACCESS IMPLEMENTATION
+
+### Quick Access Dashboard
+- **Location**: Top section of home screen
+- **Content**: 4-6 most used USSD codes as tap-ready buttons
+- **Personalization**: Automatically reorders based on usage frequency
+- **Customization**: User can pin/unpin items
+- **Visual Design**: High-contrast, distinctive icons with labels
+
+### Global Quick Actions
+- **Pull-down Menu**: Access from anywhere via status bar gesture
+- **Content**: Top 3 most used codes + emergency button
+- **Implementation**: Native OS quick actions support
+
+### Floating Action Button (FAB)
+- **Location**: Bottom right corner of screen
+- **Primary Function**: Direct code execution
+- **Secondary Functions**: Revealed through extended press
+  - Scan QR USSD code
+  - Voice input for code
+  - Access recent codes
+
+## PROFESSIONAL NAVIGATION PATTERNS
+
+### Bottom Navigation Bar
+```
+┌─────────────┬─────────────┬─────────────┬─────────────┐
+│     Home    │  Categories │  Execute    │   Profile   │
+└─────────────┴─────────────┴─────────────┴─────────────┘
+```
+
+**Features:**
+- Limited to 4 essential destinations
+- Active state clearly indicated with color and subtle elevation
+- Middle "Execute" button slightly larger as primary action
+- Provides haptic feedback on selection
+- Emergency button accessible via long-press on Execute button
+
+### Tab Navigation (Category Screens)
+```
+┌─────────────┬─────────────┬─────────────┐
+│     All     │   Carrier   │    Device   │ ...
+└─────────────┴─────────────┴─────────────┘
+```
+
+**Features:**
+- Horizontally scrollable for additional tabs
+- Underline indicator with smooth animation
+- Swipe between tabs
+- Remembers last selected tab on return to screen
+
+### Hierarchical Navigation
+- Consistent back button in top-left corner
+- Breadcrumb display for deep navigation (optional)
+- Home icon always available in navigation bar
+- "Up" navigation returns to parent screen
+- History-based back button behavior
+
+## GESTURE SUPPORT
+
+### Essential Gesture Shortcuts
+- **Swipe down**: Global search
+- **Swipe right** on code item: Quick execute
+- **Swipe left** on code item: Add to favorites
+- **Long press** on code: Show quick actions menu
+- **Double tap** on code: Copy to clipboard
+- **Pull to refresh**: Update carrier-specific data
+
+## CONTEXTUAL NAVIGATION
+
+### Situation-Aware Suggestions
+- **Low Balance**: Show balance check and recharge codes
+- **Roaming Detected**: Show roaming activation/deactivation codes
+- **Call Issues**: Suggest call forwarding or network mode codes
+- **Location Change**: Update emergency codes for current region
+
+
+### Notification-Based Navigation
+- Deep links from notifications go directly to relevant code
+- Action buttons in notifications for immediate execution
+- Follow-up suggestions based on recently executed codes
+
+## SEARCH OPTIMIZATION
+
+### Universal Search
+- Available from any screen via persistent icon
+- Results grouped by categories
+- Type-ahead suggestions
+- Search history saved
+- Voice search support
+
+### Search Results Prioritization
+1. Exact code matches
+2. Function name matches
+3. Description matches
+4. Category matches
+5. Similar codes (fuzzy matching)
+
+### Search Filters
+- Quick filter chips for major categories
+- Carrier-specific toggle
+- Device-specific toggle
+- Recently used filter
+
+## MICRO-INTERACTIONS & FEEDBACK
+
+### Loading States
+- **Code Execution**: Animated progress indicator with estimated time
+- **Results Loading**: Pulsing animation with carrier-colored accents
+- **Search**: Progressive loading of different result categories
+
+### Success/Error Feedback
+- **Success**: Brief green checkmark animation + subtle haptics
+- **Error**: Red exclamation with specific error message
+- **Warning**: Yellow notice for ambiguous results
+- **Copy Confirmation**: Toast notification with preview of copied text
+
+### Empty States
+- Instructional content instead of blank screens
+- Suggestions for getting started
+- Quick links to popular categories
+- Conversational prompts ("Try searching for...")
+
+## PROGRESSIVE DISCLOSURE
+
+### Layered Information Architecture
+- **Layer 1**: Essential functions and commonly used codes
+- **Layer 2**: Category groupings and organization
+- **Layer 3**: Detailed information and technical specifications
+- **Layer 4**: Advanced settings and customization
+
+### Implementation Examples
+- Code list shows brief description, details screen shows full information
+- Long descriptions are collapsed with "Read more" option
+- Advanced parameters hidden by default with expansion option
+- Technical details accessible via info icons
+
+## ACCESSIBILITY SHORTCUTS
+
+### Screen Reader Optimization
+- Custom actions for quick code execution
+- Descriptive labels for all buttons
+- Logical focus order following user flow
+
+### Keyboard/Switch Navigation
+- Arrow key navigation between items
+- Number key shortcuts (1-9) for quick access codes
+- Custom keyboard shortcuts for desktop web version
+
+### Reduced Motion Paths
+- Direct navigation alternatives for gesture-based actions
+- Setting to minimize animations
+- Text-based alternatives to graphical elements
+
+## USER FLOW TESTING & METRICS
+
+### Key Success Metrics
+- **Time to Execute**: Target < 5 seconds from open to execute
+- **Navigation Depth**: Target < 3 clicks for common tasks
+- **Task Completion Rate**: Target > 95% for all primary flows
+- **Error Recovery**: Target < 2 steps to recover from errors
+- **Retention Patterns**: Target consistent engagement over time
+
+### Automated Flow Monitoring
+- Track common paths through the app
+- Identify drop-off points
+- Measure time spent on each screen
+- Monitor error frequency at each step
+
+### A/B Testing Strategy
+- Test alternative quick access implementations
+- Compare tab vs. list navigation in categories
+- Evaluate different search result prioritization methods
+- Test contextual suggestion algorithms

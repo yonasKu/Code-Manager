@@ -1,0 +1,224 @@
+[
+  {
+    "country": "United States",
+    "iso": "US",
+    "carriers": [
+      {
+        "name": "Verizon Wireless",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "#225",
+            "description": "Check account balance (#BAL)",
+            "notes": "Often used for prepaid, may trigger SMS or IVR."
+          },
+          {
+            "code": "#646",
+            "description": "Check minutes used (#MIN)",
+            "notes": "More relevant for older tiered minute plans."
+          },
+          {
+            "code": "#3282",
+            "description": "Check data usage (#DATA)",
+            "notes": "Commonly used."
+          },
+          {
+            "code": "*611",
+            "description": "Call Customer Service / Automated System",
+            "notes": "Can often check balance/usage via IVR."
+          }
+        ]
+      },
+      {
+        "name": "AT&T Mobility",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*777#",
+            "description": "Check prepaid account balance and minutes",
+            "notes": "Primarily for GoPhone/AT&T PREPAID."
+          },
+          {
+            "code": "*3282#",
+            "description": "Check data and messaging usage (*DATA#)",
+            "notes": "Commonly used for postpaid/prepaid."
+          },
+          {
+            "code": "611",
+            "description": "Call Customer Service / Automated System",
+            "notes": "Can often check balance/usage via IVR."
+          }
+        ]
+      },
+      {
+        "name": "T-Mobile US",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "#225#",
+            "description": "Check account balance (#BAL#)",
+            "notes": "General balance check."
+          },
+          {
+            "code": "#646#",
+            "description": "Check minutes used (#MIN#)",
+            "notes": "More relevant for older tiered minute plans."
+          },
+          {
+            "code": "#932#",
+            "description": "Check data usage (#WEB#)",
+            "notes": "Commonly used."
+          },
+          {
+            "code": "#999#",
+            "description": "Check prepaid account balance",
+            "notes": "Specific to prepaid."
+          },
+          {
+            "code": "611",
+            "description": "Call Customer Service / Automated System",
+            "notes": "Can often check balance/usage via IVR."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Canada",
+    "iso": "CA",
+    "carriers": [
+      {
+        "name": "Rogers Wireless (Incl. Fido)",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*611",
+            "description": "Call Customer Service / Automated System",
+            "notes": "Primary method for phone support/IVR checks. Direct balance USSD less common."
+          }
+        ]
+      },
+      {
+        "name": "Bell Mobility (Incl. Virgin Plus, Lucky Mobile)",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*611",
+            "description": "Call Customer Service / Automated System",
+            "notes": "Primary method for phone support/IVR checks."
+          },
+          {
+            "code": "#321",
+            "description": "Request data usage via SMS",
+            "notes": "Triggers an SMS response, not direct USSD display."
+          }
+        ]
+      },
+      {
+        "name": "Telus Mobility (Incl. Koodo, Public Mobile)",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*611",
+            "description": "Call Customer Service / Automated System",
+            "notes": "Primary method for phone support/IVR checks."
+          },
+          {
+            "code": "#123#",
+            "description": "Request account balance/usage via SMS",
+            "notes": "Often used for prepaid, triggers an SMS response."
+          }
+        ]
+      },
+      {
+        "name": "Vidéotron (Incl. Freedom Mobile)",
+        "type": "Regional MNO",
+        "ussd_codes": [
+          {
+            "code": "*611",
+            "description": "Call Customer Service / Automated System",
+            "notes": "Primary method for phone support/IVR checks."
+          },
+          {
+            "code": "*123#",
+            "description": "Check prepaid account balance (Freedom Mobile)",
+            "notes": "May trigger SMS response."
+          }
+        ]
+      },
+      {
+        "name": "SaskTel",
+        "type": "Regional MNO",
+        "ussd_codes": [
+          {
+            "code": "*611",
+            "description": "Call Customer Service / Automated System",
+            "notes": "Primary method for phone support/IVR checks."
+          }
+        ]
+      }
+    ],
+    "notes": "Canadian carriers generally favor apps/websites or calling customer service over extensive USSD codes compared to the US."
+  },
+  {
+    "country": "Mexico",
+    "iso": "MX",
+    "carriers": [
+      {
+        "name": "Telcel (América Móvil)",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*133#",
+            "description": "Check 'Saldo Amigo' (Prepaid Balance)",
+            "notes": "Common for prepaid users."
+          },
+           {
+            "code": "*333",
+            "description": "Call Balance Inquiry/Customer Service IVR"
+           },
+           {
+            "code": "*264",
+            "description": "Call Customer Service"
+           }
+        ]
+      },
+      {
+        "name": "AT&T México (Formerly Iusacell/Nextel)",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*611",
+            "description": "Call Customer Service / Automated System / Balance",
+            "notes": "Primary contact number."
+          },
+          {
+            "code": "*100",
+            "description": "Prepaid Account Menu / Recharge",
+            "notes": "Used for managing prepaid services."
+          }
+        ]
+      },
+      {
+        "name": "Movistar (Telefónica)",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*611",
+            "description": "Call Customer Service / Automated System / Balance",
+             "notes": "Primary contact number."
+          },
+          {
+            "code": "*100#",
+            "description": "Check prepaid balance / Prepaid Menu",
+            "notes": "Common for prepaid."
+          },
+           {
+            "code": "*72536#",
+            "description": "Check prepaid balance (*SALDO#)"
+           }
+        ]
+      }
+    ]
+  }
+]

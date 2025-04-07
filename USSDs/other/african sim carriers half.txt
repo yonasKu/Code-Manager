@@ -1,0 +1,1217 @@
+[
+  {
+    "country": "Algeria",
+    "iso": "DZ",
+    "carriers": [
+      {
+        "name": "Mobilis (ATM Mobilis)",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*222#",
+            "description": "Check Balance ('Solde')"
+          },
+          {
+            "code": "888",
+            "description": "Call Customer Service"
+          }
+        ]
+      },
+      {
+        "name": "Djezzy (Veon group)",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*710#",
+            "description": "Check Balance ('Solde')"
+          },
+          {
+            "code": "777",
+            "description": "Call Customer Service"
+          }
+        ]
+      },
+      {
+        "name": "Ooredoo Algeria",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*200#",
+            "description": "Check Balance ('Solde')"
+          },
+          {
+            "code": "333",
+            "description": "Call Customer Service"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Angola",
+    "iso": "AO",
+    "carriers": [
+      {
+        "name": "Unitel",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*101#",
+            "description": "Check Balance ('Saldo')"
+          },
+          {
+            "code": "19191",
+            "description": "Call Customer Service"
+          }
+        ]
+      },
+      {
+        "name": "Movicel",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*123#",
+            "description": "Check Balance ('Saldo')"
+          },
+          {
+            "code": "19190",
+            "description": "Call Customer Service"
+          }
+        ]
+      },
+      {
+        "name": "Africell Angola",
+        "type": "MNO (Newer Operator)",
+        "ussd_codes": [
+            {
+                "code": "*123#",
+                 "description": "Check Balance ('Saldo')"
+            },
+             {
+                 "code": "123",
+                 "description": "Call Customer Service"
+             }
+        ],
+         "notes": "Codes subject to verification as it's a newer network."
+      }
+    ]
+  },
+  {
+    "country": "Benin",
+    "iso": "BJ",
+    "carriers": [
+      {
+        "name": "MTN Benin",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*124#",
+            "description": "Check Balance ('Solde')"
+          },
+          {
+            "code": "111",
+            "description": "Call Customer Service"
+          }
+        ]
+      },
+      {
+        "name": "Moov Africa Benin (Maroc Telecom)",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*101#",
+            "description": "Check Balance ('Solde')"
+          },
+          {
+            "code": "123",
+            "description": "Call Customer Service"
+          }
+        ]
+      },
+       {
+         "name": "Celtiis (SONEB)",
+         "type": "MNO (Newer Operator)",
+         "ussd_codes": [],
+         "notes": "USSD codes may not be widely published or stable yet."
+       }
+    ]
+  },
+  {
+    "country": "Botswana",
+    "iso": "BW",
+    "carriers": [
+      {
+        "name": "Mascom",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*111#",
+            "description": "Check Balance"
+          },
+          {
+            "code": "111",
+            "description": "Call Customer Service"
+          }
+        ]
+      },
+      {
+        "name": "Orange Botswana",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*155#",
+            "description": "Check Balance"
+          },
+          {
+            "code": "123",
+            "description": "Call Customer Service"
+          }
+        ]
+      },
+      {
+        "name": "BTC Mobile (Botswana Telecommunications)",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*180#",
+            "description": "Check Balance / Menu"
+          },
+          {
+            "code": "17000",
+            "description": "Call Customer Service"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Burkina Faso",
+    "iso": "BF",
+    "carriers": [
+      {
+        "name": "Orange Burkina Faso",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*123#",
+            "description": "Check Balance ('Solde')"
+          },
+          {
+            "code": "121",
+            "description": "Call Customer Service"
+          }
+        ]
+      },
+      {
+        "name": "Moov Africa Burkina (Maroc Telecom)",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*110#",
+            "description": "Check Balance ('Solde')"
+          },
+          {
+            "code": "110",
+            "description": "Call Customer Service"
+          }
+        ]
+      },
+      {
+        "name": "Telecel Faso",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*101#",
+            "description": "Check Balance ('Solde')"
+          },
+          {
+            "code": "888",
+            "description": "Call Customer Service"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Burundi",
+    "iso": "BI",
+    "carriers": [
+      {
+        "name": "Econet Leo (Formerly U-COM)",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*111#",
+            "description": "Check Balance"
+          },
+          {
+            "code": "100",
+            "description": "Call Customer Service"
+          }
+        ]
+      },
+      {
+        "name": "Lumitel (Viettel)",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*102#",
+            "description": "Check Balance"
+          },
+          {
+            "code": "100",
+            "description": "Call Customer Service"
+          }
+        ]
+      },
+      {
+        "name": "Smart Mobile (Formerly Lacell)",
+        "type": "MNO",
+        "ussd_codes": [
+            {
+              "code": "*111#",
+              "description": "Check Balance"
+            }
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Cape Verde",
+    "iso": "CV",
+    "carriers": [
+      {
+        "name": "CV Móvel (CVMovel)",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*#123#",
+            "description": "Check Balance ('Saldo')"
+          },
+          {
+            "code": "800 12 12",
+            "description": "Call Customer Service"
+          }
+        ]
+      },
+      {
+        "name": "Unitel T+",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*123#",
+            "description": "Check Balance ('Saldo')"
+          },
+          {
+            "code": "800 11 11",
+            "description": "Call Customer Service"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Cameroon",
+    "iso": "CM",
+    "carriers": [
+      {
+        "name": "MTN Cameroon",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*155#",
+            "description": "Check Balance"
+          },
+          {
+            "code": "8787",
+            "description": "Call Customer Service"
+          }
+        ]
+      },
+      {
+        "name": "Orange Cameroun",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "#123#",
+            "description": "Check Balance"
+          },
+          {
+            "code": "950",
+            "description": "Call Customer Service"
+          }
+        ]
+      },
+      {
+        "name": "Nexttel (Viettel)",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*801#",
+            "description": "Check Balance"
+          },
+          {
+            "code": "8123",
+            "description": "Call Customer Service"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Central African Republic",
+    "iso": "CF",
+    "carriers": [
+      {
+        "name": "Orange Centrafrique",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "#123#",
+            "description": "Check Balance"
+          },
+          {
+            "code": "750",
+            "description": "Call Customer Service"
+          }
+        ]
+      },
+      {
+        "name": "Telecel Centrafrique",
+        "type": "MNO",
+        "ussd_codes": [
+           {
+              "code": "*101#",
+              "description": "Check Balance"
+           }
+        ]
+      },
+      {
+        "name": "Moov Africa Centrafrique (Maroc Telecom)",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*110#",
+            "description": "Check Balance"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Chad",
+    "iso": "TD",
+    "carriers": [
+      {
+        "name": "Airtel Chad",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*121#",
+            "description": "Check Balance"
+          },
+          {
+            "code": "121",
+            "description": "Call Customer Service"
+          }
+        ]
+      },
+      {
+        "name": "Moov Africa Tchad (Maroc Telecom)",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*101#",
+            "description": "Check Balance"
+          },
+          {
+            "code": "255",
+            "description": "Call Customer Service"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Comoros",
+    "iso": "KM",
+    "carriers": [
+      {
+        "name": "Telco SA (Formerly Comores Telecom)",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*333#",
+            "description": "Check Balance"
+          }
+        ]
+      },
+      {
+        "name": "Telma Comores",
+        "type": "MNO",
+        "ussd_codes": [
+           {
+             "code": "*345#",
+             "description": "Check Balance"
+           }
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Congo, Democratic Republic of the",
+    "iso": "CD",
+    "carriers": [
+      {
+        "name": "Vodacom Congo",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*121#",
+            "description": "Check Balance"
+          },
+          {
+            "code": "1111",
+            "description": "Call Customer Service"
+          }
+        ]
+      },
+      {
+        "name": "Airtel DRC",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*121#",
+            "description": "Check Balance"
+          },
+          {
+            "code": "121",
+            "description": "Call Customer Service"
+          }
+        ]
+      },
+      {
+        "name": "Orange RDC",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*123#",
+            "description": "Check Balance"
+          },
+          {
+            "code": "1777",
+            "description": "Call Customer Service"
+          }
+        ]
+      },
+       {
+         "name": "Africell RDC",
+         "type": "MNO",
+         "ussd_codes": [
+             {
+                 "code": "*123#",
+                 "description": "Check Balance"
+             },
+              {
+                  "code": "123",
+                  "description": "Call Customer Service"
+              }
+         ]
+       }
+    ]
+  },
+  {
+    "country": "Congo, Republic of the",
+    "iso": "CG",
+    "carriers": [
+      {
+        "name": "MTN Congo",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*101#",
+            "description": "Check Balance"
+          },
+          {
+            "code": "123",
+            "description": "Call Customer Service"
+          }
+        ]
+      },
+      {
+        "name": "Airtel Congo",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*137#",
+            "description": "Check Balance"
+          },
+          {
+            "code": "111",
+            "description": "Call Customer Service"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Ivory Coast (Côte d'Ivoire)",
+    "iso": "CI",
+    "carriers": [
+      {
+        "name": "Orange Côte d'Ivoire",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "#123#",
+            "description": "Check Balance"
+          },
+           {
+             "code": "#121#",
+             "description": "Main Menu"
+           },
+          {
+            "code": "0707",
+            "description": "Call Customer Service"
+          }
+        ]
+      },
+      {
+        "name": "MTN Côte d'Ivoire",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*124#",
+            "description": "Check Balance"
+          },
+           {
+             "code": "*100#",
+             "description": "Main Menu"
+           },
+          {
+            "code": "100",
+            "description": "Call Customer Service"
+          }
+        ]
+      },
+      {
+        "name": "Moov Africa Côte d'Ivoire (Maroc Telecom)",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*145#",
+            "description": "Check Balance"
+          },
+          {
+            "code": "101",
+            "description": "Call Customer Service"
+          }
+        ]
+      }
+    ]
+  },
+  // --- Continue for Djibouti, Egypt, Equatorial Guinea etc. ---
+  {
+    "country": "Djibouti",
+    "iso": "DJ",
+    "carriers": [
+      {
+        "name": "Djibouti Telecom",
+        "type": "MNO (State-owned)",
+        "ussd_codes": [
+          {
+            "code": "*122#",
+            "description": "Check Balance"
+          },
+          {
+            "code": "121",
+            "description": "Call Customer Service"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Egypt",
+    "iso": "EG",
+    "carriers": [
+      {
+        "name": "Vodafone Egypt",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*868*1#",
+            "description": "Check Balance"
+          },
+          {
+            "code": "*888#",
+            "description": "Main Service Menu"
+          },
+          {
+            "code": "888",
+            "description": "Call Customer Service"
+          }
+        ]
+      },
+      {
+        "name": "Orange Egypt (Formerly Mobinil)",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "#100#",
+            "description": "Main Service Menu / Balance Check"
+          },
+          {
+            "code": "110",
+            "description": "Call Customer Service"
+          }
+        ]
+      },
+      {
+        "name": "Etisalat Misr by e&",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*555#",
+            "description": "Check Balance"
+          },
+          {
+            "code": "333",
+            "description": "Call Customer Service"
+          }
+        ]
+      },
+      {
+        "name": "WE (Telecom Egypt)",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*600#",
+            "description": "Main Service Menu"
+          },
+           {
+             "code": "*322#",
+             "description": "Check Balance"
+           },
+          {
+            "code": "111",
+            "description": "Call Customer Service"
+          }
+        ]
+      }
+    ]
+  },
+   {
+    "country": "Equatorial Guinea",
+    "iso": "GQ",
+    "carriers": [
+      {
+        "name": "GETESA (Orange)",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*133#",
+            "description": "Check Balance"
+          }
+        ]
+      },
+      {
+        "name": "Muni (GITGE)",
+        "type": "MNO (State-owned)",
+        "ussd_codes": [
+             {
+                 "code": "*123#",
+                 "description": "Check Balance"
+             }
+        ]
+      }
+    ]
+   },
+   {
+     "country": "Eritrea",
+     "iso": "ER",
+     "carriers": [
+       {
+         "name": "EriTel",
+         "type": "MNO (State-owned)",
+         "ussd_codes": [],
+         "notes": "Limited information available on public USSD codes. Primarily uses physical recharge cards."
+       }
+     ]
+   },
+   {
+     "country": "Eswatini",
+     "iso": "SZ",
+     "carriers": [
+       {
+         "name": "MTN Eswatini",
+         "type": "MNO",
+         "ussd_codes": [
+           {
+             "code": "*141#",
+             "description": "Check Balance"
+           },
+           {
+             "code": "111",
+             "description": "Call Customer Service"
+           }
+         ]
+       },
+       {
+         "name": "Eswatini Mobile",
+         "type": "MNO",
+         "ussd_codes": [
+            {
+                 "code": "*100#",
+                 "description": "Check Balance / Menu"
+            }
+         ]
+       }
+     ]
+   },
+   {
+     "country": "Ethiopia",
+     "iso": "ET",
+     "carriers": [
+       {
+         "name": "Ethio Telecom",
+         "type": "MNO (State-owned)",
+         "ussd_codes": [
+           {
+             "code": "*804#",
+             "description": "Check Balance"
+           },
+           {
+             "code": "999",
+             "description": "Call Customer Service"
+           }
+         ]
+       },
+       {
+         "name": "Safaricom Ethiopia",
+         "type": "MNO",
+         "ussd_codes": [
+           {
+             "code": "*704#",
+             "description": "Check Balance"
+           },
+            {
+                "code": "*777#",
+                 "description": "Main Menu"
+            },
+           {
+             "code": "700",
+             "description": "Call Customer Service"
+           }
+         ]
+       }
+     ]
+   },
+    // --- Continue for Gabon, Gambia, Ghana etc. ---
+    {
+      "country": "Gabon",
+      "iso": "GA",
+      "carriers": [
+        {
+          "name": "Libertis (Gabon Telecom / Maroc Telecom)",
+          "type": "MNO",
+          "ussd_codes": [
+            {
+              "code": "*111#",
+              "description": "Check Balance"
+            }
+          ]
+        },
+        {
+          "name": "Airtel Gabon",
+          "type": "MNO",
+          "ussd_codes": [
+            {
+              "code": "*123#",
+              "description": "Check Balance"
+            }
+          ]
+        },
+        {
+          "name": "Moov Africa Gabon Telecom",
+          "type": "MNO",
+          "ussd_codes": [
+              {
+                  "code": "*123#",
+                  "description": "Check Balance"
+              }
+          ]
+        }
+      ]
+    },
+     {
+      "country": "Gambia",
+      "iso": "GM",
+      "carriers": [
+          {
+              "name": "Africell Gambia",
+              "type": "MNO",
+              "ussd_codes": [
+                  {
+                      "code": "*121#",
+                      "description": "Check Balance"
+                  },
+                   {
+                       "code": "111",
+                       "description": "Call Customer Service"
+                   }
+              ]
+          },
+          {
+              "name": "Gamcel",
+              "type": "MNO (State-owned)",
+              "ussd_codes": [
+                  {
+                      "code": "*111#",
+                      "description": "Check Balance"
+                  },
+                  {
+                      "code": "111",
+                      "description": "Call Customer Service"
+                  }
+              ]
+          },
+           {
+               "name": "Qcell Gambia",
+               "type": "MNO",
+               "ussd_codes": [
+                   {
+                       "code": "*100#",
+                       "description": "Check Balance / Menu"
+                   },
+                   {
+                       "code": "111",
+                       "description": "Call Customer Service"
+                   }
+               ]
+           },
+           {
+               "name": "Comium Gambia",
+               "type": "MNO",
+               "ussd_codes": [
+                    {
+                        "code": "*123#",
+                        "description": "Check Balance"
+                    }
+               ]
+           }
+      ]
+    },
+    {
+      "country": "Ghana",
+      "iso": "GH",
+      "carriers": [
+        {
+          "name": "MTN Ghana",
+          "type": "MNO",
+          "ussd_codes": [
+            {
+              "code": "*134*PIN#",
+              "description": "Top-up Voucher"
+            },
+            {
+              "code": "*124#",
+              "description": "Check Balance"
+            },
+            {
+               "code": "*138#",
+               "description": "Data Bundle Menu"
+            },
+            {
+              "code": "100",
+              "description": "Call Customer Service"
+            }
+          ]
+        },
+        {
+          "name": "Vodafone Ghana",
+          "type": "MNO",
+          "ussd_codes": [
+            {
+              "code": "*124#",
+              "description": "Check Balance"
+            },
+            {
+              "code": "*700#",
+              "description": "Data Bundle Menu"
+            },
+            {
+              "code": "100",
+              "description": "Call Customer Service"
+            }
+          ]
+        },
+        {
+          "name": "AirtelTigo Ghana",
+          "type": "MNO",
+          "ussd_codes": [
+            {
+              "code": "*134#",
+              "description": "Check Balance"
+            },
+            {
+              "code": "*111#",
+              "description": "Data Bundle Menu"
+            },
+            {
+              "code": "100",
+              "description": "Call Customer Service"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "country": "Guinea",
+      "iso": "GN",
+      "carriers": [
+        {
+          "name": "Orange Guinée",
+          "type": "MNO",
+          "ussd_codes": [
+            {
+              "code": "#123#",
+              "description": "Check Balance"
+            },
+            {
+              "code": "6277",
+              "description": "Call Customer Service"
+            }
+          ]
+        },
+        {
+          "name": "MTN Guinée",
+          "type": "MNO",
+          "ussd_codes": [
+            {
+              "code": "*124#",
+              "description": "Check Balance"
+            },
+            {
+              "code": "664 00 00 00",
+              "description": "Call Customer Service"
+            }
+          ]
+        },
+        {
+          "name": "Cellcom Guinée",
+          "type": "MNO",
+          "ussd_codes": [
+            {
+              "code": "*123#",
+              "description": "Check Balance"
+            }
+          ]
+        }
+      ]
+    },
+     {
+      "country": "Guinea-Bissau",
+      "iso": "GW",
+      "carriers": [
+        {
+          "name": "Orange Bissau",
+          "type": "MNO",
+          "ussd_codes": [
+            {
+              "code": "*111#",
+              "description": "Check Balance"
+            }
+          ]
+        },
+        {
+          "name": "MTN Guinea-Bissau",
+          "type": "MNO",
+          "ussd_codes": [
+             {
+               "code": "*124#",
+               "description": "Check Balance"
+             }
+          ]
+        },
+        {
+            "name": "Guinetel",
+            "type": "MNO (State-owned)",
+            "ussd_codes": []
+        }
+      ]
+    },
+     {
+       "country": "Kenya",
+       "iso": "KE",
+       "carriers": [
+         {
+           "name": "Safaricom",
+           "type": "MNO",
+           "ussd_codes": [
+             {
+               "code": "*144#",
+               "description": "Check Balance"
+             },
+             {
+               "code": "*544#",
+               "description": "Data Bundle Menu"
+             },
+             {
+               "code": "100",
+               "description": "Call Customer Service (Prepaid)"
+             },
+              {
+                 "code": "200",
+                 "description": "Call Customer Service (Postpaid)"
+              }
+           ]
+         },
+         {
+           "name": "Airtel Kenya",
+           "type": "MNO",
+           "ussd_codes": [
+             {
+               "code": "*131#",
+               "description": "Check Balance"
+             },
+             {
+                "code": "*544#",
+                "description": "Data Bundle Menu"
+             },
+             {
+               "code": "100",
+               "description": "Call Customer Service"
+             }
+           ]
+         },
+         {
+           "name": "Telkom Kenya",
+           "type": "MNO",
+           "ussd_codes": [
+             {
+               "code": "*131#",
+               "description": "Check Balance"
+             },
+             {
+                 "code": "*544#",
+                 "description": "Data Bundle Menu"
+             },
+             {
+               "code": "100",
+               "description": "Call Customer Service"
+             }
+           ]
+         }
+       ]
+     },
+      {
+        "country": "Lesotho",
+        "iso": "LS",
+        "carriers": [
+            {
+                "name": "Vodacom Lesotho",
+                "type": "MNO",
+                "ussd_codes": [
+                    {
+                        "code": "*111#",
+                        "description": "Check Balance"
+                    },
+                    {
+                        "code": "114",
+                        "description": "Call Customer Service"
+                    }
+                ]
+            },
+            {
+                "name": "Econet Telecom Lesotho",
+                "type": "MNO",
+                "ussd_codes": [
+                    {
+                        "code": "*100#",
+                        "description": "Check Balance / Menu"
+                    },
+                    {
+                        "code": "100",
+                        "description": "Call Customer Service"
+                    }
+                ]
+            }
+        ]
+      },
+       {
+        "country": "Liberia",
+        "iso": "LR",
+        "carriers": [
+            {
+                "name": "Lonestar Cell MTN",
+                "type": "MNO",
+                "ussd_codes": [
+                    {
+                        "code": "*124#",
+                        "description": "Check Balance"
+                    },
+                    {
+                        "code": "111",
+                        "description": "Call Customer Service"
+                    }
+                ]
+            },
+            {
+                "name": "Orange Liberia",
+                "type": "MNO",
+                "ussd_codes": [
+                    {
+                        "code": "*124#",
+                        "description": "Check Balance"
+                    },
+                    {
+                        "code": "111",
+                        "description": "Call Customer Service"
+                    }
+                ]
+            }
+        ]
+       },
+        {
+         "country": "Libya",
+         "iso": "LY",
+         "carriers": [
+             {
+                 "name": "Libyana",
+                 "type": "MNO (State-owned)",
+                 "ussd_codes": [
+                     {
+                         "code": "*121#",
+                         "description": "Check Balance"
+                     },
+                     {
+                         "code": "121",
+                         "description": "Call Customer Service"
+                     }
+                 ]
+             },
+             {
+                 "name": "Almadar Aljadid",
+                 "type": "MNO (State-owned)",
+                 "ussd_codes": [
+                     {
+                         "code": "*111#",
+                         "description": "Check Balance"
+                     },
+                      {
+                         "code": "111",
+                         "description": "Call Customer Service"
+                     }
+                 ]
+             },
+              {
+                 "name": "LTT (Libya Telecom & Technology)",
+                 "type": "ISP/Mobile Data",
+                 "ussd_codes": [],
+                 "notes": "Primarily data services, less focus on traditional mobile USSD."
+              }
+         ]
+        },
+    // ... And so on for the remaining African countries. The pattern continues, but finding reliable USSD data for every single carrier in every country becomes increasingly difficult.
+]

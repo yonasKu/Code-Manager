@@ -1,0 +1,351 @@
+[
+  {
+    "country": "Australia",
+    "iso": "AU",
+    "carriers": [
+      {
+        "name": "Telstra",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*#100#",
+            "description": "Prepaid Menu / Balance (May vary)"
+          },
+          {
+            "code": "13 22 00",
+            "description": "Call Customer Service (General)"
+          }
+        ],
+        "notes": "USSD codes are less common for account management than the My Telstra app or website. Codes may change."
+      },
+      {
+        "name": "Optus",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*999#",
+            "description": "Prepaid Balance (May vary)"
+          },
+          {
+             "code": "133 937",
+             "description": "Call Customer Service (General)"
+          }
+        ],
+        "notes": "Primary account management via My Optus app or website. USSD use is limited."
+      },
+      {
+        "name": "Vodafone Australia (TPG Telecom)",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*#150#",
+            "description": "Prepaid Balance / Menu (May vary)"
+          },
+          {
+            "code": "1555",
+            "description": "Call Customer Service (From Vodafone mobile)"
+          }
+        ],
+        "notes": "Account management typically done via My Vodafone app or website."
+      }
+    ]
+  },
+  {
+    "country": "New Zealand",
+    "iso": "NZ",
+    "carriers": [
+      {
+        "name": "Spark New Zealand",
+        "type": "MNO",
+        "ussd_codes": [
+           {
+             "code": "*333#",
+             "description": "Prepaid Balance (Often via automated voice after dialling *333)"
+           },
+           {
+             "code": "*123",
+             "description": "Call Customer Service"
+           }
+        ],
+        "notes": "USSD usage is limited; Spark app and website are primary management tools."
+      },
+      {
+        "name": "One NZ (Formerly Vodafone NZ)",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*111#",
+            "description": "Prepaid Balance / Menu (May vary)"
+          },
+          {
+            "code": "777",
+            "description": "Call Customer Service (From One NZ mobile)"
+          }
+        ],
+        "notes": "Primary account management via One NZ app or website."
+      },
+      {
+        "name": "2degrees",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*100#",
+            "description": "Prepaid Balance / Menu"
+          },
+          {
+             "code": "101",
+             "description": "Check Balance (Alternative - Often voice call)"
+          },
+          {
+            "code": "200",
+            "description": "Call Customer Service (From 2degrees mobile)"
+          }
+        ],
+         "notes": "App and website also heavily used for account management."
+      }
+    ]
+  },
+  {
+    "country": "Papua New Guinea",
+    "iso": "PG",
+    "carriers": [
+      {
+        "name": "Digicel PNG",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*130#",
+            "description": "Check Balance"
+          },
+          {
+             "code": "*123#",
+             "description": "Main Menu / Services"
+          },
+          {
+            "code": "123",
+            "description": "Call Customer Service"
+          }
+        ]
+      },
+      {
+        "name": "Telikom PNG / bmobile",
+        "type": "MNO (State-owned)",
+        "ussd_codes": [
+          {
+            "code": "*121#",
+            "description": "Check Balance (May vary)"
+          },
+          {
+            "code": "*777#",
+            "description": "Top Up / Menu (May vary)"
+          },
+          {
+             "code": "1555",
+             "description": "Call Customer Service"
+          }
+        ],
+         "notes": "Codes can be inconsistent or change; merging of Telikom/bmobile services might affect codes."
+      }
+    ]
+  },
+  {
+    "country": "Fiji",
+    "iso": "FJ",
+    "carriers": [
+      {
+        "name": "Vodafone Fiji",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*131#",
+            "description": "Check Balance"
+          },
+           {
+             "code": "*141#",
+             "description": "Promotions / Data Menu (May vary)"
+           },
+          {
+            "code": "123",
+            "description": "Call Customer Service (Prepaid)"
+          },
+          {
+            "code": "125",
+            "description": "Call Customer Service (Postpaid)"
+          }
+        ]
+      },
+      {
+        "name": "Digicel Fiji",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*130#",
+            "description": "Check Balance"
+          },
+          {
+             "code": "*123#",
+             "description": "Main Menu"
+          },
+          {
+            "code": "123",
+            "description": "Call Customer Service"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Solomon Islands",
+    "iso": "SB",
+    "carriers": [
+      {
+        "name": "Our Telekom (Breeze)",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*188#",
+            "description": "Check Balance"
+          },
+          {
+            "code": "123",
+            "description": "Call Customer Service"
+          }
+        ],
+        "notes": "Codes subject to change."
+      },
+      {
+        "name": "Digicel Solomon Islands",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*130#",
+            "description": "Check Balance"
+          },
+           {
+             "code": "*123#",
+             "description": "Main Menu"
+          },
+          {
+            "code": "123",
+            "description": "Call Customer Service"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Vanuatu",
+    "iso": "VU",
+    "carriers": [
+      {
+        "name": "Vodafone Vanuatu (Formerly TVL)",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*141#",
+            "description": "Check Balance / Menu"
+          },
+          {
+            "code": "111",
+            "description": "Call Customer Service"
+          }
+        ]
+      },
+      {
+        "name": "Digicel Vanuatu",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*130#",
+            "description": "Check Balance"
+          },
+          {
+             "code": "*123#",
+             "description": "Main Menu"
+          },
+          {
+            "code": "123",
+            "description": "Call Customer Service"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Samoa",
+    "iso": "WS",
+    "carriers": [
+      {
+        "name": "Vodafone Samoa",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*121#",
+            "description": "Check Balance / Menu"
+          },
+          {
+            "code": "121",
+            "description": "Call Customer Service"
+          }
+        ]
+      },
+      {
+        "name": "Digicel Samoa",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*130#",
+            "description": "Check Balance"
+          },
+          {
+             "code": "*123#",
+             "description": "Main Menu"
+          },
+          {
+            "code": "123",
+            "description": "Call Customer Service"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Tonga",
+    "iso": "TO",
+    "carriers": [
+       {
+         "name": "Digicel Tonga",
+         "type": "MNO",
+         "ussd_codes": [
+           {
+             "code": "*130#",
+             "description": "Check Balance"
+           },
+            {
+              "code": "*123#",
+              "description": "Main Menu"
+           },
+           {
+             "code": "123",
+             "description": "Call Customer Service"
+           }
+         ]
+       },
+      {
+        "name": "TCC (Tonga Communications Corporation - UCall)",
+        "type": "MNO (State-owned)",
+        "ussd_codes": [
+          {
+            "code": "*124#",
+            "description": "Check Balance / Menu"
+          },
+          {
+            "code": "0800 212",
+            "description": "Call Customer Service (Toll Free)"
+          }
+        ],
+        "notes": "Codes subject to change."
+      }
+    ]
+  }
+]

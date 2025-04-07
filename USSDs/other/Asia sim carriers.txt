@@ -1,0 +1,2228 @@
+[
+  {
+    "country": "Afghanistan",
+    "iso": "AF",
+    "carriers": [
+      {
+        "name": "Roshan",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*122#",
+            "description": "Check Prepaid Balance"
+          },
+          {
+            "code": "333",
+            "description": "Call Customer Service"
+          }
+        ]
+      },
+      {
+        "name": "MTN Afghanistan",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*789#",
+            "description": "Check Prepaid Balance"
+          },
+          {
+            "code": "789",
+            "description": "Call Customer Service"
+          }
+        ]
+      },
+      {
+        "name": "Afghan Wireless (AWCC)",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*345#",
+            "description": "Check Prepaid Balance"
+          },
+          {
+            "code": "152",
+            "description": "Call Customer Service"
+          }
+        ]
+      },
+      {
+        "name": "Etisalat Afghanistan",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*123#",
+            "description": "Check Prepaid Balance"
+          },
+          {
+            "code": "888",
+            "description": "Call Customer Service"
+          }
+        ]
+      }
+    ],
+    "notes": "Service reliability and codes may vary due to the situation."
+  },
+  {
+    "country": "Bahrain",
+    "iso": "BH",
+    "carriers": [
+      {
+        "name": "Batelco",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*122#",
+            "description": "Check Prepaid Balance"
+          },
+          {
+            "code": "196",
+            "description": "Call Customer Service"
+          }
+        ]
+      },
+      {
+        "name": "Zain Bahrain",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*142#",
+            "description": "Check Prepaid Balance"
+          },
+          {
+            "code": "107",
+            "description": "Call Customer Service"
+          }
+        ]
+      },
+      {
+        "name": "stc Bahrain (Formerly Viva)",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*124#",
+            "description": "Check Prepaid Balance"
+          },
+          {
+            "code": "124",
+            "description": "Call Customer Service"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Bangladesh",
+    "iso": "BD",
+    "carriers": [
+      {
+        "name": "Grameenphone (Telenor group)",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*566#",
+            "description": "Check Prepaid Balance"
+          },
+          {
+            "code": "*121#",
+            "description": "Main Service Menu"
+          },
+          {
+            "code": "121",
+            "description": "Call Customer Service"
+          }
+        ]
+      },
+      {
+        "name": "Robi (Axiata group)",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*222#",
+            "description": "Check Prepaid Balance"
+          },
+          {
+            "code": "*123#",
+            "description": "Main Service Menu"
+          },
+          {
+            "code": "123",
+            "description": "Call Customer Service"
+          }
+        ]
+      },
+      {
+        "name": "Banglalink (Veon group)",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*124#",
+            "description": "Check Prepaid Balance"
+          },
+          {
+            "code": "*121#",
+            "description": "Main Service Menu"
+          },
+          {
+            "code": "121",
+            "description": "Call Customer Service"
+          }
+        ]
+      },
+      {
+        "name": "Teletalk (State-owned)",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*152#",
+            "description": "Check Prepaid Balance"
+          },
+          {
+            "code": "121",
+            "description": "Call Customer Service"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Bhutan",
+    "iso": "BT",
+    "carriers": [
+      {
+        "name": "B-Mobile (Bhutan Telecom)",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*170#",
+            "description": "Check Prepaid Balance"
+          },
+          {
+            "code": "1600",
+            "description": "Call Customer Service"
+          }
+        ]
+      },
+      {
+        "name": "TashiCell",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*121#",
+            "description": "Check Prepaid Balance"
+          },
+          {
+            "code": "7700",
+            "description": "Call Customer Service"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Brunei",
+    "iso": "BN",
+    "carriers": [
+      {
+        "name": "DST",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*102#",
+            "description": "Check Prepaid Balance (Easi)"
+          },
+          {
+            "code": "151",
+            "description": "Call Customer Service"
+          }
+        ]
+      },
+      {
+        "name": "Progresif",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*179#",
+            "description": "Check Prepaid Balance"
+          },
+          {
+            "code": "177",
+            "description": "Call Customer Service"
+          }
+        ]
+      },
+      {
+        "name": "Imagine (TelBru)",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*178#",
+            "description": "Check Prepaid Balance"
+          },
+          {
+            "code": "111",
+            "description": "Call Customer Service"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Cambodia",
+    "iso": "KH",
+    "carriers": [
+      {
+        "name": "Cellcard (CamGSM)",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "#124#",
+            "description": "Check Prepaid Balance"
+          },
+          {
+            "code": "812",
+            "description": "Call Customer Service"
+          }
+        ]
+      },
+      {
+        "name": "Smart Axiata",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*124#",
+            "description": "Check Prepaid Balance"
+          },
+          {
+            "code": "888",
+            "description": "Call Customer Service"
+          }
+        ]
+      },
+      {
+        "name": "Metfone (Viettel)",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*097#",
+            "description": "Check Prepaid Balance"
+          },
+          {
+            "code": "1777",
+            "description": "Call Customer Service"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "country": "China",
+    "iso": "CN",
+    "carriers": [
+      {
+        "name": "China Mobile",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "10086",
+            "description": "Call Customer Service / Balance Check (IVR)"
+          }
+        ],
+        "notes": "USSD codes are generally not used for balance checks; relies on SMS commands (e.g., send YE to 10086) or app/website."
+      },
+      {
+        "name": "China Unicom",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "10010",
+            "description": "Call Customer Service / Balance Check (IVR)"
+          }
+        ],
+        "notes": "Relies on SMS commands (e.g., send YE to 10010) or app/website."
+      },
+      {
+        "name": "China Telecom",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "10000",
+            "description": "Call Customer Service / Balance Check (IVR)"
+          }
+        ],
+        "notes": "Relies on SMS commands (e.g., send 101 to 10001) or app/website."
+      }
+    ]
+  },
+  {
+    "country": "Hong Kong",
+    "iso": "HK",
+    "carriers": [
+      {
+        "name": "CSL (incl. 1O1O, csl)",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*109#",
+            "description": "Check Prepaid Balance"
+          },
+          {
+            "code": "1000",
+            "description": "Call Customer Service (csl)"
+          },
+           {
+            "code": "171010",
+             "description": "Call Customer Service (1O1O)"
+           }
+        ]
+      },
+      {
+        "name": "SmarTone",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*111#",
+            "description": "Check Prepaid Balance"
+          },
+          {
+            "code": "2880 2688",
+            "description": "Call Customer Service"
+          }
+        ]
+      },
+      {
+        "name": "3 Hong Kong (Hutchison)",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "##107#",
+            "description": "Check Prepaid Balance"
+          },
+          {
+            "code": "1033",
+            "description": "Call Customer Service"
+          }
+        ]
+      },
+      {
+        "name": "China Mobile Hong Kong (CMHK)",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*#130#",
+            "description": "Check Prepaid Balance"
+          },
+          {
+            "code": "2945 8888",
+            "description": "Call Customer Service"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "country": "India",
+    "iso": "IN",
+    "carriers": [
+      {
+        "name": "Jio",
+        "type": "MNO",
+        "ussd_codes": [],
+        "notes": "Jio primarily uses its 'MyJio' app for all account management, including balance and data checks. No widely used public USSD codes."
+      },
+      {
+        "name": "Airtel India",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*123#",
+            "description": "Check Main Balance (Prepaid)"
+          },
+          {
+            "code": "*121#",
+            "description": "Main Service Menu (Offers, Data Balance etc.)"
+          }
+        ]
+      },
+      {
+        "name": "Vodafone Idea (Vi)",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*199#",
+            "description": "Main Service Menu / Check Balance & Data"
+          },
+          {
+             "code": "*199*2*1#",
+             "description": "Direct Balance Check (Often works)"
+          }
+        ]
+      },
+      {
+        "name": "BSNL",
+        "type": "MNO (State-owned)",
+        "ussd_codes": [
+          {
+            "code": "*123#",
+            "description": "Check Main Balance (Prepaid)"
+          },
+          {
+            "code": "*124#",
+            "description": "Check Data Balance (May vary by region/plan)"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Indonesia",
+    "iso": "ID",
+    "carriers": [
+      {
+        "name": "Telkomsel",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*888#",
+            "description": "Check Balance ('Pulsa') / Main Menu"
+          },
+          {
+            "code": "*363#",
+            "description": "Internet Package Menu"
+          },
+          {
+            "code": "188",
+            "description": "Call Customer Service"
+          }
+        ]
+      },
+      {
+        "name": "Indosat Ooredoo Hutchison (IM3)",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*123#",
+            "description": "Check Balance ('Pulsa') / Main Menu"
+          },
+          {
+            "code": "*363#",
+            "description": "Internet Package Menu"
+          },
+          {
+            "code": "185",
+            "description": "Call Customer Service"
+          }
+        ]
+      },
+      {
+        "name": "XL Axiata",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*123#",
+            "description": "Check Balance ('Pulsa') / Main Menu"
+          },
+          {
+            "code": "817",
+            "description": "Call Customer Service"
+          }
+        ]
+      },
+      {
+        "name": "Smartfren",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*999#",
+            "description": "Check Balance ('Pulsa')"
+          },
+           {
+             "code": "*123#",
+             "description": "Main Menu (Also works)"
+           },
+          {
+            "code": "888",
+            "description": "Call Customer Service"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Iran",
+    "iso": "IR",
+    "carriers": [
+      {
+        "name": "MCI (Hamrah-e Aval)",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*10*121#",
+            "description": "Check Credit Balance"
+          },
+          {
+            "code": "*100#",
+            "description": "Service Menu"
+          }
+        ]
+      },
+      {
+        "name": "Irancell",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*555*1*2#",
+            "description": "Check Credit Balance"
+          },
+          {
+            "code": "*555#",
+            "description": "Main Service Menu"
+          }
+        ]
+      },
+      {
+        "name": "Rightel",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*140#",
+            "description": "Check Credit Balance"
+          },
+           {
+             "code": "*200#",
+             "description": "Service Menu"
+           }
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Iraq",
+    "iso": "IQ",
+    "carriers": [
+      {
+        "name": "Zain Iraq",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*100#",
+            "description": "Check Balance"
+          },
+          {
+            "code": "107",
+            "description": "Call Customer Service"
+          }
+        ]
+      },
+      {
+        "name": "Asiacell",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*133#",
+            "description": "Check Balance"
+          },
+          {
+            "code": "111",
+            "description": "Call Customer Service"
+          }
+        ]
+      },
+      {
+        "name": "Korek Telecom",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*211#",
+            "description": "Check Balance"
+          },
+          {
+            "code": "411",
+            "description": "Call Customer Service"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Israel",
+    "iso": "IL",
+    "carriers": [
+      {
+        "name": "Pelephone",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*111",
+            "description": "Call Customer Service"
+          }
+        ],
+        "notes": "Limited public USSD codes; relies on apps/calling."
+      },
+      {
+        "name": "Cellcom",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*777",
+            "description": "Call Customer Service"
+          }
+        ],
+        "notes": "Limited public USSD codes; relies on apps/calling."
+      },
+      {
+        "name": "Partner (Formerly Orange)",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*111",
+            "description": "Call Customer Service"
+          }
+        ],
+        "notes": "Limited public USSD codes; relies on apps/calling."
+      }
+    ]
+  },
+  {
+    "country": "Japan",
+    "iso": "JP",
+    "carriers": [
+      {
+        "name": "NTT Docomo",
+        "type": "MNO",
+        "ussd_codes": [
+           {
+            "code": "151",
+            "description": "Call Customer Service (from Docomo)"
+           }
+        ],
+        "notes": "USSD codes are generally not used by major Japanese carriers for customer functions. Apps and websites are primary."
+      },
+      {
+        "name": "au (KDDI)",
+        "type": "MNO",
+        "ussd_codes": [
+           {
+            "code": "157",
+            "description": "Call Customer Service (from au)"
+           }
+        ],
+        "notes": "USSD codes generally not used."
+      },
+      {
+        "name": "SoftBank",
+        "type": "MNO",
+        "ussd_codes": [
+           {
+            "code": "157",
+            "description": "Call Customer Service (from SoftBank)"
+           }
+        ],
+         "notes": "USSD codes generally not used."
+      },
+      {
+        "name": "Rakuten Mobile",
+        "type": "MNO",
+        "ussd_codes": [],
+         "notes": "Primarily uses app ('my Rakuten Mobile') for account management."
+      }
+    ]
+  },
+  // --- Continue for Jordan, Kazakhstan, Kuwait etc. ---
+  {
+    "country": "Jordan",
+    "iso": "JO",
+    "carriers": [
+      {
+        "name": "Zain Jordan",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*111#",
+            "description": "Check Prepaid Balance"
+          },
+          {
+            "code": "1234",
+            "description": "Call Customer Service"
+          }
+        ]
+      },
+      {
+        "name": "Orange Jordan",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*155#",
+            "description": "Check Prepaid Balance"
+          },
+          {
+            "code": "1777",
+            "description": "Call Customer Service"
+          }
+        ]
+      },
+      {
+        "name": "Umniah",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*121#",
+            "description": "Check Prepaid Balance"
+          },
+          {
+            "code": "1333",
+            "description": "Call Customer Service"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Kazakhstan",
+    "iso": "KZ",
+    "carriers": [
+      {
+        "name": "Beeline KZ",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*111#",
+            "description": "Check Balance"
+          },
+          {
+            "code": "*102#",
+             "description": "Check Balance (Alternative)"
+          },
+          {
+            "code": "611",
+            "description": "Call Customer Service"
+          }
+        ]
+      },
+      {
+        "name": "Kcell / Activ",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*111#",
+            "description": "Check Balance"
+          },
+          {
+             "code": "*100#",
+             "description": "Main Menu"
+          },
+          {
+            "code": "3030",
+            "description": "Call Customer Service (Activ)"
+          }
+        ]
+      },
+      {
+        "name": "Tele2 / Altel",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*111#",
+            "description": "Check Balance"
+          },
+          {
+            "code": "611",
+            "description": "Call Customer Service"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Kuwait",
+    "iso": "KW",
+    "carriers": [
+      {
+        "name": "Zain Kuwait",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*142#",
+            "description": "Check Balance"
+          },
+          {
+            "code": "107",
+            "description": "Call Customer Service"
+          }
+        ]
+      },
+      {
+        "name": "stc Kuwait",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*555#",
+            "description": "Check Balance"
+          },
+          {
+            "code": "102",
+            "description": "Call Customer Service"
+          }
+        ]
+      },
+      {
+        "name": "Ooredoo Kuwait",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*555#",
+            "description": "Check Balance / Main Menu"
+          },
+          {
+            "code": "121",
+            "description": "Call Customer Service"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Kyrgyzstan",
+    "iso": "KG",
+    "carriers": [
+      {
+        "name": "Beeline KG",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*102#",
+            "description": "Check Balance"
+          },
+          {
+            "code": "611",
+            "description": "Call Customer Service"
+          }
+        ]
+      },
+      {
+        "name": "MegaCom",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*505#",
+            "description": "Check Balance"
+          },
+          {
+            "code": "505",
+            "description": "Call Customer Service"
+          }
+        ]
+      },
+      {
+        "name": "O!",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*100#",
+            "description": "Check Balance"
+          },
+          {
+            "code": "707",
+            "description": "Call Customer Service"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Laos",
+    "iso": "LA",
+    "carriers": [
+      {
+        "name": "Unitel",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*122#",
+            "description": "Check Balance"
+          },
+          {
+            "code": "109",
+            "description": "Call Customer Service"
+          }
+        ]
+      },
+      {
+        "name": "Lao Telecom (LTC)",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*122#",
+            "description": "Check Balance"
+          },
+          {
+            "code": "101",
+            "description": "Call Customer Service"
+          }
+        ]
+      },
+      {
+        "name": "ETL (Enterprise des Telecommunications Lao)",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*122#",
+            "description": "Check Balance"
+          }
+        ]
+      },
+      {
+         "name": "TPLUS (Formerly Beeline)",
+         "type": "MNO",
+         "ussd_codes": [
+             {
+                 "code": "*102#",
+                 "description": "Check Balance"
+             }
+         ]
+      }
+    ]
+  },
+  {
+    "country": "Lebanon",
+    "iso": "LB",
+    "carriers": [
+      {
+        "name": "Alfa",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*11#",
+            "description": "Check Balance"
+          },
+          {
+            "code": "111",
+            "description": "Call Customer Service"
+          }
+        ]
+      },
+      {
+        "name": "Touch",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*220#",
+            "description": "Check Balance"
+          },
+          {
+            "code": "111",
+            "description": "Call Customer Service"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Malaysia",
+    "iso": "MY",
+    "carriers": [
+      {
+        "name": "CelcomDigi (Merger of Celcom & Digi)",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*128#",
+            "description": "Main Menu (Celcom legacy)"
+          },
+          {
+            "code": "*126#",
+            "description": "Check Balance (Digi legacy)"
+          },
+          {
+            "code": "*118#",
+            "description": "Check Balance (Celcom legacy)"
+          },
+          {
+            "code": "111",
+            "description": "Call Customer Service (Celcom)"
+          },
+          {
+             "code": "016 221 1800",
+             "description": "Call Customer Service (Digi)"
+           }
+        ],
+        "notes": "Codes from both legacy networks may still work during transition."
+      },
+      {
+        "name": "Maxis (Hotlink for prepaid)",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*122#",
+            "description": "Check Prepaid Balance (Hotlink)"
+          },
+          {
+            "code": "*100#",
+            "description": "Main Service Menu"
+          },
+          {
+            "code": "123",
+            "description": "Call Customer Service"
+          }
+        ]
+      },
+      {
+        "name": "U Mobile",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*118#",
+            "description": "Check Balance / Main Menu"
+          },
+          {
+            "code": "1318",
+            "description": "Call Customer Service"
+          }
+        ]
+      }
+    ]
+  },
+  // --- Continue for Maldives, Mongolia, Myanmar etc. ---
+  {
+    "country": "Maldives",
+    "iso": "MV",
+    "carriers": [
+      {
+        "name": "Dhiraagu",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*142#",
+            "description": "Check Prepaid Balance"
+          },
+          {
+            "code": "123",
+            "description": "Call Customer Service"
+          }
+        ]
+      },
+      {
+        "name": "Ooredoo Maldives",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*200#",
+            "description": "Check Prepaid Balance"
+          },
+          {
+            "code": "929",
+            "description": "Call Customer Service"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Mongolia",
+    "iso": "MN",
+    "carriers": [
+      {
+        "name": "Unitel",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*1414#",
+            "description": "Check Balance"
+          },
+          {
+            "code": "1414",
+            "description": "Call Customer Service"
+          }
+        ]
+      },
+      {
+        "name": "Mobicom Corporation",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*1111#",
+            "description": "Check Balance"
+          },
+          {
+            "code": "2222",
+            "description": "Call Customer Service"
+          }
+        ]
+      },
+      {
+        "name": "Skytel",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*111#",
+            "description": "Check Balance"
+          },
+          {
+            "code": "1515",
+            "description": "Call Customer Service"
+          }
+        ]
+      },
+       {
+         "name": "G-Mobile",
+         "type": "MNO",
+         "ussd_codes": [
+             {
+                 "code": "*111#",
+                 "description": "Check Balance"
+             },
+             {
+                 "code": "3333",
+                 "description": "Call Customer Service"
+             }
+         ]
+       }
+    ]
+  },
+  {
+    "country": "Myanmar (Burma)",
+    "iso": "MM",
+    "carriers": [
+      {
+        "name": "MPT (Myanma Posts and Telecommunications)",
+        "type": "MNO (State-owned)",
+        "ussd_codes": [
+          {
+            "code": "*124#",
+            "description": "Check Balance"
+          },
+           {
+             "code": "*106#",
+             "description": "Main Menu"
+           },
+          {
+            "code": "106",
+            "description": "Call Customer Service"
+          }
+        ]
+      },
+      {
+        "name": "Ooredoo Myanmar",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*124#",
+            "description": "Check Balance"
+          },
+           {
+             "code": "*505#",
+             "description": "Main Menu"
+           },
+          {
+            "code": "234",
+            "description": "Call Customer Service"
+          }
+        ]
+      },
+      {
+        "name": "Atom (Formerly Telenor Myanmar)",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*124#",
+            "description": "Check Balance"
+          },
+           {
+             "code": "*979#",
+             "description": "Main Menu"
+           },
+          {
+            "code": "979",
+            "description": "Call Customer Service"
+          }
+        ]
+      },
+       {
+         "name": "Mytel (Viettel)",
+         "type": "MNO",
+         "ussd_codes": [
+             {
+                 "code": "*966#",
+                 "description": "Check Balance"
+             },
+             {
+                 "code": "966",
+                 "description": "Call Customer Service"
+             }
+         ]
+       }
+    ],
+     "notes": "Check codes locally as situations can change."
+  },
+  // --- Continue for Nepal, Oman, Pakistan etc. ---
+  {
+    "country": "Nepal",
+    "iso": "NP",
+    "carriers": [
+      {
+        "name": "Nepal Telecom (NTC)",
+        "type": "MNO (State-owned)",
+        "ussd_codes": [
+          {
+            "code": "*400#",
+            "description": "Check Balance (GSM Prepaid)"
+          },
+          {
+            "code": "*411#",
+            "description": "Check Data Balance (GSM)"
+          },
+          {
+            "code": "1415",
+            "description": "Call Customer Service"
+          }
+        ]
+      },
+      {
+        "name": "Ncell (Axiata group)",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*901#",
+            "description": "Check Balance"
+          },
+           {
+             "code": "*17123#",
+             "description": "Check Data Balance"
+           },
+          {
+            "code": "9005",
+            "description": "Call Customer Service"
+          }
+        ]
+      },
+       {
+         "name": "Smart Cell",
+         "type": "MNO",
+         "ussd_codes": [
+             {
+                 "code": "*123#",
+                 "description": "Check Balance"
+             },
+             {
+                "code": "*141#",
+                "description": "Check Data Balance"
+             }
+         ]
+       }
+    ]
+  },
+  {
+    "country": "Oman",
+    "iso": "OM",
+    "carriers": [
+      {
+        "name": "Omantel",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*100#",
+            "description": "Check Prepaid Balance"
+          },
+          {
+            "code": "1234",
+            "description": "Call Customer Service"
+          }
+        ]
+      },
+      {
+        "name": "Ooredoo Oman",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*141#",
+            "description": "Main Service Menu / Balance Check"
+          },
+          {
+            "code": "1500",
+            "description": "Call Customer Service"
+          }
+        ]
+      },
+      {
+        "name": "Vodafone Oman",
+        "type": "MVNO/MNO",
+        "ussd_codes": [
+           {
+             "code": "*100#",
+             "description": "Main Menu"
+           },
+           {
+             "code": "*151#",
+             "description": "Check Balance"
+           },
+            {
+                "code": "1717",
+                "description": "Call Customer Service"
+            }
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Pakistan",
+    "iso": "PK",
+    "carriers": [
+      {
+        "name": "Jazz (Veon group)",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*111#",
+            "description": "Check Prepaid Balance"
+          },
+          {
+            "code": "111",
+            "description": "Call Customer Service"
+          }
+        ]
+      },
+      {
+        "name": "Telenor Pakistan",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*444#",
+            "description": "Check Prepaid Balance"
+          },
+          {
+            "code": "345",
+            "description": "Call Customer Service"
+          }
+        ]
+      },
+      {
+        "name": "Zong (China Mobile)",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*222#",
+            "description": "Check Prepaid Balance"
+          },
+          {
+            "code": "310",
+            "description": "Call Customer Service"
+          }
+        ]
+      },
+      {
+        "name": "Ufone (PTCL)",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*124#",
+            "description": "Check Prepaid Balance"
+          },
+          {
+            "code": "333",
+            "description": "Call Customer Service"
+          }
+        ]
+      }
+    ]
+  },
+  // --- And so on for Philippines, Qatar, Saudi Arabia etc. ---
+  {
+    "country": "Philippines",
+    "iso": "PH",
+    "carriers": [
+      {
+        "name": "Smart Communications",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*123#",
+            "description": "Main Service Menu ('GigaLife Menu')"
+          },
+           {
+            "code": "*121",
+             "description": "Check Balance (Call IVR - Prepaid)"
+           },
+          {
+            "code": "*888",
+            "description": "Call Customer Service (Postpaid)"
+          }
+        ]
+      },
+      {
+        "name": "Globe Telecom",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*143#",
+            "description": "Main Service Menu / Balance Check"
+          },
+          {
+            "code": "211",
+            "description": "Call Customer Service (from Globe/TM)"
+          }
+        ]
+      },
+      {
+        "name": "DITO Telecommunity",
+        "type": "MNO",
+        "ussd_codes": [
+            {
+                "code": "*185#",
+                "description": "Check Load Balance and Promo Status"
+            },
+             {
+                 "code": "185",
+                 "description": "Call Customer Service"
+             }
+        ],
+         "notes": "Relies heavily on app."
+      }
+    ]
+  },
+   {
+    "country": "Qatar",
+    "iso": "QA",
+    "carriers": [
+      {
+        "name": "Ooredoo Qatar",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*129#",
+            "description": "Check Prepaid Balance ('Hala')"
+          },
+          {
+            "code": "111",
+            "description": "Call Customer Service"
+          }
+        ]
+      },
+      {
+        "name": "Vodafone Qatar",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*100#",
+            "description": "Check Prepaid Balance"
+          },
+          {
+            "code": "111",
+            "description": "Call Customer Service"
+          }
+        ]
+      }
+    ]
+  },
+   {
+    "country": "Saudi Arabia",
+    "iso": "SA",
+    "carriers": [
+      {
+        "name": "stc (Saudi Telecom Company)",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*166#",
+            "description": "Check Prepaid Balance ('Sawa')"
+          },
+          {
+            "code": "900",
+            "description": "Call Customer Service"
+          }
+        ]
+      },
+      {
+        "name": "Mobily",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*1411#",
+            "description": "Check Prepaid Balance"
+          },
+          {
+            "code": "1100",
+            "description": "Call Customer Service"
+          }
+        ]
+      },
+      {
+        "name": "Zain Saudi Arabia",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*142#",
+            "description": "Check Prepaid Balance"
+          },
+          {
+            "code": "959",
+            "description": "Call Customer Service"
+          }
+        ]
+      }
+    ]
+  },
+   {
+    "country": "Singapore",
+    "iso": "SG",
+    "carriers": [
+      {
+        "name": "Singtel",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*100#",
+            "description": "Prepaid Main Menu ('hi! Menu')"
+          },
+           {
+            "code": "*139#",
+            "description": "Check Prepaid Balance"
+           },
+          {
+            "code": "1688",
+            "description": "Call Customer Service"
+          }
+        ]
+      },
+      {
+        "name": "StarHub",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*123#",
+            "description": "Prepaid Main Menu"
+          },
+          {
+            "code": "1633",
+            "description": "Call Customer Service"
+          }
+        ]
+      },
+      {
+        "name": "M1",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*100#",
+            "description": "Prepaid Main Menu"
+          },
+           {
+             "code": "#100*1*1#",
+             "description": "Check Prepaid Balance"
+           },
+          {
+            "code": "1627",
+            "description": "Call Customer Service"
+          }
+        ]
+      }
+    ]
+  },
+   {
+    "country": "South Korea",
+    "iso": "KR",
+    "carriers": [
+        {
+            "name": "SK Telecom",
+            "type": "MNO",
+            "ussd_codes": [
+                 {
+                     "code": "114",
+                     "description": "Call Customer Service (from SKT)"
+                 }
+            ],
+            "notes": "Heavy reliance on apps (T world) and website. USSD codes not common for customer interaction."
+        },
+        {
+            "name": "KT (Korea Telecom)",
+            "type": "MNO",
+            "ussd_codes": [
+                {
+                    "code": "114",
+                    "description": "Call Customer Service (from KT)"
+                }
+            ],
+            "notes": "Heavy reliance on apps (My KT) and website."
+        },
+        {
+            "name": "LG U+",
+            "type": "MNO",
+            "ussd_codes": [
+                {
+                    "code": "114",
+                    "description": "Call Customer Service (from LGU+)"
+                }
+            ],
+            "notes": "Heavy reliance on apps (Your U+) and website."
+        }
+    ]
+  },
+   {
+    "country": "Sri Lanka",
+    "iso": "LK",
+    "carriers": [
+      {
+        "name": "Dialog Axiata",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "#456#",
+            "description": "Check Prepaid Balance"
+          },
+          {
+            "code": "#678#",
+            "description": "Main Service Menu"
+          },
+          {
+            "code": "1777",
+            "description": "Call Customer Service"
+          }
+        ]
+      },
+      {
+        "name": "Mobitel (SLT-MOBITEL)",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*100#",
+            "description": "Check Prepaid Balance"
+          },
+           {
+            "code": "#170#",
+            "description": "Check Data Balance"
+           },
+          {
+            "code": "1717",
+            "description": "Call Customer Service"
+          }
+        ]
+      },
+      {
+        "name": "Hutch Sri Lanka",
+        "type": "MNO",
+        "ussd_codes": [
+          {
+            "code": "*344#",
+            "description": "Check Prepaid Balance"
+          },
+          {
+            "code": "1788",
+            "description": "Call Customer Service"
+          }
+        ]
+      },
+       {
+         "name": "Airtel Sri Lanka",
+         "type": "MNO",
+         "ussd_codes": [
+             {
+                 "code": "*550#",
+                 "description": "Check Prepaid Balance"
+             },
+             {
+                "code": "*567#",
+                "description": "Main Service Menu"
+             },
+             {
+                 "code": "555",
+                 "description": "Call Customer Service"
+             }
+         ]
+       }
+    ]
+  },
+   {
+     "country": "Syria",
+     "iso": "SY",
+     "carriers": [
+       {
+         "name": "Syriatel",
+         "type": "MNO",
+         "ussd_codes": [
+           {
+             "code": "*100#",
+             "description": "Check Balance"
+           },
+           {
+             "code": "111",
+             "description": "Call Customer Service"
+           }
+         ]
+       },
+       {
+         "name": "MTN Syria",
+         "type": "MNO",
+         "ussd_codes": [
+           {
+             "code": "*100#",
+             "description": "Check Balance"
+           },
+           {
+             "code": "111",
+             "description": "Call Customer Service"
+           }
+         ]
+       },
+        {
+          "name": "Wafa Telecom",
+          "type": "MNO (Newer Operator)",
+          "ussd_codes": [],
+          "notes": "USSD codes may not be widely published or stable yet."
+        }
+     ],
+      "notes": "Service availability and codes might be affected by the situation."
+   },
+   {
+     "country": "Taiwan",
+     "iso": "TW",
+     "carriers": [
+       {
+         "name": "Chunghwa Telecom",
+         "type": "MNO",
+         "ussd_codes": [
+            {
+                "code": "*101*1#",
+                "description": "Check Prepaid Balance"
+            },
+             {
+                 "code": "928",
+                 "description": "Call Customer Service (from CHT Mobile)"
+             }
+         ]
+       },
+       {
+         "name": "Taiwan Mobile",
+         "type": "MNO",
+         "ussd_codes": [
+            {
+                "code": "*147#",
+                "description": "Check Prepaid Balance"
+            },
+             {
+                 "code": "188",
+                 "description": "Call Customer Service (from Taiwan Mobile)"
+             }
+         ]
+       },
+       {
+         "name": "Far EasTone Telecommunications (FET)",
+         "type": "MNO",
+         "ussd_codes": [
+              {
+                 "code": "*123#",
+                 "description": "Check Prepaid Balance"
+              },
+              {
+                 "code": "777",
+                 "description": "Call Customer Service (from FET Mobile)"
+              }
+         ]
+       }
+     ]
+   },
+   {
+     "country": "Tajikistan",
+     "iso": "TJ",
+     "carriers": [
+       {
+         "name": "Tcell",
+         "type": "MNO",
+         "ussd_codes": [
+           {
+             "code": "*100#",
+             "description": "Check Balance"
+           },
+           {
+             "code": "500",
+             "description": "Call Customer Service"
+           }
+         ]
+       },
+       {
+         "name": "Babilon-Mobile",
+         "type": "MNO",
+         "ussd_codes": [
+           {
+             "code": "*1001#",
+             "description": "Check Balance"
+           },
+           {
+             "code": "3003",
+             "description": "Call Customer Service"
+           }
+         ]
+       },
+       {
+         "name": "Megafon Tajikistan",
+         "type": "MNO",
+         "ussd_codes": [
+           {
+             "code": "*100#",
+             "description": "Check Balance"
+           },
+           {
+             "code": "500",
+             "description": "Call Customer Service"
+           }
+         ]
+       },
+        {
+          "name": "Beeline Tajikistan (Now part of ZET-MOBILE)",
+          "type": "MNO",
+          "ussd_codes": [
+             {
+                 "code": "*102#",
+                 "description": "Check Balance"
+             },
+             {
+                 "code": "611",
+                 "description": "Call Customer Service"
+             }
+          ]
+        }
+     ]
+   },
+   {
+     "country": "Thailand",
+     "iso": "TH",
+     "carriers": [
+       {
+         "name": "AIS (Advanced Info Service)",
+         "type": "MNO",
+         "ussd_codes": [
+           {
+             "code": "*121#",
+             "description": "Check Balance"
+           },
+           {
+             "code": "1175",
+             "description": "Call Customer Service"
+           }
+         ]
+       },
+       {
+         "name": "TrueMove H",
+         "type": "MNO",
+         "ussd_codes": [
+           {
+             "code": "#123#",
+             "description": "Check Balance"
+           },
+            {
+                "code": "*935#",
+                "description": "Check Data Balance"
+            },
+           {
+             "code": "1242",
+             "description": "Call Customer Service"
+           }
+         ]
+       },
+       {
+         "name": "dtac (Now merged with True, operating as True Corporation)",
+         "type": "MNO",
+         "ussd_codes": [
+           {
+             "code": "*101#",
+             "description": "Check Balance (Legacy dtac)"
+           },
+           {
+             "code": "1678",
+             "description": "Call Customer Service"
+           }
+         ],
+          "notes": "Codes may change post-merger, True codes likely become primary."
+       }
+     ]
+   },
+    {
+      "country": "Turkey",
+      "iso": "TR",
+      "carriers": [
+          {
+              "name": "Turkcell",
+              "type": "MNO",
+              "ussd_codes": [
+                  {
+                      "code": "*123#",
+                      "description": "Check Prepaid Balance ('TL Miktarı')"
+                  },
+                  {
+                      "code": "532",
+                      "description": "Call Customer Service (from Turkcell)"
+                  }
+              ]
+          },
+          {
+              "name": "Türk Telekom (Mobile - formerly Avea)",
+              "type": "MNO",
+              "ussd_codes": [
+                  {
+                      "code": "*123#",
+                      "description": "Check Prepaid Balance ('TL Miktarı')"
+                  },
+                  {
+                      "code": "444 1 444",
+                      "description": "Call Customer Service"
+                  }
+              ]
+          },
+          {
+              "name": "Vodafone Turkey",
+              "type": "MNO",
+              "ussd_codes": [
+                  {
+                      "code": "*123#",
+                      "description": "Check Prepaid Balance ('TL Miktarı')"
+                  },
+                  {
+                      "code": "542",
+                      "description": "Call Customer Service (from Vodafone)"
+                  }
+              ]
+          }
+      ]
+    },
+    {
+     "country": "Turkmenistan",
+     "iso": "TM",
+     "carriers": [
+       {
+         "name": "Altyn Asyr (TM CELL)",
+         "type": "MNO (State-owned)",
+         "ussd_codes": [
+           {
+             "code": "*0809#",
+             "description": "Check Balance"
+           },
+            {
+               "code": "0890",
+                "description": "Call Information Service"
+            }
+         ]
+       },
+       {
+         "name": "MTS Turkmenistan (Operations suspended/limited)",
+         "type": "MNO",
+         "ussd_codes": [],
+         "notes": "Service status is often uncertain."
+       }
+     ]
+   },
+   {
+     "country": "United Arab Emirates",
+     "iso": "AE",
+     "carriers": [
+       {
+         "name": "Etisalat by e&",
+         "type": "MNO",
+         "ussd_codes": [
+           {
+             "code": "*121#",
+             "description": "Check Prepaid Balance"
+           },
+            {
+                "code": "*170#",
+                "description": "Check Data Balance"
+            },
+           {
+             "code": "101",
+             "description": "Call Customer Service"
+           }
+         ]
+       },
+       {
+         "name": "du",
+         "type": "MNO",
+         "ussd_codes": [
+           {
+             "code": "*135#",
+             "description": "Check Prepaid Balance / Main Menu"
+           },
+           {
+             "code": "155",
+             "description": "Call Customer Service"
+           }
+         ]
+       }
+     ]
+   },
+   {
+     "country": "Uzbekistan",
+     "iso": "UZ",
+     "carriers": [
+       {
+         "name": "Beeline Uzbekistan",
+         "type": "MNO",
+         "ussd_codes": [
+           {
+             "code": "*102#",
+             "description": "Check Balance"
+           },
+           {
+             "code": "0611",
+             "description": "Call Customer Service"
+           }
+         ]
+       },
+       {
+         "name": "Ucell",
+         "type": "MNO",
+         "ussd_codes": [
+           {
+             "code": "*100#",
+             "description": "Check Balance"
+           },
+           {
+             "code": "8123",
+             "description": "Call Customer Service"
+           }
+         ]
+       },
+       {
+         "name": "Mobiuz (Formerly UMS)",
+         "type": "MNO",
+         "ussd_codes": [
+           {
+             "code": "*100#",
+             "description": "Check Balance"
+           },
+           {
+             "code": "0890",
+             "description": "Call Customer Service"
+           }
+         ]
+       },
+        {
+           "name": "Uztelecom (Uzmobile)",
+           "type": "MNO (State-owned)",
+           "ussd_codes": [
+               {
+                   "code": "*100#",
+                   "description": "Check Balance"
+               },
+               {
+                   "code": "1084",
+                   "description": "Call Customer Service"
+               }
+           ]
+        }
+     ]
+   },
+   {
+     "country": "Vietnam",
+     "iso": "VN",
+     "carriers": [
+       {
+         "name": "Viettel",
+         "type": "MNO",
+         "ussd_codes": [
+           {
+             "code": "*101#",
+             "description": "Check Main Balance"
+           },
+            {
+                "code": "*102#",
+                "description": "Check Promotional Balance"
+            },
+           {
+             "code": "198",
+             "description": "Call Customer Service"
+           }
+         ]
+       },
+       {
+         "name": "MobiFone",
+         "type": "MNO",
+         "ussd_codes": [
+           {
+             "code": "*101#",
+             "description": "Check Balance"
+           },
+           {
+             "code": "9090",
+             "description": "Call Customer Service"
+           }
+         ]
+       },
+       {
+         "name": "VinaPhone",
+         "type": "MNO",
+         "ussd_codes": [
+           {
+             "code": "*101#",
+             "description": "Check Balance"
+           },
+           {
+             "code": "9191",
+             "description": "Call Customer Service"
+           }
+         ]
+       },
+        {
+           "name": "Vietnamobile",
+           "type": "MNO",
+           "ussd_codes": [
+               {
+                   "code": "*101#",
+                   "description": "Check Balance"
+               },
+               {
+                   "code": "789",
+                   "description": "Call Customer Service"
+               }
+           ]
+        }
+     ]
+   },
+    {
+      "country": "Yemen",
+      "iso": "YE",
+      "carriers": [
+          {
+              "name": "MTN Yemen",
+              "type": "MNO",
+              "ussd_codes": [
+                  {
+                      "code": "*111#",
+                      "description": "Check Balance"
+                  },
+                   {
+                       "code": "111",
+                       "description": "Call Customer Service"
+                   }
+              ]
+          },
+          {
+              "name": "Sabafon",
+              "type": "MNO",
+              "ussd_codes": [
+                  {
+                      "code": "*101#",
+                      "description": "Check Balance"
+                  },
+                   {
+                       "code": "211",
+                       "description": "Call Customer Service"
+                   }
+              ]
+          },
+          {
+              "name": "Yemen Mobile",
+              "type": "MNO (CDMA)",
+              "ussd_codes": [
+                  {
+                      "code": "*888#",
+                      "description": "Check Balance"
+                  }
+              ],
+               "notes": "CDMA network, USSD usage may differ or be limited."
+          },
+           {
+             "name": "Y Telecom (Formerly Y)",
+             "type": "MNO (Newer Operator)",
+             "ussd_codes": [],
+             "notes": "USSD codes may not be widely published or stable yet."
+           }
+      ],
+       "notes": "Service availability and codes might be affected by the ongoing conflict."
+    }
+]

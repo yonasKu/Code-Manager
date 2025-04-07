@@ -1,0 +1,1197 @@
+[
+  {
+    "country": "Antigua and Barbuda",
+    "iso": "AG",
+    "institutions": [
+      {
+        "name": "Eastern Caribbean Central Bank (Regional Central Bank)",
+        "phone": "+1 869-465-2537",
+        "website": "https://www.eccb-centralbank.org/"
+      },
+      {
+        "name": "Antigua Commercial Bank (ACB)",
+        "phone": "+1 268-481-4200",
+        "website": "https://www.acbonline.com/"
+      },
+      {
+        "name": "CIBC FirstCaribbean International Bank",
+        "phone": "+1 268-480-5000",
+        "website": "https://www.cibcfcib.com/"
+      },
+      {
+        "name": "Scotiabank Antigua",
+        "phone": "+1 268-480-1500",
+        "website": "https://ag.scotiabank.com/"
+      }
+    ],
+    "notes": "Part of the Eastern Caribbean Currency Union (ECCU)."
+  },
+  {
+    "country": "Argentina",
+    "iso": "AR",
+    "institutions": [
+      {
+        "name": "Banco Central de la República Argentina",
+        "phone": "+54 11 4348 3500",
+        "website": "https://www.bcra.gob.ar/"
+      },
+      {
+        "name": "Banco de la Nación Argentina",
+        "phone": "+54 0810 666 4444",
+        "website": "https://www.bna.com.ar/"
+      },
+      {
+        "name": "Banco Santander Argentina",
+        "phone": "+54 0800 999 2400",
+        "website": "https://www.santander.com.ar/"
+      },
+      {
+        "name": "Banco Galicia",
+        "phone": "+54 0800 888 4254",
+        "website": "https://www.bancogalicia.com/"
+      }
+    ]
+  },
+  {
+    "country": "Aruba",
+    "iso": "AW",
+    "institutions": [
+      {
+        "name": "Centrale Bank van Aruba",
+        "phone": "+297 525 2100",
+        "website": "https://www.cbaruba.org/"
+      },
+      {
+        "name": "Aruba Bank",
+        "phone": "+297 527 7777",
+        "website": "https://www.arubabank.com/"
+      },
+      {
+        "name": "RBC Royal Bank (Aruba)",
+        "phone": "+297 588 0101",
+        "website": "https://www.rbcroyalbank.com/caribbean/aruba/"
+      },
+      {
+        "name": "CIBC FirstCaribbean International Bank",
+        "phone": "+297 522 5600",
+        "website": "https://www.cibcfcib.com/"
+      }
+    ]
+  },
+  {
+    "country": "Bahamas",
+    "iso": "BS",
+    "institutions": [
+      {
+        "name": "Central Bank of The Bahamas",
+        "phone": "+1 242-302-2600",
+        "website": "https://www.centralbankbahamas.com/"
+      },
+      {
+        "name": "Scotiabank (Bahamas)",
+        "phone": "+1 242-356-1400",
+        "website": "https://bs.scotiabank.com/"
+      },
+      {
+        "name": "CIBC FirstCaribbean International Bank",
+        "phone": "+1 242-502-6800",
+        "website": "https://www.cibcfcib.com/"
+      },
+      {
+        "name": "RBC Royal Bank (Bahamas)",
+        "phone": "+1 242-356-8500",
+        "website": "https://www.rbcroyalbank.com/caribbean/bahamas/"
+      }
+    ]
+  },
+  {
+    "country": "Barbados",
+    "iso": "BB",
+    "institutions": [
+      {
+        "name": "Central Bank of Barbados",
+        "phone": "+1 246-436-6870",
+        "website": "https://www.centralbank.org.bb/"
+      },
+      {
+        "name": "CIBC FirstCaribbean International Bank (HQ)",
+        "phone": "+1 246-367-2300",
+        "website": "https://www.cibcfcib.com/"
+      },
+      {
+        "name": "Scotiabank (Barbados)",
+        "phone": "+1 246-426-7000",
+        "website": "https://bb.scotiabank.com/"
+      },
+      {
+        "name": "Republic Bank (Barbados) Limited",
+        "phone": "+1 246-227-2700",
+        "website": "https://republicbarbados.com/"
+      }
+    ]
+  },
+  {
+    "country": "Belize",
+    "iso": "BZ",
+    "institutions": [
+      {
+        "name": "Central Bank of Belize",
+        "phone": "+501 223 6194",
+        "website": "https://www.centralbank.org.bz/"
+      },
+      {
+        "name": "Belize Bank Limited",
+        "phone": "+501 227 7132",
+        "website": "https://www.belizebank.com/"
+      },
+      {
+        "name": "Atlantic Bank Limited",
+        "phone": "+501 223 4123",
+        "website": "https://atlabank.com/"
+      },
+      {
+        "name": "Heritage Bank Limited",
+        "phone": "+501 223 5698",
+        "website": "https://www.heritageibt.com/"
+      }
+    ]
+  },
+  {
+    "country": "Bermuda",
+    "iso": "BM",
+    "institutions": [
+      {
+        "name": "Bermuda Monetary Authority",
+        "phone": "+1 441-295-5278",
+        "website": "https://www.bma.bm/"
+      },
+      {
+        "name": "HSBC Bank Bermuda Limited",
+        "phone": "+1 441-295-4000",
+        "website": "https://www.hsbc.bm/"
+      },
+      {
+        "name": "Butterfield Bank",
+        "phone": "+1 441-295-1111",
+        "website": "https://www.butterfieldgroup.com/"
+      },
+      {
+        "name": "Clarien Bank Limited",
+        "phone": "+1 441-296-6969",
+        "website": "https://clarienbank.com/"
+      }
+    ]
+  },
+  {
+    "country": "Bolivia",
+    "iso": "BO",
+    "institutions": [
+      {
+        "name": "Banco Central de Bolivia",
+        "phone": "+591 2 240 9090",
+        "website": "https://www.bcb.gob.bo/"
+      },
+      {
+        "name": "Banco Mercantil Santa Cruz",
+        "phone": "+591 800 10 5000",
+        "website": "https://www.bmsc.com.bo/"
+      },
+      {
+        "name": "Banco Nacional de Bolivia (BNB)",
+        "phone": "+591 800 10 2001",
+        "website": "https://www.bnb.com.bo/"
+      },
+      {
+        "name": "Banco Unión S.A.",
+        "phone": "+591 800 10 2828",
+        "website": "https://www.bancounion.com.bo/"
+      }
+    ]
+  },
+  {
+    "country": "Brazil",
+    "iso": "BR",
+    "institutions": [
+      {
+        "name": "Banco Central do Brasil",
+        "phone": "+55 61 3414 1414",
+        "website": "https://www.bcb.gov.br/"
+      },
+      {
+        "name": "Itaú Unibanco",
+        "phone": "+55 0800 728 0728",
+        "website": "https://www.itau.com.br/"
+      },
+      {
+        "name": "Banco Bradesco",
+        "phone": "+55 0800 704 8383",
+        "website": "https://banco.bradesco/"
+      },
+      {
+        "name": "Banco do Brasil",
+        "phone": "+55 0800 729 0722",
+        "website": "https://www.bb.com.br/"
+      }
+    ]
+  },
+  {
+    "country": "Canada",
+    "iso": "CA",
+    "institutions": [
+      {
+        "name": "Bank of Canada",
+        "phone": "+1 800-303-1282",
+        "website": "https://www.bankofcanada.ca/"
+      },
+      {
+        "name": "Royal Bank of Canada (RBC)",
+        "phone": "+1 800-769-2511",
+        "website": "https://www.rbcroyalbank.com/"
+      },
+      {
+        "name": "Toronto-Dominion Bank (TD)",
+        "phone": "+1 866-222-3456",
+        "website": "https://www.td.com/"
+      },
+      {
+        "name": "Bank of Nova Scotia (Scotiabank)",
+        "phone": "+1 800-472-6842",
+        "website": "https://www.scotiabank.com/"
+      }
+    ]
+  },
+  {
+    "country": "Cayman Islands",
+    "iso": "KY",
+    "institutions": [
+      {
+        "name": "Cayman Islands Monetary Authority",
+        "phone": "+1 345-949-7089",
+        "website": "https://www.cima.ky/"
+      },
+      {
+        "name": "Butterfield Bank (Cayman) Limited",
+        "phone": "+1 345-949-7055",
+        "website": "https://ky.butterfieldgroup.com/"
+      },
+      {
+        "name": "Cayman National Bank",
+        "phone": "+1 345-949-4655",
+        "website": "https://www.caymannational.com/"
+      },
+      {
+        "name": "Scotiabank & Trust (Cayman)",
+        "phone": "+1 345-949-7666",
+        "website": "https://ky.scotiabank.com/"
+      }
+    ]
+  },
+  {
+    "country": "Chile",
+    "iso": "CL",
+    "institutions": [
+      {
+        "name": "Banco Central de Chile",
+        "phone": "+56 2 2670 2000",
+        "website": "https://www.bcentral.cl/"
+      },
+      {
+        "name": "Banco Santander Chile",
+        "phone": "+56 600 320 3000",
+        "website": "https://www.santander.cl/"
+      },
+      {
+        "name": "Banco de Chile",
+        "phone": "+56 2 2637 1111",
+        "website": "https://www.bancochile.cl/"
+      },
+      {
+        "name": "BancoEstado",
+        "phone": "+56 600 200 7000",
+        "website": "https://www.bancoestado.cl/"
+      }
+    ]
+  },
+  {
+    "country": "Colombia",
+    "iso": "CO",
+    "institutions": [
+      {
+        "name": "Banco de la República (Central Bank)",
+        "phone": "+57 601 343 1111",
+        "website": "https://www.banrep.gov.co/"
+      },
+      {
+        "name": "Bancolombia",
+        "phone": "+57 01 8000 912345",
+        "website": "https://www.grupobancolombia.com/"
+      },
+      {
+        "name": "Banco Davivienda",
+        "phone": "+57 601 338 3838",
+        "website": "https://www.davivienda.com/"
+      },
+      {
+        "name": "Banco de Bogotá",
+        "phone": "+57 601 382 0000",
+        "website": "https://www.bancodebogota.com/"
+      }
+    ]
+  },
+  {
+    "country": "Costa Rica",
+    "iso": "CR",
+    "institutions": [
+      {
+        "name": "Banco Central de Costa Rica",
+        "phone": "+506 2243 3333",
+        "website": "https://www.bccr.fi.cr/"
+      },
+      {
+        "name": "Banco Nacional de Costa Rica",
+        "phone": "+506 2212 2000",
+        "website": "https://www.bncr.fi.cr/"
+      },
+      {
+        "name": "Banco de Costa Rica (BCR)",
+        "phone": "+506 2211 1111",
+        "website": "https://www.bancobcr.com/"
+      },
+      {
+        "name": "BAC Credomatic",
+        "phone": "+506 2295 9797",
+        "website": "https://www.baccredomatic.com/"
+      }
+    ]
+  },
+  {
+    "country": "Cuba",
+    "iso": "CU",
+    "institutions": [
+      {
+        "name": "Banco Central de Cuba",
+        "phone": "+53 7 867 1970",
+        "website": "https://www.bc.gob.cu/"
+      },
+      {
+        "name": "Banco Metropolitano S.A.",
+        "phone": "+53 7 868 3535",
+        "website": "https://www.banco-metropolitano.com.cu/"
+      },
+      {
+        "name": "Banco Popular de Ahorro (BPA)",
+        "phone": "+53 7 867 0406",
+        "website": "https://www.bpa.cu/"
+      },
+      {
+        "name": "Banco de Crédito y Comercio (BANDEC)",
+        "phone": "+53 7 861 5337",
+        "website": "https://www.bandec.cu/"
+      }
+    ],
+    "notes": "Banking system is state-controlled. Exchange primarily at CADECA offices or banks."
+  },
+  {
+    "country": "Curaçao",
+    "iso": "CW",
+    "institutions": [
+      {
+        "name": "Centrale Bank van Curaçao en Sint Maarten",
+        "phone": "+599 9 434 5500",
+        "website": "https://www.centralbank.cw/"
+      },
+      {
+        "name": "Maduro & Curiel's Bank (MCB)",
+        "phone": "+599 9 466 1111",
+        "website": "https://www.mcb-bank.com/"
+      },
+      {
+        "name": "RBC Royal Bank (Curaçao)",
+        "phone": "+599 9 763 8000",
+        "website": "https://www.rbcroyalbank.com/caribbean/curacao/"
+      },
+      {
+        "name": "Banco di Caribe",
+        "phone": "+599 9 432 3000",
+        "website": "https://www.bancodicaribe.com/"
+      }
+    ]
+  },
+  {
+    "country": "Dominica",
+    "iso": "DM",
+    "institutions": [
+      {
+        "name": "Eastern Caribbean Central Bank (Regional Central Bank)",
+        "phone": "+1 869-465-2537",
+        "website": "https://www.eccb-centralbank.org/"
+      },
+      {
+        "name": "National Bank of Dominica (NBD)",
+        "phone": "+1 767-255-2300",
+        "website": "https://nbdominica.com/"
+      },
+      {
+        "name": "Republic Bank (EC) Limited",
+        "phone": "+1 767-448-4725",
+        "website": "https://republicbankec.com/"
+      },
+      {
+        "name": "CIBC FirstCaribbean International Bank",
+        "phone": "+1 767-448-2571",
+        "website": "https://www.cibcfcib.com/"
+      }
+    ],
+    "notes": "Part of the Eastern Caribbean Currency Union (ECCU)."
+  },
+  {
+    "country": "Dominican Republic",
+    "iso": "DO",
+    "institutions": [
+      {
+        "name": "Banco Central de la República Dominicana",
+        "phone": "+1 809-221-9111",
+        "website": "https://www.bancentral.gov.do/"
+      },
+      {
+        "name": "Banco Popular Dominicano",
+        "phone": "+1 809-544-5000",
+        "website": "https://www.popularenlinea.com/"
+      },
+      {
+        "name": "Banreservas",
+        "phone": "+1 809-960-2121",
+        "website": "https://www.banreservas.com/"
+      },
+      {
+        "name": "Banco BHD",
+        "phone": "+1 809-243-5000",
+        "website": "https://www.bhd.com.do/"
+      }
+    ]
+  },
+  {
+    "country": "Ecuador",
+    "iso": "EC",
+    "institutions": [
+      {
+        "name": "Banco Central del Ecuador",
+        "phone": "+593 2 393 8600",
+        "website": "https://www.bce.fin.ec/"
+      },
+      {
+        "name": "Banco Pichincha",
+        "phone": "+593 2 299 9999",
+        "website": "https://www.pichincha.com/"
+      },
+      {
+        "name": "Banco Guayaquil",
+        "phone": "+593 4 373 0100",
+        "website": "https://www.bancoguayaquil.com/"
+      },
+      {
+        "name": "Produbanco",
+        "phone": "+593 1700 123 123",
+        "website": "https://www.produbanco.com/"
+      }
+    ],
+    "notes": "Uses the US Dollar as official currency."
+  },
+  {
+    "country": "El Salvador",
+    "iso": "SV",
+    "institutions": [
+      {
+        "name": "Banco Central de Reserva de El Salvador",
+        "phone": "+503 2281 8000",
+        "website": "https://www.bcr.gob.sv/"
+      },
+      {
+        "name": "Banco Cuscatlán",
+        "phone": "+503 2212 2000",
+        "website": "https://www.bancocuscatlan.com/"
+      },
+      {
+        "name": "Banco Agrícola",
+        "phone": "+503 2267 5000",
+        "website": "https://www.bancoagricola.com/"
+      },
+      {
+        "name": "Banco Davivienda Salvadoreño",
+        "phone": "+503 2556 0000",
+        "website": "https://www.davivienda.com.sv/"
+      }
+    ],
+    "notes": "Uses the US Dollar as official currency."
+  },
+   {
+    "country": "Falkland Islands",
+    "iso": "FK",
+    "institutions": [
+       {
+        "name": "Standard Chartered Bank",
+        "phone": "+500 27300",
+        "website": "https://www.sc.com/fk/"
+      }
+    ],
+    "notes": "Uses the Falkland Islands Pound (pegged to GBP). Limited banking options."
+   },
+  {
+    "country": "French Guiana",
+    "iso": "GF",
+    "institutions": [
+      {
+        "name": "Banque de France (Oversees as part of France)",
+        "phone": "+33 1 42 92 42 92",
+        "website": "https://www.banque-france.fr/"
+      },
+      {
+        "name": "Crédit Agricole Mutuel de Guyane",
+        "phone": "+594 594 29 84 00",
+        "website": "https://www.ca-guyane.fr/"
+      },
+      {
+        "name": "Banque Française Commerciale Antilles-Guyane (BFCAG)",
+        "phone": "+594 594 29 60 60",
+        "website": "https://www.bfcag.fr/"
+      }
+    ],
+    "notes": "Overseas department of France, uses the Euro."
+  },
+   {
+    "country": "Greenland",
+    "iso": "GL",
+    "institutions": [
+       {
+        "name": "Danmarks Nationalbank (Oversees currency)",
+        "phone": "+45 33 63 63 63",
+        "website": "https://www.nationalbanken.dk/"
+       },
+       {
+        "name": "Bank of Greenland (Grønlandsbanken)",
+        "phone": "+299 70 1234",
+        "website": "https://www.banken.gl/"
+      }
+    ],
+     "notes": "Uses Danish Krone. Limited banking options."
+   },
+  {
+    "country": "Grenada",
+    "iso": "GD",
+    "institutions": [
+      {
+        "name": "Eastern Caribbean Central Bank (Regional Central Bank)",
+        "phone": "+1 869-465-2537",
+        "website": "https://www.eccb-centralbank.org/"
+      },
+      {
+        "name": "Republic Bank (Grenada) Limited",
+        "phone": "+1 473-440-3566",
+        "website": "https://republicbankgrenada.com/"
+      },
+      {
+        "name": "Grenada Co-operative Bank Limited",
+        "phone": "+1 473-440-2111",
+        "website": "https://www.grenadaco-opbank.com/"
+      },
+      {
+        "name": "CIBC FirstCaribbean International Bank",
+        "phone": "+1 473-440-3232",
+        "website": "https://www.cibcfcib.com/"
+      }
+    ],
+    "notes": "Part of the Eastern Caribbean Currency Union (ECCU)."
+  },
+  {
+    "country": "Guadeloupe",
+    "iso": "GP",
+    "institutions": [
+      {
+        "name": "Banque de France (Oversees as part of France)",
+        "phone": "+33 1 42 92 42 92",
+        "website": "https://www.banque-france.fr/"
+      },
+      {
+        "name": "Crédit Agricole Mutuel de Guadeloupe",
+        "phone": "+590 590 90 65 65",
+        "website": "https://www.ca-guadeloupe.fr/"
+      },
+      {
+        "name": "BRED Banque Populaire",
+        "phone": "+590 590 90 61 61",
+        "website": "https://www.bred.fr/outre-mer/guadeloupe"
+      }
+    ],
+     "notes": "Overseas department of France, uses the Euro."
+  },
+  {
+    "country": "Guatemala",
+    "iso": "GT",
+    "institutions": [
+      {
+        "name": "Banco de Guatemala (Central Bank)",
+        "phone": "+502 2429 6000",
+        "website": "https://www.banguat.gob.gt/"
+      },
+      {
+        "name": "Banco Industrial",
+        "phone": "+502 1717",
+        "website": "https://www.bi.com.gt/"
+      },
+      {
+        "name": "Banco G&T Continental",
+        "phone": "+502 1718",
+        "website": "https://www.gytcontinental.com.gt/"
+      },
+      {
+        "name": "Banrural",
+        "phone": "+502 2339 8888",
+        "website": "https://www.banrural.com.gt/"
+      }
+    ]
+  },
+  {
+    "country": "Guyana",
+    "iso": "GY",
+    "institutions": [
+      {
+        "name": "Bank of Guyana (Central Bank)",
+        "phone": "+592 226 3250",
+        "website": "https://bankofguyana.org.gy/"
+      },
+      {
+        "name": "Republic Bank (Guyana) Limited",
+        "phone": "+592 223 4091",
+        "website": "https://republicguyana.com/"
+      },
+      {
+        "name": "Demerara Bank Limited",
+        "phone": "+592 225 0610",
+        "website": "https://www.demerarabank.com/"
+      },
+      {
+        "name": "Guyana Bank for Trade and Industry (GBTI)",
+        "phone": "+592 231 4400",
+        "website": "https://www.gbtibank.com/"
+      }
+    ]
+  },
+  {
+    "country": "Haiti",
+    "iso": "HT",
+    "institutions": [
+      {
+        "name": "Banque de la République d'Haïti (Central Bank)",
+        "phone": "+509 2940 1000",
+        "website": "https://www.brh.ht/"
+      },
+      {
+        "name": "Unibank S.A.",
+        "phone": "+509 2940 1000",
+        "website": "https://www.unibankhaiti.com/"
+      },
+      {
+        "name": "Sogebank",
+        "phone": "+509 2815 5000",
+        "website": "https://www.sogebank.com/"
+      },
+      {
+        "name": "Banque Nationale de Crédit (BNC)",
+        "phone": "+509 2949 4300",
+        "website": "https://www.bnconline.com/"
+      }
+    ]
+  },
+  {
+    "country": "Honduras",
+    "iso": "HN",
+    "institutions": [
+      {
+        "name": "Banco Central de Honduras",
+        "phone": "+504 2266 2200",
+        "website": "https://www.bch.hn/"
+      },
+      {
+        "name": "Banco Atlántida",
+        "phone": "+504 2280 1010",
+        "website": "https://www.bancatlan.hn/"
+      },
+      {
+        "name": "Banco FICOHSA",
+        "phone": "+504 2280 1000",
+        "website": "https://www.ficohsa.com/"
+      },
+      {
+        "name": "Banco BAC Credomatic Honduras",
+        "phone": "+504 2216 0200",
+        "website": "https://www.baccredomatic.com/es-hn/"
+      }
+    ]
+  },
+  {
+    "country": "Jamaica",
+    "iso": "JM",
+    "institutions": [
+      {
+        "name": "Bank of Jamaica (Central Bank)",
+        "phone": "+1 876-922-0750",
+        "website": "https://boj.org.jm/"
+      },
+      {
+        "name": "National Commercial Bank Jamaica (NCB)",
+        "phone": "+1 888-622-3477",
+        "website": "https://www.jncb.com/"
+      },
+      {
+        "name": "Scotiabank Jamaica",
+        "phone": "+1 888-472-6842",
+        "website": "https://jm.scotiabank.com/"
+      },
+      {
+        "name": "Sagicor Bank Jamaica",
+        "phone": "+1 888-724-4267",
+        "website": "https://www.sagicor.com/jm/bank/"
+      }
+    ]
+  },
+  {
+    "country": "Martinique",
+    "iso": "MQ",
+    "institutions": [
+       {
+        "name": "Banque de France (Oversees as part of France)",
+        "phone": "+33 1 42 92 42 92",
+        "website": "https://www.banque-france.fr/"
+      },
+      {
+        "name": "Crédit Agricole Mutuel de Martinique-Guyane",
+        "phone": "+596 596 59 45 45",
+        "website": "https://www.ca-martg.fr/"
+      },
+       {
+        "name": "BRED Banque Populaire",
+        "phone": "+596 596 59 12 12",
+        "website": "https://www.bred.fr/outre-mer/martinique"
+       }
+    ],
+    "notes": "Overseas region of France, uses the Euro."
+  },
+  {
+    "country": "Mexico",
+    "iso": "MX",
+    "institutions": [
+      {
+        "name": "Banco de México",
+        "phone": "+52 55 5237 2000",
+        "website": "https://www.banxico.org.mx/"
+      },
+      {
+        "name": "BBVA México",
+        "phone": "+52 55 5226 2663",
+        "website": "https://www.bbva.mx/"
+      },
+      {
+        "name": "Banorte",
+        "phone": "+52 81 8156 9600",
+        "website": "https://www.banorte.com/"
+      },
+      {
+        "name": "Santander México",
+        "phone": "+52 55 5169 4300",
+        "website": "https://www.santander.com.mx/"
+      }
+    ]
+  },
+   {
+    "country": "Montserrat",
+    "iso": "MS",
+    "institutions": [
+      {
+        "name": "Eastern Caribbean Central Bank (Regional Central Bank)",
+        "phone": "+1 869-465-2537",
+        "website": "https://www.eccb-centralbank.org/"
+      },
+       {
+        "name": "Bank of Montserrat",
+        "phone": "+1 664-491-3843",
+        "website": "https://www.bankofmontserrat.ms/"
+      },
+       {
+        "name": "Royal Bank of Canada (RBC) - Branch",
+        "phone": "+1 664-491-2426",
+        "website": "https://www.rbcroyalbank.com/caribbean/"
+      }
+    ],
+    "notes": "Part of the Eastern Caribbean Currency Union (ECCU)."
+  },
+  {
+    "country": "Nicaragua",
+    "iso": "NI",
+    "institutions": [
+      {
+        "name": "Banco Central de Nicaragua",
+        "phone": "+505 2255 7171",
+        "website": "https://www.bcn.gob.ni/"
+      },
+      {
+        "name": "Banco Lafise Bancentro",
+        "phone": "+505 2255 8888",
+        "website": "https://www.lafise.com/blb/"
+      },
+      {
+        "name": "Banco BAC Credomatic Nicaragua",
+        "phone": "+505 2274 4444",
+        "website": "https://www.baccredomatic.com/es-ni/"
+      },
+      {
+        "name": "Banco Ficohsa Nicaragua",
+        "phone": "+505 2255 8000",
+        "website": "https://www.ficohsa.com.ni/"
+      }
+    ]
+  },
+  {
+    "country": "Panama",
+    "iso": "PA",
+    "institutions": [
+      {
+        "name": "Superintendencia de Bancos de Panamá (Regulator, no traditional Central Bank)",
+        "phone": "+507 506 7800",
+        "website": "https://www.superbancos.gob.pa/"
+      },
+      {
+        "name": "Banco General",
+        "phone": "+507 800 5000",
+        "website": "https://www.bgeneral.com/"
+      },
+      {
+        "name": "Banco Nacional de Panamá",
+        "phone": "+507 505 2000",
+        "website": "https://www.banconal.com.pa/"
+      },
+      {
+        "name": "BAC Credomatic Panama",
+        "phone": "+507 306 2500",
+        "website": "https://www.baccredomatic.com/es-pa/"
+      }
+    ],
+    "notes": "Uses the US Dollar as official currency alongside the Panamanian Balboa (pegged 1:1)."
+  },
+  {
+    "country": "Paraguay",
+    "iso": "PY",
+    "institutions": [
+      {
+        "name": "Banco Central del Paraguay",
+        "phone": "+595 21 608 011",
+        "website": "https://www.bcp.gov.py/"
+      },
+      {
+        "name": "Banco Continental",
+        "phone": "+595 21 419 3000",
+        "website": "https://www.bancontinental.com.py/"
+      },
+      {
+        "name": "Banco Itaú Paraguay",
+        "phone": "+595 21 617 1000",
+        "website": "https://www.itau.com.py/"
+      },
+      {
+        "name": "Banco Regional",
+        "phone": "+595 21 599 1000",
+        "website": "https://www.regional.com.py/"
+      }
+    ]
+  },
+  {
+    "country": "Peru",
+    "iso": "PE",
+    "institutions": [
+      {
+        "name": "Banco Central de Reserva del Perú",
+        "phone": "+51 1 613 2000",
+        "website": "https://www.bcrp.gob.pe/"
+      },
+      {
+        "name": "Banco de Crédito del Perú (BCP)",
+        "phone": "+51 1 311 9898",
+        "website": "https://www.viabcp.com/"
+      },
+      {
+        "name": "BBVA Perú",
+        "phone": "+51 1 595 0000",
+        "website": "https://www.bbva.pe/"
+      },
+      {
+        "name": "Scotiabank Perú",
+        "phone": "+51 1 311 6000",
+        "website": "https://www.scotiabank.com.pe/"
+      }
+    ]
+  },
+  {
+    "country": "Puerto Rico",
+    "iso": "PR",
+    "institutions": [
+      {
+        "name": "Federal Reserve System (Oversees as US territory)",
+        "phone": "+1 202-452-3000",
+        "website": "https://www.federalreserve.gov/"
+      },
+      {
+        "name": "Banco Popular de Puerto Rico",
+        "phone": "+1 787-724-3650",
+        "website": "https://www.popular.com/"
+      },
+      {
+        "name": "FirstBank Puerto Rico",
+        "phone": "+1 787-725-2511",
+        "website": "https://www.1firstbank.com/"
+      },
+      {
+        "name": "Oriental Bank",
+        "phone": "+1 787-620-0000",
+        "website": "https://orientalbank.com/"
+      }
+    ],
+    "notes": "US Territory, uses the US Dollar. Banking system integrated with the US."
+  },
+  {
+    "country": "Saint Kitts and Nevis",
+    "iso": "KN",
+    "institutions": [
+      {
+        "name": "Eastern Caribbean Central Bank (Regional Central Bank)",
+        "phone": "+1 869-465-2537",
+        "website": "https://www.eccb-centralbank.org/"
+      },
+      {
+        "name": "St. Kitts-Nevis-Anguilla National Bank Limited",
+        "phone": "+1 869-465-2204",
+        "website": "https://www.sknanb.com/"
+      },
+      {
+        "name": "CIBC FirstCaribbean International Bank",
+        "phone": "+1 869-465-2245",
+        "website": "https://www.cibcfcib.com/"
+      },
+      {
+        "name": "Republic Bank (EC) Limited",
+        "phone": "+1 869-469-5752 (Nevis Branch)",
+        "website": "https://republicbankec.com/"
+      }
+    ],
+    "notes": "Part of the Eastern Caribbean Currency Union (ECCU)."
+  },
+  {
+    "country": "Saint Lucia",
+    "iso": "LC",
+    "institutions": [
+      {
+        "name": "Eastern Caribbean Central Bank (Regional Central Bank)",
+        "phone": "+1 869-465-2537",
+        "website": "https://www.eccb-centralbank.org/"
+      },
+      {
+        "name": "Bank of Saint Lucia",
+        "phone": "+1 758-456-6000",
+        "website": "https://www.bankofsaintlucia.com/"
+      },
+      {
+        "name": "CIBC FirstCaribbean International Bank",
+        "phone": "+1 758-456-1000",
+        "website": "https://www.cibcfcib.com/"
+      },
+       {
+        "name": "Republic Bank (EC) Limited",
+        "phone": "+1 758-458-4725",
+        "website": "https://republicbankec.com/"
+      }
+    ],
+    "notes": "Part of the Eastern Caribbean Currency Union (ECCU)."
+  },
+  {
+    "country": "Saint Vincent and the Grenadines",
+    "iso": "VC",
+    "institutions": [
+       {
+        "name": "Eastern Caribbean Central Bank (Regional Central Bank)",
+        "phone": "+1 869-465-2537",
+        "website": "https://www.eccb-centralbank.org/"
+      },
+      {
+        "name": "Bank of Saint Vincent & the Grenadines (BOSVG)",
+        "phone": "+1 784-457-1844",
+        "website": "https://bosvg.com/"
+      },
+       {
+        "name": "CIBC FirstCaribbean International Bank",
+        "phone": "+1 784-457-1587",
+        "website": "https://www.cibcfcib.com/"
+      },
+       {
+        "name": "Republic Bank (EC) Limited",
+        "phone": "+1 784-457-2725",
+        "website": "https://republicbankec.com/"
+      }
+    ],
+    "notes": "Part of the Eastern Caribbean Currency Union (ECCU)."
+  },
+  {
+    "country": "Suriname",
+    "iso": "SR",
+    "institutions": [
+      {
+        "name": "Centrale Bank van Suriname",
+        "phone": "+597 473 741",
+        "website": "https://www.cbvs.sr/"
+      },
+      {
+        "name": "De Surinaamsche Bank (DSB)",
+        "phone": "+597 471 100",
+        "website": "https://www.dsbbank.sr/"
+      },
+      {
+        "name": "Republic Bank (Suriname) N.V.",
+        "phone": "+597 477 722",
+        "website": "https://republicbanksr.com/"
+      },
+      {
+        "name": "Hakrinbank N.V.",
+        "phone": "+597 477 722",
+        "website": "https://www.hakrinbank.com/"
+      }
+    ]
+  },
+  {
+    "country": "Trinidad and Tobago",
+    "iso": "TT",
+    "institutions": [
+      {
+        "name": "Central Bank of Trinidad and Tobago",
+        "phone": "+1 868-625-4835",
+        "website": "https://www.central-bank.org.tt/"
+      },
+      {
+        "name": "Republic Bank Limited",
+        "phone": "+1 868-625-4411",
+        "website": "https://www.republictt.com/"
+      },
+      {
+        "name": "First Citizens Bank",
+        "phone": "+1 868-625-2893",
+        "website": "https://www.firstcitizensgroup.com/tt/"
+      },
+      {
+        "name": "Scotiabank Trinidad and Tobago",
+        "phone": "+1 868-627-2684",
+        "website": "https://tt.scotiabank.com/"
+      }
+    ]
+  },
+  {
+    "country": "Turks and Caicos Islands",
+    "iso": "TC",
+    "institutions": [
+      {
+        "name": "Financial Services Commission (Regulator)",
+        "phone": "+1 649-946-5314",
+        "website": "https://tcifsc.tc/"
+      },
+       {
+        "name": "Scotiabank (Turks & Caicos)",
+        "phone": "+1 649-339-7100",
+        "website": "https://tc.scotiabank.com/"
+      },
+       {
+        "name": "CIBC FirstCaribbean International Bank",
+        "phone": "+1 649-946-4245",
+        "website": "https://www.cibcfcib.com/"
+      },
+       {
+        "name": "RBC Royal Bank (Turks & Caicos)",
+        "phone": "+1 649-941-4700",
+        "website": "https://www.rbcroyalbank.com/caribbean/"
+       }
+    ],
+    "notes": "Uses the US Dollar. British Overseas Territory."
+  },
+  {
+    "country": "United States",
+    "iso": "US",
+    "institutions": [
+      {
+        "name": "Federal Reserve System",
+        "phone": "+1 202-452-3000",
+        "website": "https://www.federalreserve.gov/"
+      },
+      {
+        "name": "JPMorgan Chase Bank",
+        "phone": "+1 800-935-9935",
+        "website": "https://www.chase.com/"
+      },
+      {
+        "name": "Bank of America",
+        "phone": "+1 800-432-1000",
+        "website": "https://www.bankofamerica.com/"
+      },
+      {
+        "name": "Wells Fargo Bank",
+        "phone": "+1 800-869-3557",
+        "website": "https://www.wellsfargo.com/"
+      }
+    ]
+  },
+  {
+    "country": "Uruguay",
+    "iso": "UY",
+    "institutions": [
+      {
+        "name": "Banco Central del Uruguay",
+        "phone": "+598 2 1967",
+        "website": "https://www.bcu.gub.uy/"
+      },
+      {
+        "name": "Banco de la República Oriental del Uruguay (BROU)",
+        "phone": "+598 2 1996",
+        "website": "https://www.brou.com.uy/"
+      },
+      {
+        "name": "Banco Santander Uruguay",
+        "phone": "+598 132",
+        "website": "https://www.santander.com.uy/"
+      },
+      {
+        "name": "Banco Itaú Uruguay",
+        "phone": "+598 2 1780",
+        "website": "https://www.itau.com.uy/"
+      }
+    ]
+  },
+  {
+    "country": "Venezuela",
+    "iso": "VE",
+    "institutions": [
+      {
+        "name": "Banco Central de Venezuela",
+        "phone": "+58 212 801 5111",
+        "website": "https://www.bcv.org.ve/"
+      },
+      {
+        "name": "Banco de Venezuela",
+        "phone": "+58 0500 MICLAVE (6425283)",
+        "website": "https://www.bancodevenezuela.com/"
+      },
+      {
+        "name": "Banco Mercantil",
+        "phone": "+58 0500 5032424",
+        "website": "https://www.mercantilbanco.com/"
+      },
+      {
+        "name": "BBVA Provincial",
+        "phone": "+58 0500 5087432",
+        "website": "https://www.provincial.com/"
+      }
+    ]
+  }
+]

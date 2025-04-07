@@ -1,0 +1,483 @@
+[
+  {
+    "country": "Australia",
+    "iso": "AU",
+    "institutions": [
+      {
+        "name": "Reserve Bank of Australia",
+        "phone": "+61 2 9551 8111",
+        "website": "https://www.rba.gov.au/"
+      },
+      {
+        "name": "Commonwealth Bank of Australia (CBA)",
+        "phone": "+61 13 22 21",
+        "website": "https://www.commbank.com.au/"
+      },
+      {
+        "name": "Westpac Banking Corporation",
+        "phone": "+61 13 20 32",
+        "website": "https://www.westpac.com.au/"
+      },
+      {
+        "name": "Australia and New Zealand Banking Group (ANZ)",
+        "phone": "+61 13 13 14",
+        "website": "https://www.anz.com.au/"
+      }
+    ]
+  },
+  {
+    "country": "Cook Islands",
+    "iso": "CK",
+    "institutions": [
+      {
+        "name": "Financial Supervisory Commission (Regulator)",
+        "phone": "+682 29 504",
+        "website": "https://www.fsc.gov.ck/"
+      },
+      {
+        "name": "Bank of the Cook Islands (BCI)",
+        "phone": "+682 29 341",
+        "website": "https://www.bci.co.ck/"
+      },
+      {
+        "name": "ANZ Bank Cook Islands",
+        "phone": "+682 21 750",
+        "website": "https://www.anz.com/cookislands/"
+      },
+      {
+        "name": "BSP Financial Group Limited (Bank South Pacific)",
+        "phone": "+682 22 014",
+        "website": "https://www.bsp.com.ck/"
+      }
+    ],
+    "notes": "Uses the New Zealand Dollar (NZD) alongside the Cook Islands Dollar."
+  },
+   {
+    "country": "Fiji",
+    "iso": "FJ",
+    "institutions": [
+      {
+        "name": "Reserve Bank of Fiji",
+        "phone": "+679 331 3611",
+        "website": "https://www.rbf.gov.fj/"
+      },
+       {
+        "name": "BSP Financial Group Limited (Bank South Pacific) Fiji",
+        "phone": "+679 132 888",
+        "website": "https://www.bsp.com.fj/"
+       },
+       {
+        "name": "ANZ Bank Fiji",
+        "phone": "+679 321 3000",
+        "website": "https://www.anz.com/fiji/"
+       },
+       {
+        "name": "Westpac Fiji",
+        "phone": "+679 132 032",
+        "website": "https://www.westpac.com.fj/"
+       }
+    ]
+  },
+   {
+    "country": "French Polynesia",
+    "iso": "PF",
+    "institutions": [
+       {
+        "name": "Banque de France (Oversees as part of France)",
+        "phone": "+33 1 42 92 42 92",
+        "website": "https://www.banque-france.fr/"
+       },
+       {
+        "name": "Banque SOCREDO",
+        "phone": "+689 40 41 51 23",
+        "website": "https://www.socredo.pf/"
+       },
+       {
+        "name": "Banque de Polynésie (Groupe BPCE)",
+        "phone": "+689 40 46 66 66",
+        "website": "https://www.bpolynesie.pf/"
+       },
+       {
+        "name": "Banque de Tahiti (Groupe BPCE)",
+        "phone": "+689 40 41 70 00",
+        "website": "https://www.bt.pf/"
+       }
+    ],
+     "notes": "French Overseas Collectivity, uses the CFP Franc (XPF), pegged to the Euro."
+   },
+  {
+    "country": "Kiribati",
+    "iso": "KI",
+    "institutions": [
+      {
+        "name": "Ministry of Finance & Economic Development (Oversees banking)",
+        "phone": "+686 7502 1807",
+        "website": "https://www.mfed.gov.ki/"
+      },
+      {
+        "name": "ANZ Bank Kiribati",
+        "phone": "+686 7502 1095",
+        "website": "https://www.anz.com/kiribati/"
+      },
+      {
+        "name": "Development Bank of Kiribati",
+        "phone": "+686 7502 1297",
+        "website": "N/A"
+      }
+    ],
+    "notes": "Uses the Australian Dollar (AUD)."
+  },
+   {
+    "country": "Marshall Islands",
+    "iso": "MH",
+    "institutions": [
+       {
+        "name": "Banking Commission (Regulator)",
+        "phone": "+692 625 3238",
+        "website": "https://www.rmibankingcomm.com/"
+       },
+       {
+        "name": "Bank of Marshall Islands",
+        "phone": "+692 625 3636",
+        "website": "N/A"
+       },
+       {
+        "name": "Bank of Guam (Marshall Islands Branch)",
+        "phone": "+692 625 3322",
+        "website": "https://www.bankofguam.com/"
+       }
+    ],
+     "notes": "Uses the US Dollar."
+   },
+  {
+    "country": "Micronesia, Federated States of",
+    "iso": "FM",
+    "institutions": [
+      {
+        "name": "FSM Banking Board (Regulator)",
+        "phone": "+691 320 2825",
+        "website": "N/A"
+      },
+      {
+        "name": "Bank of the Federated States of Micronesia",
+        "phone": "+691 320 2720",
+        "website": "https://www.bfsm.fm/"
+      },
+      {
+        "name": "Bank of Guam (FSM Branches)",
+        "phone": "+691 320 2520 (Pohnpei)",
+        "website": "https://www.bankofguam.com/"
+      }
+    ],
+    "notes": "Uses the US Dollar."
+  },
+   {
+    "country": "Nauru",
+    "iso": "NR",
+    "institutions": [
+       {
+        "name": "Bendigo and Adelaide Bank Agency (Operated by Republic of Nauru Finance Corporation)",
+        "phone": "+674 557 3133",
+        "website": "https://www.bendigobank.com.au/locate-us/nauru/"
+       }
+    ],
+     "notes": "Uses the Australian Dollar (AUD). Very limited banking services."
+   },
+  {
+    "country": "New Caledonia",
+    "iso": "NC",
+    "institutions": [
+       {
+        "name": "Institut d'Émission d'Outre-Mer (IEOM - Issues currency)",
+        "phone": "+687 27 58 22",
+        "website": "https://www.ieom.fr/"
+       },
+       {
+        "name": "Banque Calédonienne d'Investissement (BCI)",
+        "phone": "+687 25 69 00",
+        "website": "https://www.bci.nc/"
+       },
+       {
+        "name": "Société Générale Calédonienne de Banque (SG CB)",
+        "phone": "+687 25 63 00",
+        "website": "https://particuliers.sgcb.nc/"
+       },
+       {
+        "name": "Banque de Nouvelle-Calédonie (BNC - Groupe BPCE)",
+        "phone": "+687 25 80 00",
+        "website": "https://www.bnc.nc/"
+       }
+    ],
+     "notes": "French sui generis collectivity, uses the CFP Franc (XPF), pegged to the Euro."
+   },
+  {
+    "country": "New Zealand",
+    "iso": "NZ",
+    "institutions": [
+      {
+        "name": "Reserve Bank of New Zealand (Te Pūtea Matua)",
+        "phone": "+64 4 472 2029",
+        "website": "https://www.rbnz.govt.nz/"
+      },
+      {
+        "name": "ANZ Bank New Zealand",
+        "phone": "+64 800 269 296",
+        "website": "https://www.anz.co.nz/"
+      },
+      {
+        "name": "ASB Bank",
+        "phone": "+64 800 803 804",
+        "website": "https://www.asb.co.nz/"
+      },
+      {
+        "name": "Bank of New Zealand (BNZ)",
+        "phone": "+64 800 275 269",
+        "website": "https://www.bnz.co.nz/"
+      }
+    ]
+  },
+   {
+    "country": "Niue",
+    "iso": "NU",
+    "institutions": [
+       {
+        "name": "Government of Niue - Treasury Department",
+        "phone": "+683 4297",
+        "website": "https://www.gov.nu/treasury"
+       },
+       {
+        "name": "Kiwibank Agency (via Treasury/Post Office)",
+        "phone": "N/A",
+        "website": "https://www.kiwibank.co.nz/"
+       }
+    ],
+     "notes": "Uses the New Zealand Dollar (NZD). Very limited banking services."
+   },
+   {
+    "country": "Norfolk Island",
+    "iso": "NF",
+    "institutions": [
+       {
+        "name": "Commonwealth Bank Agency (Operated at Post Office)",
+        "phone": "+672 3 22141",
+        "website": "https://www.commbank.com.au/"
+       }
+    ],
+     "notes": "Australian territory, uses the Australian Dollar (AUD)."
+   },
+  {
+    "country": "Palau",
+    "iso": "PW",
+    "institutions": [
+      {
+        "name": "Palau Financial Institutions Commission (Regulator)",
+        "phone": "+680 488 3021",
+        "website": "N/A"
+      },
+      {
+        "name": "Bank of Guam (Palau Branch)",
+        "phone": "+680 488 2696",
+        "website": "https://www.bankofguam.com/"
+      },
+      {
+        "name": "Bank of Hawaii (Palau Branch)",
+        "phone": "+680 488 2602",
+        "website": "https://www.boh.com/"
+      },
+       {
+        "name": "Palau National Development Bank",
+        "phone": "+680 488 2578",
+        "website": "N/A"
+       }
+    ],
+    "notes": "Uses the US Dollar."
+  },
+  {
+    "country": "Papua New Guinea",
+    "iso": "PG",
+    "institutions": [
+      {
+        "name": "Bank of Papua New Guinea",
+        "phone": "+675 322 7200",
+        "website": "https://www.bankpng.gov.pg/"
+      },
+      {
+        "name": "BSP Financial Group Limited (Bank South Pacific)",
+        "phone": "+675 320 1212 / 7030 1212",
+        "website": "https://www.bsp.com.pg/"
+      },
+      {
+        "name": "Kina Bank",
+        "phone": "+675 308 3800 / 180 1525",
+        "website": "https://www.kinabank.com.pg/"
+      },
+      {
+        "name": "Westpac Bank PNG Limited",
+        "phone": "+675 322 0888",
+        "website": "https://www.westpac.com.pg/"
+      }
+    ]
+  },
+   {
+    "country": "Pitcairn Islands",
+    "iso": "PN",
+    "institutions": [
+       {
+        "name": "Government of Pitcairn Islands - Treasury",
+        "phone": "+64 9 366 0186 (NZ Office)",
+        "website": "https://www.government.pn/"
+       }
+    ],
+     "notes": "British Overseas Territory, uses the New Zealand Dollar (NZD). No local bank; transactions often via NZ or online."
+   },
+  {
+    "country": "Samoa",
+    "iso": "WS",
+    "institutions": [
+      {
+        "name": "Central Bank of Samoa",
+        "phone": "+685 34 100",
+        "website": "https://www.cbs.gov.ws/"
+      },
+      {
+        "name": "ANZ Bank Samoa",
+        "phone": "+685 69 999",
+        "website": "https://www.anz.com/samoa/"
+      },
+      {
+        "name": "BSP Financial Group Limited (Bank South Pacific) Samoa",
+        "phone": "+685 22 422",
+        "website": "https://www.bsp.ws/"
+      },
+      {
+        "name": "National Bank of Samoa",
+        "phone": "+685 22 421",
+        "website": "https://www.nbs.ws/"
+      }
+    ]
+  },
+  {
+    "country": "Solomon Islands",
+    "iso": "SB",
+    "institutions": [
+      {
+        "name": "Central Bank of Solomon Islands",
+        "phone": "+677 21 791",
+        "website": "https://www.cbsi.com.sb/"
+      },
+      {
+        "name": "BSP Financial Group Limited (Bank South Pacific) Solomon Islands",
+        "phone": "+677 21 874",
+        "website": "https://www.bsp.com.sb/"
+      },
+      {
+        "name": "ANZ Bank Solomon Islands",
+        "phone": "+677 21 111",
+        "website": "https://www.anz.com/solomonislands/"
+      },
+       {
+        "name": "Pan Oceanic Bank (POB)",
+        "phone": "+677 27767",
+        "website": "https://pob.com.sb/"
+       }
+    ]
+  },
+   {
+    "country": "Tokelau",
+    "iso": "TK",
+    "institutions": [
+       {
+        "name": "Government of Tokelau - Department of Finance",
+        "phone": "N/A",
+        "website": "https://www.tokelau.org.nz/"
+       }
+    ],
+     "notes": "New Zealand territory, uses the New Zealand Dollar (NZD). No local banks."
+   },
+  {
+    "country": "Tonga",
+    "iso": "TO",
+    "institutions": [
+      {
+        "name": "National Reserve Bank of Tonga",
+        "phone": "+676 24 057",
+        "website": "https://www.reservebank.to/"
+      },
+      {
+        "name": "BSP Financial Group Limited (Bank South Pacific) Tonga",
+        "phone": "+676 23 933",
+        "website": "https://www.bsp.to/"
+      },
+      {
+        "name": "ANZ Bank Tonga",
+        "phone": "+676 20 500",
+        "website": "https://www.anz.com/tonga/"
+      },
+       {
+        "name": "Tonga Development Bank",
+        "phone": "+676 23 333",
+        "website": "https://www.tdb.to/"
+       }
+    ]
+  },
+  {
+    "country": "Tuvalu",
+    "iso": "TV",
+    "institutions": [
+      {
+        "name": "National Bank of Tuvalu",
+        "phone": "+688 20 841",
+        "website": "N/A"
+      },
+       {
+        "name": "Tuvalu Development Bank",
+        "phone": "+688 20 850",
+        "website": "N/A"
+       }
+    ],
+    "notes": "Uses the Australian Dollar (AUD). Very limited banking services."
+  },
+  {
+    "country": "Vanuatu",
+    "iso": "VU",
+    "institutions": [
+      {
+        "name": "Reserve Bank of Vanuatu",
+        "phone": "+678 23 333",
+        "website": "https://www.rbv.gov.vu/"
+      },
+       {
+        "name": "BSP Financial Group Limited (Bank South Pacific) Vanuatu",
+        "phone": "+678 22 084",
+        "website": "https://www.bsp.vu/"
+       },
+       {
+        "name": "ANZ Bank Vanuatu",
+        "phone": "+678 26 355",
+        "website": "https://www.anz.com/vanuatu/"
+       },
+       {
+        "name": "BRED Bank Vanuatu",
+        "phone": "+678 29 111",
+        "website": "https://www.bred.vu/"
+       }
+    ]
+  },
+   {
+    "country": "Wallis and Futuna",
+    "iso": "WF",
+    "institutions": [
+       {
+        "name": "Institut d'Émission d'Outre-Mer (IEOM - Issues currency)",
+        "phone": "+681 72 14 00",
+        "website": "https://www.ieom.fr/"
+       },
+       {
+        "name": "Banque de Wallis et Futuna (BWF - Subsidiary of BNP Paribas)",
+        "phone": "+681 72 17 00",
+        "website": "https://www.bwf.wf/"
+       }
+    ],
+     "notes": "French Overseas Collectivity, uses the CFP Franc (XPF), pegged to the Euro."
+   }
+]

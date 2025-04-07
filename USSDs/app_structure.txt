@@ -1,0 +1,422 @@
+# USSD CODE MANAGER APP - STRUCTURE & DESIGN DOCUMENT
+
+## 1. APP ARCHITECTURE
+
+### 1.1 Folder Structure
+```
+/src
+  /assets            # Images, fonts, and static resources
+  /components        # Reusable UI components
+    /common          # Buttons, inputs, cards, etc.
+    /layouts         # Headers, footers, navigation bars
+  /screens           # Main app screens
+  /navigation        # Navigation configuration
+  /store             # State management (Redux/Context)
+  /services          # API calls, device functions
+  /utils             # Helper functions
+  /hooks             # Custom React hooks
+  /localization      # Translations and language files
+  /theme             # Colors, typography, and global styles
+```
+
+### 1.2 Data Models
+```
+- User
+  - id
+  - name
+  - email
+  - preferences
+  - favoriteCodeIds
+  - recentCodeIds
+  - customCodeIds
+
+- USSD Code
+  - id
+  - category
+  - subcategory
+  - function
+  - code
+  - description
+  - type (universal/carrier_specific/device_specific/regional)
+  - platforms (carriers/devices/regions)
+  - actions (activate/deactivate/check)
+  - notes
+  - userRating
+  - popularity
+
+- Custom Code
+  - id
+  - name
+  - code
+  - description
+  - category
+  - parameters
+  - dateCreated
+  - lastUsed
+```
+
+## 2. SCREENS & COMPONENTS
+
+### 2.1 Main Screens
+1. **Splash Screen**
+   - App logo animation
+   - Version information
+
+2. **Onboarding Screen**
+   - App introduction slides
+   - Permissions request
+   - Device & carrier detection
+
+3. **Home Dashboard**
+   - Quick access shortcuts
+   - Recent codes
+   - Favorite codes
+   - Search bar
+   - Category navigation
+
+4. **Category Browser**
+   - List of all categories
+   - Sub-categories
+   - Filter options
+
+5. **Code List Screen**
+   - List of USSD codes by category/search
+   - Code details preview
+   - Execute code button
+   - Sort/filter options
+
+6. **Code Detail Screen**
+   - Complete code information
+   - Usage instructions
+   - Execution options
+   - Related codes
+   - User feedback/ratings
+
+7. **Carrier Services Screen**
+   - Carrier-specific codes
+   - Balance check
+   - Data plan management
+   - Service subscriptions
+
+8. **Device Diagnostics Screen**
+   - Device information
+   - Network diagnostics
+   - Hardware tests
+   - Brand-specific menus
+
+9. **Emergency Services Screen**
+   - Location-based emergency contacts
+   - Quick-dial buttons
+   - Emergency instructions
+
+10. **Settings Screen**
+    - User preferences
+    - Theme selection
+    - Notifications settings
+    - Backup/restore options
+    - About/Help
+
+11. **Profile Screen**
+    - User information
+    - Usage statistics
+    - Subscription status
+
+12. **Custom Codes Screen**
+    - User-created codes
+    - Code editor
+    - Import/export options
+
+### 2.2 Key Components
+1. **Code Card**
+   - Visual representation of USSD code
+   - Quick execute button
+   - Save/favorite toggle
+   - Description preview
+
+2. **Code Executor**
+   - Code input field with parameter replacement
+   - Execute button
+   - Result display
+   - History log
+
+3. **Category Panel**
+   - Icon
+   - Title
+   - Description
+   - Count badge
+
+4. **Search Component**
+   - Text input
+   - Voice search
+   - Filters dropdown
+   - Recent searches
+
+5. **Bottom Navigation Bar**
+   - Home
+   - Categories
+   - Execute
+   - Emergency
+   - Profile
+
+6. **Notification Cards**
+   - Context-aware suggestions
+   - Alerts for balance/data usage
+   - Tips & tricks
+
+## 3. CORE FUNCTIONS
+
+### 3.1 User Management
+- **userSignUp()**: Register new user
+- **userSignIn()**: Authenticate existing user
+- **updateUserProfile()**: Edit user information
+- **syncUserData()**: Sync across devices
+
+### 3.2 Code Management
+- **fetchCodesByCategory(category)**: Get codes by category
+- **searchCodes(query, filters)**: Search through codes
+- **getRecentCodes()**: Retrieve recently used codes
+- **getFavoriteCodes()**: Get user's favorite codes
+- **saveCustomCode(code)**: Save user-created code
+- **rateCode(codeId, rating)**: Submit user rating
+
+### 3.3 Code Execution
+- **executeCode(code, params)**: Run USSD code
+- **addToHistory(code, result)**: Log executed code
+- **scheduleExecution(code, time)**: Schedule future execution
+- **cancelExecution(id)**: Cancel scheduled execution
+
+### 3.4 Context Awareness
+- **detectCarrier()**: Identify current mobile carrier
+- **detectDevice()**: Identify device model and OS
+- **detectLocation()**: Get user's current location
+- **suggestRelevantCodes()**: Recommend contextual codes
+
+### 3.5 Data Synchronization
+- **syncLocalDatabase()**: Update local code database
+- **backupUserData()**: Save user data to cloud
+- **restoreUserData()**: Restore from backup
+- **exportCustomCodes()**: Export custom codes as file
+
+## 4. USER FLOW
+
+### 4.1 First-time User
+1. Splash Screen → Onboarding
+2. Device detection & permissions
+3. Carrier detection (if applicable)
+4. Home Dashboard introduction
+5. Feature highlight tour
+
+### 4.2 Regular Usage Flow
+1. Home Dashboard (main entry point)
+2. Search or browse categories
+3. Select code from list
+4. View code details
+5. Execute code or save for later
+6. View execution result or return to list
+
+### 4.3 Emergency Flow
+1. Access emergency button (persistent)
+2. Location verification
+3. Display relevant emergency codes
+4. One-tap execution option
+5. Confirmation and execution
+
+### 4.4 Custom Code Creation Flow
+1. Access Custom Codes screen
+2. Select "Create New"
+3. Enter code details and parameters
+4. Test execution
+5. Save and categorize
+
+## 5. UX DESIGN & WIREFRAMES
+
+### 5.1 Design Principles
+- **Accessibility**: Large touch targets, high contrast, voice support
+- **Simplicity**: Minimalist interface with clear hierarchy
+- **Contextual**: Relevant information based on user situation
+- **Educational**: Progressive disclosure of technical information
+- **Trustworthy**: Clear feedback and confirmation for critical actions
+
+### 5.2 Color Scheme
+- **Primary**: #4285F4 (Blue) - Trust, reliability
+- **Secondary**: #34A853 (Green) - Success, execution
+- **Accent**: #FBBC05 (Yellow) - Attention, warnings
+- **Error**: #EA4335 (Red) - Errors, critical information
+- **Background**: #FFFFFF (Light) / #121212 (Dark)
+- **Text**: #202124 (Dark) / #E8EAED (Light)
+
+### 5.3 Typography
+- **Headings**: Roboto Bold (18-24sp)
+- **Body**: Roboto Regular (14-16sp)
+- **Buttons**: Roboto Medium (14-16sp)
+- **Captions**: Roboto Light (12sp)
+- **Code Display**: Roboto Mono (14sp)
+
+### 5.4 Key Screen Wireframes
+
+#### Home Dashboard
+```
+┌─────────────────────────────┐
+│ ┌─────┐   [Search]    ⚙️ 👤 │
+│ │Logo │                     │
+│ └─────┘                     │
+├─────────────────────────────┤
+│ QUICK ACCESS                │
+│ ┌─────┐ ┌─────┐ ┌─────┐    │
+│ │Check│ │Data │ │Voice│    │
+│ │Bal  │ │Plan │ │Mail │    │
+│ └─────┘ └─────┘ └─────┘    │
+├─────────────────────────────┤
+│ CATEGORIES                  │
+│ ┌─────┐ ┌─────┐ ┌─────┐    │
+│ │Call │ │Carr-│ │Device│    │
+│ │Mgmt │ │ier  │ │Diag  │    │
+│ └─────┘ └─────┘ └─────┘    │
+│ ┌─────┐ ┌─────┐ ┌─────┐    │
+│ │Emerg│ │Custom│ │More │    │
+│ │ency │ │Codes│ │     │    │
+│ └─────┘ └─────┘ └─────┘    │
+├─────────────────────────────┤
+│ RECENTLY USED               │
+│ ┌─────────────────────┐    │
+│ │ *123# - Check Bal   │    │
+│ └─────────────────────┘    │
+│ ┌─────────────────────┐    │
+│ │ *131*4# - Data Bal  │    │
+│ └─────────────────────┘    │
+├─────────────────────────────┤
+│ 🏠    📂    📱    🚨    👤  │
+└─────────────────────────────┘
+```
+
+#### Code Executor Screen
+```
+┌─────────────────────────────┐
+│ ← Code Executor        ⋮    │
+├─────────────────────────────┤
+│                             │
+│ USSD CODE                   │
+│ ┌─────────────────────┐    │
+│ │ **21*[number]#      │    │
+│ └─────────────────────┘    │
+│                             │
+│ PARAMETERS                  │
+│ ┌─────────────────────┐    │
+│ │ [number]: +1234567  │    │
+│ └─────────────────────┘    │
+│                             │
+│ DESCRIPTION                 │
+│ Forward all calls to the    │
+│ specified number            │
+│                             │
+│ ┌─────────────────────┐    │
+│ │     EXECUTE CODE    │    │
+│ └─────────────────────┘    │
+│                             │
+│ RESULT                      │
+│ Last executed: 12:45 PM     │
+│ Status: Success             │
+│ Response: Call forwarding   │
+│ activated                   │
+│                             │
+│ [SAVE TO FAVORITES]         │
+│                             │
+└─────────────────────────────┘
+```
+
+#### Category Browser Screen
+```
+┌─────────────────────────────┐
+│ ← Categories           ⋮    │
+├─────────────────────────────┤
+│ [Search Categories]         │
+├─────────────────────────────┤
+│ ┌─────────────────────┐    │
+│ │ 📞 Call Management  >│    │
+│ └─────────────────────┘    │
+│ ┌─────────────────────┐    │
+│ │ 🏢 Carrier Services >│    │
+│ └─────────────────────┘    │
+│ ┌─────────────────────┐    │
+│ │ 📱 Device Diag      >│    │
+│ └─────────────────────┘    │
+│ ┌─────────────────────┐    │
+│ │ 🌎 Regional         >│    │
+│ └─────────────────────┘    │
+│ ┌─────────────────────┐    │
+│ │ 🚨 Emergency        >│    │
+│ └─────────────────────┘    │
+│ ┌─────────────────────┐    │
+│ │ 🛠️ Custom Codes     >│    │
+│ └─────────────────────┘    │
+│                             │
+└─────────────────────────────┘
+```
+
+#### Emergency Services Screen
+```
+┌─────────────────────────────┐
+│        EMERGENCY            │
+├─────────────────────────────┤
+│ YOUR LOCATION               │
+│ 📍 New York, USA            │
+│                             │
+│ LOCAL EMERGENCY NUMBERS     │
+│ ┌───────────────────┐      │
+│ │  CALL 911  [DIAL] │      │
+│ │  All Emergency    │      │
+│ └───────────────────┘      │
+│                             │
+│ ┌───────────────────┐      │
+│ │  POLICE    [DIAL] │      │
+│ │  911              │      │
+│ └───────────────────┘      │
+│                             │
+│ ┌───────────────────┐      │
+│ │  AMBULANCE [DIAL] │      │
+│ │  911              │      │
+│ └───────────────────┘      │
+│                             │
+│ ┌───────────────────┐      │
+│ │  FIRE      [DIAL] │      │
+│ │  911              │      │
+│ └───────────────────┘      │
+│                             │
+│ NOTES                       │
+│ In USA, 911 is used for     │
+│ all emergency services      │
+│                             │
+└─────────────────────────────┘
+```
+
+## 6. IMPLEMENTATION MILESTONES
+
+### Phase 1: Foundation
+- Project setup and architecture
+- Basic navigation and UI components
+- Core screens implementation
+- Local database setup
+
+### Phase 2: Core Functionality
+- USSD code database integration
+- Code execution framework
+- Category browsing and search
+- User preferences
+
+### Phase 3: Advanced Features
+- Carrier and device detection
+- Emergency services integration
+- Custom code creation tools
+- History and favorites
+
+### Phase 4: Polish & Refinement
+- UI/UX refinements
+- Performance optimization
+- Accessibility improvements
+- Analytics integration
+
+### Phase 5: Launch Preparation
+- Comprehensive testing
+- Localization
+- Store listing preparation
+- Marketing materials

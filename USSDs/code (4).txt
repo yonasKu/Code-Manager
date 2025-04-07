@@ -1,0 +1,1678 @@
+[
+  {
+    "country": "Afghanistan",
+    "iso": "AF",
+    "primary": "119",
+    "ambulance": "102",
+    "notes": "119 for Police/Fire. Reliability may vary significantly."
+  },
+  {
+    "country": "Albania",
+    "iso": "AL",
+    "primary": "112",
+    "police": "129",
+    "ambulance": "127",
+    "fire": "128"
+  },
+  {
+    "country": "Algeria",
+    "iso": "DZ",
+    "primary": "14",
+    "police": "17",
+    "ambulance": "14",
+    "fire": "14",
+    "notes": "Police also use 1548 (National Gendarmerie). 14 for Civil Protection (Ambulance/Fire)."
+  },
+  {
+    "country": "American Samoa",
+    "iso": "AS",
+    "primary": "911"
+  },
+  {
+    "country": "Andorra",
+    "iso": "AD",
+    "primary": "112",
+    "police": "110",
+    "ambulance": "118",
+    "fire": "118"
+  },
+  {
+    "country": "Angola",
+    "iso": "AO",
+    "primary": "113",
+    "ambulance": "112",
+    "fire": "115",
+    "notes": "113 Police, 115 Fire, 112 Ambulance."
+  },
+  {
+    "country": "Anguilla",
+    "iso": "AI",
+    "primary": "911"
+  },
+  {
+    "country": "Antigua and Barbuda",
+    "iso": "AG",
+    "primary": "911",
+    "notes": "Also 999."
+  },
+  {
+    "country": "Argentina",
+    "iso": "AR",
+    "primary": "911",
+    "police": "101",
+    "ambulance": "107",
+    "fire": "100",
+    "notes": "911 is being implemented widely, older numbers still exist."
+  },
+  {
+    "country": "Armenia",
+    "iso": "AM",
+    "primary": "911",
+    "police": "102",
+    "ambulance": "103",
+    "fire": "101",
+    "notes": "911/112 connect to a central dispatch."
+  },
+  {
+    "country": "Aruba",
+    "iso": "AW",
+    "primary": "911",
+    "police": "100",
+    "ambulance": "911",
+    "fire": "911"
+  },
+  {
+    "country": "Australia",
+    "iso": "AU",
+    "primary": "000",
+    "notes": "112 works from mobile phones. 106 for TTY service."
+  },
+  {
+    "country": "Austria",
+    "iso": "AT",
+    "primary": "112",
+    "police": "133",
+    "ambulance": "144",
+    "fire": "122"
+  },
+  {
+    "country": "Azerbaijan",
+    "iso": "AZ",
+    "primary": "112",
+    "police": "102",
+    "ambulance": "103",
+    "fire": "101"
+  },
+  {
+    "country": "Bahamas",
+    "iso": "BS",
+    "primary": "911",
+    "notes": "Also 919."
+  },
+  {
+    "country": "Bahrain",
+    "iso": "BH",
+    "primary": "999"
+  },
+  {
+    "country": "Bangladesh",
+    "iso": "BD",
+    "primary": "999"
+  },
+  {
+    "country": "Barbados",
+    "iso": "BB",
+    "primary": "211",
+    "police": "211",
+    "ambulance": "511",
+    "fire": "311"
+  },
+  {
+    "country": "Belarus",
+    "iso": "BY",
+    "primary": "112",
+    "police": "102",
+    "ambulance": "103",
+    "fire": "101"
+  },
+  {
+    "country": "Belgium",
+    "iso": "BE",
+    "primary": "112",
+    "police": "101"
+  },
+  {
+    "country": "Belize",
+    "iso": "BZ",
+    "primary": "911"
+  },
+  {
+    "country": "Benin",
+    "iso": "BJ",
+    "primary": "112",
+    "police": "117",
+    "ambulance": "112",
+    "fire": "118"
+  },
+  {
+    "country": "Bermuda",
+    "iso": "BM",
+    "primary": "911"
+  },
+  {
+    "country": "Bhutan",
+    "iso": "BT",
+    "primary": "112",
+    "police": "113",
+    "ambulance": "112",
+    "fire": "110"
+  },
+  {
+    "country": "Bolivia",
+    "iso": "BO",
+    "primary": "911",
+    "police": "110",
+    "ambulance": "165",
+    "fire": "119",
+    "notes": "911 implementation varies by region."
+  },
+  {
+    "country": "Bosnia and Herzegovina",
+    "iso": "BA",
+    "primary": "112",
+    "police": "122",
+    "ambulance": "124",
+    "fire": "123"
+  },
+  {
+    "country": "Botswana",
+    "iso": "BW",
+    "primary": "911",
+    "police": "999",
+    "ambulance": "997",
+    "fire": "998"
+  },
+  {
+    "country": "Brazil",
+    "iso": "BR",
+    "primary": "190",
+    "police": "190",
+    "ambulance": "192",
+    "fire": "193",
+    "notes": "911 may work in some tourist areas. 112 from mobiles often redirects."
+  },
+  {
+    "country": "British Virgin Islands",
+    "iso": "VG",
+    "primary": "911",
+     "notes": "Also 999."
+  },
+  {
+    "country": "Brunei",
+    "iso": "BN",
+    "primary": "991",
+    "police": "993",
+    "ambulance": "991",
+    "fire": "995"
+  },
+  {
+    "country": "Bulgaria",
+    "iso": "BG",
+    "primary": "112"
+  },
+  {
+    "country": "Burkina Faso",
+    "iso": "BF",
+    "primary": "112",
+    "police": "17",
+    "ambulance": "112",
+    "fire": "18"
+  },
+  {
+    "country": "Burundi",
+    "iso": "BI",
+    "primary": "112",
+    "police": "117",
+    "ambulance": "112",
+    "fire": "118"
+  },
+  {
+    "country": "Cambodia",
+    "iso": "KH",
+    "primary": "117",
+    "police": "117",
+    "ambulance": "119",
+    "fire": "118"
+  },
+  {
+    "country": "Cameroon",
+    "iso": "CM",
+    "primary": "112",
+    "police": "117",
+    "ambulance": "119",
+    "fire": "118"
+  },
+  {
+    "country": "Canada",
+    "iso": "CA",
+    "primary": "911",
+    "notes": "Some remote areas may use local numbers. 112 works from mobile phones."
+  },
+  {
+    "country": "Cape Verde",
+    "iso": "CV",
+    "primary": "112",
+    "police": "132",
+    "ambulance": "130",
+    "fire": "131"
+  },
+  {
+    "country": "Cayman Islands",
+    "iso": "KY",
+    "primary": "911"
+  },
+  {
+    "country": "Central African Republic",
+    "iso": "CF",
+    "primary": "117",
+    "police": "117",
+    "fire": "118"
+  },
+  {
+    "country": "Chad",
+    "iso": "TD",
+    "primary": "17",
+    "police": "17",
+    "fire": "18"
+  },
+  {
+    "country": "Chile",
+    "iso": "CL",
+    "primary": "133",
+    "police": "133",
+    "ambulance": "131",
+    "fire": "132",
+    "notes": "911 often redirects."
+  },
+  {
+    "country": "China",
+    "iso": "CN",
+    "primary": "110",
+    "police": "110",
+    "ambulance": "120",
+    "fire": "119"
+  },
+  {
+    "country": "Christmas Island",
+    "iso": "CX",
+    "primary": "000"
+  },
+  {
+    "country": "Cocos (Keeling) Islands",
+    "iso": "CC",
+    "primary": "000"
+  },
+  {
+    "country": "Colombia",
+    "iso": "CO",
+    "primary": "123"
+  },
+  {
+    "country": "Comoros",
+    "iso": "KM",
+    "primary": "17",
+    "police": "17",
+    "ambulance": "772-03-73",
+    "fire": "18",
+    "notes": "Ambulance number is a standard phone number, reliability may vary."
+  },
+  {
+    "country": "Congo, Democratic Republic of the",
+    "iso": "CD",
+    "primary": "112",
+    "police": "112",
+    "ambulance": "N/A",
+    "fire": "118"
+  },
+  {
+    "country": "Congo, Republic of the",
+    "iso": "CG",
+    "primary": "117",
+    "police": "117",
+    "ambulance": "118",
+    "fire": "118"
+  },
+  {
+    "country": "Cook Islands",
+    "iso": "CK",
+    "primary": "999",
+    "police": "999",
+    "ambulance": "998",
+    "fire": "996"
+  },
+  {
+    "country": "Costa Rica",
+    "iso": "CR",
+    "primary": "911"
+  },
+  {
+    "country": "Croatia",
+    "iso": "HR",
+    "primary": "112",
+    "police": "192",
+    "ambulance": "194",
+    "fire": "193"
+  },
+  {
+    "country": "Cuba",
+    "iso": "CU",
+    "primary": "106",
+    "police": "106",
+    "ambulance": "104",
+    "fire": "105"
+  },
+  {
+    "country": "Curaçao",
+    "iso": "CW",
+    "primary": "911",
+    "police": "911",
+    "ambulance": "912",
+    "fire": "911"
+  },
+  {
+    "country": "Cyprus",
+    "iso": "CY",
+    "primary": "112",
+    "notes": "Also 199."
+  },
+  {
+    "country": "Czech Republic",
+    "iso": "CZ",
+    "primary": "112",
+    "police": "158",
+    "ambulance": "155",
+    "fire": "150"
+  },
+  {
+    "country": "Denmark",
+    "iso": "DK",
+    "primary": "112",
+    "police": "114 (non-emergency)"
+  },
+  {
+    "country": "Djibouti",
+    "iso": "DJ",
+    "primary": "17",
+    "police": "17",
+    "ambulance": "19",
+    "fire": "18"
+  },
+  {
+    "country": "Dominica",
+    "iso": "DM",
+    "primary": "911"
+  },
+  {
+    "country": "Dominican Republic",
+    "iso": "DO",
+    "primary": "911"
+  },
+  {
+    "country": "East Timor (Timor-Leste)",
+    "iso": "TL",
+    "primary": "112"
+  },
+  {
+    "country": "Ecuador",
+    "iso": "EC",
+    "primary": "911"
+  },
+  {
+    "country": "Egypt",
+    "iso": "EG",
+    "primary": "122",
+    "police": "122",
+    "ambulance": "123",
+    "fire": "180"
+  },
+  {
+    "country": "El Salvador",
+    "iso": "SV",
+    "primary": "911"
+  },
+  {
+    "country": "Equatorial Guinea",
+    "iso": "GQ",
+    "primary": "112",
+    "police": "114",
+    "ambulance": "112",
+    "fire": "115"
+  },
+  {
+    "country": "Eritrea",
+    "iso": "ER",
+    "primary": "114",
+    "police": "113",
+    "ambulance": "114",
+    "fire": "116"
+  },
+  {
+    "country": "Estonia",
+    "iso": "EE",
+    "primary": "112"
+  },
+  {
+    "country": "Eswatini (formerly Swaziland)",
+    "iso": "SZ",
+    "primary": "999",
+    "police": "999",
+    "ambulance": "977",
+    "fire": "933"
+  },
+  {
+    "country": "Ethiopia",
+    "iso": "ET",
+    "primary": "911",
+    "police": "991",
+    "ambulance": "907",
+    "fire": "939"
+  },
+  {
+    "country": "Falkland Islands",
+    "iso": "FK",
+    "primary": "999"
+  },
+  {
+    "country": "Faroe Islands",
+    "iso": "FO",
+    "primary": "112"
+  },
+  {
+    "country": "Fiji",
+    "iso": "FJ",
+    "primary": "911",
+    "police": "917",
+    "ambulance": "911",
+    "fire": "910"
+  },
+  {
+    "country": "Finland",
+    "iso": "FI",
+    "primary": "112"
+  },
+  {
+    "country": "France",
+    "iso": "FR",
+    "primary": "112",
+    "police": "17",
+    "ambulance": "15",
+    "fire": "18"
+  },
+  {
+    "country": "French Guiana",
+    "iso": "GF",
+    "primary": "112",
+    "police": "17",
+    "ambulance": "15",
+    "fire": "18"
+  },
+  {
+    "country": "French Polynesia",
+    "iso": "PF",
+    "primary": "112",
+    "police": "17",
+    "ambulance": "15",
+    "fire": "18"
+  },
+  {
+    "country": "Gabon",
+    "iso": "GA",
+    "primary": "1730",
+    "police": "1730",
+    "ambulance": "1300",
+    "fire": "18"
+  },
+  {
+    "country": "Gambia",
+    "iso": "GM",
+    "primary": "112",
+    "police": "117",
+    "ambulance": "116",
+    "fire": "118"
+  },
+  {
+    "country": "Georgia",
+    "iso": "GE",
+    "primary": "112"
+  },
+  {
+    "country": "Germany",
+    "iso": "DE",
+    "primary": "112",
+    "police": "110"
+  },
+  {
+    "country": "Ghana",
+    "iso": "GH",
+    "primary": "112",
+    "police": "191 or 18555",
+    "ambulance": "193",
+    "fire": "192"
+  },
+  {
+    "country": "Gibraltar",
+    "iso": "GI",
+    "primary": "112",
+    "notes": "Also 999."
+  },
+  {
+    "country": "Greece",
+    "iso": "GR",
+    "primary": "112",
+    "police": "100",
+    "ambulance": "166",
+    "fire": "199"
+  },
+  {
+    "country": "Greenland",
+    "iso": "GL",
+    "primary": "112"
+  },
+  {
+    "country": "Grenada",
+    "iso": "GD",
+    "primary": "911"
+  },
+  {
+    "country": "Guadeloupe",
+    "iso": "GP",
+    "primary": "112",
+    "police": "17",
+    "ambulance": "15",
+    "fire": "18"
+  },
+  {
+    "country": "Guam",
+    "iso": "GU",
+    "primary": "911"
+  },
+  {
+    "country": "Guatemala",
+    "iso": "GT",
+    "primary": "110",
+    "police": "110",
+    "ambulance": "122 / 123",
+    "fire": "122 / 123"
+  },
+  {
+    "country": "Guernsey",
+    "iso": "GG",
+    "primary": ["999", "112"]
+  },
+  {
+    "country": "Guinea",
+    "iso": "GN",
+    "primary": "117",
+    "police": "117",
+    "ambulance": "18",
+    "fire": "18"
+  },
+  {
+    "country": "Guinea-Bissau",
+    "iso": "GW",
+    "primary": "112",
+    "police": "117",
+    "ambulance": "119",
+    "fire": "118"
+  },
+  {
+    "country": "Guyana",
+    "iso": "GY",
+    "primary": "911",
+    "police": "911",
+    "ambulance": "913",
+    "fire": "912"
+  },
+  {
+    "country": "Haiti",
+    "iso": "HT",
+    "primary": "114",
+    "police": "114",
+    "ambulance": "116",
+    "fire": "115"
+  },
+  {
+    "country": "Honduras",
+    "iso": "HN",
+    "primary": "911"
+  },
+  {
+    "country": "Hong Kong",
+    "iso": "HK",
+    "primary": "999",
+    "notes": "112 works from mobile phones."
+  },
+  {
+    "country": "Hungary",
+    "iso": "HU",
+    "primary": "112",
+    "police": "107",
+    "ambulance": "104",
+    "fire": "105"
+  },
+  {
+    "country": "Iceland",
+    "iso": "IS",
+    "primary": "112"
+  },
+  {
+    "country": "India",
+    "iso": "IN",
+    "primary": "112",
+    "police": "100",
+    "ambulance": "102 / 108",
+    "fire": "101",
+    "notes": "112 is the integrated number being rolled out. Older numbers still widely used."
+  },
+  {
+    "country": "Indonesia",
+    "iso": "ID",
+    "primary": "112",
+    "police": "110",
+    "ambulance": "118 / 119",
+    "fire": "113"
+  },
+  {
+    "country": "Iran",
+    "iso": "IR",
+    "primary": "110",
+    "police": "110",
+    "ambulance": "115",
+    "fire": "125"
+  },
+  {
+    "country": "Iraq",
+    "iso": "IQ",
+    "primary": "112",
+    "police": "104",
+    "ambulance": "122",
+    "fire": "115"
+  },
+  {
+    "country": "Ireland",
+    "iso": "IE",
+    "primary": ["999", "112"]
+  },
+  {
+    "country": "Isle of Man",
+    "iso": "IM",
+    "primary": ["999", "112"]
+  },
+  {
+    "country": "Israel",
+    "iso": "IL",
+    "primary": "100",
+    "police": "100",
+    "ambulance": "101",
+    "fire": "102"
+  },
+  {
+    "country": "Italy",
+    "iso": "IT",
+    "primary": "112",
+    "police": "113",
+    "ambulance": "118",
+    "fire": "115",
+    "notes": "112 is the single European number, others are being phased into it."
+  },
+  {
+    "country": "Ivory Coast (Côte d'Ivoire)",
+    "iso": "CI",
+    "primary": "110/111/170",
+    "police": "110/111/170",
+    "ambulance": "185",
+    "fire": "180"
+  },
+  {
+    "country": "Jamaica",
+    "iso": "JM",
+    "primary": "119",
+    "police": "119",
+    "ambulance": "110",
+    "fire": "110"
+  },
+  {
+    "country": "Japan",
+    "iso": "JP",
+    "primary": "110",
+    "police": "110",
+    "ambulance": "119",
+    "fire": "119"
+  },
+  {
+    "country": "Jersey",
+    "iso": "JE",
+    "primary": ["999", "112"]
+  },
+  {
+    "country": "Jordan",
+    "iso": "JO",
+    "primary": "911"
+  },
+  {
+    "country": "Kazakhstan",
+    "iso": "KZ",
+    "primary": "112",
+    "police": "102",
+    "ambulance": "103",
+    "fire": "101"
+  },
+  {
+    "country": "Kenya",
+    "iso": "KE",
+    "primary": "999",
+    "notes": "112 also works from mobile phones."
+  },
+  {
+    "country": "Kiribati",
+    "iso": "KI",
+    "primary": "999",
+    "police": "992",
+    "ambulance": "994",
+    "fire": "993"
+  },
+  {
+    "country": "Kosovo",
+    "iso": "XK",
+    "primary": "112",
+    "police": "192",
+    "ambulance": "194",
+    "fire": "193"
+  },
+  {
+    "country": "Kuwait",
+    "iso": "KW",
+    "primary": "112"
+  },
+  {
+    "country": "Kyrgyzstan",
+    "iso": "KG",
+    "primary": "112",
+    "police": "102",
+    "ambulance": "103",
+    "fire": "101"
+  },
+  {
+    "country": "Laos",
+    "iso": "LA",
+    "primary": "191",
+    "police": "191",
+    "ambulance": "195",
+    "fire": "190"
+  },
+  {
+    "country": "Latvia",
+    "iso": "LV",
+    "primary": "112",
+    "police": "110",
+    "ambulance": "113"
+  },
+  {
+    "country": "Lebanon",
+    "iso": "LB",
+    "primary": "112",
+    "police": "112",
+    "ambulance": "140 (Red Cross)",
+    "fire": "175"
+  },
+  {
+    "country": "Lesotho",
+    "iso": "LS",
+    "primary": "112",
+    "police": "123",
+    "ambulance": "121",
+    "fire": "122"
+  },
+  {
+    "country": "Liberia",
+    "iso": "LR",
+    "primary": "911"
+  },
+  {
+    "country": "Libya",
+    "iso": "LY",
+    "primary": "191",
+    "police": "193",
+    "ambulance": "190",
+    "fire": "191"
+  },
+  {
+    "country": "Liechtenstein",
+    "iso": "LI",
+    "primary": "112",
+    "police": "117",
+    "ambulance": "144",
+    "fire": "118"
+  },
+  {
+    "country": "Lithuania",
+    "iso": "LT",
+    "primary": "112"
+  },
+  {
+    "country": "Luxembourg",
+    "iso": "LU",
+    "primary": "112",
+    "police": "113"
+  },
+  {
+    "country": "Macau",
+    "iso": "MO",
+    "primary": ["999", "110", "112"]
+  },
+  {
+    "country": "Madagascar",
+    "iso": "MG",
+    "primary": "117",
+    "police": "117",
+    "ambulance": "118",
+    "fire": "118"
+  },
+  {
+    "country": "Malawi",
+    "iso": "MW",
+    "primary": "999",
+    "police": "997",
+    "ambulance": "998",
+    "fire": "999"
+  },
+  {
+    "country": "Malaysia",
+    "iso": "MY",
+    "primary": "999",
+    "notes": "112 works from mobile phones."
+  },
+  {
+    "country": "Maldives",
+    "iso": "MV",
+    "primary": "119",
+    "police": "119",
+    "ambulance": "102",
+    "fire": "118"
+  },
+  {
+    "country": "Mali",
+    "iso": "ML",
+    "primary": "17",
+    "police": "17",
+    "ambulance": "15",
+    "fire": "18"
+  },
+  {
+    "country": "Malta",
+    "iso": "MT",
+    "primary": "112"
+  },
+  {
+    "country": "Marshall Islands",
+    "iso": "MH",
+    "primary": "911"
+  },
+  {
+    "country": "Martinique",
+    "iso": "MQ",
+    "primary": "112",
+    "police": "17",
+    "ambulance": "15",
+    "fire": "18"
+  },
+  {
+    "country": "Mauritania",
+    "iso": "MR",
+    "primary": "117",
+    "police": "117",
+    "ambulance": "101",
+    "fire": "118"
+  },
+  {
+    "country": "Mauritius",
+    "iso": "MU",
+    "primary": "999",
+    "police": "999 / 112",
+    "ambulance": "114",
+    "fire": "115 / 995"
+  },
+  {
+    "country": "Mayotte",
+    "iso": "YT",
+    "primary": "112",
+    "police": "17",
+    "ambulance": "15",
+    "fire": "18"
+  },
+  {
+    "country": "Mexico",
+    "iso": "MX",
+    "primary": "911"
+  },
+  {
+    "country": "Micronesia, Federated States of",
+    "iso": "FM",
+    "primary": "911"
+  },
+  {
+    "country": "Moldova",
+    "iso": "MD",
+    "primary": "112"
+  },
+  {
+    "country": "Monaco",
+    "iso": "MC",
+    "primary": "112",
+    "police": "17",
+    "ambulance": "18",
+    "fire": "18"
+  },
+  {
+    "country": "Mongolia",
+    "iso": "MN",
+    "primary": "105",
+    "police": "102",
+    "ambulance": "103",
+    "fire": "101"
+  },
+  {
+    "country": "Montenegro",
+    "iso": "ME",
+    "primary": "112",
+    "police": "122",
+    "ambulance": "124",
+    "fire": "123"
+  },
+  {
+    "country": "Montserrat",
+    "iso": "MS",
+    "primary": "911",
+    "notes": "Also 999."
+  },
+  {
+    "country": "Morocco",
+    "iso": "MA",
+    "primary": "190",
+    "police": "190 (Urban) / 177 (Rural)",
+    "ambulance": "150",
+    "fire": "150"
+  },
+  {
+    "country": "Mozambique",
+    "iso": "MZ",
+    "primary": "112",
+    "police": "119",
+    "ambulance": "117",
+    "fire": "198"
+  },
+  {
+    "country": "Myanmar (Burma)",
+    "iso": "MM",
+    "primary": "999",
+    "police": "199",
+    "ambulance": "192",
+    "fire": "191"
+  },
+  {
+    "country": "Namibia",
+    "iso": "NA",
+    "primary": "112",
+    "police": "10111"
+  },
+  {
+    "country": "Nauru",
+    "iso": "NR",
+    "primary": "111",
+    "police": "110",
+    "ambulance": "111",
+    "fire": "112"
+  },
+  {
+    "country": "Nepal",
+    "iso": "NP",
+    "primary": "100",
+    "police": "100",
+    "ambulance": "102",
+    "fire": "101"
+  },
+  {
+    "country": "Netherlands",
+    "iso": "NL",
+    "primary": "112",
+    "police": "0900-8844 (non-emergency)"
+  },
+  {
+    "country": "New Caledonia",
+    "iso": "NC",
+    "primary": "112",
+    "police": "17",
+    "ambulance": "15",
+    "fire": "18"
+  },
+  {
+    "country": "New Zealand",
+    "iso": "NZ",
+    "primary": "111",
+    "notes": "105 for non-emergency police."
+  },
+  {
+    "country": "Nicaragua",
+    "iso": "NI",
+    "primary": "118",
+    "police": "118",
+    "ambulance": "128",
+    "fire": "115 / 911"
+  },
+  {
+    "country": "Niger",
+    "iso": "NE",
+    "primary": "17",
+    "police": "17",
+    "ambulance": "15",
+    "fire": "18"
+  },
+  {
+    "country": "Nigeria",
+    "iso": "NG",
+    "primary": "112"
+  },
+  {
+    "country": "Niue",
+    "iso": "NU",
+    "primary": "999"
+  },
+  {
+    "country": "Norfolk Island",
+    "iso": "NF",
+    "primary": "911"
+  },
+  {
+    "country": "North Korea",
+    "iso": "KP",
+    "primary": "112",
+    "police": "110",
+    "ambulance": "119",
+    "fire": "119",
+    "notes": "Accessibility and reliability are questionable."
+  },
+  {
+    "country": "North Macedonia",
+    "iso": "MK",
+    "primary": "112",
+    "police": "192",
+    "ambulance": "194",
+    "fire": "193"
+  },
+  {
+    "country": "Northern Mariana Islands",
+    "iso": "MP",
+    "primary": "911"
+  },
+  {
+    "country": "Norway",
+    "iso": "NO",
+    "primary": "112",
+    "police": "112",
+    "ambulance": "113",
+    "fire": "110"
+  },
+  {
+    "country": "Oman",
+    "iso": "OM",
+    "primary": "9999"
+  },
+  {
+    "country": "Pakistan",
+    "iso": "PK",
+    "primary": "1122",
+    "police": "15",
+    "ambulance": "115 / 1122",
+    "fire": "16 / 1122",
+    "notes": "1122 (Rescue 1122) is common in Punjab and other areas."
+  },
+  {
+    "country": "Palau",
+    "iso": "PW",
+    "primary": "911"
+  },
+  {
+    "country": "Palestine",
+    "iso": "PS",
+    "primary": "100",
+    "police": "100",
+    "ambulance": "101",
+    "fire": "102"
+  },
+  {
+    "country": "Panama",
+    "iso": "PA",
+    "primary": "911"
+  },
+  {
+    "country": "Papua New Guinea",
+    "iso": "PG",
+    "primary": "111",
+    "police": "112",
+    "ambulance": "111",
+    "fire": "110"
+  },
+  {
+    "country": "Paraguay",
+    "iso": "PY",
+    "primary": "911"
+  },
+  {
+    "country": "Peru",
+    "iso": "PE",
+    "primary": "112",
+    "police": "105",
+    "ambulance": "106",
+    "fire": "116",
+    "notes": "911 often redirects to 112 or 105."
+  },
+  {
+    "country": "Philippines",
+    "iso": "PH",
+    "primary": "911"
+  },
+  {
+    "country": "Pitcairn Islands",
+    "iso": "PN",
+    "primary": "N/A",
+    "notes": "No standard emergency number; contact local authorities directly."
+  },
+  {
+    "country": "Poland",
+    "iso": "PL",
+    "primary": "112",
+    "police": "997",
+    "ambulance": "999",
+    "fire": "998"
+  },
+  {
+    "country": "Portugal",
+    "iso": "PT",
+    "primary": "112"
+  },
+  {
+    "country": "Puerto Rico",
+    "iso": "PR",
+    "primary": "911"
+  },
+  {
+    "country": "Qatar",
+    "iso": "QA",
+    "primary": "999"
+  },
+  {
+    "country": "Réunion",
+    "iso": "RE",
+    "primary": "112",
+    "police": "17",
+    "ambulance": "15",
+    "fire": "18"
+  },
+  {
+    "country": "Romania",
+    "iso": "RO",
+    "primary": "112"
+  },
+  {
+    "country": "Russia",
+    "iso": "RU",
+    "primary": "112",
+    "police": "102",
+    "ambulance": "103",
+    "fire": "101"
+  },
+  {
+    "country": "Rwanda",
+    "iso": "RW",
+    "primary": "112",
+    "police": "112",
+    "ambulance": "912",
+    "fire": "111"
+  },
+  {
+    "country": "Saint Barthélemy",
+    "iso": "BL",
+    "primary": "112",
+    "police": "17",
+    "ambulance": "15",
+    "fire": "18"
+  },
+  {
+    "country": "Saint Helena",
+    "iso": "SH",
+    "primary": "999"
+  },
+  {
+    "country": "Saint Kitts and Nevis",
+    "iso": "KN",
+    "primary": "911"
+  },
+  {
+    "country": "Saint Lucia",
+    "iso": "LC",
+    "primary": "911",
+    "notes": "Also 999."
+  },
+  {
+    "country": "Saint Martin",
+    "iso": "MF",
+    "primary": "112",
+    "police": "17",
+    "ambulance": "15",
+    "fire": "18"
+  },
+  {
+    "country": "Saint Pierre and Miquelon",
+    "iso": "PM",
+    "primary": "112",
+    "police": "17",
+    "ambulance": "15",
+    "fire": "18"
+  },
+  {
+    "country": "Saint Vincent and the Grenadines",
+    "iso": "VC",
+    "primary": "911",
+    "notes": "Also 999."
+  },
+  {
+    "country": "Samoa",
+    "iso": "WS",
+    "primary": "911",
+    "police": "995",
+    "ambulance": "996",
+    "fire": "994"
+  },
+  {
+    "country": "San Marino",
+    "iso": "SM",
+    "primary": "112",
+    "police": "113",
+    "ambulance": "118",
+    "fire": "115"
+  },
+  {
+    "country": "Sao Tome and Principe",
+    "iso": "ST",
+    "primary": "112"
+  },
+  {
+    "country": "Saudi Arabia",
+    "iso": "SA",
+    "primary": "911",
+    "police": "999",
+    "ambulance": "997",
+    "fire": "998",
+    "notes": "911 is being rolled out, older numbers still work."
+  },
+  {
+    "country": "Senegal",
+    "iso": "SN",
+    "primary": "17",
+    "police": "17",
+    "ambulance": "15",
+    "fire": "18"
+  },
+  {
+    "country": "Serbia",
+    "iso": "RS",
+    "primary": "112",
+    "police": "192",
+    "ambulance": "194",
+    "fire": "193"
+  },
+  {
+    "country": "Seychelles",
+    "iso": "SC",
+    "primary": ["999", "112"]
+  },
+  {
+    "country": "Sierra Leone",
+    "iso": "SL",
+    "primary": "112",
+    "police": "019 / 999",
+    "ambulance": "999",
+    "fire": "019"
+  },
+  {
+    "country": "Singapore",
+    "iso": "SG",
+    "primary": "999",
+    "police": "999",
+    "ambulance": "995",
+    "fire": "995"
+  },
+  {
+    "country": "Sint Maarten",
+    "iso": "SX",
+    "primary": "911",
+    "police": "911",
+    "ambulance": "912",
+    "fire": "919"
+  },
+  {
+    "country": "Slovakia",
+    "iso": "SK",
+    "primary": "112",
+    "police": "158",
+    "ambulance": "155",
+    "fire": "150"
+  },
+  {
+    "country": "Slovenia",
+    "iso": "SI",
+    "primary": "112",
+    "police": "113"
+  },
+  {
+    "country": "Solomon Islands",
+    "iso": "SB",
+    "primary": "999",
+    "police": "999",
+    "ambulance": "911",
+    "fire": "988"
+  },
+  {
+    "country": "Somalia",
+    "iso": "SO",
+    "primary": "888 / 999",
+    "police": "888",
+    "ambulance": "999",
+    "fire": "555",
+    "notes": "Numbers and reliability vary greatly by region."
+  },
+  {
+    "country": "South Africa",
+    "iso": "ZA",
+    "primary": "10111",
+    "police": "10111",
+    "ambulance": "10177",
+    "fire": "10177",
+    "notes": "112 works from mobile phones and connects to call centre."
+  },
+  {
+    "country": "South Korea",
+    "iso": "KR",
+    "primary": "119",
+    "police": "112",
+    "ambulance": "119",
+    "fire": "119"
+  },
+  {
+    "country": "South Sudan",
+    "iso": "SS",
+    "primary": "999"
+  },
+  {
+    "country": "Spain",
+    "iso": "ES",
+    "primary": "112",
+    "police": "091 (National) / 092 (Local)",
+    "ambulance": "061",
+    "fire": "080 / 085"
+  },
+  {
+    "country": "Sri Lanka",
+    "iso": "LK",
+    "primary": "119",
+    "police": "119",
+    "ambulance": "1990",
+    "fire": "110"
+  },
+  {
+    "country": "Sudan",
+    "iso": "SD",
+    "primary": "999"
+  },
+  {
+    "country": "Suriname",
+    "iso": "SR",
+    "primary": "115",
+    "police": "115",
+    "ambulance": "113",
+    "fire": "110"
+  },
+  {
+    "country": "Svalbard and Jan Mayen",
+    "iso": "SJ",
+    "primary": "112",
+    "police": "112",
+    "ambulance": "113",
+    "fire": "110"
+  },
+  {
+    "country": "Sweden",
+    "iso": "SE",
+    "primary": "112",
+    "police": "114 14 (non-emergency)"
+  },
+  {
+    "country": "Switzerland",
+    "iso": "CH",
+    "primary": "112",
+    "police": "117",
+    "ambulance": "144",
+    "fire": "118"
+  },
+  {
+    "country": "Syria",
+    "iso": "SY",
+    "primary": "112",
+    "police": "112",
+    "ambulance": "110",
+    "fire": "113"
+  },
+  {
+    "country": "Taiwan",
+    "iso": "TW",
+    "primary": "119",
+    "police": "110",
+    "ambulance": "119",
+    "fire": "119"
+  },
+  {
+    "country": "Tajikistan",
+    "iso": "TJ",
+    "primary": "112",
+    "police": "102",
+    "ambulance": "103",
+    "fire": "101"
+  },
+  {
+    "country": "Tanzania",
+    "iso": "TZ",
+    "primary": "112"
+  },
+  {
+    "country": "Thailand",
+    "iso": "TH",
+    "primary": "191",
+    "police": "191",
+    "ambulance": "1669",
+    "fire": "199"
+  },
+  {
+    "country": "Togo",
+    "iso": "TG",
+    "primary": "117",
+    "police": "117",
+    "ambulance": "8200",
+    "fire": "118"
+  },
+  {
+    "country": "Tokelau",
+    "iso": "TK",
+    "primary": "N/A",
+     "notes": "Contact local station."
+  },
+  {
+    "country": "Tonga",
+    "iso": "TO",
+    "primary": "911"
+  },
+  {
+    "country": "Trinidad and Tobago",
+    "iso": "TT",
+    "primary": "999",
+    "police": "999",
+    "ambulance": "811",
+    "fire": "990"
+  },
+  {
+    "country": "Tunisia",
+    "iso": "TN",
+    "primary": "197",
+    "police": "197",
+    "ambulance": "190",
+    "fire": "198"
+  },
+  {
+    "country": "Turkey",
+    "iso": "TR",
+    "primary": "112"
+  },
+  {
+    "country": "Turkmenistan",
+    "iso": "TM",
+    "primary": "112",
+    "police": "102",
+    "ambulance": "103",
+    "fire": "101"
+  },
+  {
+    "country": "Turks and Caicos Islands",
+    "iso": "TC",
+    "primary": "911",
+    "notes": "Also 999."
+  },
+  {
+    "country": "Tuvalu",
+    "iso": "TV",
+    "primary": "911"
+  },
+  {
+    "country": "Uganda",
+    "iso": "UG",
+    "primary": "112",
+    "police": "999",
+    "ambulance": "112",
+    "fire": "999"
+  },
+  {
+    "country": "Ukraine",
+    "iso": "UA",
+    "primary": "112",
+    "police": "102",
+    "ambulance": "103",
+    "fire": "101"
+  },
+  {
+    "country": "United Arab Emirates",
+    "iso": "AE",
+    "primary": "999",
+    "police": "999",
+    "ambulance": "998",
+    "fire": "997"
+  },
+  {
+    "country": "United Kingdom",
+    "iso": "GB",
+    "primary": ["999", "112"],
+    "notes": "101 for non-emergency police."
+  },
+  {
+    "country": "United States",
+    "iso": "US",
+    "primary": "911",
+    "notes": "112 often works from mobile phones."
+  },
+  {
+    "country": "Uruguay",
+    "iso": "UY",
+    "primary": "911"
+  },
+  {
+    "country": "Uzbekistan",
+    "iso": "UZ",
+    "primary": "112",
+    "police": "102",
+    "ambulance": "103",
+    "fire": "101"
+  },
+  {
+    "country": "Vanuatu",
+    "iso": "VU",
+    "primary": "112"
+  },
+  {
+    "country": "Vatican City",
+    "iso": "VA",
+    "primary": "112",
+    "police": "113",
+    "ambulance": "118",
+    "fire": "115"
+  },
+  {
+    "country": "Venezuela",
+    "iso": "VE",
+    "primary": "911"
+  },
+  {
+    "country": "Vietnam",
+    "iso": "VN",
+    "primary": "113",
+    "police": "113",
+    "ambulance": "115",
+    "fire": "114"
+  },
+  {
+    "country": "Wallis and Futuna",
+    "iso": "WF",
+    "primary": "112",
+    "police": "17",
+    "ambulance": "15",
+    "fire": "18"
+  },
+  {
+    "country": "Western Sahara",
+    "iso": "EH",
+    "primary": "150",
+    "police": "190 / 177",
+    "fire": "150",
+    "notes": "Uses Moroccan system. 150 Civil Protection (Ambulance/Fire). 190 Urban Police, 177 Gendarmerie."
+  },
+  {
+    "country": "Yemen",
+    "iso": "YE",
+    "primary": "199",
+    "police": "194",
+    "ambulance": "191",
+    "fire": "171"
+  },
+  {
+    "country": "Zambia",
+    "iso": "ZM",
+    "primary": "999",
+    "police": "991",
+    "ambulance": "992",
+    "fire": "993"
+  },
+  {
+    "country": "Zimbabwe",
+    "iso": "ZW",
+    "primary": "999",
+    "police": "995",
+    "ambulance": "994",
+    "fire": "993"
+  }
+]

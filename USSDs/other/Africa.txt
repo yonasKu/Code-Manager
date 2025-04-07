@@ -1,0 +1,1411 @@
+[
+  {
+    "country": "Algeria",
+    "iso": "DZ",
+    "institutions": [
+      {
+        "name": "Banque d'Algérie (Central Bank)",
+        "phone": "+213 21 60 60 60",
+        "website": "https://www.bank-of-algeria.dz/"
+      },
+      {
+        "name": "Banque Nationale d'Algérie (BNA)",
+        "phone": "+213 21 98 11 00",
+        "website": "https://www.bna.dz/"
+      },
+      {
+        "name": "Banque Extérieure d'Algérie (BEA)",
+        "phone": "+213 21 98 11 11",
+        "website": "https://www.bea.dz/"
+      },
+      {
+        "name": "Crédit Populaire d'Algérie (CPA)",
+        "phone": "+213 21 43 99 99",
+        "website": "https://www.cpa-bank.dz/"
+      }
+    ]
+  },
+  {
+    "country": "Angola",
+    "iso": "AO",
+    "institutions": [
+      {
+        "name": "Banco Nacional de Angola (Central Bank)",
+        "phone": "+244 222 679 200",
+        "website": "https://www.bna.ao/"
+      },
+      {
+        "name": "Banco Angolano de Investimentos (BAI)",
+        "phone": "+244 924 100 100",
+        "website": "https://www.bancobai.ao/"
+      },
+      {
+        "name": "Banco de Fomento Angola (BFA)",
+        "phone": "+244 923 120 120",
+        "website": "https://www.bfa.ao/"
+      },
+      {
+        "name": "Banco BIC",
+        "phone": "+244 924 100 000",
+        "website": "https://www.bancobic.ao/"
+      }
+    ]
+  },
+  {
+    "country": "Benin",
+    "iso": "BJ",
+    "institutions": [
+      {
+        "name": "Banque Centrale des États de l'Afrique de l'Ouest (BCEAO - Regional)",
+        "phone": "+221 33 839 05 00 (HQ in Senegal)",
+        "website": "https://www.bceao.int/"
+      },
+      {
+        "name": "Bank of Africa - Bénin",
+        "phone": "+229 21 31 32 28",
+        "website": "https://www.boabenin.com/"
+      },
+      {
+        "name": "Ecobank Bénin",
+        "phone": "+229 21 31 40 23",
+        "website": "https://ecobank.com/bj"
+      },
+      {
+        "name": "Société Générale Bénin",
+        "phone": "+229 21 31 83 00",
+        "website": "https://societegenerale.bj/"
+      }
+    ],
+    "notes": "Member of the West African Economic and Monetary Union (WAEMU/UEMOA), uses the West African CFA franc (XOF)."
+  },
+  {
+    "country": "Botswana",
+    "iso": "BW",
+    "institutions": [
+      {
+        "name": "Bank of Botswana (Central Bank)",
+        "phone": "+267 360 6000",
+        "website": "https://www.bankofbotswana.bw/"
+      },
+      {
+        "name": "First National Bank Botswana (FNBB)",
+        "phone": "+267 395 9881",
+        "website": "https://www.fnbbotswana.co.bw/"
+      },
+      {
+        "name": "Absa Bank Botswana",
+        "phone": "+267 315 9575",
+        "website": "https://www.absa.co.bw/"
+      },
+      {
+        "name": "Standard Chartered Bank Botswana",
+        "phone": "+267 360 1500",
+        "website": "https://www.sc.com/bw/"
+      }
+    ]
+  },
+  {
+    "country": "Burkina Faso",
+    "iso": "BF",
+    "institutions": [
+      {
+        "name": "Banque Centrale des États de l'Afrique de l'Ouest (BCEAO - Regional)",
+        "phone": "+221 33 839 05 00 (HQ in Senegal)",
+        "website": "https://www.bceao.int/"
+      },
+      {
+        "name": "Bank of Africa - Burkina Faso",
+        "phone": "+226 25 49 00 00",
+        "website": "https://boaburkinafaso.com/"
+      },
+      {
+        "name": "Coris Bank International",
+        "phone": "+226 25 49 10 00",
+        "website": "https://burkina.coris.bank/"
+      },
+      {
+        "name": "Ecobank Burkina Faso",
+        "phone": "+226 25 31 18 86",
+        "website": "https://ecobank.com/bf"
+      }
+    ],
+    "notes": "Member of the West African Economic and Monetary Union (WAEMU/UEMOA), uses the West African CFA franc (XOF)."
+  },
+  {
+    "country": "Burundi",
+    "iso": "BI",
+    "institutions": [
+      {
+        "name": "Banque de la République du Burundi (Central Bank)",
+        "phone": "+257 22 22 17 65",
+        "website": "https://www.brb.bi/"
+      },
+      {
+        "name": "Banque Commerciale du Burundi (Bancobu)",
+        "phone": "+257 22 26 21 00",
+        "website": "https://www.bancobu.com/"
+      },
+      {
+        "name": "Banque de Crédit de Bujumbura (BCB)",
+        "phone": "+257 22 26 40 00",
+        "website": "https://www.bcb.bi/"
+      },
+      {
+        "name": "KCB Bank Burundi",
+        "phone": "+257 22 27 78 00",
+        "website": "https://bi.kcbgroup.com/"
+      }
+    ]
+  },
+  {
+    "country": "Cape Verde",
+    "iso": "CV",
+    "institutions": [
+      {
+        "name": "Banco de Cabo Verde (Central Bank)",
+        "phone": "+238 260 70 00",
+        "website": "https://www.bcv.cv/"
+      },
+      {
+        "name": "Banco Comercial do Atlântico (BCA)",
+        "phone": "+238 260 45 00",
+        "website": "https://www.bca.cv/"
+      },
+      {
+        "name": "Caixa Económica de Cabo Verde",
+        "phone": "+238 260 36 00",
+        "website": "https://www.caixa.cv/"
+      },
+      {
+        "name": "Banco Interatlântico",
+        "phone": "+238 261 64 80",
+        "website": "https://www.bi.cv/"
+      }
+    ]
+  },
+  {
+    "country": "Cameroon",
+    "iso": "CM",
+    "institutions": [
+      {
+        "name": "Banque des États de l'Afrique Centrale (BEAC - Regional)",
+        "phone": "+237 222 23 40 30 (HQ in Cameroon)",
+        "website": "https://www.beac.int/"
+      },
+      {
+        "name": "Afriland First Bank",
+        "phone": "+237 233 43 44 20",
+        "website": "https://afrilandfirstbank.com/"
+      },
+      {
+        "name": "Société Générale Cameroun",
+        "phone": "+237 233 50 30 00",
+        "website": "https://societegenerale.cm/"
+      },
+      {
+        "name": "Ecobank Cameroun",
+        "phone": "+237 233 50 37 00",
+        "website": "https://ecobank.com/cm"
+      }
+    ],
+    "notes": "Member of the Central African Economic and Monetary Community (CEMAC), uses the Central African CFA franc (XAF)."
+  },
+  {
+    "country": "Central African Republic",
+    "iso": "CF",
+    "institutions": [
+      {
+        "name": "Banque des États de l'Afrique Centrale (BEAC - Regional)",
+        "phone": "+237 222 23 40 30 (HQ in Cameroon)",
+        "website": "https://www.beac.int/"
+      },
+      {
+        "name": "Ecobank Centrafrique",
+        "phone": "+236 21 61 00 41",
+        "website": "https://ecobank.com/cf"
+      },
+      {
+        "name": "Banque Sahélo-Saharienne pour l'Investissement et le Commerce (BSIC)",
+        "phone": "+236 21 61 39 70",
+        "website": "https://www.bsic-cf.com/"
+      }
+    ],
+    "notes": "Member of CEMAC, uses the Central African CFA franc (XAF). Banking sector is limited."
+  },
+  {
+    "country": "Chad",
+    "iso": "TD",
+    "institutions": [
+      {
+        "name": "Banque des États de l'Afrique Centrale (BEAC - Regional)",
+        "phone": "+237 222 23 40 30 (HQ in Cameroon)",
+        "website": "https://www.beac.int/"
+      },
+      {
+        "name": "Ecobank Tchad",
+        "phone": "+235 22 52 55 29",
+        "website": "https://ecobank.com/td"
+      },
+      {
+        "name": "Société Générale Tchad",
+        "phone": "+235 22 52 59 70",
+        "website": "https://societegenerale.td/"
+      },
+      {
+        "name": "Commercial Bank Tchad (CBT)",
+        "phone": "+235 22 52 68 21",
+        "website": "N/A"
+      }
+    ],
+    "notes": "Member of CEMAC, uses the Central African CFA franc (XAF)."
+  },
+  {
+    "country": "Comoros",
+    "iso": "KM",
+    "institutions": [
+      {
+        "name": "Banque Centrale des Comores",
+        "phone": "+269 773 10 02",
+        "website": "https://www.banque-comores.km/"
+      },
+      {
+        "name": "Banque pour l'Industrie et le Commerce - Comores (BIC)",
+        "phone": "+269 773 02 43",
+        "website": "N/A"
+      },
+      {
+        "name": "Exim Bank Comores S.A.",
+        "phone": "+269 773 60 60",
+        "website": "https://www.eximbank-comores.com/"
+      }
+    ]
+  },
+  {
+    "country": "Congo, Democratic Republic of the",
+    "iso": "CD",
+    "institutions": [
+      {
+        "name": "Banque Centrale du Congo",
+        "phone": "+243 81 333 0200",
+        "website": "https://www.bcc.cd/"
+      },
+      {
+        "name": "Rawbank",
+        "phone": "+243 81 999 99 99",
+        "website": "https://www.rawbank.com/"
+      },
+      {
+        "name": "Equity BCDC",
+        "phone": "+243 808 800 700",
+        "website": "https://equitygroupholdings.com/cd/"
+      },
+      {
+        "name": "Trust Merchant Bank (TMB)",
+        "phone": "+243 81 700 5000",
+        "website": "https://www.tmb.cd/"
+      }
+    ]
+  },
+  {
+    "country": "Congo, Republic of the",
+    "iso": "CG",
+    "institutions": [
+      {
+        "name": "Banque des États de l'Afrique Centrale (BEAC - Regional)",
+        "phone": "+237 222 23 40 30 (HQ in Cameroon)",
+        "website": "https://www.beac.int/"
+      },
+      {
+        "name": "BGFI Bank Congo",
+        "phone": "+242 05 531 51 51",
+        "website": "https://bgfibank.com/cg/"
+      },
+      {
+        "name": "Ecobank Congo",
+        "phone": "+242 06 660 00 30",
+        "website": "https://ecobank.com/cg"
+      },
+      {
+        "name": "Crédit du Congo (Attijariwafa Bank Group)",
+        "phone": "+242 22 281 31 13",
+        "website": "https://www.creditducongo.com/"
+      }
+    ],
+    "notes": "Member of CEMAC, uses the Central African CFA franc (XAF)."
+  },
+  {
+    "country": "Ivory Coast (Côte d'Ivoire)",
+    "iso": "CI",
+    "institutions": [
+      {
+        "name": "Banque Centrale des États de l'Afrique de l'Ouest (BCEAO - Regional)",
+        "phone": "+221 33 839 05 00 (HQ in Senegal)",
+        "website": "https://www.bceao.int/"
+      },
+      {
+        "name": "Société Générale Côte d'Ivoire",
+        "phone": "+225 27 20 20 12 34",
+        "website": "https://societegenerale.ci/"
+      },
+      {
+        "name": "Ecobank Côte d'Ivoire",
+        "phone": "+225 27 20 21 10 00",
+        "website": "https://ecobank.com/ci"
+      },
+      {
+        "name": "NSIA Banque CI",
+        "phone": "+225 27 20 20 05 00",
+        "website": "https://nsiabanque.ci/"
+      }
+    ],
+    "notes": "Member of WAEMU/UEMOA, uses the West African CFA franc (XOF)."
+  },
+  {
+    "country": "Djibouti",
+    "iso": "DJ",
+    "institutions": [
+      {
+        "name": "Banque Centrale de Djibouti",
+        "phone": "+253 21 35 27 51",
+        "website": "https://www.banque-centrale.dj/"
+      },
+      {
+        "name": "Bank of Africa - Mer Rouge",
+        "phone": "+253 21 35 28 01",
+        "website": "https://boatradehub.com/djibouti/"
+      },
+      {
+        "name": "CAC International Bank",
+        "phone": "+253 21 35 88 88",
+        "website": "https://www.cacintbank.com/"
+      },
+      {
+        "name": "Salaam African Bank - Djibouti",
+        "phone": "+253 21 35 66 66",
+        "website": "https://banksalaam.com/"
+      }
+    ]
+  },
+  {
+    "country": "Egypt",
+    "iso": "EG",
+    "institutions": [
+      {
+        "name": "Central Bank of Egypt",
+        "phone": "+20 2 2770 2770",
+        "website": "https://www.cbe.org.eg/"
+      },
+      {
+        "name": "National Bank of Egypt (NBE)",
+        "phone": "+20 19623",
+        "website": "https://www.nbe.com.eg/"
+      },
+      {
+        "name": "Banque Misr",
+        "phone": "+20 19888",
+        "website": "https://www.banquemisr.com/"
+      },
+      {
+        "name": "Commercial International Bank (CIB)",
+        "phone": "+20 19666",
+        "website": "https://www.cibeg.com/"
+      }
+    ]
+  },
+  {
+    "country": "Equatorial Guinea",
+    "iso": "GQ",
+    "institutions": [
+      {
+        "name": "Banque des États de l'Afrique Centrale (BEAC - Regional)",
+        "phone": "+237 222 23 40 30 (HQ in Cameroon)",
+        "website": "https://www.beac.int/"
+      },
+      {
+        "name": "BGFI Bank Equatorial Guinea",
+        "phone": "+240 333 09 00 15",
+        "website": "https://bgfibank.com/gq/"
+      },
+      {
+        "name": "Ecobank Equatorial Guinea",
+        "phone": "+240 333 09 29 30",
+        "website": "https://ecobank.com/gq"
+      },
+      {
+        "name": "Société Générale de Banques en Guinée Équatoriale (SGBGE)",
+        "phone": "+240 333 09 78 10",
+        "website": "N/A"
+      }
+    ],
+    "notes": "Member of CEMAC, uses the Central African CFA franc (XAF)."
+  },
+  {
+    "country": "Eritrea",
+    "iso": "ER",
+    "institutions": [
+      {
+        "name": "Bank of Eritrea (Central Bank)",
+        "phone": "+291 1 12 51 80",
+        "website": "N/A"
+      },
+      {
+        "name": "Commercial Bank of Eritrea",
+        "phone": "+291 1 12 51 88",
+        "website": "N/A"
+      },
+      {
+        "name": "Housing and Commerce Bank of Eritrea",
+        "phone": "+291 1 12 03 50",
+        "website": "N/A"
+      }
+    ],
+     "notes": "Highly limited and state-controlled banking sector. Information is scarce."
+  },
+  {
+    "country": "Eswatini (formerly Swaziland)",
+    "iso": "SZ",
+    "institutions": [
+      {
+        "name": "Central Bank of Eswatini",
+        "phone": "+268 2408 2000",
+        "website": "https://www.centralbank.org.sz/"
+      },
+      {
+        "name": "Eswatini Bank",
+        "phone": "+268 2409 5000",
+        "website": "https://www.eswatinibank.co.sz/"
+      },
+      {
+        "name": "First National Bank Eswatini",
+        "phone": "+268 2404 2441",
+        "website": "https://www.fnbswaziland.co.sz/"
+      },
+      {
+        "name": "Standard Bank Eswatini",
+        "phone": "+268 2404 8000",
+        "website": "https://www.standardbank.co.sz/"
+      }
+    ]
+  },
+  {
+    "country": "Ethiopia",
+    "iso": "ET",
+    "institutions": [
+      {
+        "name": "National Bank of Ethiopia",
+        "phone": "+251 11 551 7430",
+        "website": "https://nbe.gov.et/"
+      },
+      {
+        "name": "Commercial Bank of Ethiopia (CBE)",
+        "phone": "+251 951",
+        "website": "https://www.combanketh.et/"
+      },
+      {
+        "name": "Awash Bank",
+        "phone": "+251 11 557 0167",
+        "website": "https://www.awashbank.com/"
+      },
+      {
+        "name": "Bank of Abyssinia",
+        "phone": "+251 8892",
+        "website": "https://bankofabyssinia.com/"
+      }
+    ]
+  },
+  {
+    "country": "Gabon",
+    "iso": "GA",
+    "institutions": [
+      {
+        "name": "Banque des États de l'Afrique Centrale (BEAC - Regional)",
+        "phone": "+237 222 23 40 30 (HQ in Cameroon)",
+        "website": "https://www.beac.int/"
+      },
+      {
+        "name": "BGFI Bank Gabon",
+        "phone": "+241 011 79 79 79",
+        "website": "https://bgfibank.com/ga/"
+      },
+      {
+        "name": "Ecobank Gabon",
+        "phone": "+241 011 73 82 86",
+        "website": "https://ecobank.com/ga"
+      },
+      {
+        "name": "Union Gabonaise de Banque (UGB - Attijariwafa Bank)",
+        "phone": "+241 011 79 00 00",
+        "website": "https://www.ugb-banque.com/"
+      }
+    ],
+    "notes": "Member of CEMAC, uses the Central African CFA franc (XAF)."
+  },
+  {
+    "country": "Gambia",
+    "iso": "GM",
+    "institutions": [
+      {
+        "name": "Central Bank of The Gambia",
+        "phone": "+220 422 8103",
+        "website": "https://www.cbg.gm/"
+      },
+      {
+        "name": "Trust Bank Ltd",
+        "phone": "+220 422 5777",
+        "website": "https://www.tblgambia.com/"
+      },
+      {
+        "name": "Ecobank Gambia",
+        "phone": "+220 420 1111",
+        "website": "https://ecobank.com/gm"
+      },
+      {
+        "name": "Standard Chartered Bank Gambia",
+        "phone": "+220 420 3300",
+        "website": "https://www.sc.com/gm/"
+      }
+    ]
+  },
+  {
+    "country": "Ghana",
+    "iso": "GH",
+    "institutions": [
+      {
+        "name": "Bank of Ghana",
+        "phone": "+233 30 266 6902",
+        "website": "https://www.bog.gov.gh/"
+      },
+      {
+        "name": "GCB Bank PLC",
+        "phone": "+233 30 266 3985",
+        "website": "https://www.gcbbank.com.gh/"
+      },
+      {
+        "name": "Ecobank Ghana",
+        "phone": "+233 30 221 3999",
+        "website": "https://ecobank.com/gh"
+      },
+      {
+        "name": "Absa Bank Ghana",
+        "phone": "+233 30 242 9150",
+        "website": "https://www.absa.com.gh/"
+      }
+    ]
+  },
+  {
+    "country": "Guinea",
+    "iso": "GN",
+    "institutions": [
+      {
+        "name": "Banque Centrale de la République de Guinée",
+        "phone": "+224 620 36 36 36",
+        "website": "https://www.bcrg-guinee.org/"
+      },
+      {
+        "name": "Société Générale de Banques en Guinée (SGBG)",
+        "phone": "+224 620 14 14 14",
+        "website": "https://societegenerale.gn/"
+      },
+      {
+        "name": "Ecobank Guinée",
+        "phone": "+224 625 25 25 25",
+        "website": "https://ecobank.com/gn"
+      },
+      {
+        "name": "Banque Internationale pour le Commerce et l'Industrie de la Guinée (BICIGUI)",
+        "phone": "+224 629 30 30 30",
+        "website": "https://www.bicigui.com/"
+      }
+    ]
+  },
+  {
+    "country": "Guinea-Bissau",
+    "iso": "GW",
+    "institutions": [
+      {
+        "name": "Banque Centrale des États de l'Afrique de l'Ouest (BCEAO - Regional)",
+        "phone": "+221 33 839 05 00 (HQ in Senegal)",
+        "website": "https://www.bceao.int/"
+      },
+      {
+        "name": "Banco da Africa Ocidental (BAO)",
+        "phone": "+245 966 60 00 00",
+        "website": "N/A"
+      },
+      {
+        "name": "Ecobank Guiné-Bissau",
+        "phone": "+245 955 20 00 00",
+        "website": "https://ecobank.com/gw"
+      },
+      {
+        "name": "Banco da União (BDU)",
+        "phone": "+245 966 66 33 33",
+        "website": "https://www.bdu.gw/"
+      }
+    ],
+    "notes": "Member of WAEMU/UEMOA, uses the West African CFA franc (XOF)."
+  },
+  {
+    "country": "Kenya",
+    "iso": "KE",
+    "institutions": [
+      {
+        "name": "Central Bank of Kenya",
+        "phone": "+254 20 286 0000",
+        "website": "https://www.centralbank.go.ke/"
+      },
+      {
+        "name": "KCB Group Plc",
+        "phone": "+254 711 087000",
+        "website": "https://ke.kcbgroup.com/"
+      },
+      {
+        "name": "Equity Bank Kenya",
+        "phone": "+254 763 063000",
+        "website": "https://equitygroupholdings.com/ke/"
+      },
+      {
+        "name": "Co-operative Bank of Kenya",
+        "phone": "+254 711 049000",
+        "website": "https://www.co-opbank.co.ke/"
+      }
+    ]
+  },
+  {
+    "country": "Lesotho",
+    "iso": "LS",
+    "institutions": [
+      {
+        "name": "Central Bank of Lesotho",
+        "phone": "+266 2223 2000",
+        "website": "https://www.centralbank.org.ls/"
+      },
+      {
+        "name": "Standard Lesotho Bank",
+        "phone": "+266 2221 2221",
+        "website": "https://www.standardbank.co.ls/"
+      },
+      {
+        "name": "Nedbank Lesotho",
+        "phone": "+266 2231 2696",
+        "website": "https://www.nedbank.co.ls/"
+      },
+      {
+        "name": "First National Bank Lesotho",
+        "phone": "+266 2224 1000",
+        "website": "https://www.fnblesotho.co.ls/"
+      }
+    ]
+  },
+  {
+    "country": "Liberia",
+    "iso": "LR",
+    "institutions": [
+      {
+        "name": "Central Bank of Liberia",
+        "phone": "+231 770 004 545",
+        "website": "https://www.cbl.org.lr/"
+      },
+      {
+        "name": "Ecobank Liberia",
+        "phone": "+231 777 715 151",
+        "website": "https://ecobank.com/lr"
+      },
+      {
+        "name": "United Bank for Africa (UBA) Liberia",
+        "phone": "+231 777 500 822",
+        "website": "https://www.ubaliberia.com/"
+      },
+      {
+        "name": "International Bank (Liberia) Limited",
+        "phone": "+231 777 555 777",
+        "website": "https://www.ibliberia.com/"
+      }
+    ]
+  },
+  {
+    "country": "Libya",
+    "iso": "LY",
+    "institutions": [
+      {
+        "name": "Central Bank of Libya",
+        "phone": "+218 21 333 3591",
+        "website": "https://cbl.gov.ly/"
+      },
+      {
+        "name": "National Commercial Bank (NCB)",
+        "phone": "+218 21 334 4573",
+        "website": "https://www.ncb.ly/"
+      },
+      {
+        "name": "Jumhouria Bank",
+        "phone": "+218 21 333 3553",
+        "website": "https://www.jbank.ly/"
+      },
+      {
+        "name": "Sahara Bank",
+        "phone": "+218 21 333 2771",
+        "website": "https://www.saharabank.com.ly/"
+      }
+    ],
+     "notes": "Banking situation may be complex due to internal divisions."
+  },
+  {
+    "country": "Madagascar",
+    "iso": "MG",
+    "institutions": [
+      {
+        "name": "Banky Foiben'i Madagasikara (Central Bank)",
+        "phone": "+261 20 22 345 00",
+        "website": "https://www.banky-foibe.mg/"
+      },
+      {
+        "name": "BNI Madagascar",
+        "phone": "+261 20 22 390 00",
+        "website": "https://www.bni.mg/"
+      },
+      {
+        "name": "Bank of Africa - Madagascar",
+        "phone": "+261 20 22 391 00",
+        "website": "https://boatradehub.com/madagascar/"
+      },
+      {
+        "name": "MCB Madagascar (Mauritius Commercial Bank)",
+        "phone": "+261 20 22 272 62",
+        "website": "https://www.mcbmadagascar.com/"
+      }
+    ]
+  },
+  {
+    "country": "Malawi",
+    "iso": "MW",
+    "institutions": [
+      {
+        "name": "Reserve Bank of Malawi",
+        "phone": "+265 1 770 600",
+        "website": "https://www.rbm.mw/"
+      },
+      {
+        "name": "National Bank of Malawi plc",
+        "phone": "+265 1 820 622",
+        "website": "https://natbank.co.mw/"
+      },
+      {
+        "name": "Standard Bank Malawi",
+        "phone": "+265 1 820 144",
+        "website": "https://www.standardbank.co.mw/"
+      },
+      {
+        "name": "NBS Bank plc",
+        "phone": "+265 1 827 377",
+        "website": "https://nbs.mw/"
+      }
+    ]
+  },
+  {
+    "country": "Mali",
+    "iso": "ML",
+    "institutions": [
+      {
+        "name": "Banque Centrale des États de l'Afrique de l'Ouest (BCEAO - Regional)",
+        "phone": "+221 33 839 05 00 (HQ in Senegal)",
+        "website": "https://www.bceao.int/"
+      },
+      {
+        "name": "Banque de Développement du Mali (BDM-SA)",
+        "phone": "+223 20 22 53 36",
+        "website": "https://www.bdm-sa.com/"
+      },
+      {
+        "name": "Ecobank Mali",
+        "phone": "+223 20 70 33 00",
+        "website": "https://ecobank.com/ml"
+      },
+      {
+        "name": "Bank of Africa - Mali",
+        "phone": "+223 44 97 78 00",
+        "website": "https://boatradehub.com/mali/"
+      }
+    ],
+    "notes": "Member of WAEMU/UEMOA, uses the West African CFA franc (XOF)."
+  },
+  {
+    "country": "Mauritania",
+    "iso": "MR",
+    "institutions": [
+      {
+        "name": "Banque Centrale de Mauritanie",
+        "phone": "+222 45 25 22 06",
+        "website": "https://www.bcm.mr/"
+      },
+      {
+        "name": "Banque Nationale de Mauritanie (BNM)",
+        "phone": "+222 45 25 26 02",
+        "website": "https://www.bnm.mr/"
+      },
+      {
+        "name": "Attijari bank Mauritanie",
+        "phone": "+222 45 29 58 58",
+        "website": "https://www.attijaribank.mr/"
+      },
+      {
+        "name": "Société Générale Mauritanie",
+        "phone": "+222 45 29 97 00",
+        "website": "https://societegenerale.mr/"
+      }
+    ]
+  },
+  {
+    "country": "Mauritius",
+    "iso": "MU",
+    "institutions": [
+      {
+        "name": "Bank of Mauritius",
+        "phone": "+230 202 3800",
+        "website": "https://www.bom.mu/"
+      },
+      {
+        "name": "Mauritius Commercial Bank (MCB)",
+        "phone": "+230 202 5000",
+        "website": "https://www.mcb.mu/"
+      },
+      {
+        "name": "State Bank of Mauritius (SBM)",
+        "phone": "+230 202 1111",
+        "website": "https://www.sbmgroup.mu/"
+      },
+      {
+        "name": "Absa Bank (Mauritius) Limited",
+        "phone": "+230 402 1000",
+        "website": "https://www.absabank.mu/"
+      }
+    ]
+  },
+  {
+    "country": "Morocco",
+    "iso": "MA",
+    "institutions": [
+      {
+        "name": "Bank Al-Maghrib (Central Bank)",
+        "phone": "+212 5 37 81 81 81",
+        "website": "https://www.bkam.ma/"
+      },
+      {
+        "name": "Attijariwafa Bank",
+        "phone": "+212 5 22 58 88 88",
+        "website": "https://www.attijariwafabank.com/"
+      },
+      {
+        "name": "Banque Populaire (Groupe BCP)",
+        "phone": "+212 5 22 20 25 33",
+        "website": "https://www.groupebcp.com/"
+      },
+      {
+        "name": "BMCE Bank of Africa",
+        "phone": "+212 5 22 46 20 20",
+        "website": "https://www.bankofafrica.ma/"
+      }
+    ]
+  },
+  {
+    "country": "Mozambique",
+    "iso": "MZ",
+    "institutions": [
+      {
+        "name": "Banco de Moçambique",
+        "phone": "+258 21 350 000",
+        "website": "https://www.bancomoc.mz/"
+      },
+      {
+        "name": "Millennium bim",
+        "phone": "+258 21 350 035",
+        "website": "https://www.millenniumbim.co.mz/"
+      },
+      {
+        "name": "Standard Bank Mozambique",
+        "phone": "+258 84 305 0000",
+        "website": "https://www.standardbank.co.mz/"
+      },
+      {
+        "name": "Banco Comercial e de Investimentos (BCI)",
+        "phone": "+258 800 224 224",
+        "website": "https://www.bci.co.mz/"
+      }
+    ]
+  },
+  {
+    "country": "Namibia",
+    "iso": "NA",
+    "institutions": [
+      {
+        "name": "Bank of Namibia",
+        "phone": "+264 61 283 5111",
+        "website": "https://www.bon.com.na/"
+      },
+      {
+        "name": "First National Bank Namibia",
+        "phone": "+264 61 299 2222",
+        "website": "https://www.fnbnamibia.com.na/"
+      },
+      {
+        "name": "Bank Windhoek",
+        "phone": "+264 61 299 1200",
+        "website": "https://www.bankwindhoek.com.na/"
+      },
+      {
+        "name": "Standard Bank Namibia",
+        "phone": "+264 61 294 9111",
+        "website": "https://www.standardbank.com.na/"
+      }
+    ]
+  },
+  {
+    "country": "Niger",
+    "iso": "NE",
+    "institutions": [
+      {
+        "name": "Banque Centrale des États de l'Afrique de l'Ouest (BCEAO - Regional)",
+        "phone": "+221 33 839 05 00 (HQ in Senegal)",
+        "website": "https://www.bceao.int/"
+      },
+      {
+        "name": "Bank of Africa - Niger",
+        "phone": "+227 20 73 36 20",
+        "website": "https://boatradehub.com/niger/"
+      },
+      {
+        "name": "Ecobank Niger",
+        "phone": "+227 20 73 71 81",
+        "website": "https://ecobank.com/ne"
+      },
+      {
+        "name": "Banque Internationale pour l'Afrique au Niger (BIA)",
+        "phone": "+227 20 73 37 26",
+        "website": "https://www.bia-niger.com/"
+      }
+    ],
+    "notes": "Member of WAEMU/UEMOA, uses the West African CFA franc (XOF)."
+  },
+  {
+    "country": "Nigeria",
+    "iso": "NG",
+    "institutions": [
+      {
+        "name": "Central Bank of Nigeria",
+        "phone": "+234 9 462 36000",
+        "website": "https://www.cbn.gov.ng/"
+      },
+      {
+        "name": "Access Bank Plc",
+        "phone": "+234 1 271 2005",
+        "website": "https://www.accessbankplc.com/"
+      },
+      {
+        "name": "Zenith Bank Plc",
+        "phone": "+234 1 278 7000",
+        "website": "https://www.zenithbank.com/"
+      },
+      {
+        "name": "Guaranty Trust Bank (GTBank)",
+        "phone": "+234 1 271 5227",
+        "website": "https://www.gtbank.com/"
+      }
+    ]
+  },
+  {
+    "country": "Rwanda",
+    "iso": "RW",
+    "institutions": [
+      {
+        "name": "National Bank of Rwanda (Banki Nkuru y'u Rwanda)",
+        "phone": "+250 788 199 000",
+        "website": "https://www.bnr.rw/"
+      },
+      {
+        "name": "Bank of Kigali Plc",
+        "phone": "+250 788 143 000 / 4455",
+        "website": "https://www.bk.rw/"
+      },
+      {
+        "name": "Equity Bank Rwanda Plc",
+        "phone": "+250 788 190 000",
+        "website": "https://equitygroupholdings.com/rw/"
+      },
+      {
+        "name": "KCB Bank Rwanda Plc",
+        "phone": "+250 788 140 000",
+        "website": "https://rw.kcbgroup.com/"
+      }
+    ]
+  },
+  {
+    "country": "Sao Tome and Principe",
+    "iso": "ST",
+    "institutions": [
+      {
+        "name": "Banco Central de São Tomé e Príncipe",
+        "phone": "+239 222 1774",
+        "website": "https://www.bcstp.st/"
+      },
+      {
+        "name": "Banco Internacional de São Tomé e Príncipe (BISTP)",
+        "phone": "+239 222 1222",
+        "website": "https://www.bistp.st/"
+      },
+      {
+        "name": "Ecobank São Tomé e Principe",
+        "phone": "+239 222 6771",
+        "website": "https://ecobank.com/st"
+      },
+      {
+        "name": "Banco Equador",
+        "phone": "+239 222 4444",
+        "website": "N/A"
+      }
+    ]
+  },
+  {
+    "country": "Senegal",
+    "iso": "SN",
+    "institutions": [
+      {
+        "name": "Banque Centrale des États de l'Afrique de l'Ouest (BCEAO - HQ)",
+        "phone": "+221 33 839 05 00",
+        "website": "https://www.bceao.int/"
+      },
+      {
+        "name": "Société Générale Sénégal",
+        "phone": "+221 33 839 55 00",
+        "website": "https://societegenerale.sn/"
+      },
+      {
+        "name": "Ecobank Sénégal",
+        "phone": "+221 33 849 20 00",
+        "website": "https://ecobank.com/sn"
+      },
+      {
+        "name": "Bank of Africa - Senegal",
+        "phone": "+221 33 889 53 53",
+        "website": "https://boatradehub.com/senegal/"
+      }
+    ],
+    "notes": "Host country for BCEAO. Member of WAEMU/UEMOA, uses the West African CFA franc (XOF)."
+  },
+  {
+    "country": "Seychelles",
+    "iso": "SC",
+    "institutions": [
+      {
+        "name": "Central Bank of Seychelles",
+        "phone": "+248 4 293 700",
+        "website": "https://www.cbs.sc/"
+      },
+      {
+        "name": "Absa Bank (Seychelles) Limited",
+        "phone": "+248 4 383 838",
+        "website": "https://www.absabank.sc/"
+      },
+      {
+        "name": "Nouvobanq",
+        "phone": "+248 4 293 000",
+        "website": "https://www.nouvobanq.sc/"
+      },
+      {
+        "name": "MCB Seychelles (Mauritius Commercial Bank)",
+        "phone": "+248 4 284 555",
+        "website": "https://www.mcbseychelles.com/"
+      }
+    ]
+  },
+  {
+    "country": "Sierra Leone",
+    "iso": "SL",
+    "institutions": [
+      {
+        "name": "Bank of Sierra Leone",
+        "phone": "+232 22 226 501",
+        "website": "https://www.bsl.gov.sl/"
+      },
+      {
+        "name": "Rokel Commercial Bank",
+        "phone": "+232 78 700 000",
+        "website": "https://rokelbank.sl/"
+      },
+      {
+        "name": "Sierra Leone Commercial Bank",
+        "phone": "+232 76 718 000",
+        "website": "https://www.slcb.com/"
+      },
+      {
+        "name": "Ecobank Sierra Leone",
+        "phone": "+232 78 200 200",
+        "website": "https://ecobank.com/sl"
+      }
+    ]
+  },
+  {
+    "country": "Somalia",
+    "iso": "SO",
+    "institutions": [
+      {
+        "name": "Central Bank of Somalia",
+        "phone": "N/A",
+        "website": "https://centralbank.gov.so/"
+      },
+      {
+        "name": "Dahabshiil Bank International",
+        "phone": "N/A",
+        "website": "https://www.dahabshilbank.com/"
+      },
+      {
+        "name": "Premier Bank",
+        "phone": "3333 (Local)",
+        "website": "https://premierbank.so/"
+      },
+      {
+        "name": "Salaam Somali Bank",
+        "phone": "N/A",
+        "website": "https://salamsomalia.com/"
+      }
+    ],
+    "notes": "Banking sector is developing, with informal money transfer operators also playing a large role."
+  },
+  {
+    "country": "South Africa",
+    "iso": "ZA",
+    "institutions": [
+      {
+        "name": "South African Reserve Bank",
+        "phone": "+27 12 313 3911",
+        "website": "https://www.resbank.co.za/"
+      },
+      {
+        "name": "Standard Bank",
+        "phone": "+27 860 123 000",
+        "website": "https://www.standardbank.co.za/"
+      },
+      {
+        "name": "Absa Group",
+        "phone": "+27 8600 2272",
+        "website": "https://www.absa.co.za/"
+      },
+      {
+        "name": "First National Bank (FNB)",
+        "phone": "+27 87 575 9404",
+        "website": "https://www.fnb.co.za/"
+      }
+    ]
+  },
+  {
+    "country": "South Sudan",
+    "iso": "SS",
+    "institutions": [
+      {
+        "name": "Bank of South Sudan",
+        "phone": "N/A",
+        "website": "https://boss.gov.ss/"
+      },
+      {
+        "name": "Equity Bank South Sudan",
+        "phone": "+211 912 077 777",
+        "website": "https://equitygroupholdings.com/ss/"
+      },
+      {
+        "name": "KCB Bank South Sudan",
+        "phone": "+211 920 012 345",
+        "website": "https://ss.kcbgroup.com/"
+      },
+      {
+        "name": "Stanbic Bank South Sudan",
+        "phone": "+211 920 000 000",
+        "website": "https://www.stanbicbank.co.ss/"
+      }
+    ],
+    "notes": "Banking sector is still developing."
+  },
+  {
+    "country": "Sudan",
+    "iso": "SD",
+    "institutions": [
+      {
+        "name": "Central Bank of Sudan",
+        "phone": "+249 183 778 860",
+        "website": "https://cbos.gov.sd/"
+      },
+      {
+        "name": "Bank of Khartoum (BOK)",
+        "phone": "1913 (Local)",
+        "website": "https://bankofkhartoum.com/"
+      },
+      {
+        "name": "Omdurman National Bank (ONB)",
+        "phone": "+249 187 155 555",
+        "website": "https://onb.sd/"
+      },
+      {
+        "name": "Faisal Islamic Bank (Sudan)",
+        "phone": "2525 (Local)",
+        "website": "https://fib.sd/"
+      }
+    ],
+    "notes": "Recent conflict heavily impacts the banking system."
+  },
+  {
+    "country": "Tanzania",
+    "iso": "TZ",
+    "institutions": [
+      {
+        "name": "Bank of Tanzania",
+        "phone": "+255 22 223 3333",
+        "website": "https://www.bot.go.tz/"
+      },
+      {
+        "name": "CRDB Bank Plc",
+        "phone": "+255 736 500 500",
+        "website": "https://crdbbank.co.tz/"
+      },
+      {
+        "name": "NMB Bank Plc",
+        "phone": "+255 800 002 002",
+        "website": "https://www.nmbbank.co.tz/"
+      },
+      {
+        "name": "NBC Bank (National Bank of Commerce)",
+        "phone": "+255 768 983 000",
+        "website": "https://nbc.co.tz/"
+      }
+    ]
+  },
+  {
+    "country": "Togo",
+    "iso": "TG",
+    "institutions": [
+      {
+        "name": "Banque Centrale des États de l'Afrique de l'Ouest (BCEAO - Regional)",
+        "phone": "+221 33 839 05 00 (HQ in Senegal)",
+        "website": "https://www.bceao.int/"
+      },
+      {
+        "name": "Ecobank Togo",
+        "phone": "+228 22 21 72 14",
+        "website": "https://ecobank.com/tg"
+      },
+      {
+        "name": "Orabank Togo",
+        "phone": "+228 22 21 36 41",
+        "website": "https://www.orabank.net/tg"
+      },
+      {
+        "name": "Banque Atlantique Togo",
+        "phone": "+228 22 23 15 00",
+        "website": "https://www.banqueatlantique.net/tg/"
+      }
+    ],
+    "notes": "Member of WAEMU/UEMOA, uses the West African CFA franc (XOF)."
+  },
+  {
+    "country": "Tunisia",
+    "iso": "TN",
+    "institutions": [
+      {
+        "name": "Banque Centrale de Tunisie",
+        "phone": "+216 71 340 588",
+        "website": "https://www.bct.gov.tn/"
+      },
+      {
+        "name": "Banque Nationale Agricole (BNA)",
+        "phone": "+216 70 020 100",
+        "website": "https://www.bna.tn/"
+      },
+      {
+        "name": "Banque Internationale Arabe de Tunisie (BIAT)",
+        "phone": "+216 71 131 000",
+        "website": "https://www.biat.com.tn/"
+      },
+      {
+        "name": "Attijari bank Tunisie",
+        "phone": "+216 71 111 300",
+        "website": "https://www.attijaribank.com.tn/"
+      }
+    ]
+  },
+  {
+    "country": "Uganda",
+    "iso": "UG",
+    "institutions": [
+      {
+        "name": "Bank of Uganda",
+        "phone": "+256 414 258 441",
+        "website": "https://www.bou.or.ug/"
+      },
+      {
+        "name": "Stanbic Bank Uganda",
+        "phone": "+256 800 150 150",
+        "website": "https://www.stanbicbank.co.ug/"
+      },
+      {
+        "name": "Centenary Bank",
+        "phone": "+256 800 200 555",
+        "website": "https://www.centenarybank.co.ug/"
+      },
+      {
+        "name": "Absa Bank Uganda",
+        "phone": "+256 800 222 123",
+        "website": "https://www.absa.co.ug/"
+      }
+    ]
+  },
+  {
+    "country": "Zambia",
+    "iso": "ZM",
+    "institutions": [
+      {
+        "name": "Bank of Zambia",
+        "phone": "+260 211 399 300",
+        "website": "https://www.boz.zm/"
+      },
+      {
+        "name": "Zambia National Commercial Bank (Zanaco)",
+        "phone": "+260 211 228 863",
+        "website": "https://www.zanaco.co.zm/"
+      },
+      {
+        "name": "Stanbic Bank Zambia",
+        "phone": "+260 211 370 000",
+        "website": "https://www.stanbicbank.co.zm/"
+      },
+      {
+        "name": "Standard Chartered Bank Zambia",
+        "phone": "+260 211 229 242",
+        "website": "https://www.sc.com/zm/"
+      }
+    ]
+  },
+  {
+    "country": "Zimbabwe",
+    "iso": "ZW",
+    "institutions": [
+      {
+        "name": "Reserve Bank of Zimbabwe",
+        "phone": "+263 242 703 000",
+        "website": "https://www.rbz.co.zw/"
+      },
+      {
+        "name": "CBZ Bank Limited",
+        "phone": "+263 867 700 4050",
+        "website": "https://www.cbz.co.zw/"
+      },
+      {
+        "name": "Ecobank Zimbabwe",
+        "phone": "+263 867 700 8040",
+        "website": "https://ecobank.com/zw"
+      },
+      {
+        "name": "Stanbic Bank Zimbabwe",
+        "phone": "+263 808 8888",
+        "website": "https://www.stanbicbank.co.zw/"
+      }
+    ],
+    "notes": "Uses a multi-currency system, including USD and the Zimbabwe Dollar (ZWL)."
+  }
+]
