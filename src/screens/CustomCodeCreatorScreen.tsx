@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, ScrollView, TouchableOpacity, TextInput } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, TouchableOpacity, TextInput, StatusBar } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import { spacing, typography, shadows, borderRadius } from '../theme/theme';
+import { useTheme } from '../theme/ThemeContext';
 
 type ParameterType = {
   name: string;
@@ -9,23 +11,27 @@ type ParameterType = {
   value: string;
 };
 
-const ParameterItem = ({ parameter, onEdit, onRemove }: { 
+const ParameterItem = ({ parameter, onEdit, onRemove, colors }: { 
   parameter: ParameterType; 
   onEdit: () => void;
   onRemove: () => void;
+  colors: any;
 }) => {
   return (
-    <View style={styles.parameterItem}>
-      <Text style={styles.parameterName}>{parameter.name}:</Text>
+    <View style={[styles.parameterItem, { 
+      backgroundColor: colors.card,
+      borderColor: colors.border
+    }]}>
+      <Text style={[styles.parameterName, { color: colors.text }]}>{parameter.name}:</Text>
       <View style={styles.parameterValueContainer}>
-        <Text style={styles.parameterType}>
+        <Text style={[styles.parameterType, { color: colors.textSecondary }]}>
           {parameter.type === 'fixed' ? '● Fixed Value:' : '○ Variable'}
         </Text>
-        <Text style={styles.parameterValue}> {parameter.value}</Text>
-        <Icon name="chevron-right" size={20} color="#999" />
+        <Text style={[styles.parameterValue, { color: colors.text }]}> {parameter.value}</Text>
+        <Icon name="chevron-right" size={20} color={colors.textTertiary} />
       </View>
       <TouchableOpacity style={styles.removeButton} onPress={onRemove}>
-        <Icon name="close" size={16} color="#999" />
+        <Icon name="close" size={16} color={colors.textTertiary} />
       </TouchableOpacity>
     </View>
   );
@@ -33,6 +39,7 @@ const ParameterItem = ({ parameter, onEdit, onRemove }: {
 
 const CustomCodeCreatorScreen = () => {
   const navigation = useNavigation();
+  const { colors, isDark } = useTheme();
   
   const [name, setName] = useState('');
   const [codePattern, setCodePattern] = useState('');
@@ -74,59 +81,80 @@ const CustomCodeCreatorScreen = () => {
   };
   
   return (
-    <ScrollView style={styles.container}>
+    <ScrollView style={[styles.container, { backgroundColor: colors.background }]}>
+      <StatusBar barStyle={isDark ? "light-content" : "dark-content"} />
+      
       <View style={styles.section}>
-        <Text style={styles.sectionTitle}>NAME</Text>
+        <Text style={[styles.sectionTitle, { color: colors.text }]}>NAME</Text>
         <TextInput
-          style={styles.textInput}
+          style={[styles.textInput, { 
+            backgroundColor: colors.card,
+            borderColor: colors.border,
+            color: colors.text
+          }]}
           placeholder="Enter a name for this code"
+          placeholderTextColor={colors.textTertiary}
           value={name}
           onChangeText={setName}
         />
       </View>
       
       <View style={styles.section}>
-        <Text style={styles.sectionTitle}>CODE PATTERN</Text>
+        <Text style={[styles.sectionTitle, { color: colors.text }]}>CODE PATTERN</Text>
         <TextInput
-          style={styles.textInput}
+          style={[styles.textInput, { 
+            backgroundColor: colors.card,
+            borderColor: colors.border,
+            color: colors.text
+          }]}
           placeholder="e.g. *131*{plan}#"
+          placeholderTextColor={colors.textTertiary}
           value={codePattern}
           onChangeText={setCodePattern}
         />
       </View>
       
       <View style={styles.section}>
-        <Text style={styles.sectionTitle}>PARAMETERS</Text>
+        <Text style={[styles.sectionTitle, { color: colors.text }]}>PARAMETERS</Text>
         {parameters.map((param, index) => (
           <ParameterItem 
             key={index}
             parameter={param}
             onEdit={() => editParameter(index)}
             onRemove={() => removeParameter(index)}
+            colors={colors}
           />
         ))}
         <TouchableOpacity 
-          style={styles.addParameterButton}
+          style={[styles.addParameterButton, { borderColor: colors.border }]}
           onPress={addParameter}
         >
-          <Icon name="add" size={16} color="#007AFF" />
-          <Text style={styles.addParameterText}>ADD PARAMETER</Text>
+          <Icon name="add" size={16} color={colors.primary} />
+          <Text style={[styles.addParameterText, { color: colors.primary }]}>ADD PARAMETER</Text>
         </TouchableOpacity>
       </View>
       
       <View style={styles.section}>
-        <Text style={styles.sectionTitle}>CATEGORY</Text>
-        <TouchableOpacity style={styles.categorySelector}>
-          <Text style={styles.categoryText}>{category}</Text>
-          <Icon name="chevron-right" size={20} color="#999" />
+        <Text style={[styles.sectionTitle, { color: colors.text }]}>CATEGORY</Text>
+        <TouchableOpacity style={[styles.categorySelector, { 
+          backgroundColor: colors.card,
+          borderColor: colors.border
+        }]}>
+          <Text style={[styles.categoryText, { color: colors.text }]}>{category}</Text>
+          <Icon name="chevron-right" size={20} color={colors.textTertiary} />
         </TouchableOpacity>
       </View>
       
       <View style={styles.section}>
-        <Text style={styles.sectionTitle}>DESCRIPTION</Text>
+        <Text style={[styles.sectionTitle, { color: colors.text }]}>DESCRIPTION</Text>
         <TextInput
-          style={[styles.textInput, styles.descriptionInput]}
+          style={[styles.textInput, styles.descriptionInput, { 
+            backgroundColor: colors.card,
+            borderColor: colors.border,
+            color: colors.text
+          }]}
           placeholder="Enter a description"
+          placeholderTextColor={colors.textTertiary}
           value={description}
           onChangeText={setDescription}
           multiline
@@ -135,14 +163,14 @@ const CustomCodeCreatorScreen = () => {
       </View>
       
       <TouchableOpacity 
-        style={styles.testButton}
+        style={[styles.testButton, { backgroundColor: colors.infoLight }]}
         onPress={testCode}
       >
-        <Text style={styles.testButtonText}>TEST CODE</Text>
+        <Text style={[styles.testButtonText, { color: colors.info }]}>TEST CODE</Text>
       </TouchableOpacity>
       
       <TouchableOpacity 
-        style={styles.saveButton}
+        style={[styles.saveButton, { backgroundColor: colors.primary }]}
         onPress={saveCode}
       >
         <Text style={styles.saveButtonText}>SAVE</Text>
@@ -154,53 +182,47 @@ const CustomCodeCreatorScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F5F5F5',
   },
   section: {
-    marginBottom: 16,
-    paddingHorizontal: 16,
-    paddingTop: 16,
+    marginBottom: spacing.md,
+    paddingHorizontal: spacing.md,
+    paddingTop: spacing.md,
   },
   sectionTitle: {
-    fontSize: 14,
-    fontWeight: 'bold',
-    marginBottom: 8,
+    fontSize: typography.caption,
+    fontWeight: typography.bold as any,
+    marginBottom: spacing.sm,
   },
   textInput: {
-    backgroundColor: '#FFFFFF',
-    borderRadius: 8,
-    padding: 12,
+    borderRadius: borderRadius.md,
+    padding: spacing.sm,
     borderWidth: 1,
-    borderColor: '#EEEEEE',
-    fontSize: 16,
+    fontSize: typography.body,
   },
   descriptionInput: {
     height: 80,
     textAlignVertical: 'top',
   },
   parameterItem: {
-    backgroundColor: '#FFFFFF',
-    borderRadius: 8,
-    padding: 12,
+    borderRadius: borderRadius.md,
+    padding: spacing.sm,
     borderWidth: 1,
-    borderColor: '#EEEEEE',
-    marginBottom: 8,
+    marginBottom: spacing.sm,
   },
   parameterName: {
-    fontSize: 14,
-    fontWeight: 'bold',
-    marginBottom: 4,
+    fontSize: typography.bodySmall,
+    fontWeight: typography.semiBold as any,
+    marginBottom: spacing.xs,
   },
   parameterValueContainer: {
     flexDirection: 'row',
     alignItems: 'center',
   },
   parameterType: {
-    fontSize: 14,
+    fontSize: typography.bodySmall,
   },
   parameterValue: {
-    fontSize: 14,
-    fontWeight: 'bold',
+    fontSize: typography.bodySmall,
   },
   removeButton: {
     position: 'absolute',
@@ -210,60 +232,56 @@ const styles = StyleSheet.create({
     height: 24,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#F5F5F5',
-    borderRadius: 12,
   },
   addParameterButton: {
     flexDirection: 'row',
     alignItems: 'center',
-    paddingVertical: 8,
+    justifyContent: 'center',
+    padding: spacing.sm,
+    borderWidth: 1,
+    borderStyle: 'dashed',
+    borderRadius: borderRadius.md,
   },
   addParameterText: {
-    fontSize: 14,
-    fontWeight: 'bold',
-    color: '#007AFF',
-    marginLeft: 8,
+    fontSize: typography.bodySmall,
+    fontWeight: typography.medium as any,
+    marginLeft: spacing.xs,
   },
   categorySelector: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    backgroundColor: '#FFFFFF',
-    borderRadius: 8,
-    padding: 12,
+    borderRadius: borderRadius.md,
+    padding: spacing.sm,
     borderWidth: 1,
-    borderColor: '#EEEEEE',
   },
   categoryText: {
-    fontSize: 16,
+    fontSize: typography.body,
   },
   testButton: {
-    backgroundColor: '#FFFFFF',
-    borderRadius: 8,
-    padding: 16,
-    margin: 16,
     alignItems: 'center',
     justifyContent: 'center',
-    borderWidth: 1,
-    borderColor: '#007AFF',
+    padding: spacing.md,
+    marginHorizontal: spacing.md,
+    marginBottom: spacing.md,
+    borderRadius: borderRadius.md,
   },
   testButtonText: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    color: '#007AFF',
+    fontSize: typography.body,
+    fontWeight: typography.semiBold as any,
   },
   saveButton: {
-    backgroundColor: '#007AFF',
-    borderRadius: 8,
-    padding: 16,
-    margin: 16,
     alignItems: 'center',
     justifyContent: 'center',
+    padding: spacing.md,
+    marginHorizontal: spacing.md,
+    marginBottom: spacing.xl,
+    borderRadius: borderRadius.md,
   },
   saveButtonText: {
-    fontSize: 16,
-    fontWeight: 'bold',
     color: '#FFFFFF',
+    fontSize: typography.body,
+    fontWeight: typography.semiBold as any,
   },
 });
 

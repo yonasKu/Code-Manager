@@ -1,8 +1,12 @@
 import React from 'react';
-import { View, Text, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, TouchableOpacity, StatusBar } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import { spacing, typography, shadows, borderRadius } from '../theme/theme';
+import { useTheme } from '../theme/ThemeContext';
 
 const AlertItem = ({ title, message, time, type }: { title: string; message: string; time: string; type: 'info' | 'warning' | 'error' }) => {
+  const { colors } = useTheme();
+  
   const getIconName = () => {
     switch (type) {
       case 'info':
@@ -19,28 +23,31 @@ const AlertItem = ({ title, message, time, type }: { title: string; message: str
   const getIconColor = () => {
     switch (type) {
       case 'info':
-        return '#2196F3';
+        return colors.info;
       case 'warning':
-        return '#FF9800';
+        return colors.warning;
       case 'error':
-        return '#F44336';
+        return colors.error;
       default:
-        return '#757575';
+        return colors.textTertiary;
     }
   };
   
   return (
-    <TouchableOpacity style={styles.alertItem}>
+    <TouchableOpacity style={[styles.alertItem, { 
+      backgroundColor: colors.card,
+      borderColor: colors.border
+    }]}>
       <View style={[styles.alertIconContainer, { backgroundColor: getIconColor() + '20' }]}>
         <Icon name={getIconName()} size={24} color={getIconColor()} />
       </View>
       <View style={styles.alertContent}>
-        <Text style={styles.alertTitle}>{title}</Text>
-        <Text style={styles.alertMessage}>{message}</Text>
-        <Text style={styles.alertTime}>{time}</Text>
+        <Text style={[styles.alertTitle, { color: colors.text }]}>{title}</Text>
+        <Text style={[styles.alertMessage, { color: colors.textSecondary }]}>{message}</Text>
+        <Text style={[styles.alertTime, { color: colors.textTertiary }]}>{time}</Text>
       </View>
       <TouchableOpacity style={styles.alertAction}>
-        <Icon name="more-vert" size={24} color="#999" />
+        <Icon name="more-vert" size={24} color={colors.textTertiary} />
       </TouchableOpacity>
     </TouchableOpacity>
   );
@@ -56,6 +63,8 @@ const EmergencyServicesButton = () => {
 };
 
 const AlertsScreen = () => {
+  const { colors, isDark } = useTheme();
+  
   // This would be replaced with actual alerts data from storage or API
   const alertsData = [
     { 
@@ -85,16 +94,20 @@ const AlertsScreen = () => {
   ];
   
   return (
-    <ScrollView style={styles.container}>
-      <View style={styles.header}>
-        <Text style={styles.headerTitle}>Alerts & Notifications</Text>
+    <ScrollView style={[styles.container, { backgroundColor: colors.background }]}>
+      <StatusBar barStyle={isDark ? "light-content" : "dark-content"} />
+      <View style={[styles.header, { 
+        backgroundColor: colors.card,
+        borderBottomColor: colors.border
+      }]}>
+        <Text style={[styles.headerTitle, { color: colors.text }]}>Alerts & Notifications</Text>
       </View>
       
       <EmergencyServicesButton />
       
       {alertsData.length > 0 ? (
         <View style={styles.alertsContainer}>
-          <Text style={styles.sectionTitle}>RECENT ALERTS</Text>
+          <Text style={[styles.sectionTitle, { color: colors.textSecondary }]}>RECENT ALERTS</Text>
           {alertsData.map((alert, index) => (
             <AlertItem 
               key={index}
@@ -107,9 +120,9 @@ const AlertsScreen = () => {
         </View>
       ) : (
         <View style={styles.emptyContainer}>
-          <Icon name="notifications-none" size={64} color="#CCCCCC" />
-          <Text style={styles.emptyText}>No alerts</Text>
-          <Text style={styles.emptySubtext}>You don't have any notifications at the moment</Text>
+          <Icon name="notifications-none" size={64} color={colors.textTertiary} />
+          <Text style={[styles.emptyText, { color: colors.textSecondary }]}>No alerts</Text>
+          <Text style={[styles.emptySubtext, { color: colors.textTertiary }]}>You don't have any notifications at the moment</Text>
         </View>
       )}
     </ScrollView>
@@ -119,51 +132,46 @@ const AlertsScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F5F5F5',
   },
   header: {
-    padding: 16,
-    backgroundColor: '#FFFFFF',
+    padding: spacing.md,
     borderBottomWidth: 1,
-    borderBottomColor: '#EEEEEE',
   },
   headerTitle: {
-    fontSize: 20,
-    fontWeight: 'bold',
+    fontSize: typography.heading2,
+    fontWeight: typography.bold as any,
   },
   emergencyButton: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#F44336',
-    borderRadius: 8,
-    padding: 16,
-    margin: 16,
+    borderRadius: borderRadius.md,
+    padding: spacing.md,
+    margin: spacing.md,
   },
   emergencyButtonText: {
-    fontSize: 16,
-    fontWeight: 'bold',
+    fontSize: typography.body,
+    fontWeight: typography.bold as any,
     color: '#FFFFFF',
-    marginLeft: 8,
+    marginLeft: spacing.sm,
   },
   alertsContainer: {
-    padding: 16,
+    padding: spacing.md,
   },
   sectionTitle: {
-    fontSize: 14,
-    fontWeight: 'bold',
-    marginBottom: 12,
-    color: '#666666',
+    fontSize: typography.caption,
+    fontWeight: typography.bold as any,
+    marginBottom: spacing.sm,
   },
   alertItem: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#FFFFFF',
-    borderRadius: 8,
-    padding: 16,
-    marginBottom: 12,
+    borderRadius: borderRadius.md,
+    padding: spacing.md,
+    marginBottom: spacing.sm,
     borderWidth: 1,
-    borderColor: '#EEEEEE',
+    ...shadows.small,
   },
   alertIconContainer: {
     width: 48,
@@ -171,47 +179,43 @@ const styles = StyleSheet.create({
     borderRadius: 24,
     alignItems: 'center',
     justifyContent: 'center',
-    marginRight: 16,
+    marginRight: spacing.md,
   },
   alertContent: {
     flex: 1,
   },
   alertTitle: {
-    fontSize: 16,
-    fontWeight: 'bold',
+    fontSize: typography.body,
+    fontWeight: typography.bold as any,
   },
   alertMessage: {
-    fontSize: 14,
-    color: '#666666',
-    marginTop: 4,
+    fontSize: typography.bodySmall,
+    marginTop: spacing.xs,
     lineHeight: 20,
   },
   alertTime: {
-    fontSize: 12,
-    color: '#999999',
-    marginTop: 4,
+    fontSize: typography.caption,
+    marginTop: spacing.xs,
   },
   alertAction: {
-    marginLeft: 8,
+    marginLeft: spacing.sm,
   },
   emptyContainer: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    padding: 32,
-    marginTop: 64,
+    padding: spacing.xl,
+    marginTop: spacing.xxl,
   },
   emptyText: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    marginTop: 16,
-    color: '#666666',
+    fontSize: typography.heading3,
+    fontWeight: typography.bold as any,
+    marginTop: spacing.md,
   },
   emptySubtext: {
-    fontSize: 14,
-    color: '#999999',
+    fontSize: typography.body,
     textAlign: 'center',
-    marginTop: 8,
+    marginTop: spacing.sm,
   },
 });
 

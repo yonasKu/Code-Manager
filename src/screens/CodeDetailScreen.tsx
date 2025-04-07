@@ -1,23 +1,37 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, ScrollView, TouchableOpacity, TextInput } from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  ScrollView,
+  TouchableOpacity,
+  TextInput,
+  StatusBar,
+} from 'react-native';
 import { useNavigation, useRoute, RouteProp } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
-import Icon from 'react-native-vector-icons/MaterialIcons';
+import { IconButton } from 'react-native-paper';
 import { RootStackParamList } from '../navigation/AppNavigator';
+import { spacing, typography, shadows, borderRadius } from '../theme/theme';
+import { useTheme } from '../theme/ThemeContext';
 
 type CodeDetailScreenRouteProp = RouteProp<RootStackParamList, 'CodeDetailScreen'>;
 type CodeDetailScreenNavigationProp = StackNavigationProp<RootStackParamList>;
 
 const RelatedCodeItem = ({ code, description }: { code: string; description: string }) => {
   const navigation = useNavigation<CodeDetailScreenNavigationProp>();
+  const { colors } = useTheme();
   
   return (
     <TouchableOpacity 
-      style={styles.relatedCodeItem}
+      style={[styles.relatedCodeItem, { backgroundColor: colors.card }]}
       onPress={() => navigation.navigate('CodeDetailScreen', { code, title: description })}
     >
-      <Text style={styles.relatedCodeText}>{code} - {description}</Text>
-      <Icon name="chevron-right" size={20} color="#999" />
+      <View>
+        <Text style={[styles.relatedCodeText, { color: colors.primary }]}>{code}</Text>
+        <Text style={[styles.relatedCodeDescription, { color: colors.textSecondary }]}>{description}</Text>
+      </View>
+      <IconButton icon="chevron-right" size={24} iconColor={colors.textTertiary} style={{ margin: 0 }} />
     </TouchableOpacity>
   );
 };
@@ -28,6 +42,7 @@ const CodeDetailScreen = () => {
   const { code, title } = route.params;
   const [isFavorite, setIsFavorite] = useState(false);
   const [paramValue, setParamValue] = useState('');
+  const { colors, isDark } = useTheme();
   
   // This would be replaced with actual code data from a database or API
   const codeData = {
@@ -58,162 +73,254 @@ const CodeDetailScreen = () => {
   };
   
   return (
-    <ScrollView style={styles.container}>
-      <View style={styles.codeContainer}>
-        <Text style={styles.codeText}>{code}</Text>
-      </View>
-      
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>DETAILS</Text>
-        <View style={styles.detailsContainer}>
-          <Text style={styles.detailItem}>Category: {codeData.category}</Text>
-          <Text style={styles.detailItem}>Subcategory: {codeData.subcategory}</Text>
-          <Text style={styles.detailItem}>Function: {codeData.function}</Text>
-          <Text style={styles.detailItem}>Type: {codeData.type}</Text>
-        </View>
-      </View>
-      
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>DESCRIPTION</Text>
-        <Text style={styles.descriptionText}>{codeData.description}</Text>
-      </View>
-      
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>PARAMETERS</Text>
-        {codeData.parameters.map((param, index) => (
-          <View key={index} style={styles.parameterContainer}>
-            <TextInput
-              style={styles.parameterInput}
-              placeholder={`${param.name}: +`}
-              placeholderTextColor="#999"
-              value={paramValue}
-              onChangeText={setParamValue}
-              keyboardType={param.type === 'phone' ? 'phone-pad' : 'default'}
-            />
-          </View>
-        ))}
-      </View>
-      
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>NOTES</Text>
-        {codeData.notes.map((note, index) => (
-          <Text key={index} style={styles.noteText}>u2022 {note}</Text>
-        ))}
-      </View>
-      
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>RELATED CODES</Text>
-        {codeData.relatedCodes.map((relatedCode, index) => (
-          <RelatedCodeItem 
-            key={index}
-            code={relatedCode.code} 
-            description={relatedCode.description} 
+    <View style={[styles.container, { backgroundColor: colors.background }]}>
+      <StatusBar barStyle={isDark ? "light-content" : "dark-content"} />
+      <View style={[styles.header, { backgroundColor: colors.card, borderBottomColor: colors.border }]}>
+        <TouchableOpacity onPress={() => navigation.goBack()}>
+          <IconButton icon="arrow-left" size={24} iconColor={colors.text} style={{ margin: 0 }} />
+        </TouchableOpacity>
+        <Text style={[styles.headerTitle, { color: colors.text }]}>{title}</Text>
+        <TouchableOpacity onPress={toggleFavorite}>
+          <IconButton 
+            icon={isFavorite ? "star" : "star-outline"} 
+            size={24} 
+            iconColor={isFavorite ? "#FFC107" : colors.text} 
+            style={{ margin: 0 }} 
           />
-        ))}
+        </TouchableOpacity>
       </View>
       
-      <TouchableOpacity 
-        style={styles.executeButton}
-        onPress={executeCode}
-      >
-        <Text style={styles.executeButtonText}>EXECUTE CODE</Text>
-      </TouchableOpacity>
-    </ScrollView>
+      <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
+        <View style={[styles.codeContainer, { backgroundColor: colors.card }]}>
+          <Text style={[styles.codeText, { color: colors.primary }]}>{code}</Text>
+          <View style={[styles.codeTypeBadge, { backgroundColor: colors.primaryLight }]}>
+            <Text style={[styles.codeTypeText, { color: colors.primary }]}>{codeData.type}</Text>
+          </View>
+        </View>
+        
+        <View style={styles.section}>
+          <Text style={[styles.sectionTitle, { color: colors.text }]}>Details</Text>
+          <View style={[styles.detailsContainer, { backgroundColor: colors.card }]}>
+            <View style={styles.detailRow}>
+              <Text style={[styles.detailLabel, { color: colors.textSecondary }]}>Category</Text>
+              <Text style={[styles.detailValue, { color: colors.text }]}>{codeData.category}</Text>
+            </View>
+            <View style={[styles.divider, { backgroundColor: colors.border }]} />
+            <View style={styles.detailRow}>
+              <Text style={[styles.detailLabel, { color: colors.textSecondary }]}>Subcategory</Text>
+              <Text style={[styles.detailValue, { color: colors.text }]}>{codeData.subcategory}</Text>
+            </View>
+            <View style={[styles.divider, { backgroundColor: colors.border }]} />
+            <View style={styles.detailRow}>
+              <Text style={[styles.detailLabel, { color: colors.textSecondary }]}>Function</Text>
+              <Text style={[styles.detailValue, { color: colors.text }]}>{codeData.function}</Text>
+            </View>
+          </View>
+        </View>
+        
+        <View style={styles.section}>
+          <Text style={[styles.sectionTitle, { color: colors.text }]}>Description</Text>
+          <View style={[styles.card, { backgroundColor: colors.card }]}>
+            <Text style={[styles.descriptionText, { color: colors.text }]}>{codeData.description}</Text>
+          </View>
+        </View>
+        
+        <View style={styles.section}>
+          <Text style={[styles.sectionTitle, { color: colors.text }]}>Parameters</Text>
+          {codeData.parameters.map((param, index) => (
+            <View key={index} style={[styles.card, { backgroundColor: colors.card }]}>
+              <Text style={[styles.parameterLabel, { color: colors.text }]}>{param.name}</Text>
+              <TextInput
+                style={[styles.parameterInput, { 
+                  color: colors.text, 
+                  backgroundColor: isDark ? colors.background : colors.card,
+                  borderColor: colors.border
+                }]}
+                placeholder={`Enter ${param.name}`}
+                placeholderTextColor={colors.textTertiary}
+                value={paramValue}
+                onChangeText={setParamValue}
+                keyboardType={param.type === 'phone' ? 'phone-pad' : 'default'}
+              />
+            </View>
+          ))}
+        </View>
+        
+        <View style={styles.section}>
+          <Text style={[styles.sectionTitle, { color: colors.text }]}>Notes</Text>
+          <View style={[styles.card, { backgroundColor: colors.card }]}>
+            {codeData.notes.map((note, index) => (
+              <View key={index} style={styles.noteItem}>
+                <View style={[styles.bulletPoint, { backgroundColor: colors.primary }]} />
+                <Text style={[styles.noteText, { color: colors.textSecondary }]}>{note}</Text>
+              </View>
+            ))}
+          </View>
+        </View>
+        
+        <View style={styles.section}>
+          <Text style={[styles.sectionTitle, { color: colors.text }]}>Related Codes</Text>
+          {codeData.relatedCodes.map((relatedCode, index) => (
+            <RelatedCodeItem 
+              key={index}
+              code={relatedCode.code} 
+              description={relatedCode.description} 
+            />
+          ))}
+        </View>
+        
+        <TouchableOpacity 
+          style={[styles.executeButton, { backgroundColor: colors.primary }]}
+          onPress={executeCode}
+        >
+          <Text style={styles.executeButtonText}>Execute Code</Text>
+        </TouchableOpacity>
+      </ScrollView>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F5F5F5',
+  },
+  header: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingHorizontal: spacing.md,
+    paddingTop: spacing.md,
+    paddingBottom: spacing.sm,
+    borderBottomWidth: 1,
+  },
+  headerTitle: {
+    fontSize: typography.heading3,
+    fontWeight: typography.semiBold as any,
+  },
+  scrollView: {
+    flex: 1,
   },
   codeContainer: {
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#FFFFFF',
-    borderRadius: 8,
-    padding: 16,
-    margin: 16,
-    borderWidth: 1,
-    borderColor: '#EEEEEE',
+    padding: spacing.lg,
+    margin: spacing.md,
+    borderRadius: borderRadius.lg,
+    ...shadows.medium,
   },
   codeText: {
-    fontSize: 20,
-    fontWeight: 'bold',
+    fontSize: 24,
+    fontWeight: typography.bold as any,
+    marginBottom: spacing.sm,
+  },
+  codeTypeBadge: {
+    paddingHorizontal: spacing.md,
+    paddingVertical: spacing.xs,
+    borderRadius: borderRadius.round,
+  },
+  codeTypeText: {
+    fontSize: typography.bodySmall,
+    fontWeight: typography.medium as any,
   },
   section: {
-    marginBottom: 16,
-    paddingHorizontal: 16,
+    marginBottom: spacing.lg,
   },
   sectionTitle: {
-    fontSize: 14,
-    fontWeight: 'bold',
-    marginBottom: 8,
-    color: '#666666',
+    fontSize: typography.heading3,
+    fontWeight: typography.semiBold as any,
+    marginLeft: spacing.md,
+    marginBottom: spacing.sm,
   },
   detailsContainer: {
-    backgroundColor: '#FFFFFF',
-    borderRadius: 8,
-    padding: 16,
-    borderWidth: 1,
-    borderColor: '#EEEEEE',
+    marginHorizontal: spacing.md,
+    borderRadius: borderRadius.lg,
+    overflow: 'hidden',
+    ...shadows.small,
   },
-  detailItem: {
-    fontSize: 14,
-    marginBottom: 8,
+  detailRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    padding: spacing.md,
+  },
+  detailLabel: {
+    fontSize: typography.body,
+    fontWeight: typography.medium as any,
+  },
+  detailValue: {
+    fontSize: typography.body,
+  },
+  divider: {
+    height: 1,
+    width: '100%',
+  },
+  card: {
+    marginHorizontal: spacing.md,
+    padding: spacing.md,
+    borderRadius: borderRadius.lg,
+    ...shadows.small,
   },
   descriptionText: {
-    fontSize: 14,
-    lineHeight: 20,
-    backgroundColor: '#FFFFFF',
-    borderRadius: 8,
-    padding: 16,
-    borderWidth: 1,
-    borderColor: '#EEEEEE',
+    fontSize: typography.body,
+    lineHeight: 22,
   },
-  parameterContainer: {
-    backgroundColor: '#FFFFFF',
-    borderRadius: 8,
-    padding: 8,
-    borderWidth: 1,
-    borderColor: '#EEEEEE',
+  parameterLabel: {
+    fontSize: typography.body,
+    fontWeight: typography.semiBold as any,
+    marginBottom: spacing.sm,
   },
   parameterInput: {
-    fontSize: 16,
-    color: '#000000',
+    fontSize: typography.body,
+    borderWidth: 1,
+    borderRadius: borderRadius.md,
+    padding: spacing.sm,
+  },
+  noteItem: {
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+    marginBottom: spacing.sm,
+  },
+  bulletPoint: {
+    width: 6,
+    height: 6,
+    borderRadius: 3,
+    marginTop: 8,
+    marginRight: spacing.sm,
   },
   noteText: {
-    fontSize: 14,
+    flex: 1,
+    fontSize: typography.body,
     lineHeight: 20,
-    marginBottom: 8,
-    paddingLeft: 8,
   },
   relatedCodeItem: {
     flexDirection: 'row',
-    alignItems: 'center',
     justifyContent: 'space-between',
-    backgroundColor: '#FFFFFF',
-    borderRadius: 8,
-    padding: 12,
-    marginBottom: 8,
-    borderWidth: 1,
-    borderColor: '#EEEEEE',
+    alignItems: 'center',
+    marginHorizontal: spacing.md,
+    marginBottom: spacing.sm,
+    padding: spacing.md,
+    borderRadius: borderRadius.lg,
+    ...shadows.small,
   },
   relatedCodeText: {
-    fontSize: 14,
+    fontSize: typography.body,
+    fontWeight: typography.semiBold as any,
+    marginBottom: 4,
+  },
+  relatedCodeDescription: {
+    fontSize: typography.bodySmall,
   },
   executeButton: {
-    backgroundColor: '#007AFF',
-    borderRadius: 8,
-    padding: 16,
-    margin: 16,
+    marginHorizontal: spacing.md,
+    marginBottom: spacing.xl,
+    padding: spacing.md,
+    borderRadius: borderRadius.lg,
     alignItems: 'center',
-    justifyContent: 'center',
   },
   executeButtonText: {
-    fontSize: 16,
-    fontWeight: 'bold',
     color: '#FFFFFF',
+    fontSize: typography.body,
+    fontWeight: typography.semiBold as any,
   },
 });
 

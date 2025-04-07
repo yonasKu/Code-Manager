@@ -1,179 +1,346 @@
-import React from 'react';
-import { View, Text, StyleSheet, ScrollView, TouchableOpacity, TextInput } from 'react-native';
-import { useNavigation, useRoute, RouteProp } from '@react-navigation/native';
+import React, { useState } from 'react';
+import {
+  View,
+  Text,
+  StyleSheet,
+  ScrollView,
+  TouchableOpacity,
+  TextInput,
+  StatusBar,
+} from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
-import Icon from 'react-native-vector-icons/MaterialIcons';
+import { IconButton } from 'react-native-paper';
 import { RootStackParamList } from '../navigation/AppNavigator';
+import { categories, Subcategory } from '../data/categories';
+import { typography, spacing, shadows, borderRadius } from '../theme/theme';
+import { useTheme } from '../theme/ThemeContext';
 
-type CategoryScreenRouteProp = RouteProp<RootStackParamList, 'CategoryScreen'>;
 type CategoryScreenNavigationProp = StackNavigationProp<RootStackParamList>;
 
-const SubcategoryItem = ({ title }: { title: string }) => {
+const SubcategoryItem = ({ title, icon = "folder" }: { title: string; icon?: string }) => {
   const navigation = useNavigation<CategoryScreenNavigationProp>();
+  const { colors } = useTheme();
   
   return (
     <TouchableOpacity 
-      style={styles.subcategoryItem}
-      onPress={() => navigation.navigate('CategoryScreen', { category: title })}
+      style={[styles.subcategoryItem, { 
+        backgroundColor: colors.card,
+        borderColor: colors.border
+      }]}
+      onPress={() => navigation.navigate('CodeDetailScreen', { code: '', title })}
     >
-      <Text style={styles.subcategoryTitle}>{title}</Text>
-      <Icon name="chevron-right" size={24} color="#999" />
+      <View style={styles.subcategoryContent}>
+        <IconButton icon={icon} size={24} iconColor={colors.primary} style={{ margin: 0, marginRight: 12 }} />
+        <Text style={[styles.subcategoryTitle, { color: colors.text }]}>{title}</Text>
+      </View>
+      <IconButton icon="chevron-right" size={24} iconColor={colors.textTertiary} style={{ margin: 0 }} />
     </TouchableOpacity>
   );
 };
 
 const PopularCodeItem = ({ code, description }: { code: string; description: string }) => {
   const navigation = useNavigation<CategoryScreenNavigationProp>();
+  const { colors } = useTheme();
   
   return (
     <TouchableOpacity 
-      style={styles.popularCodeItem}
+      style={[styles.popularCodeItem, { 
+        backgroundColor: colors.card,
+        borderColor: colors.border
+      }]}
       onPress={() => navigation.navigate('CodeDetailScreen', { code, title: description })}
     >
       <View>
-        <Text style={styles.popularCodeText}>{code}</Text>
-        <Text style={styles.popularCodeDescription}>{description}</Text>
+        <Text style={[styles.popularCodeText, { color: colors.text }]}>{code}</Text>
+        <Text style={[styles.popularCodeDescription, { color: colors.textSecondary }]}>{description}</Text>
         <View style={styles.popularCodeActions}>
           <TouchableOpacity 
-            style={styles.popularCodeButton}
+            style={styles.actionButton}
             onPress={() => navigation.navigate('CodeExecutionScreen', { code })}
           >
-            <Text style={styles.popularCodeButtonText}>EXECUTE</Text>
+            <IconButton icon="play" size={16} iconColor={colors.primary} style={{ margin: 0 }} />
+            <Text style={[styles.actionButtonText, { color: colors.primary }]}>Execute</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.popularCodeButton}>
-            <Text style={styles.popularCodeButtonText}>FAVORITE</Text>
+          <TouchableOpacity style={styles.actionButton}>
+            <IconButton icon="star-outline" size={16} iconColor={colors.primary} style={{ margin: 0 }} />
+            <Text style={[styles.actionButtonText, { color: colors.primary }]}>Favorite</Text>
           </TouchableOpacity>
-          <Icon name="chevron-right" size={20} color="#999" />
         </View>
       </View>
     </TouchableOpacity>
   );
 };
 
-const CategoryScreen = () => {
-  const route = useRoute<CategoryScreenRouteProp>();
-  const navigation = useNavigation<CategoryScreenNavigationProp>();
-  const { category = 'Call Management' } = route.params || {};
+const CategoryItem = ({ title, icon, subcategories }: { title: string; icon: string; subcategories: Subcategory[] }) => {
+  const [expanded, setExpanded] = useState(false);
+  const { colors } = useTheme();
   
   return (
-    <ScrollView style={styles.container}>
-      <View style={styles.searchContainer}>
-        <Icon name="search" size={20} color="#999" style={styles.searchIcon} />
-        <TextInput 
-          style={styles.searchInput} 
-          placeholder="Search this category"
-          placeholderTextColor="#999"
+    <View style={styles.categoryContainer}>
+      <TouchableOpacity 
+        style={[styles.categoryItem, { 
+          backgroundColor: colors.card,
+          borderColor: colors.border
+        }]}
+        onPress={() => setExpanded(!expanded)}
+      >
+        <View style={styles.categoryContent}>
+          <IconButton icon={icon} size={24} iconColor={colors.primary} style={{ margin: 0, marginRight: 12 }} />
+          <Text style={[styles.categoryTitle, { color: colors.text }]}>{title}</Text>
+        </View>
+        <IconButton 
+          icon={expanded ? "chevron-up" : "chevron-down"} 
+          size={24} 
+          iconColor={colors.textTertiary} 
+          style={{ margin: 0 }} 
         />
+      </TouchableOpacity>
+      
+      {expanded && (
+        <View style={styles.subcategoriesContainer}>
+          {subcategories.map((subcategory, index) => (
+            <SubcategoryItem 
+              key={index} 
+              title={subcategory.title} 
+              icon={subcategory.icon} 
+            />
+          ))}
+        </View>
+      )}
+    </View>
+  );
+};
+
+const CategoryScreen = () => {
+  const navigation = useNavigation<CategoryScreenNavigationProp>();
+  const [searchQuery, setSearchQuery] = useState('');
+  const { colors, isDark } = useTheme();
+  
+  // Filter categories based on search query
+  const filteredCategories = searchQuery
+    ? categories.filter(category => 
+        category.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        category.subcategories.some(sub => 
+          sub.title.toLowerCase().includes(searchQuery.toLowerCase())
+        )
+      )
+    : categories;
+  
+  // Popular codes (just examples)
+  const popularCodes = [
+    { code: '**21*number#', description: 'Forward all calls' },
+    { code: '#31#', description: 'Hide caller ID (per call)' },
+    { code: '*100#', description: 'Check account balance' },
+    { code: '*#06#', description: 'Show IMEI number' }
+  ];
+  
+  return (
+    <View style={[styles.container, { backgroundColor: colors.background }]}>
+      <StatusBar barStyle={isDark ? "light-content" : "dark-content"} />
+      <View style={[styles.header, { 
+        backgroundColor: colors.card,
+        borderBottomColor: colors.border
+      }]}>
+        <Text style={[styles.headerTitle, { color: colors.text }]}>Categories</Text>
+        <TouchableOpacity>
+          <IconButton icon="magnify" size={24} iconColor={colors.text} style={{ margin: 0 }} />
+        </TouchableOpacity>
       </View>
       
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>SUBCATEGORIES</Text>
-        <SubcategoryItem title="Call Forwarding" />
-        <SubcategoryItem title="Call Barring" />
-        <SubcategoryItem title="Caller ID" />
-        <SubcategoryItem title="Call Waiting" />
-        <SubcategoryItem title="Conference Calls" />
-      </View>
-      
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>POPULAR CODES</Text>
-        <PopularCodeItem 
-          code="**21*number#" 
-          description="Forward all calls" 
-        />
-        <PopularCodeItem 
-          code="#31#" 
-          description="Hide caller ID (per call)" 
-        />
-      </View>
-    </ScrollView>
+      <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
+        <View style={[styles.searchContainer, { 
+          backgroundColor: colors.card,
+          borderColor: colors.border
+        }]}>
+          <IconButton icon="magnify" size={20} iconColor={colors.textTertiary} style={{ margin: 0 }} />
+          <TextInput 
+            style={[styles.searchInput, { color: colors.text }]} 
+            placeholder="Search categories or codes"
+            placeholderTextColor={colors.textTertiary}
+            value={searchQuery}
+            onChangeText={setSearchQuery}
+          />
+        </View>
+        
+        {popularCodes.length > 0 && (
+          <View style={styles.section}>
+            <View style={styles.sectionHeader}>
+              <Text style={[styles.sectionTitle, { color: colors.text }]}>Popular Codes</Text>
+              <TouchableOpacity>
+                <Text style={[styles.seeAllButton, { color: colors.primary }]}>See All</Text>
+              </TouchableOpacity>
+            </View>
+            {popularCodes.map((item, index) => (
+              <PopularCodeItem 
+                key={index}
+                code={item.code} 
+                description={item.description} 
+              />
+            ))}
+          </View>
+        )}
+        
+        <View style={styles.section}>
+          <Text style={[styles.sectionTitle, { color: colors.text }]}>All Categories</Text>
+          {filteredCategories.map((category, index) => (
+            <CategoryItem 
+              key={index} 
+              title={category.title} 
+              icon={category.icon}
+              subcategories={category.subcategories}
+            />
+          ))}
+        </View>
+        
+        {filteredCategories.length === 0 && (
+          <View style={styles.emptyState}>
+            <IconButton icon="magnify" size={48} iconColor={colors.textTertiary} style={{ margin: 0 }} />
+            <Text style={[styles.emptyStateTitle, { color: colors.text }]}>No results found</Text>
+            <Text style={[styles.emptyStateDescription, { color: colors.textSecondary }]}>
+              Try adjusting your search or browse all categories
+            </Text>
+          </View>
+        )}
+      </ScrollView>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F5F5F5',
+  },
+  header: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    padding: spacing.md,
+    borderBottomWidth: 1,
+  },
+  headerTitle: {
+    fontSize: typography.heading2,
+    fontWeight: typography.bold as any,
+  },
+  scrollView: {
+    flex: 1,
   },
   searchContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#FFFFFF',
-    borderRadius: 8,
-    margin: 16,
-    paddingHorizontal: 12,
-    paddingVertical: 8,
+    margin: spacing.md,
+    paddingHorizontal: spacing.sm,
+    borderRadius: borderRadius.md,
     borderWidth: 1,
-    borderColor: '#EEEEEE',
-  },
-  searchIcon: {
-    marginRight: 8,
   },
   searchInput: {
     flex: 1,
-    fontSize: 16,
-    color: '#000000',
+    height: 40,
+    paddingHorizontal: spacing.sm,
+    fontSize: typography.body,
   },
   section: {
-    marginBottom: 16,
+    marginBottom: spacing.lg,
+    paddingHorizontal: spacing.md,
+  },
+  sectionHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: spacing.sm,
   },
   sectionTitle: {
-    fontSize: 14,
-    fontWeight: 'bold',
-    marginHorizontal: 16,
-    marginBottom: 8,
-    color: '#666666',
+    fontSize: typography.heading3,
+    fontWeight: typography.semiBold as any,
+  },
+  seeAllButton: {
+    fontSize: typography.body,
+    fontWeight: typography.medium as any,
+  },
+  categoryContainer: {
+    marginBottom: spacing.sm,
+  },
+  categoryItem: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    padding: spacing.sm,
+    borderRadius: borderRadius.md,
+    borderWidth: 1,
+    ...shadows.small,
+  },
+  categoryContent: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  categoryTitle: {
+    fontSize: typography.body,
+    fontWeight: typography.semiBold as any,
+  },
+  subcategoriesContainer: {
+    marginLeft: spacing.xl,
+    marginTop: spacing.xs,
   },
   subcategoryItem: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    backgroundColor: '#FFFFFF',
-    borderRadius: 8,
-    padding: 16,
-    marginHorizontal: 16,
-    marginBottom: 8,
+    padding: spacing.sm,
+    marginTop: spacing.xs,
+    borderRadius: borderRadius.md,
     borderWidth: 1,
-    borderColor: '#EEEEEE',
+    ...shadows.small,
+  },
+  subcategoryContent: {
+    flexDirection: 'row',
+    alignItems: 'center',
   },
   subcategoryTitle: {
-    fontSize: 16,
-    fontWeight: '500',
+    fontSize: typography.body,
   },
   popularCodeItem: {
-    backgroundColor: '#FFFFFF',
-    borderRadius: 8,
-    padding: 16,
-    marginHorizontal: 16,
-    marginBottom: 8,
+    padding: spacing.md,
+    marginBottom: spacing.sm,
+    borderRadius: borderRadius.md,
     borderWidth: 1,
-    borderColor: '#EEEEEE',
+    ...shadows.small,
   },
   popularCodeText: {
-    fontSize: 16,
-    fontWeight: 'bold',
+    fontSize: typography.body,
+    fontWeight: typography.semiBold as any,
   },
   popularCodeDescription: {
-    fontSize: 14,
-    color: '#666666',
-    marginTop: 4,
+    fontSize: typography.bodySmall,
+    marginTop: spacing.xs,
   },
   popularCodeActions: {
     flexDirection: 'row',
+    marginTop: spacing.sm,
+  },
+  actionButton: {
+    flexDirection: 'row',
     alignItems: 'center',
-    marginTop: 12,
+    marginRight: spacing.md,
   },
-  popularCodeButton: {
-    backgroundColor: '#F5F5F5',
-    borderRadius: 4,
-    paddingVertical: 6,
-    paddingHorizontal: 12,
-    marginRight: 12,
+  actionButtonText: {
+    fontSize: typography.caption,
+    fontWeight: typography.medium as any,
   },
-  popularCodeButtonText: {
-    fontSize: 12,
-    fontWeight: 'bold',
-    color: '#007AFF',
+  emptyState: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: spacing.xl,
+    marginTop: spacing.xxl,
+  },
+  emptyStateTitle: {
+    fontSize: typography.heading3,
+    fontWeight: typography.semiBold as any,
+    marginTop: spacing.md,
+  },
+  emptyStateDescription: {
+    fontSize: typography.body,
+    textAlign: 'center',
+    marginTop: spacing.sm,
   },
 });
 

@@ -4,6 +4,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { IconButton } from 'react-native-paper';
+import { ThemeProvider, useTheme } from '../theme/ThemeContext';
 
 // Import screens
 import EmergencyServicesScreen from '../screens/EmergencyServicesScreen';
@@ -12,10 +13,10 @@ import SettingsScreen from '../screens/SettingsScreen';
 import HomeScreen from '../screens/HomeScreen';
 import CategoryScreen from '../screens/CategoryScreen';
 import FavoritesScreen from '../screens/FavoritesScreen';
-import AlertsScreen from '../screens/AlertsScreen';
 import ProfileScreen from '../screens/ProfileScreen';
 import CodeDetailScreen from '../screens/CodeDetailScreen';
 import CodeExecutionScreen from '../screens/CodeExecutionScreen';
+import DeviceSpecsScreen from '../screens/DeviceSpecsScreen';
 
 // Define stack navigator types
 export type RootStackParamList = {
@@ -26,20 +27,22 @@ export type RootStackParamList = {
   EmergencyServicesScreen: undefined;
   CustomCodeCreatorScreen: undefined;
   SettingsScreen: undefined;
+  DeviceSpecsScreen: undefined;
 };
 
 export type TabParamList = {
   Home: undefined;
   Codes: undefined;
-  Favorites: undefined;
-  Alerts: undefined;
-  Profile: undefined;
+  MyCodes: undefined;
+  Settings: undefined;
 };
 
 const Stack = createStackNavigator<RootStackParamList>();
 const Tab = createBottomTabNavigator<TabParamList>();
 
 const MainTabs = () => {
+  const { colors, isDark } = useTheme();
+  
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
@@ -50,45 +53,51 @@ const MainTabs = () => {
             iconName = 'home';
           } else if (route.name === 'Codes') {
             iconName = 'folder';
-          } else if (route.name === 'Favorites') {
+          } else if (route.name === 'MyCodes') {
             iconName = 'star';
-          } else if (route.name === 'Alerts') {
-            iconName = 'bell';
-          } else if (route.name === 'Profile') {
-            iconName = 'account';
+          } else if (route.name === 'Settings') {
+            iconName = 'cog';
           } else {
             iconName = 'help';
           }
 
           return <IconButton icon={iconName} size={size} iconColor={color} style={{ margin: 0 }} />;
         },
-        tabBarActiveTintColor: '#007AFF',
-        tabBarInactiveTintColor: 'gray',
+        tabBarActiveTintColor: colors.primary,
+        tabBarInactiveTintColor: colors.textTertiary,
+        tabBarStyle: {
+          backgroundColor: colors.card,
+          borderTopColor: colors.border,
+        },
         headerShown: false,
       })}
     >
       <Tab.Screen name="Home" component={HomeScreen} />
       <Tab.Screen name="Codes" component={CategoryScreen} />
-      <Tab.Screen name="Favorites" component={FavoritesScreen} />
-      <Tab.Screen name="Alerts" component={AlertsScreen} />
-      <Tab.Screen name="Profile" component={ProfileScreen} />
+      <Tab.Screen name="MyCodes" component={FavoritesScreen} />
+      <Tab.Screen name="Settings" component={SettingsScreen} />
     </Tab.Navigator>
   );
 };
 
 const AppNavigator = () => {
+  const { colors, isDark } = useTheme();
+  
   return (
     <SafeAreaProvider>
       <NavigationContainer>
         <Stack.Navigator
           screenOptions={{
             headerStyle: {
-              backgroundColor: '#FFFFFF',
+              backgroundColor: colors.card,
             },
-            headerTintColor: '#000000',
+            headerTintColor: colors.text,
             headerTitleStyle: {
               fontWeight: 'bold',
             },
+            cardStyle: {
+              backgroundColor: colors.background
+            }
           }}
         >
           <Stack.Screen 
@@ -126,10 +135,23 @@ const AppNavigator = () => {
             component={SettingsScreen} 
             options={{ title: 'Settings' }} 
           />
+          <Stack.Screen 
+            name="DeviceSpecsScreen" 
+            component={DeviceSpecsScreen} 
+            options={{ title: 'Device Specs' }} 
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>
   );
 };
 
-export default AppNavigator;
+const ThemedApp = () => {
+  return (
+    <ThemeProvider>
+      <AppNavigator />
+    </ThemeProvider>
+  );
+};
+
+export default ThemedApp;

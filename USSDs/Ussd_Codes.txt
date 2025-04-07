@@ -1,0 +1,1976 @@
+[
+  {
+    "id": 1,
+    "category": "Call Management",
+    "subcategory": "Call Forwarding",
+    "function": "Forward All Calls (Voice) - Unconditional",
+    "actions": [
+      {
+        "action": "activate",
+        "code": "**21*number#",
+        "description": "Activate unconditional forwarding for all voice calls to 'number'"
+      },
+      {
+        "action": "cancel",
+        "code": "##21#",
+        "description": "Cancel unconditional forwarding for all voice calls"
+      },
+      {
+        "action": "check",
+        "code": "*#21#",
+        "description": "Check status of unconditional forwarding for voice calls"
+      }
+    ],
+    "scope": "universal_gsm",
+    "scope_details": ["GSM"],
+    "verified": true,
+    "risk_level": "medium",
+    "input_params": [
+      {
+        "name": "number",
+        "type": "phone_number",
+        "description": "The full phone number to forward calls to (include country code if needed)."
+      }
+    ],
+    "tags": ["call", "forwarding", "unconditional", "voice", "cfu", "gsm", "redirect"],
+    "notes": "Replace 'number' with the full phone number including country code if necessary."
+  },
+  {
+    "id": 2,
+    "category": "Call Management",
+    "subcategory": "Call Forwarding",
+    "function": "Forward All Calls (Data) - Unconditional",
+    "actions": [
+      {
+        "action": "activate",
+        "code": "**21*number*25#",
+        "description": "Activate unconditional forwarding for all data calls to 'number'"
+      },
+      {
+        "action": "cancel",
+        "code": "##21#*25#",
+        "description": "Cancel unconditional forwarding for all data calls"
+      },
+      {
+        "action": "check",
+        "code": "*#21#*25#",
+        "description": "Check status of unconditional forwarding for data calls"
+      }
+    ],
+    "scope": "universal_gsm",
+    "scope_details": ["GSM"],
+    "verified": true,
+    "risk_level": "medium",
+    "input_params": [
+       {
+        "name": "number",
+        "type": "phone_number",
+        "description": "The full phone number to forward data calls to."
+      }
+    ],
+    "tags": ["call", "forwarding", "unconditional", "data", "gsm", "obsolete"],
+    "notes": "Circuit-switched data calls are largely obsolete. Replace 'number'."
+  },
+  {
+    "id": 3,
+    "category": "Call Management",
+    "subcategory": "Call Forwarding",
+    "function": "Forward All Calls (Fax) - Unconditional",
+    "actions": [
+      {
+        "action": "activate",
+        "code": "**21*number*13#",
+        "description": "Activate unconditional forwarding for all fax calls to 'number'"
+      },
+      {
+        "action": "cancel",
+        "code": "##21#*13#",
+        "description": "Cancel unconditional forwarding for all fax calls"
+      },
+      {
+        "action": "check",
+        "code": "*#21#*13#",
+        "description": "Check status of unconditional forwarding for fax calls"
+      }
+    ],
+    "scope": "universal_gsm",
+    "scope_details": ["GSM"],
+    "verified": true,
+    "risk_level": "medium",
+    "input_params": [
+       {
+        "name": "number",
+        "type": "phone_number",
+        "description": "The full phone number to forward fax calls to."
+      }
+    ],
+    "tags": ["call", "forwarding", "unconditional", "fax", "gsm", "obsolete"],
+    "notes": "Circuit-switched fax calls are largely obsolete. Replace 'number'."
+  },
+  {
+    "id": 4,
+    "category": "Call Management",
+    "subcategory": "Call Forwarding",
+    "function": "Forward When No Answer (Voice)",
+    "actions": [
+      {
+        "action": "activate",
+        "code": "**61*number#",
+        "description": "Activate forwarding when no answer for voice calls to 'number'"
+      },
+      {
+        "action": "activate",
+        "code": "**61*number**seconds#",
+        "description": "Activate forwarding when no answer after 'seconds' (5-30 sec) for voice calls"
+      },
+      {
+        "action": "cancel",
+        "code": "##61#",
+        "description": "Cancel forwarding when no answer for voice calls"
+      },
+      {
+        "action": "check",
+        "code": "*#61#",
+        "description": "Check status for no answer forwarding (voice)"
+      }
+    ],
+    "scope": "universal_gsm",
+    "scope_details": ["GSM"],
+    "verified": true,
+    "risk_level": "medium",
+    "input_params": [
+      { "name": "number", "type": "phone_number", "description": "Number to forward to." },
+      { "name": "seconds", "type": "numeric_choice", "description": "Delay in seconds (5, 10, 15, 20, 25, or 30). Only for timed activation.", "options": [5, 10, 15, 20, 25, 30] }
+    ],
+    "tags": ["call", "forwarding", "conditional", "no_answer", "cfnry", "voice", "gsm", "timer"],
+    "notes": "Replace 'number'. 'seconds' must be a multiple of 5 (5, 10, 15, 20, 25, 30)."
+  },
+  {
+    "id": 5,
+    "category": "Call Management",
+    "subcategory": "Call Forwarding",
+    "function": "Forward When Unreachable (Voice)",
+    "actions": [
+      {
+        "action": "activate",
+        "code": "**62*number#",
+        "description": "Activate forwarding when unreachable (off or no signal) for voice calls to 'number'"
+      },
+      {
+        "action": "cancel",
+        "code": "##62#",
+        "description": "Cancel forwarding when unreachable for voice calls"
+      },
+      {
+        "action": "check",
+        "code": "*#62#",
+        "description": "Check status for unreachable forwarding (voice)"
+      }
+    ],
+    "scope": "universal_gsm",
+    "scope_details": ["GSM"],
+    "verified": true,
+    "risk_level": "medium",
+    "input_params": [
+       { "name": "number", "type": "phone_number", "description": "Number to forward to." }
+    ],
+     "tags": ["call", "forwarding", "conditional", "unreachable", "cfnrc", "voice", "gsm", "voicemail"],
+    "notes": "Replace 'number'. Often forwards to voicemail by default."
+  },
+  {
+    "id": 6,
+    "category": "Call Management",
+    "subcategory": "Call Forwarding",
+    "function": "Forward When Unreachable (Fax)",
+    "actions": [
+      {
+        "action": "activate",
+        "code": "**62*number*13#",
+        "description": "Activate forwarding when unreachable for fax calls to 'number'"
+      },
+      {
+        "action": "cancel",
+        "code": "##62#*13#",
+        "description": "Cancel forwarding when unreachable for fax calls"
+      },
+      {
+        "action": "check",
+        "code": "*#62#*13#",
+        "description": "Check status for unreachable fax calls"
+      }
+    ],
+    "scope": "universal_gsm",
+    "scope_details": ["GSM"],
+    "verified": true,
+    "risk_level": "medium",
+     "input_params": [
+       { "name": "number", "type": "phone_number", "description": "Number to forward fax calls to." }
+    ],
+    "tags": ["call", "forwarding", "conditional", "unreachable", "fax", "gsm", "obsolete"],
+    "notes": "Circuit-switched fax calls are largely obsolete. Replace 'number'."
+  },
+  {
+    "id": 7,
+    "category": "Call Management",
+    "subcategory": "Call Forwarding",
+    "function": "Forward When Busy (Voice)",
+    "actions": [
+      {
+        "action": "activate",
+        "code": "**67*number#",
+        "description": "Activate forwarding when busy for voice calls to 'number'"
+      },
+      {
+        "action": "cancel",
+        "code": "##67#",
+        "description": "Cancel forwarding when busy for voice calls"
+      },
+      {
+        "action": "check",
+        "code": "*#67#",
+        "description": "Check status for busy forwarding (voice)"
+      }
+    ],
+    "scope": "universal_gsm",
+    "scope_details": ["GSM"],
+    "verified": true,
+    "risk_level": "medium",
+    "input_params": [
+       { "name": "number", "type": "phone_number", "description": "Number to forward to when busy." }
+    ],
+    "tags": ["call", "forwarding", "conditional", "busy", "cfb", "voice", "gsm"],
+    "notes": "Replace 'number'."
+  },
+  {
+    "id": 8,
+    "category": "Call Management",
+    "subcategory": "Call Forwarding",
+    "function": "Forward When Busy (Data)",
+    "actions": [
+      {
+        "action": "activate",
+        "code": "**67*number*25#",
+        "description": "Activate forwarding when busy for data calls to 'number'"
+      },
+      {
+        "action": "cancel",
+        "code": "##67#*25#",
+        "description": "Cancel forwarding when busy for data calls"
+      },
+      {
+        "action": "check",
+        "code": "*#67#*25#",
+        "description": "Check status for busy data calls"
+      }
+    ],
+    "scope": "universal_gsm",
+    "scope_details": ["GSM"],
+    "verified": true,
+    "risk_level": "medium",
+    "input_params": [
+       { "name": "number", "type": "phone_number", "description": "Number to forward data calls to when busy." }
+    ],
+    "tags": ["call", "forwarding", "conditional", "busy", "data", "gsm", "obsolete"],
+    "notes": "Circuit-switched data calls are largely obsolete. Replace 'number'."
+  },
+  {
+    "id": 9,
+    "category": "Call Management",
+    "subcategory": "Call Forwarding",
+    "function": "Cancel All Call Forwarding",
+    "actions": [
+      {
+        "action": "cancel",
+        "code": "##002#",
+        "description": "Cancel ALL call forwarding types (unconditional and conditional for voice, data, fax)"
+      }
+    ],
+    "scope": "universal_gsm",
+    "scope_details": ["GSM"],
+    "verified": true,
+    "risk_level": "low",
+    "input_params": [],
+    "tags": ["call", "forwarding", "cancel", "all", "gsm"],
+    "notes": "Comprehensive cancel code for all standard forwarding."
+  },
+  {
+    "id": 10,
+    "category": "Call Management",
+    "subcategory": "Call Forwarding",
+    "function": "Cancel Conditional Call Forwarding",
+    "actions": [
+      {
+        "action": "cancel",
+        "code": "##004#",
+        "description": "Cancel all conditional call forwarding (Busy, No Answer, Unreachable)"
+      }
+    ],
+    "scope": "universal_gsm",
+    "scope_details": ["GSM"],
+    "verified": true,
+    "risk_level": "low",
+    "input_params": [],
+    "tags": ["call", "forwarding", "cancel", "conditional", "gsm"],
+    "notes": "Leaves unconditional forwarding (**21*) active if set."
+  },
+  {
+    "id": 11,
+    "category": "Call Management",
+    "subcategory": "Call Barring",
+    "function": "Bar All Outgoing Calls",
+    "actions": [
+      {
+        "action": "activate",
+        "code": "*33*password#",
+        "description": "Activate barring for all outgoing calls"
+      },
+      {
+        "action": "cancel",
+        "code": "#33*password#",
+        "description": "Cancel barring for all outgoing calls"
+      },
+      {
+        "action": "check",
+        "code": "*#33#",
+        "description": "Check status for barring all outgoing calls"
+      }
+    ],
+    "scope": "universal_gsm",
+    "scope_details": ["GSM"],
+    "verified": true,
+    "risk_level": "medium",
+    "input_params": [
+      {
+            "name": "password",
+            "type": "numeric_password",
+            "description": "Network barring password (usually 4 digits). Default is often 0000 or 1234. Contact carrier if unknown.",
+            "sensitive": true
+        }
+    ],
+    "tags": ["call", "barring", "outgoing", "all", "baoc", "password", "gsm"],
+    "notes": "Requires network barring password (often 0000 or 1234, check with carrier). Affects voice, SMS, data."
+  },
+  {
+    "id": 12,
+    "category": "Call Management",
+    "subcategory": "Call Barring",
+    "function": "Bar Outgoing Voice Calls",
+    "actions": [
+      {
+        "action": "activate",
+        "code": "*33*password*11#",
+        "description": "Activate barring for outgoing voice calls"
+      },
+      {
+        "action": "cancel",
+        "code": "#33*password*11#",
+        "description": "Cancel barring for outgoing voice calls"
+      },
+      {
+        "action": "check",
+        "code": "*#33*11#",
+        "description": "Check status for barring outgoing voice calls"
+      }
+    ],
+    "scope": "universal_gsm",
+    "scope_details": ["GSM"],
+    "verified": true,
+    "risk_level": "medium",
+    "input_params": [
+       {
+            "name": "password",
+            "type": "numeric_password",
+            "description": "Network barring password.",
+            "sensitive": true
+        }
+    ],
+    "tags": ["call", "barring", "outgoing", "voice", "password", "gsm"],
+    "notes": "Requires network barring password. Service code *11# may vary."
+  },
+  {
+    "id": 13,
+    "category": "Call Management",
+    "subcategory": "Call Barring",
+    "function": "Bar Outgoing International Calls",
+    "actions": [
+      {
+        "action": "activate",
+        "code": "*331*password#",
+        "description": "Activate barring for outgoing international calls"
+      },
+      {
+        "action": "cancel",
+        "code": "#331*password#",
+        "description": "Cancel barring for outgoing international calls"
+      },
+      {
+        "action": "check",
+        "code": "*#331#",
+        "description": "Check status for barring outgoing international calls"
+      }
+    ],
+    "scope": "universal_gsm",
+    "scope_details": ["GSM"],
+    "verified": true,
+    "risk_level": "medium",
+    "input_params": [
+       {
+            "name": "password",
+            "type": "numeric_password",
+            "description": "Network barring password.",
+            "sensitive": true
+        }
+    ],
+    "tags": ["call", "barring", "outgoing", "international", "boic", "password", "gsm"],
+    "notes": "Requires network barring password."
+  },
+  {
+    "id": 14,
+    "category": "Call Management",
+    "subcategory": "Call Barring",
+    "function": "Bar Outgoing International Calls (Except Home)",
+    "actions": [
+      {
+        "action": "activate",
+        "code": "*332*password#",
+        "description": "Activate barring for outgoing international calls except to home PLMN country"
+      },
+      {
+        "action": "cancel",
+        "code": "#332*password#",
+        "description": "Cancel barring for outgoing international calls except to home PLMN country"
+      },
+      {
+        "action": "check",
+        "code": "*#332#",
+        "description": "Check status for barring outgoing international calls except to home PLMN country"
+      }
+    ],
+    "scope": "universal_gsm",
+    "scope_details": ["GSM"],
+    "verified": true,
+    "risk_level": "medium",
+    "input_params": [
+       {
+            "name": "password",
+            "type": "numeric_password",
+            "description": "Network barring password.",
+            "sensitive": true
+        }
+    ],
+    "tags": ["call", "barring", "outgoing", "international", "except_home", "boic_exhc", "password", "gsm"],
+    "notes": "Requires network barring password."
+  },
+  {
+    "id": 15,
+    "category": "Call Management",
+    "subcategory": "Call Barring",
+    "function": "Bar All Incoming Calls",
+    "actions": [
+      {
+        "action": "activate",
+        "code": "*35*password#",
+        "description": "Activate barring for all incoming calls"
+      },
+      {
+        "action": "cancel",
+        "code": "#35*password#",
+        "description": "Cancel barring for all incoming calls"
+      },
+      {
+        "action": "check",
+        "code": "*#35#",
+        "description": "Check status for barring all incoming calls"
+      }
+    ],
+    "scope": "universal_gsm",
+    "scope_details": ["GSM"],
+    "verified": true,
+    "risk_level": "medium",
+    "input_params": [
+       {
+            "name": "password",
+            "type": "numeric_password",
+            "description": "Network barring password.",
+            "sensitive": true
+        }
+    ],
+    "tags": ["call", "barring", "incoming", "all", "baic", "password", "gsm"],
+    "notes": "Requires network barring password. Affects voice, SMS."
+  },
+  {
+    "id": 16,
+    "category": "Call Management",
+    "subcategory": "Call Barring",
+    "function": "Bar Incoming Voice Calls",
+    "actions": [
+      {
+        "action": "activate",
+        "code": "*35*password*11#",
+        "description": "Activate barring for incoming voice calls"
+      },
+      {
+        "action": "cancel",
+        "code": "#35*password*11#",
+        "description": "Cancel barring for incoming voice calls"
+      },
+      {
+        "action": "check",
+        "code": "*#35*11#",
+        "description": "Check status for barring incoming voice calls"
+      }
+    ],
+    "scope": "universal_gsm",
+    "scope_details": ["GSM"],
+    "verified": true,
+    "risk_level": "medium",
+    "input_params": [
+       {
+            "name": "password",
+            "type": "numeric_password",
+            "description": "Network barring password.",
+            "sensitive": true
+        }
+    ],
+    "tags": ["call", "barring", "incoming", "voice", "password", "gsm"],
+    "notes": "Requires network barring password. Service code *11# may vary."
+  },
+  {
+    "id": 17,
+    "category": "Call Management",
+    "subcategory": "Call Barring",
+    "function": "Bar All Incoming Calls When Roaming",
+    "actions": [
+      {
+        "action": "activate",
+        "code": "*351*password#",
+        "description": "Activate barring for all incoming calls when roaming outside home PLMN country"
+      },
+      {
+        "action": "cancel",
+        "code": "#351*password#",
+        "description": "Cancel barring for all incoming calls when roaming outside home PLMN country"
+      },
+      {
+        "action": "check",
+        "code": "*#351#",
+        "description": "Check status for barring incoming calls when roaming"
+      }
+    ],
+    "scope": "universal_gsm",
+    "scope_details": ["GSM"],
+    "verified": true,
+    "risk_level": "medium",
+     "input_params": [
+       {
+            "name": "password",
+            "type": "numeric_password",
+            "description": "Network barring password.",
+            "sensitive": true
+        }
+    ],
+    "tags": ["call", "barring", "incoming", "roaming", "bic_roam", "password", "gsm"],
+    "notes": "Requires network barring password."
+  },
+  {
+    "id": 18,
+    "category": "Call Management",
+    "subcategory": "Call Waiting",
+    "function": "Call Waiting",
+    "actions": [
+      {
+        "action": "activate",
+        "code": "*43#",
+        "description": "Activate call waiting"
+      },
+      {
+        "action": "deactivate",
+        "code": "#43#",
+        "description": "Deactivate call waiting"
+      },
+      {
+        "action": "check",
+        "code": "*#43#",
+        "description": "Check call waiting status"
+      }
+    ],
+    "scope": "universal_gsm",
+    "scope_details": ["GSM"],
+    "verified": true,
+    "risk_level": "low",
+    "input_params": [],
+    "tags": ["call", "waiting", "activate", "deactivate", "check", "gsm"],
+    "notes": ""
+  },
+  {
+    "id": 19,
+    "category": "Call Management",
+    "subcategory": "Call Control (During Call)",
+    "function": "Manage Calls with Call Waiting",
+    "actions": [
+      {
+        "action": "manage_in_call",
+        "code": "1",
+        "description": "End current call and accept waiting call"
+      },
+      {
+        "action": "manage_in_call",
+        "code": "2",
+        "description": "Put current call on hold and accept waiting call"
+      },
+      {
+        "action": "manage_in_call",
+        "code": "3",
+        "description": "Add held call to the current conversation (conference call) - Network dependent"
+      },
+      {
+        "action": "manage_in_call",
+        "code": "0",
+        "description": "Reject waiting call (or send to voicemail if configured)"
+      }
+    ],
+    "scope": "universal_gsm",
+    "scope_details": ["In-Call Interaction"],
+    "verified": true,
+    "risk_level": "low",
+    "input_params": [],
+    "tags": ["call", "waiting", "control", "in_call", "hold", "reject", "answer", "conference", "gsm"],
+    "notes": "These are typically entered via the dial pad *during* an active call when another call comes in. Options may vary slightly."
+  },
+  {
+    "id": 20,
+    "category": "Call Management",
+    "subcategory": "Conference Call",
+    "function": "Manage Conference Calls",
+    "actions": [
+      {
+        "action": "info",
+        "code": null,
+        "description": "1. Call first person. 2. Put them on hold (e.g., press '2' or Hold button). 3. Call second person. 4. Merge calls (e.g., press '3' or Merge button)."
+      },
+      {
+        "action": "info",
+         "code": null,
+        "description": "During conference: Hold conference, dial new number, merge call."
+      },
+      {
+        "action": "manage_conference",
+        "code": "2 + N",
+        "description": "Speak privately with Nth participant (others on hold). Send '2'. Requires network support."
+      },
+      {
+        "action": "manage_conference",
+        "code": "1 + N",
+        "description": "Disconnect Nth participant. Send '1'. Requires network support."
+      }
+    ],
+    "scope": "universal_gsm",
+    "scope_details": ["In-Call Interaction"],
+    "verified": true,
+     "risk_level": "low",
+    "input_params": [
+      { "name": "N", "type": "number", "description": "Participant number (for private talk/disconnect actions)." }
+    ],
+    "tags": ["call", "conference", "manage", "in_call", "merge", "hold", "gsm"],
+    "notes": "Specific button presses (Hold, Merge) can vary by phone OS/UI. Codes '2+N' and '1+N' (where N is participant number) depend on network supplementary service support."
+  },
+  {
+    "id": 21,
+    "category": "Call Management",
+    "subcategory": "Caller ID",
+    "function": "Outgoing Caller ID (CLIR)",
+    "actions": [
+      {
+        "action": "activate",
+        "code": "*31#",
+        "description": "Allow caller ID presentation for all outgoing calls (Network Default - Show Number)"
+      },
+      {
+        "action": "deactivate",
+        "code": "#31#",
+        "description": "Restrict caller ID presentation for all outgoing calls (Network Setting - Hide Number)"
+      },
+      {
+        "action": "check",
+        "code": "*#31#",
+        "description": "Check network setting for outgoing caller ID presentation"
+      },
+      {
+        "action": "hide_onetime",
+        "code": "#31#number",
+        "description": "Restrict caller ID presentation just for the next outgoing call to 'number'"
+      },
+      {
+        "action": "show_onetime",
+        "code": "*31#number",
+        "description": "Allow caller ID presentation just for the next outgoing call to 'number' (overrides permanent restriction)"
+      }
+    ],
+    "scope": "universal_gsm",
+    "scope_details": ["GSM"],
+    "verified": true,
+    "risk_level": "low",
+    "input_params": [
+      { "name": "number", "type": "phone_number", "description": "The full phone number to call (for one-time actions)." }
+    ],
+    "tags": ["call", "caller_id", "outgoing", "clir", "hide_number", "show_number", "gsm"],
+    "notes": "Replace 'number' with the full phone number to call."
+  },
+  {
+    "id": 22,
+    "category": "Call Management",
+    "subcategory": "Caller ID",
+    "function": "Incoming Caller ID (CLIP)",
+    "actions": [
+      {
+        "action": "check",
+        "code": "*#30#",
+        "description": "Check if you are subscribed to Incoming Caller ID Presentation service (CLIP)"
+      }
+    ],
+    "scope": "universal_gsm",
+    "scope_details": ["GSM"],
+    "verified": true,
+    "risk_level": "none",
+    "input_params": [],
+    "tags": ["call", "caller_id", "incoming", "clip", "check", "subscription", "gsm"],
+    "notes": "Whether you *see* the incoming number depends on your subscription (CLIP) and whether the caller allows presentation (CLIR status). Activation (*30#) / Deactivation (#30#) by user is usually not supported."
+  },
+  {
+    "id": 23,
+    "category": "Device Information",
+    "subcategory": "Own Number",
+    "function": "Check Own Phone Number (MSISDN)",
+    "actions": [
+      {
+        "action": "check",
+        "code": "*#100#",
+        "description": "May display own phone number (Vodafone UK and others)"
+      },
+      {
+        "action": "check",
+        "code": "*1#",
+        "description": "May display own phone number (Some European carriers)"
+      },
+      {
+        "action": "check",
+        "code": "*#62#",
+        "description": "Check number forwarded to when unreachable (Sometimes reveals own number if forwarded to self/voicemail linked)"
+      },
+      {
+        "action": "check",
+        "code": "*135#",
+        "description": "May display own number (e.g., MTN South Africa)"
+      }
+    ],
+    "scope": "carrier_specific",
+    "scope_details": ["Various", "Vodafone UK", "MTN South Africa"],
+    "verified": false, // Highly variable
+    "risk_level": "none",
+    "input_params": [],
+    "tags": ["device", "info", "own_number", "msisdn", "phone_number", "check", "carrier"],
+    "notes": "Not universally supported. Often easier to find in Phone Settings > About Phone > Status > My phone number."
+  },
+  {
+    "id": 24,
+    "category": "Device Information",
+    "subcategory": "IMEI",
+    "function": "Check IMEI",
+    "actions": [
+      {
+        "action": "check",
+        "code": "*#06#",
+        "description": "Display the device's IMEI number(s)"
+      }
+    ],
+    "scope": "universal_device",
+    "scope_details": ["All"],
+    "verified": true,
+    "risk_level": "none",
+    "input_params": [],
+    "tags": ["device", "info", "imei", "check", "universal"],
+    "notes": "Works on virtually all mobile phones. Will show multiple IMEIs for dual-SIM devices."
+  },
+  {
+    "id": 25,
+    "category": "Device Information",
+    "subcategory": "SIM Information",
+    "function": "Check SIM Serial Number (ICCID)",
+    "actions": [
+      {
+        "action": "check",
+        "code": "*#102#",
+        "description": "May display SIM Serial Number (ICCID) on some networks/devices (e.g., Tesco Mobile UK - Unverified)"
+      }
+    ],
+    "scope": "carrier_specific",
+    "scope_details": ["Various", "Tesco Mobile UK (Unverified)"],
+    "verified": false, // Rare support
+    "risk_level": "none",
+    "input_params": [],
+    "tags": ["device", "info", "sim", "iccid", "serial_number", "check", "carrier", "unverified"],
+    "notes": "Support is rare. ICCID is usually printed on the SIM card or found in Settings > About Phone > Status > SIM status."
+  },
+  {
+    "id": 26,
+    "category": "Device Information",
+    "subcategory": "Software Version",
+    "function": "Check Software Version (Nokia - Legacy)",
+    "actions": [
+      {
+        "action": "check",
+        "code": "*#0000#",
+        "description": "Display software version on older Nokia phones (Symbian/S40)"
+      },
+      {
+        "action": "check",
+        "code": "*#9999#",
+        "description": "Alternative code to display software version if *#0000# fails"
+      }
+    ],
+    "scope": "brand_specific",
+    "scope_details": ["Nokia (Legacy)"],
+     "verified": true, // For the specified legacy devices
+    "risk_level": "none",
+    "input_params": [],
+    "tags": ["device", "info", "software", "version", "firmware", "nokia", "legacy", "symbian", "s40"],
+    "notes": "Does not typically work on modern Nokia Android smartphones."
+  },
+  {
+    "id": 27,
+    "category": "Device Information",
+    "subcategory": "Hardware Version (Samsung - Legacy)",
+    "function": "Check Hardware Version",
+    "actions": [
+      {
+        "action": "check",
+        "code": "*#2222#",
+        "description": "Display hardware version on some older Samsung phones"
+      },
+      {
+        "action": "check",
+        "code": "*#1111#",
+        "description": "Display software/firmware version (alternative) on some older Samsung phones"
+      }
+    ],
+    "scope": "brand_specific",
+    "scope_details": ["Samsung (Legacy)"],
+    "verified": true, // For the specified legacy devices
+    "risk_level": "none",
+    "input_params": [],
+    "tags": ["device", "info", "hardware", "software", "version", "samsung", "legacy"],
+    "notes": "Less common on modern devices. Use *#1234# or diagnostic menus for newer models."
+  },
+  {
+    "id": 28,
+    "category": "Device Information",
+    "subcategory": "Device Info / Testing Menu",
+    "function": "Access Android Testing Menu",
+    "actions": [
+      {
+        "action": "access",
+        "code": "*#*#4636#*#*",
+        "description": "Access Testing menu: Phone info, Battery info, Usage stats, Wi-Fi info. Network mode selection."
+      }
+    ],
+    "scope": "os_specific",
+    "scope_details": ["Android"],
+    "verified": true,
+    "risk_level": "high", // Changing network settings can cause issues
+    "input_params": [],
+    "tags": ["device", "info", "testing", "menu", "android", "battery", "usage", "wifi", "network", "4636"],
+    "notes": "Standard Android secret code. Use with caution, changing settings can affect connectivity."
+  },
+  {
+    "id": 29,
+    "category": "Device Information",
+    "subcategory": "Firmware Version (Samsung)",
+    "function": "Check Firmware/PDA Version",
+    "actions": [
+      {
+        "action": "check",
+        "code": "*#1234#",
+        "description": "Display current firmware version (AP, CP, CSC)"
+      },
+      {
+        "action": "check",
+        "code": "*#*#44336#*#*",
+        "description": "Detailed software version information, including build time and changelist"
+      }
+    ],
+    "scope": "brand_specific",
+    "scope_details": ["Samsung"],
+    "verified": true,
+    "risk_level": "none",
+    "input_params": [],
+    "tags": ["device", "info", "firmware", "version", "pda", "csc", "ap", "cp", "samsung"],
+    "notes": ""
+  },
+  {
+    "id": 30,
+    "category": "Device Diagnostics",
+    "subcategory": "Hardware Test Menu",
+    "function": "Access General Test Mode (Samsung)",
+    "actions": [
+      {
+        "action": "access",
+        "code": "*#0*#",
+        "description": "Open hardware component test menu (LCD, sensors, touch, camera, speaker, etc.)"
+      }
+    ],
+    "scope": "brand_specific",
+    "scope_details": ["Samsung"],
+    "verified": true,
+    "risk_level": "low", // Primarily for testing, not changing critical settings
+    "input_params": [],
+    "tags": ["diagnostics", "hardware", "test", "menu", "samsung", "lcd", "sensor", "touch", "camera"],
+    "notes": ""
+  },
+  {
+    "id": 31,
+    "category": "Device Diagnostics",
+    "subcategory": "Diagnostic Menu (Samsung)",
+    "function": "Access Service Mode Menu",
+    "actions": [
+      {
+        "action": "access",
+        "code": "*#2663#",
+        "description": "TSP / TSK firmware update / check (Touch screen / Keys)"
+      },
+      {
+        "action": "access",
+        "code": "*#0228#",
+        "description": "Battery status and information"
+      },
+      {
+        "action": "access",
+        "code": "*#0283#",
+        "description": "Audio loopback control (mic/speaker test)"
+      },
+      {
+        "action": "access",
+        "code": "*#0808#",
+        "description": "USB Service settings (MTP, PTP, ADB)"
+      },
+      {
+        "action": "access",
+        "code": "*#9090#",
+        "description": "Diagnostic Configuration (RAM dump, logging - Advanced users)"
+      },
+      {
+        "action": "access",
+        "code": "*#9900#",
+        "description": "System Dump Mode (Log collection, debugging - Advanced users)"
+      }
+    ],
+    "scope": "brand_specific",
+    "scope_details": ["Samsung"],
+     "verified": true,
+     "risk_level": "high", // Contains advanced settings, firmware updates, USB config
+     "input_params": [],
+     "tags": ["diagnostics", "service", "menu", "samsung", "firmware", "battery", "audio", "usb", "debug", "log"],
+     "notes": ""
+  },
+  {
+    "id": 32,
+    "category": "Device Diagnostics",
+    "subcategory": "Diagnostic Menu (Samsung - Original User Input)",
+    "function": "Access Diagnostic Menu",
+    "actions": [
+      {
+        "action": "access",
+        "code": "#0#",
+        "description": "Open hardware test menu - Likely typo for *#0*# - Unverified"
+      },
+      {
+        "action": "access",
+        "code": "##889#",
+        "description": "Alternative code for diagnostic menu - Unverified, Region/Model Specific?"
+      }
+    ],
+    "scope": "brand_specific",
+    "scope_details": ["Samsung"],
+    "verified": false,
+    "risk_level": "low", // Assuming they access menus if they work at all
+    "input_params": [],
+    "tags": ["diagnostics", "samsung", "test_menu", "unverified", "user_input", "typo"],
+    "notes": "Included from user prompt, but likely incorrect or highly specific. *#0*# is standard."
+  },
+  {
+    "id": 33,
+    "category": "Device Diagnostics",
+    "subcategory": "Engineering/Service Menu",
+    "function": "Access ProjectMenu (Huawei/Honor)",
+    "actions": [
+      {
+        "action": "access",
+        "code": "*#*#2846579#*#*",
+        "description": "Open ProjectMenu (Vendor info, Network settings, Battery info, Software upgrade, Restore factory, Background setting)"
+      }
+    ],
+    "scope": "brand_specific",
+    "scope_details": ["Huawei", "Honor"],
+    "verified": true,
+    "risk_level": "high", // Contains network settings, software upgrade, factory restore
+    "input_params": [],
+    "tags": ["diagnostics", "engineering", "service", "menu", "projectmenu", "huawei", "honor", "network", "battery", "upgrade"],
+    "notes": ""
+  },
+  {
+    "id": 34,
+    "category": "Device Diagnostics",
+    "subcategory": "Diagnostic Menu (Honor - Original User Input)",
+    "function": "Access Diagnostic Menu",
+    "actions": [
+      {
+        "action": "access",
+        "code": "**#*2345**#",
+        "description": "Open diagnostic menu for hardware and software tests - Unverified, Format unusual"
+      }
+    ],
+    "scope": "brand_specific",
+    "scope_details": ["Honor"],
+    "verified": false,
+    "risk_level": "low",
+    "input_params": [],
+    "tags": ["diagnostics", "honor", "test_menu", "unverified", "user_input", "format_unusual"],
+    "notes": "Included from user prompt. Standard Honor code is *#*#2846579#*#*. This code format is strange (double star/hash)."
+  },
+  {
+    "id": 35,
+    "category": "Device Diagnostics",
+    "subcategory": "Engineering/Service Menu",
+    "function": "Access QC Test / CIT Menu (Xiaomi)",
+    "actions": [
+      {
+        "action": "access",
+        "code": "*#*#64663#*#*",
+        "description": "Open CIT menu (Hardware tests - QC test / Engineering mode)"
+      },
+      {
+        "action": "access",
+        "code": "*#*#6484#*#*",
+        "description": "Alternative CIT menu code on some Xiaomi models"
+      }
+    ],
+    "scope": "brand_specific",
+    "scope_details": ["Xiaomi"],
+    "verified": true,
+    "risk_level": "low", // Primarily hardware tests
+    "input_params": [],
+    "tags": ["diagnostics", "engineering", "service", "menu", "qc_test", "cit", "xiaomi", "hardware"],
+    "notes": ""
+  },
+  {
+    "id": 36,
+    "category": "Device Diagnostics",
+    "subcategory": "Engineering/Service Menu",
+    "function": "Access Engineering Mode (Oppo/Realme)",
+    "actions": [
+      {
+        "action": "access",
+        "code": "*#899#",
+        "description": "Open engineering mode (Product info, Manual test, Auto test, After sales)"
+      },
+      {
+        "action": "access",
+        "code": "*#800#",
+        "description": "Feedback / Logkit menu (for reporting bugs)"
+      },
+      {
+        "action": "access",
+        "code": "*#6776#",
+        "description": "Software version details"
+      }
+    ],
+    "scope": "brand_specific",
+    "scope_details": ["Oppo", "Realme"],
+    "verified": true,
+    "risk_level": "medium", // Contains tests and logging functions
+    "input_params": [],
+    "tags": ["diagnostics", "engineering", "service", "menu", "oppo", "realme", "test", "logkit", "software_version"],
+    "notes": ""
+  },
+  {
+    "id": 37,
+    "category": "Device Diagnostics",
+    "subcategory": "Engineering/Service Menu",
+    "function": "Access Factory Test Mode (Vivo)",
+    "actions": [
+      {
+        "action": "access",
+        "code": "*#558#",
+        "description": "Open factory test (Engineering mode / Quality verification test)"
+      },
+      {
+        "action": "access",
+        "code": "*#*#4838#*#*",
+        "description": "Vivo Engineering Mode (similar to *#*#4636#*#* on other Androids)"
+      }
+    ],
+    "scope": "brand_specific",
+    "scope_details": ["Vivo"],
+    "verified": true,
+    "risk_level": "medium", // Engineering modes can contain risky settings
+    "input_params": [],
+    "tags": ["diagnostics", "engineering", "service", "menu", "factory_test", "vivo", "test"],
+    "notes": ""
+  },
+  {
+    "id": 38,
+    "category": "Device Diagnostics",
+    "subcategory": "Diagnostic Menu (Vivo - Original User Input)",
+    "function": "Access Diagnostic Menu",
+    "actions": [
+      {
+        "action": "access",
+        "code": "**#*225**#",
+        "description": "Open diagnostic menu for hardware tests - Unverified, Format unusual"
+      }
+    ],
+    "scope": "brand_specific",
+    "scope_details": ["Vivo"],
+    "verified": false,
+    "risk_level": "low",
+    "input_params": [],
+    "tags": ["diagnostics", "vivo", "test_menu", "unverified", "user_input", "format_unusual"],
+    "notes": "Included from user prompt. Standard Vivo codes are *#558# or *#*#4838#*#*. This code format is strange."
+  },
+  {
+    "id": 39,
+    "category": "Device Diagnostics",
+    "subcategory": "Diagnostic Menu (Lenovo - Original User Input)",
+    "function": "Access Diagnostic Menu",
+    "actions": [
+      {
+        "action": "access",
+        "code": "**#*4636**#",
+        "description": "Open testing menu for device information and diagnostics - Typo for *#*#4636#*#*?"
+      }
+    ],
+    "scope": "brand_specific",
+    "scope_details": ["Lenovo"],
+    "verified": false,
+    "risk_level": "low", // If it works, likely accesses standard Android menu
+    "input_params": [],
+     "tags": ["diagnostics", "lenovo", "test_menu", "unverified", "user_input", "typo", "4636"],
+    "notes": "Included from user prompt. Most Lenovo devices use the standard Android *#*#4636#*#* code. This specific format is unusual and likely a typo."
+  },
+  {
+    "id": 40,
+    "category": "Device Diagnostics",
+    "subcategory": "Engineering/Service Menu",
+    "function": "Access Service Menu (Motorola/Lenovo)",
+    "actions": [
+      {
+        "action": "access",
+        "code": "*#*#2486#*#*",
+        "description": "Access CQATest Menu (Hardware Diagnostics)"
+      }
+    ],
+    "scope": "brand_specific",
+    "scope_details": ["Motorola", "Lenovo (Moto)"],
+    "verified": true,
+    "risk_level": "low", // Primarily diagnostics
+    "input_params": [],
+    "tags": ["diagnostics", "service", "menu", "motorola", "lenovo", "moto", "cqatest", "hardware"],
+    "notes": ""
+  },
+  {
+    "id": 41,
+    "category": "Device Diagnostics",
+    "subcategory": "Engineering/Service Menu",
+    "function": "Access Service Menu (Sony)",
+    "actions": [
+      {
+        "action": "access",
+        "code": "*#*#7378423#*#*",
+        "description": "Open Service menu (*#*#SERVICE#*#*) (Tests, Customization, Info)"
+      }
+    ],
+    "scope": "brand_specific",
+    "scope_details": ["Sony"],
+    "verified": true,
+    "risk_level": "medium", // Contains tests and customization options
+    "input_params": [],
+    "tags": ["diagnostics", "service", "menu", "sony", "test", "customization", "info", "service_code"],
+    "notes": ""
+  },
+  {
+    "id": 42,
+    "category": "Device Diagnostics",
+    "subcategory": "Engineering/Service Menu",
+    "function": "Access Engineering Mode (OnePlus)",
+    "actions": [
+      {
+        "action": "access",
+        "code": "*#808#",
+        "description": "Open Engineering Mode (Older OnePlus, Manual/Auto tests)"
+      },
+      {
+        "action": "access",
+        "code": "*#888#",
+        "description": "PCB Serial Number / Hardware Info (Newer OnePlus)"
+      },
+      {
+        "action": "access",
+        "code": "*#99#",
+        "description": "Toggle Always On Display (May vary by model/OS)"
+      },
+      {
+        "action": "access",
+        "code": "*#66#",
+        "description": "Check IMEI (Alternative / Older models)"
+      }
+    ],
+    "scope": "brand_specific",
+    "scope_details": ["OnePlus"],
+    "verified": true,
+    "risk_level": "medium", // Engineering modes and toggles
+    "input_params": [],
+    "tags": ["diagnostics", "engineering", "service", "menu", "oneplus", "test", "hardware", "imei", "aod"],
+    "notes": ""
+  },
+  {
+    "id": 43,
+    "category": "Device Diagnostics",
+    "subcategory": "Diagnostic Menu (OnePlus - Original User Input)",
+    "function": "Access Diagnostic Menu",
+    "actions": [
+      {
+        "action": "access",
+        "code": "**#*2346579**#",
+        "description": "Open diagnostic menu for hardware tests - Unverified, Format unusual"
+      }
+    ],
+    "scope": "brand_specific",
+    "scope_details": ["OnePlus"],
+    "verified": false,
+    "risk_level": "low",
+    "input_params": [],
+    "tags": ["diagnostics", "oneplus", "test_menu", "unverified", "user_input", "format_unusual"],
+    "notes": "Included from user prompt. Standard codes like *#808# are more common. This code format is strange."
+  },
+  {
+    "id": 44,
+    "category": "Device Diagnostics",
+    "subcategory": "Diagnostic Menu (Infinix - Original User Input)",
+    "function": "Access Diagnostic Menu",
+    "actions": [
+      {
+        "action": "access",
+        "code": "**#*49**#",
+        "description": "Open diagnostic menu for hardware tests - Unverified, Format unusual"
+      },
+      {
+        "action": "access",
+        "code": "**#*85**#",
+        "description": "Alternative code for diagnostic menu - Unverified, Format unusual"
+      }
+    ],
+    "scope": "brand_specific",
+    "scope_details": ["Infinix"],
+    "verified": false,
+    "risk_level": "low",
+    "input_params": [],
+    "tags": ["diagnostics", "infinix", "test_menu", "unverified", "user_input", "format_unusual"],
+    "notes": "Included from user prompt. Standard Android/MTK codes (*#*#4636#*#*, *#*#3646633#*#*) might work. These code formats are strange."
+  },
+  {
+    "id": 45,
+    "category": "Device Diagnostics",
+    "subcategory": "Diagnostic Menu (Tecno - Original User Input)",
+    "function": "Access Diagnostic Menu",
+    "actions": [
+      {
+        "action": "access",
+        "code": "**#*49**#",
+        "description": "Open diagnostic menu for hardware tests - Unverified, Format unusual"
+      },
+      {
+        "action": "access",
+        "code": "**#*85**#",
+        "description": "Alternative code for diagnostic menu - Unverified, Format unusual"
+      }
+    ],
+    "scope": "brand_specific",
+    "scope_details": ["Tecno"],
+    "verified": false,
+    "risk_level": "low",
+    "input_params": [],
+    "tags": ["diagnostics", "tecno", "test_menu", "unverified", "user_input", "format_unusual"],
+    "notes": "Included from user prompt. Standard Android/MTK codes (*#*#4636#*#*, *#*#3646633#*#*) might work. These code formats are strange."
+  },
+  {
+    "id": 46,
+    "category": "Device Diagnostics",
+    "subcategory": "Engineering/Service Menu",
+    "function": "Access MTK Engineering Mode",
+    "actions": [
+      {
+        "action": "access",
+        "code": "*#*#3646633#*#*",
+        "description": "Access Mediatek Engineering Mode (Telephony, Connectivity, Hardware tests - Advanced)"
+      }
+    ],
+    "scope": "chipset_specific",
+    "scope_details": ["Mediatek"],
+    "verified": true,
+    "risk_level": "high", // Contains many advanced and potentially disruptive settings
+    "input_params": [],
+    "tags": ["diagnostics", "engineering", "service", "menu", "mediatek", "mtk", "telephony", "connectivity", "hardware"],
+    "notes": "Various (Devices with Mediatek chipsets like some Xiaomi, Oppo, Vivo, Tecno, Infinix)"
+  },
+  {
+    "id": 47,
+    "category": "Device Diagnostics",
+    "subcategory": "Field Test Mode",
+    "function": "Access Field Test Mode (iPhone)",
+    "actions": [
+      {
+        "action": "access",
+        "code": "*3001#12345#*",
+        "description": "Open Field Test mode for detailed cellular signal information (dBm readings, band info, etc.)"
+      }
+    ],
+    "scope": "brand_specific",
+    "scope_details": ["iPhone"],
+    "verified": true,
+    "risk_level": "none", // Primarily informational
+    "input_params": [],
+    "tags": ["diagnostics", "field_test", "iphone", "signal", "cellular", "dbm", "band"],
+    "notes": ""
+  },
+  {
+    "id": 48,
+    "category": "Device Configuration",
+    "subcategory": "Codec Settings (Legacy GSM)",
+    "function": "Enhanced Full Rate Codec (Nokia Legacy)",
+    "actions": [
+      {
+        "action": "activate",
+        "code": "*3370#",
+        "description": "Activate EFR for better sound quality (may slightly increase battery consumption)"
+      },
+      {
+        "action": "deactivate",
+        "code": "#3370#",
+        "description": "Deactivate EFR"
+      }
+    ],
+    "scope": "brand_specific",
+    "scope_details": ["Nokia (Legacy)"],
+    "verified": true, // For specified legacy devices
+    "risk_level": "low", // Requires restart, slight battery impact
+    "input_params": [],
+    "tags": ["config", "codec", "efr", "audio", "quality", "nokia", "legacy", "gsm"],
+    "notes": "Requires phone restart. Unlikely to work on modern smartphones/networks (VoLTE uses different codecs)."
+  },
+  {
+    "id": 49,
+    "category": "Device Configuration",
+    "subcategory": "Codec Settings (Legacy GSM)",
+    "function": "Half Rate Codec (Nokia Legacy)",
+    "actions": [
+      {
+        "action": "activate",
+        "code": "*4720#",
+        "description": "Activate Half Rate Codec for lower quality but potentially longer battery life"
+      },
+      {
+        "action": "deactivate",
+        "code": "#4720#",
+        "description": "Deactivate Half Rate Codec"
+      }
+    ],
+    "scope": "brand_specific",
+    "scope_details": ["Nokia (Legacy)"],
+     "verified": true, // For specified legacy devices
+    "risk_level": "low", // Requires restart
+    "input_params": [],
+    "tags": ["config", "codec", "hr", "audio", "quality", "battery", "nokia", "legacy", "gsm"],
+    "notes": "Requires phone restart. Unlikely to work on modern smartphones/networks."
+  },
+  {
+    "id": 50,
+    "category": "Device Configuration",
+    "subcategory": "SIM Lock Status (Legacy)",
+    "function": "Check SIM Lock Status (Nokia Legacy)",
+    "actions": [
+      {
+        "action": "check",
+        "code": "*#pw+1234567890+1#",
+        "description": "Check Network Lock (MCC+MNC) status"
+      },
+      {
+        "action": "check",
+        "code": "*#pw+1234567890+2#",
+        "description": "Check Provider Lock (GID1) status"
+      },
+      {
+        "action": "check",
+        "code": "*#pw+1234567890+3#",
+        "description": "Check Provider Lock (GID2) status"
+      },
+      {
+        "action": "check",
+        "code": "*#pw+1234567890+4#",
+        "description": "Check SIM Lock (IMSI) status"
+      }
+    ],
+    "scope": "brand_specific",
+    "scope_details": ["Nokia (Legacy)"],
+    "verified": true, // For specified legacy devices, complex input needed
+    "risk_level": "none",
+    "input_params": [
+        // Note: The 'pw+' input method is very specific and hard to parameterize simply.
+        // The app might need special handling or detailed instructions for this entry.
+    ],
+    "tags": ["config", "sim_lock", "check", "nokia", "legacy", "network_lock", "provider_lock"],
+    "notes": "To enter 'p', press * three times quickly; 'w', press * four times quickly; '+', press * twice quickly. Unlikely to work on modern smartphones."
+  },
+  {
+    "id": 51,
+    "category": "Device Configuration",
+    "subcategory": "Network Mode",
+    "function": "Force Network Mode (via Android Testing Menu)",
+    "actions": [
+      {
+        "action": "access",
+        "code": "*#*#4636#*#*",
+        "description": "Access Android Testing menu, then 'Phone information' to set preferred network type (e.g., LTE only, WCDMA preferred)"
+      }
+    ],
+    "scope": "os_specific",
+    "scope_details": ["Android"],
+    "verified": true,
+    "risk_level": "high", // Forcing wrong mode causes loss of service
+    "input_params": [],
+     "tags": ["config", "network", "mode", "force", "android", "testing", "4636", "lte", "wcdma"],
+    "notes": "Use with caution, selecting an unsupported mode can lead to loss of service."
+  },
+  {
+    "id": 52,
+    "category": "Device Configuration",
+    "subcategory": "Security",
+    "function": "Change SIM PIN1",
+    "actions": [
+      {
+        "action": "change",
+        "code": "**04*OldPIN*NewPIN*NewPIN#",
+        "description": "Change the SIM card PIN code"
+      }
+    ],
+    "scope": "universal_sim",
+    "scope_details": ["All"],
+    "verified": true,
+    "risk_level": "medium", // Can lock SIM if OldPIN is wrong multiple times
+    "input_params": [
+       { "name": "OldPIN", "type": "pin", "description": "Your current SIM PIN.", "sensitive": true },
+       { "name": "NewPIN", "type": "pin", "description": "Your desired new SIM PIN (4-8 digits).", "sensitive": true }
+    ],
+    "tags": ["config", "security", "sim", "pin", "pin1", "change"],
+    "notes": "Requires knowing the current (Old) PIN. PIN is usually 4-8 digits."
+  },
+  {
+    "id": 53,
+    "category": "Device Configuration",
+    "subcategory": "Security",
+    "function": "Change SIM PIN2",
+    "actions": [
+      {
+        "action": "change",
+        "code": "**042*OldPIN2*NewPIN2*NewPIN2#",
+        "description": "Change the SIM card PIN2 code (used for Fixed Dialing Numbers, etc.)"
+      }
+    ],
+    "scope": "universal_sim",
+    "scope_details": ["All"],
+    "verified": true,
+    "risk_level": "medium", // Can lock PIN2 if OldPIN2 is wrong multiple times
+    "input_params": [
+       { "name": "OldPIN2", "type": "pin", "description": "Your current SIM PIN2.", "sensitive": true },
+       { "name": "NewPIN2", "type": "pin", "description": "Your desired new SIM PIN2.", "sensitive": true }
+    ],
+    "tags": ["config", "security", "sim", "pin", "pin2", "change", "fdn"],
+    "notes": "Requires knowing the current (Old) PIN2."
+  },
+  {
+    "id": 54,
+    "category": "Device Configuration",
+    "subcategory": "Security",
+    "function": "Unblock SIM PIN1 (using PUK1)",
+    "actions": [
+      {
+        "action": "unblock",
+        "code": "**05*PUK*NewPIN*NewPIN#",
+        "description": "Unblock SIM card (PIN1) using PUK code and set a new PIN"
+      }
+    ],
+    "scope": "universal_sim",
+    "scope_details": ["All"],
+    "verified": true,
+    "risk_level": "medium", // Entering wrong PUK too many times permanently blocks SIM
+    "input_params": [
+       { "name": "PUK", "type": "puk", "description": "Your PUK1 code (provided by carrier).", "sensitive": true },
+       { "name": "NewPIN", "type": "pin", "description": "Your desired new SIM PIN (4-8 digits).", "sensitive": true }
+    ],
+    "tags": ["config", "security", "sim", "pin", "pin1", "unblock", "puk", "puk1"],
+    "notes": "PUK (PIN Unblocking Key) is provided by the network operator. Usually 8 digits."
+  },
+  {
+    "id": 55,
+    "category": "Device Configuration",
+    "subcategory": "Security",
+    "function": "Unblock SIM PIN2 (using PUK2)",
+    "actions": [
+      {
+        "action": "unblock",
+        "code": "**052*PUK2*NewPIN2*NewPIN2#",
+        "description": "Unblock SIM card PIN2 using PUK2 code and set a new PIN2"
+      }
+    ],
+    "scope": "universal_sim",
+    "scope_details": ["All"],
+    "verified": true,
+    "risk_level": "medium", // Entering wrong PUK2 too many times blocks PIN2 features
+    "input_params": [
+        { "name": "PUK2", "type": "puk", "description": "Your PUK2 code (provided by carrier).", "sensitive": true },
+       { "name": "NewPIN2", "type": "pin", "description": "Your desired new SIM PIN2.", "sensitive": true }
+    ],
+    "tags": ["config", "security", "sim", "pin", "pin2", "unblock", "puk", "puk2"],
+    "notes": "PUK2 code is provided by the network operator."
+  },
+  {
+    "id": 56,
+    "category": "Device Reset",
+    "subcategory": "Factory Reset",
+    "function": "Factory Data Reset (Android - Generic, USE WITH EXTREME CAUTION)",
+    "actions": [
+      {
+        "action": "reset",
+        "code": "*#*#7780#*#*",
+        "description": "Removes Google account, app data and settings. Does NOT erase system software or media files. Prompts for confirmation."
+      },
+      {
+        "action": "reset_wipe",
+        "code": "*2767*3855#",
+        "description": "COMPLETE WIPE / Factory Reset. Reinstalls firmware. ERASES ALL DATA INSTANTLY WITHOUT CONFIRMATION. EXTREMELY DANGEROUS. (Older devices, mainly Samsung)"
+      }
+    ],
+    "scope": "os_specific",
+    "scope_details": ["Android", "Samsung (Legacy - for *2767*3855#)"],
+    "verified": true, // Codes are known to exist and function as described
+    "risk_level": "critical", // High potential for data loss, especially the second code
+    "input_params": [],
+    "tags": ["reset", "factory_reset", "wipe", "data_loss", "android", "samsung", "dangerous"],
+    "notes": "**WARNING:** These codes will erase data. *2767*3855# is particularly dangerous and often works instantly. Use Recovery Mode for factory reset on modern devices if possible. Prefer using Settings > System > Reset options."
+  },
+  {
+    "id": 57,
+    "category": "Carrier Specific",
+    "subcategory": "Account Management",
+    "function": "Check Balance (Examples)",
+    "actions": [
+      {
+        "action": "check",
+        "code": "*123#",
+        "description": "Common code (e.g., Vodafone India, MTN Ghana, Airtel Nigeria)"
+      },
+      {
+        "action": "check",
+        "code": "*100#",
+        "description": "Common code (e.g., O2 UK, Orange FR, Telkom SA)"
+      },
+      {
+        "action": "check",
+        "code": "*111#",
+        "description": "Common code (e.g., Vodafone SA, Safaricom Kenya)"
+      },
+      {
+        "action": "check",
+        "code": "*#225#",
+        "description": "Check balance USSD (Some US Prepaid - Unverified/Rare)"
+      },
+      {
+        "action": "check",
+        "code": "#225",
+        "description": "Check balance shortcut dial (Some US Prepaid - Dial #BAL)"
+      },
+      {
+        "action": "call",
+        "code": "611",
+        "description": "Call Customer Service / IVR (Most North American Carriers: AT&T, T-Mobile, Verizon, Bell, Rogers)"
+      }
+    ],
+    "scope": "carrier_specific",
+    "scope_details": ["Various Global", "Vodafone", "MTN", "Airtel", "O2 UK", "Orange FR", "Telkom SA", "Safaricom", "North America Carriers"],
+    "verified": false, // Generally true but highly variable by exact country/plan
+    "risk_level": "none",
+    "input_params": [],
+    "tags": ["carrier", "account", "balance", "check", "ussd", "call", "customer_service", "prepaid"],
+    "notes": "Highly variable by carrier and country. Check carrier website for accurate codes."
+  },
+  {
+    "id": 58,
+    "category": "Carrier Specific",
+    "subcategory": "Account Management",
+    "function": "Check Balance (User Input Examples)",
+    "actions": [
+      {
+        "action": "check",
+        "code": "*123#",
+        "description": "Check account balance (Included from user list for Vodafone, MTN, Airtel)"
+      }
+    ],
+    "scope": "carrier_specific",
+    "scope_details": ["Vodafone", "MTN", "Airtel"],
+    "verified": false, // Confirmed as user input, but variable by country
+    "risk_level": "none",
+    "input_params": [],
+    "tags": ["carrier", "account", "balance", "check", "ussd", "vodafone", "mtn", "airtel", "user_input"],
+    "notes": "Included as specified by user. Balance code can vary by country even for the same carrier."
+  },
+  {
+    "id": 59,
+    "category": "Carrier Specific",
+    "subcategory": "Account Management",
+    "function": "Check Data Balance (User Input Examples)",
+    "actions": [
+      {
+        "action": "check",
+        "code": "*127#",
+        "description": "Check data balance (Vodafone - Country Specific?)"
+      },
+      {
+        "action": "check",
+        "code": "*131*4#",
+        "description": "Check data balance (MTN Nigeria)"
+      },
+      {
+        "action": "check",
+        "code": "*121*8#",
+        "description": "Check data balance (Airtel India - *121* menu, option 8? Or *123*8#? Verify)"
+      },
+      {
+        "action": "check",
+        "code": "*544#",
+        "description": "Check data balance (T-Mobile - Unlikely, more common in Africa e.g. Safaricom. T-Mobile US is #932#)"
+      },
+      {
+        "action": "check",
+        "code": "*3282#",
+        "description": "Check data/min usage (AT&T US - Dials *DATA#)"
+      },
+      {
+        "action": "check",
+        "code": "#611#",
+        "description": "Check data/min usage (Verizon US - Unlikely, Verizon uses #DATA or call 611)"
+      }
+    ],
+    "scope": "carrier_specific",
+    "scope_details": ["Vodafone", "MTN Nigeria", "Airtel India", "T-Mobile (Unverified)", "AT&T US", "Verizon (Unverified)", "Safaricom (Implied)"],
+    "verified": false, // Highly specific and includes unverified/unlikely entries
+    "risk_level": "none",
+    "input_params": [],
+    "tags": ["carrier", "account", "data", "balance", "usage", "check", "ussd", "user_input"],
+    "notes": "Included from user prompt. Codes are highly specific to carrier AND country AND plan type. Some entries may be incorrect for the listed carrier (e.g., T-Mobile, Verizon)."
+  },
+  {
+    "id": 60,
+    "category": "Carrier Specific",
+    "subcategory": "Account Management",
+    "function": "Check Data Balance (Common US Examples)",
+    "actions": [
+      {
+        "action": "check",
+        "code": "#932#",
+        "description": "Check data usage (T-Mobile US - Dials #WEB#)"
+      },
+      {
+        "action": "check",
+        "code": "*3282#",
+        "description": "Check data/min usage (AT&T US - Dials *DATA#)"
+      },
+      {
+        "action": "check",
+        "code": "#3282",
+        "description": "Check data/min usage (Verizon US - Dials #DATA)"
+      }
+    ],
+    "scope": "carrier_specific",
+    "scope_details": ["T-Mobile US", "AT&T US", "Verizon US"],
+    "verified": true, // These are standard US codes
+    "risk_level": "none",
+    "input_params": [],
+    "tags": ["carrier", "account", "data", "balance", "usage", "check", "ussd", "tmobile", "att", "verizon", "usa"],
+    "notes": "Common US carrier codes."
+  },
+  {
+    "id": 61,
+    "category": "Carrier Specific",
+    "subcategory": "Services",
+    "function": "Activate Roaming (User Input Example - Unlikely)",
+    "actions": [
+      {
+        "action": "activate", // Incorrectly labelled action based on code function
+        "code": "*31*number#",
+        "description": "Activate international roaming - This is the code to SHOW caller ID for one call. Roaming activation usually done via app, website, or customer service."
+      }
+    ],
+    "scope": "carrier_specific",
+    "scope_details": ["Vodafone (Incorrect Function)", "Orange (Incorrect Function)"],
+    "verified": false, // Code exists but function is misidentified
+    "risk_level": "low", // Actual function (show caller ID) is low risk
+     "input_params": [
+      { "name": "number", "type": "phone_number", "description": "The full phone number to call (to show caller ID)." }
+    ],
+    "tags": ["carrier", "services", "roaming", "activate", "incorrect", "user_input", "caller_id"],
+    "notes": "Included from user prompt, but *31*number# is NOT for roaming activation. It's for Caller ID. Roaming activation processes vary greatly."
+  },
+  {
+    "id": 62,
+    "category": "Carrier Specific",
+    "subcategory": "Services",
+    "function": "Activate Data Plan (User Input Examples)",
+    "actions": [
+      {
+        "action": "activate",
+        "code": "*141*712#",
+        "description": "Activate data plan (MTN - Specific plan code for a specific country?)"
+      },
+      {
+        "action": "activate",
+        "code": "*121*2#",
+        "description": "Activate data plan (Airtel - Main *121# menu, option 2? Country specific?)"
+      }
+    ],
+    "scope": "carrier_specific",
+    "scope_details": ["MTN (Specific)", "Airtel (Specific)"],
+    "verified": false, // Highly specific, likely correct only in certain contexts
+    "risk_level": "medium", // Activating plans costs money/uses balance
+    "input_params": [],
+    "tags": ["carrier", "services", "data", "plan", "activate", "purchase", "mtn", "airtel", "user_input"],
+    "notes": "Included from user prompt. Data plan activation codes are highly specific to the carrier, country, and the exact plan being purchased. Often done via a main menu USSD code (e.g., *131# for MTN, *121# for Airtel)."
+  },
+  {
+    "id": 63,
+    "category": "Carrier Specific",
+    "subcategory": "Voicemail",
+    "function": "Access Voicemail",
+    "actions": [
+      {
+        "action": "call",
+        "code": "Hold 1",
+        "description": "Most common speed dial shortcut to call voicemail (pre-configured by carrier)"
+      },
+      {
+        "action": "call",
+        "code": "121",
+        "description": "Common number to call voicemail (e.g., O2 UK, Vodafone UK)"
+      },
+      {
+        "action": "call",
+        "code": "901",
+        "description": "Common number to call voicemail (e.g., Vodafone UK - older)"
+      },
+      {
+        "action": "call",
+        "code": "123",
+        "description": "Common number to call voicemail (e.g., T-Mobile DE, some Orange)"
+      },
+      {
+        "action": "call",
+        "code": "*86",
+        "description": "Call voicemail (Verizon US - dials *VM)"
+      }
+    ],
+    "scope": "carrier_specific",
+    "scope_details": ["Various Global", "O2 UK", "Vodafone UK", "T-Mobile DE", "Orange", "Verizon US"],
+    "verified": true, // Hold 1 is universal, others are common for listed carriers
+    "risk_level": "none",
+    "input_params": [],
+    "tags": ["carrier", "voicemail", "call", "access", "speed_dial"],
+    "notes": "Actual number varies significantly by carrier. Holding '1' on the keypad is the most common method."
+  },
+  {
+    "id": 64,
+    "category": "Carrier Specific",
+    "subcategory": "Services",
+    "function": "Top Up / Recharge (Examples)",
+    "actions": [
+      {
+        "action": "recharge",
+        "code": "*101*VoucherCode#",
+        "description": "Example code for recharging prepaid account with voucher (e.g., some European carriers)"
+      },
+      {
+        "action": "recharge",
+        "code": "*134*VoucherCode#",
+        "description": "Example code for recharging prepaid account with voucher (e.g., MTN SA)"
+      },
+      {
+        "action": "recharge",
+        "code": "*111*VoucherCode#",
+        "description": "Example code for recharging prepaid account with voucher (e.g., Vodafone SA)"
+      }
+    ],
+    "scope": "carrier_specific",
+    "scope_details": ["Various Prepaid", "Europe (Examples)", "MTN SA", "Vodafone SA"],
+    "verified": false, // Structure is common but exact codes vary widely
+    "risk_level": "medium", // Involves account balance/money
+    "input_params": [
+       { "name": "VoucherCode", "type": "voucher_code", "description": "The recharge voucher code.", "sensitive": true }
+    ],
+    "tags": ["carrier", "services", "topup", "recharge", "voucher", "prepaid", "ussd"],
+    "notes": "Specific code varies greatly by carrier and country."
+  },
+  {
+    "id": 65,
+    "category": "Regional Specific",
+    "subcategory": "Emergency Services",
+    "function": "Emergency Services",
+    "actions": [
+      { "action": "call", "code": "112", "description": "Call emergency services (GSM Standard, Europe, India, many other countries)" },
+      { "action": "call", "code": "911", "description": "Call emergency services (North America - USA, Canada, Mexico, etc.)" },
+      { "action": "call", "code": "999", "description": "Call emergency services (UK, Ireland, Hong Kong, UAE, Malaysia, Singapore, etc.)" },
+      { "action": "call", "code": "000", "description": "Call emergency services (Australia)" },
+      { "action": "call", "code": "100", "description": "Call Police (India, Israel)" },
+      { "action": "call", "code": "101", "description": "Call Fire / Ambulance (India) / Non-emergency police (UK)" },
+      { "action": "call", "code": "102", "description": "Call Ambulance (India, Russia)" },
+      { "action": "call", "code": "110", "description": "Call Police (China, Japan, Germany, Indonesia)" },
+      { "action": "call", "code": "119", "description": "Call Fire/Ambulance (China, Japan, South Korea, Indonesia)" },
+      { "action": "call", "code": "111", "description": "Call Emergency / Police (Pakistan) / Child Helpline (India)" },
+      { "action": "call", "code": "129", "description": "Call Ambulance (Thailand)" },
+      { "action": "call", "code": "995", "description": "Call Fire / Ambulance (Singapore)" },
+      { "action": "call", "code": "998", "description": "Call Ambulance (UAE)" }
+    ],
+    "scope": "regional",
+    "scope_details": ["Global", "Europe", "North America", "UK", "Australia", "India", "China", "Japan", "etc."],
+    "verified": true, // Standard emergency numbers
+    "risk_level": "none", // Calling emergency is intended use
+    "input_params": [],
+    "tags": ["emergency", "call", "police", "ambulance", "fire", "sos", "regional", "global"],
+    "notes": "112 and 911 are widely supported globally on mobile phones, routing to local emergency services even without a SIM or if the phone is locked."
+  },
+  {
+    "id": 66,
+    "category": "Device Specific",
+    "subcategory": "Samsung",
+    "function": "Service Menu (General Test)",
+    "actions": [
+      {
+        "action": "access",
+        "code": "*#0*#",
+        "description": "Access Samsung general hardware test menu"
+      }
+    ],
+    "scope": "brand_specific",
+    "scope_details": ["Samsung"],
+    "verified": true,
+    "risk_level": "low", // Duplicate of ID 30
+    "input_params": [],
+    "tags": ["diagnostics", "hardware", "test", "menu", "samsung", "lcd", "sensor", "touch", "camera", "duplicate"],
+    "notes": "Included from user list - duplicate of Diagnostics entry but kept for completeness."
+  },
+  {
+    "id": 67,
+    "category": "Device Specific",
+    "subcategory": "Samsung",
+    "function": "Battery Information",
+    "actions": [
+      {
+        "action": "check",
+        "code": "*#0228#",
+        "description": "Check battery status and information"
+      }
+    ],
+    "scope": "brand_specific",
+    "scope_details": ["Samsung"],
+     "verified": true,
+     "risk_level": "none", // Informational, part of ID 31
+     "input_params": [],
+    "tags": ["diagnostics", "battery", "info", "check", "samsung", "duplicate"],
+    "notes": "Included from user list - duplicate of Diagnostics entry but kept for completeness."
+  },
+  {
+    "id": 68,
+    "category": "Device Specific",
+    "subcategory": "IMEI",
+    "function": "IMEI Information",
+    "actions": [
+      {
+        "action": "check",
+        "code": "*#06#",
+        "description": "Check IMEI number"
+      }
+    ],
+    "scope": "universal_device",
+    "scope_details": ["All"],
+    "verified": true,
+    "risk_level": "none", // Duplicate of ID 24
+    "input_params": [],
+    "tags": ["device", "info", "imei", "check", "universal", "duplicate"],
+    "notes": "Included from user list - duplicate of Universal entry but kept for completeness."
+  },
+  {
+    "id": 69,
+    "category": "Device Specific",
+    "subcategory": "iPhone",
+    "function": "Field Test Mode",
+    "actions": [
+      {
+        "action": "access",
+        "code": "*3001#12345#*",
+        "description": "Access iPhone field test mode"
+      }
+    ],
+    "scope": "brand_specific",
+    "scope_details": ["iPhone"],
+    "verified": true,
+    "risk_level": "none", // Duplicate of ID 47
+    "input_params": [],
+    "tags": ["diagnostics", "field_test", "iphone", "signal", "cellular", "duplicate"],
+    "notes": "Included from user list - duplicate of Diagnostics entry but kept for completeness."
+  },
+  {
+    "id": 70,
+    "category": "Device Specific",
+    "subcategory": "Huawei",
+    "function": "Engineer Mode (ProjectMenu)",
+    "actions": [
+      {
+        "action": "access",
+        "code": "*#*#2846579#*#*",
+        "description": "Access Huawei ProjectMenu (Engineer mode)"
+      }
+    ],
+    "scope": "brand_specific",
+    "scope_details": ["Huawei", "Honor"],
+    "verified": true,
+    "risk_level": "high", // Duplicate of ID 33
+    "input_params": [],
+    "tags": ["diagnostics", "engineering", "service", "menu", "projectmenu", "huawei", "honor", "duplicate"],
+    "notes": "Included from user list - duplicate of Diagnostics entry but kept for completeness."
+  },
+  {
+    "id": 71,
+    "category": "Device Specific",
+    "subcategory": "Xiaomi",
+    "function": "Service Menu (CIT)",
+    "actions": [
+      {
+        "action": "access",
+        "code": "*#*#64663#*#*",
+        "description": "Access Xiaomi CIT service menu (QC test)"
+      }
+    ],
+    "scope": "brand_specific",
+    "scope_details": ["Xiaomi"],
+    "verified": true,
+    "risk_level": "low", // Duplicate of ID 35
+    "input_params": [],
+    "tags": ["diagnostics", "engineering", "service", "menu", "qc_test", "cit", "xiaomi", "hardware", "duplicate"],
+    "notes": "Included from user list - duplicate of Diagnostics entry but kept for completeness. *#*#6484#*#* is an alternative."
+  }
+]

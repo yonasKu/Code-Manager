@@ -1,9 +1,19 @@
-import React, { useState } from 'react';
-import { View, Text, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import {
+  View,
+  Text,
+  StyleSheet,
+  ScrollView,
+  TouchableOpacity,
+  Switch,
+  StatusBar,
+} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import Icon from 'react-native-vector-icons/MaterialIcons';
 import { StackNavigationProp } from '@react-navigation/stack';
+import { IconButton } from 'react-native-paper';
 import { RootStackParamList } from '../navigation/AppNavigator';
+import { spacing, typography, shadows, borderRadius } from '../theme/theme';
+import { useTheme } from '../theme/ThemeContext';
 
 type SettingsScreenNavigationProp = StackNavigationProp<RootStackParamList>;
 
@@ -12,21 +22,44 @@ type SettingItemProps = {
   icon: string;
   value?: string;
   onPress?: () => void;
+  isSwitch?: boolean;
+  switchValue?: boolean;
+  onSwitchChange?: (value: boolean) => void;
 };
 
-const SettingItem = ({ title, icon, value, onPress }: SettingItemProps) => {
+const SettingItem = ({ 
+  title, 
+  icon, 
+  value, 
+  onPress, 
+  isSwitch = false,
+  switchValue = false,
+  onSwitchChange
+}: SettingItemProps) => {
+  const { colors } = useTheme();
+  
   return (
     <TouchableOpacity 
-      style={styles.settingItem}
+      style={[styles.settingItem, { backgroundColor: colors.card, borderBottomColor: colors.border }]}
       onPress={onPress}
+      disabled={isSwitch}
     >
       <View style={styles.settingItemContent}>
-        <Icon name={icon} size={24} color="#007AFF" />
-        <Text style={styles.settingItemTitle}>{title}</Text>
+        <IconButton icon={icon} size={24} iconColor={colors.primary} style={{ margin: 0 }} />
+        <Text style={[styles.settingItemTitle, { color: colors.text }]}>{title}</Text>
       </View>
       <View style={styles.settingItemRight}>
-        {value && <Text style={styles.settingItemValue}>{value}</Text>}
-        <Icon name="chevron-right" size={24} color="#999" />
+        {value && <Text style={[styles.settingItemValue, { color: colors.textSecondary }]}>{value}</Text>}
+        {isSwitch ? (
+          <Switch
+            value={switchValue}
+            onValueChange={onSwitchChange}
+            trackColor={{ false: '#D1D1D6', true: colors.primaryLight }}
+            thumbColor={switchValue ? colors.primary : '#FFFFFF'}
+          />
+        ) : (
+          <IconButton icon="chevron-right" size={24} iconColor={colors.textTertiary} style={{ margin: 0 }} />
+        )}
       </View>
     </TouchableOpacity>
   );
@@ -34,134 +67,161 @@ const SettingItem = ({ title, icon, value, onPress }: SettingItemProps) => {
 
 const SettingsScreen = () => {
   const navigation = useNavigation<SettingsScreenNavigationProp>();
+  const { colors, mode, setThemeMode, isDark } = useTheme();
   
-  // These would be replaced with actual settings from storage
-  const [theme, setTheme] = useState('System default');
-  const [accentColor, setAccentColor] = useState('Blue');
+  // App settings state
+  const [notifications, setNotifications] = useState(true);
   const [defaultSim, setDefaultSim] = useState('SIM 1');
+  const [autoRefresh, setAutoRefresh] = useState(true);
   
   return (
-    <ScrollView style={styles.container}>
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>ACCOUNT</Text>
-        <SettingItem 
-          title="Profile" 
-          icon="person" 
-          onPress={() => navigation.navigate('Main')}
-        />
-        <SettingItem 
-          title="Security & Privacy" 
-          icon="lock" 
-        />
+    <View style={[styles.container, { backgroundColor: colors.background }]}>
+      <StatusBar barStyle={isDark ? "light-content" : "dark-content"} />
+      <View style={[styles.header, { backgroundColor: colors.card, borderBottomColor: colors.border }]}>
+        <Text style={[styles.headerTitle, { color: colors.text }]}>Settings</Text>
       </View>
       
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>APPEARANCE</Text>
-        <SettingItem 
-          title="Theme" 
-          icon="brightness-medium" 
-          value={theme}
-        />
-        <SettingItem 
-          title="Accent Color" 
-          icon="palette" 
-          value={accentColor}
-        />
-      </View>
-      
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>APP SETTINGS</Text>
-        <SettingItem 
-          title="Default SIM" 
-          icon="sim-card" 
-          value={defaultSim}
-        />
-        <SettingItem 
-          title="Notifications" 
-          icon="notifications" 
-        />
-        <SettingItem 
-          title="Regional Settings" 
-          icon="public" 
-        />
-      </View>
-      
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>DATA MANAGEMENT</Text>
-        <SettingItem 
-          title="Clear History" 
-          icon="cleaning-services" 
-        />
-      </View>
-      
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>ABOUT</Text>
-        <SettingItem 
-          title="App Info" 
-          icon="info" 
-        />
-        <SettingItem 
-          title="Help & Support" 
-          icon="help" 
-        />
-      </View>
-      
-      <View style={styles.versionContainer}>
-        <Text style={styles.versionText}>USSD Manager v1.0.0</Text>
-      </View>
-    </ScrollView>
+      <ScrollView style={styles.scrollView}>
+        <View style={styles.section}>
+          <Text style={[styles.sectionTitle, { color: colors.textSecondary }]}>Appearance</Text>
+          <SettingItem 
+            title="Dark Mode" 
+            icon="brightness-6" 
+            isSwitch={true}
+            switchValue={isDark}
+            onSwitchChange={(value) => setThemeMode(value ? 'dark' : 'light')}
+          />
+        </View>
+        
+        <View style={styles.section}>
+          <Text style={[styles.sectionTitle, { color: colors.textSecondary }]}>App Settings</Text>
+          <SettingItem 
+            title="Default SIM" 
+            icon="sim" 
+            value={defaultSim}
+            onPress={() => {/* Show SIM selection dialog */}}
+          />
+          <SettingItem 
+            title="Auto-refresh Data" 
+            icon="refresh" 
+            isSwitch={true}
+            switchValue={autoRefresh}
+            onSwitchChange={setAutoRefresh}
+          />
+          <SettingItem 
+            title="Notifications" 
+            icon="bell" 
+            isSwitch={true}
+            switchValue={notifications}
+            onSwitchChange={setNotifications}
+          />
+        </View>
+        
+        <View style={styles.section}>
+          <Text style={[styles.sectionTitle, { color: colors.textSecondary }]}>Data Management</Text>
+          <SettingItem 
+            title="Clear History" 
+            icon="delete" 
+            onPress={() => {/* Show confirmation dialog */}}
+          />
+          <SettingItem 
+            title="Export Data" 
+            icon="export" 
+            onPress={() => {/* Show export options */}}
+          />
+        </View>
+        
+        <View style={styles.section}>
+          <Text style={[styles.sectionTitle, { color: colors.textSecondary }]}>Device</Text>
+          <SettingItem 
+            title="Device Information" 
+            icon="cellphone" 
+            onPress={() => navigation.navigate('DeviceSpecsScreen')}
+          />
+        </View>
+        
+        <View style={styles.section}>
+          <Text style={[styles.sectionTitle, { color: colors.textSecondary }]}>About</Text>
+          <SettingItem 
+            title="App Info" 
+            icon="information" 
+            onPress={() => {/* Show app info */}}
+          />
+          <SettingItem 
+            title="Help & Support" 
+            icon="help-circle" 
+            onPress={() => {/* Show help options */}}
+          />
+        </View>
+        
+        <View style={styles.versionContainer}>
+          <Text style={[styles.versionText, { color: colors.textTertiary }]}>USSD Manager v1.0.0</Text>
+        </View>
+      </ScrollView>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F5F5F5',
+  },
+  header: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingHorizontal: spacing.md,
+    paddingTop: spacing.md,
+    paddingBottom: spacing.sm,
+    borderBottomWidth: 1,
+  },
+  headerTitle: {
+    fontSize: typography.heading3,
+    fontWeight: typography.semiBold as any,
+  },
+  scrollView: {
+    flex: 1,
   },
   section: {
-    marginBottom: 16,
+    marginBottom: spacing.md,
   },
   sectionTitle: {
-    fontSize: 14,
-    fontWeight: 'bold',
-    marginHorizontal: 16,
-    marginTop: 16,
-    marginBottom: 8,
-    color: '#666666',
+    fontSize: typography.bodySmall,
+    fontWeight: typography.semiBold as any,
+    marginHorizontal: spacing.md,
+    marginTop: spacing.md,
+    marginBottom: spacing.sm,
+    textTransform: 'uppercase',
   },
   settingItem: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    backgroundColor: '#FFFFFF',
-    padding: 16,
+    padding: spacing.md,
     borderBottomWidth: 1,
-    borderBottomColor: '#EEEEEE',
   },
   settingItemContent: {
     flexDirection: 'row',
     alignItems: 'center',
   },
   settingItemTitle: {
-    fontSize: 16,
-    marginLeft: 16,
+    fontSize: typography.body,
+    marginLeft: spacing.md,
   },
   settingItemRight: {
     flexDirection: 'row',
     alignItems: 'center',
   },
   settingItemValue: {
-    fontSize: 14,
-    color: '#666666',
-    marginRight: 8,
+    fontSize: typography.bodySmall,
+    marginRight: spacing.sm,
   },
   versionContainer: {
     alignItems: 'center',
-    padding: 24,
+    padding: spacing.xl,
   },
   versionText: {
-    fontSize: 14,
-    color: '#999999',
+    fontSize: typography.caption,
   },
 });
 
