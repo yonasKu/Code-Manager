@@ -224,7 +224,11 @@ const HomeScreen = () => {
         <View style={styles.section}>
           <View style={styles.sectionHeader}>
             <Text style={[styles.sectionTitle, { color: colors.text }]}>Recent Activity</Text>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => {
+              // Navigate to the MyCodes tab
+              const jumpToAction = { type: 'JUMP_TO', payload: { name: 'MyCodes' } };
+              navigation.dispatch(jumpToAction);
+            }}>
               <Text style={[styles.seeAllButton, { color: colors.primary }]}>See All</Text>
             </TouchableOpacity>
           </View>

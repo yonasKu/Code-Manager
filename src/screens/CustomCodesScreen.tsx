@@ -16,6 +16,7 @@ import { RootStackParamList } from '../navigation/AppNavigator';
 import { spacing, typography, shadows, borderRadius } from '../theme/theme';
 import { useTheme } from '../theme/ThemeContext';
 import StorageService, { CustomCode } from '../services/StorageService';
+import AppHeader from '../components/AppHeader';
 
 type CustomCodesScreenNavigationProp = StackNavigationProp<RootStackParamList>;
 
@@ -156,17 +157,14 @@ const CustomCodesScreen = () => {
     <View style={[styles.container, { backgroundColor: colors.background }]}>
       <StatusBar barStyle={isDark ? "light-content" : "dark-content"} />
       
-      {renderContent()}
+      <AppHeader 
+        title="Custom Codes" 
+        showBackButton={false}
+        rightIcon="plus"
+        onRightIconPress={() => navigation.navigate('CustomCodeCreatorScreen', {})}
+      />
       
-      {/* Floating Action Button for non-empty lists */}
-      {!isLoading && customCodes.length > 0 && (
-        <TouchableOpacity
-          style={[styles.fab, { backgroundColor: colors.primary }]}
-          onPress={() => navigation.navigate('CustomCodeCreatorScreen', {})}
-        >
-          <IconButton icon="plus" size={24} iconColor="#FFFFFF" style={{ margin: 0 }} />
-        </TouchableOpacity>
-      )}
+      {renderContent()}
     </View>
   );
 };
@@ -246,17 +244,6 @@ const styles = StyleSheet.create({
     color: '#FFFFFF',
     fontSize: typography.body,
     fontWeight: typography.semiBold as any,
-  },
-  fab: {
-    position: 'absolute',
-    width: 56,
-    height: 56,
-    alignItems: 'center',
-    justifyContent: 'center',
-    right: 20,
-    bottom: 20,
-    borderRadius: 28,
-    ...shadows.medium,
   },
 });
 

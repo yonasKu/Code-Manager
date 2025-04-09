@@ -17,6 +17,7 @@ import {categories, Category, Subcategory, UssdCode} from '../data/categories';
 import {typography, spacing, shadows, borderRadius} from '../theme/theme';
 import {useTheme} from '../theme/ThemeContext';
 import NoDataView from '../components/NoDataView';
+import AppHeader from '../components/AppHeader';
 
 type AllCodesScreenNavigationProp = StackNavigationProp<RootStackParamList>;
 
@@ -237,6 +238,7 @@ const AllCodesScreen = () => {
   const navigation = useNavigation<AllCodesScreenNavigationProp>();
   const {colors, isDark} = useTheme();
   const [searchQuery, setSearchQuery] = useState('');
+  const searchInputRef = React.useRef<TextInput>(null);
 
   // Filter categories based on search query
   const filteredCategories = searchQuery
@@ -262,6 +264,18 @@ const AllCodesScreen = () => {
   return (
     <View style={[styles.container, {backgroundColor: colors.background}]}>
       <StatusBar barStyle={isDark ? 'light-content' : 'dark-content'} />
+      
+      <AppHeader 
+        title="All Codes" 
+        showBackButton={false}
+        rightIcon="magnify"
+        onRightIconPress={() => {
+          // Focus the search input
+          if (searchInputRef.current) {
+            searchInputRef.current.focus();
+          }
+        }}
+      />
 
       <View
         style={[
@@ -280,6 +294,7 @@ const AllCodesScreen = () => {
           placeholderTextColor={colors.textTertiary}
           value={searchQuery}
           onChangeText={setSearchQuery}
+          ref={searchInputRef}
         />
         {searchQuery.length > 0 && (
           <TouchableOpacity onPress={() => setSearchQuery('')}>

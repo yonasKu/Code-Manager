@@ -15,6 +15,7 @@ import { typography, spacing, shadows, borderRadius } from '../theme/theme';
 import { useTheme } from '../theme/ThemeContext';
 import { categories, UssdCode } from '../data/categories';
 import NoDataView from '../components/NoDataView';
+import AppHeader from '../components/AppHeader';
 
 const DeviceSpecsScreen = () => {
   const navigation = useNavigation<any>();
@@ -190,6 +191,11 @@ const DeviceSpecsScreen = () => {
   return (
     <View style={[styles.container, { backgroundColor: colors.background }]}>
       <StatusBar barStyle={isDark ? "light-content" : "dark-content"} />
+      
+      <AppHeader 
+        title="Device Specs" 
+        showBackButton={false}
+      />
 
       {!hasDeviceData ? (
         <NoDataView
