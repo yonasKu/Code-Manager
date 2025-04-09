@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import {
   View,
   Text,
@@ -8,201 +8,288 @@ import {
   TextInput,
   StatusBar,
 } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
-import { StackNavigationProp } from '@react-navigation/stack';
-import { IconButton } from 'react-native-paper';
-import { RootStackParamList } from '../navigation/AppNavigator';
-import { categories, Subcategory } from '../data/categories';
-import { typography, spacing, shadows, borderRadius } from '../theme/theme';
-import { useTheme } from '../theme/ThemeContext';
+import {useNavigation, useRoute, RouteProp} from '@react-navigation/native';
+import {StackNavigationProp} from '@react-navigation/stack';
+import {IconButton} from 'react-native-paper';
+import {RootStackParamList} from '../navigation/AppNavigator';
+import {
+  categories,
+  Subcategory,
+  UssdCode,
+  getCategoryByTitle,
+  getSubcategoriesByCategory,
+  getCodesBySubcategory,
+} from '../data/categories';
+import {typography, spacing, shadows, borderRadius} from '../theme/theme';
+import {useTheme} from '../theme/ThemeContext';
+import NoDataView from '../components/NoDataView';
 
+type CategoryScreenRouteProp = RouteProp<RootStackParamList, 'CategoryScreen'>;
 type CategoryScreenNavigationProp = StackNavigationProp<RootStackParamList>;
 
-const SubcategoryItem = ({ title, icon = "folder" }: { title: string; icon?: string }) => {
+const CodeItem = ({
+  code,
+  description,
+}: {
+  code: string;
+  description: string;
+}) => {
   const navigation = useNavigation<CategoryScreenNavigationProp>();
-  const { colors } = useTheme();
-  
-  return (
-    <TouchableOpacity 
-      style={[styles.subcategoryItem, { 
-        backgroundColor: colors.card,
-        borderColor: colors.border
-      }]}
-      onPress={() => navigation.navigate('CodeDetailScreen', { code: '', title })}
-    >
-      <View style={styles.subcategoryContent}>
-        <IconButton icon={icon} size={24} iconColor={colors.primary} style={{ margin: 0, marginRight: 12 }} />
-        <Text style={[styles.subcategoryTitle, { color: colors.text }]}>{title}</Text>
-      </View>
-      <IconButton icon="chevron-right" size={24} iconColor={colors.textTertiary} style={{ margin: 0 }} />
-    </TouchableOpacity>
-  );
-};
+  const {colors} = useTheme();
 
-const PopularCodeItem = ({ code, description }: { code: string; description: string }) => {
-  const navigation = useNavigation<CategoryScreenNavigationProp>();
-  const { colors } = useTheme();
-  
   return (
-    <TouchableOpacity 
-      style={[styles.popularCodeItem, { 
-        backgroundColor: colors.card,
-        borderColor: colors.border
-      }]}
-      onPress={() => navigation.navigate('CodeDetailScreen', { code, title: description })}
-    >
-      <View>
-        <Text style={[styles.popularCodeText, { color: colors.text }]}>{code}</Text>
-        <Text style={[styles.popularCodeDescription, { color: colors.textSecondary }]}>{description}</Text>
-        <View style={styles.popularCodeActions}>
-          <TouchableOpacity 
-            style={styles.actionButton}
-            onPress={() => navigation.navigate('CodeExecutionScreen', { code })}
-          >
-            <IconButton icon="play" size={16} iconColor={colors.primary} style={{ margin: 0 }} />
-            <Text style={[styles.actionButtonText, { color: colors.primary }]}>Execute</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.actionButton}>
-            <IconButton icon="star-outline" size={16} iconColor={colors.primary} style={{ margin: 0 }} />
-            <Text style={[styles.actionButtonText, { color: colors.primary }]}>Favorite</Text>
-          </TouchableOpacity>
-        </View>
-      </View>
-    </TouchableOpacity>
-  );
-};
-
-const CategoryItem = ({ title, icon, subcategories }: { title: string; icon: string; subcategories: Subcategory[] }) => {
-  const [expanded, setExpanded] = useState(false);
-  const { colors } = useTheme();
-  
-  return (
-    <View style={styles.categoryContainer}>
-      <TouchableOpacity 
-        style={[styles.categoryItem, { 
+    <TouchableOpacity
+      style={[
+        styles.codeItem,
+        {
           backgroundColor: colors.card,
-          borderColor: colors.border
-        }]}
-        onPress={() => setExpanded(!expanded)}
-      >
-        <View style={styles.categoryContent}>
-          <IconButton icon={icon} size={24} iconColor={colors.primary} style={{ margin: 0, marginRight: 12 }} />
-          <Text style={[styles.categoryTitle, { color: colors.text }]}>{title}</Text>
-        </View>
-        <IconButton 
-          icon={expanded ? "chevron-up" : "chevron-down"} 
-          size={24} 
-          iconColor={colors.textTertiary} 
-          style={{ margin: 0 }} 
+          borderColor: colors.border,
+        },
+      ]}
+      onPress={() =>
+        navigation.navigate('CodeDetailScreen', {code, title: description})
+      }>
+      <View style={styles.codeContent}>
+        <Text style={[styles.codeText, {color: colors.primary}]}>
+          {code}
+        </Text>
+        <Text style={[styles.codeDescription, {color: colors.text}]}>
+          {description}
+        </Text>
+      </View>
+      <View style={styles.codeActions}>
+        <TouchableOpacity
+          style={styles.actionButton}
+          onPress={() => navigation.navigate('CodeExecutionScreen', {code})}>
+          <IconButton
+            icon="play"
+            size={20}
+            iconColor={colors.primary}
+            style={{margin: 0}}
+          />
+        </TouchableOpacity>
+      </View>
+    </TouchableOpacity>
+  );
+};
+
+const SubcategoryItem = ({
+  title,
+  icon = 'folder',
+  categoryTitle,
+  onPress,
+}: {
+  title: string;
+  icon?: string;
+  categoryTitle: string;
+  onPress: () => void;
+}) => {
+  const {colors} = useTheme();
+  const navigation = useNavigation<CategoryScreenNavigationProp>();
+
+  return (
+    <TouchableOpacity
+      style={[
+        styles.subcategoryItem,
+        {
+          backgroundColor: colors.card,
+          borderColor: colors.border,
+        },
+      ]}
+      onPress={onPress}>
+      <View style={styles.subcategoryContent}>
+        <IconButton
+          icon={icon}
+          size={24}
+          iconColor={colors.primary}
+          style={{margin: 0, marginRight: 12}}
         />
-      </TouchableOpacity>
-      
-      {expanded && (
-        <View style={styles.subcategoriesContainer}>
-          {subcategories.map((subcategory, index) => (
-            <SubcategoryItem 
-              key={index} 
-              title={subcategory.title} 
-              icon={subcategory.icon} 
-            />
-          ))}
-        </View>
-      )}
-    </View>
+        <Text style={[styles.subcategoryTitle, {color: colors.text}]}>
+          {title}
+        </Text>
+      </View>
+      <IconButton
+        icon="chevron-right"
+        size={24}
+        iconColor={colors.textTertiary}
+        style={{margin: 0}}
+      />
+    </TouchableOpacity>
   );
 };
 
 const CategoryScreen = () => {
+  const route = useRoute<CategoryScreenRouteProp>();
   const navigation = useNavigation<CategoryScreenNavigationProp>();
   const [searchQuery, setSearchQuery] = useState('');
-  const { colors, isDark } = useTheme();
-  
-  // Filter categories based on search query
-  const filteredCategories = searchQuery
-    ? categories.filter(category => 
-        category.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        category.subcategories.some(sub => 
-          sub.title.toLowerCase().includes(searchQuery.toLowerCase())
-        )
+  const [selectedSubcategory, setSelectedSubcategory] = useState<string | null>(null);
+  const {colors, isDark} = useTheme();
+  const categoryTitle = route.params?.category || '';
+  const category = getCategoryByTitle(categoryTitle);
+  const subcategories = category ? category.subcategories : [];
+
+  const handleSubcategoryPress = (subcategoryTitle: string) => {
+    if (selectedSubcategory === subcategoryTitle) {
+      // If the same subcategory is tapped again, collapse it
+      setSelectedSubcategory(null);
+    } else {
+      // Otherwise, expand the tapped subcategory
+      setSelectedSubcategory(subcategoryTitle);
+    }
+  };
+
+  // Filter subcategories based on search query
+  const filteredSubcategories = searchQuery
+    ? subcategories.filter(subcategory =>
+        subcategory.title.toLowerCase().includes(searchQuery.toLowerCase()),
       )
-    : categories;
-  
-  // Popular codes (just examples)
-  const popularCodes = [
-    { code: '**21*number#', description: 'Forward all calls' },
-    { code: '#31#', description: 'Hide caller ID (per call)' },
-    { code: '*100#', description: 'Check account balance' },
-    { code: '*#06#', description: 'Show IMEI number' }
-  ];
-  
+    : subcategories;
+
+  // Get codes for the selected subcategory
+  const getCodesForSubcategory = (subcategoryTitle: string): UssdCode[] => {
+    if (!category) return [];
+    
+    const subcategory = category.subcategories.find(sub => sub.title === subcategoryTitle);
+    return subcategory?.codes || [];
+  };
+
+  // Check if any subcategories have codes
+  const hasAnySubcategoryWithCodes = subcategories.some(sub => sub.codes && sub.codes.length > 0);
+
+  const hasData = category && subcategories && subcategories.length > 0;
+
   return (
-    <View style={[styles.container, { backgroundColor: colors.background }]}>
-      <StatusBar barStyle={isDark ? "light-content" : "dark-content"} />
-      <View style={[styles.header, { 
-        backgroundColor: colors.card,
-        borderBottomColor: colors.border
-      }]}>
-        <Text style={[styles.headerTitle, { color: colors.text }]}>Categories</Text>
-        <TouchableOpacity>
-          <IconButton icon="magnify" size={24} iconColor={colors.text} style={{ margin: 0 }} />
-        </TouchableOpacity>
-      </View>
-      
-      <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
-        <View style={[styles.searchContainer, { 
-          backgroundColor: colors.card,
-          borderColor: colors.border
-        }]}>
-          <IconButton icon="magnify" size={20} iconColor={colors.textTertiary} style={{ margin: 0 }} />
-          <TextInput 
-            style={[styles.searchInput, { color: colors.text }]} 
-            placeholder="Search categories or codes"
-            placeholderTextColor={colors.textTertiary}
-            value={searchQuery}
-            onChangeText={setSearchQuery}
-          />
-        </View>
-        
-        {popularCodes.length > 0 && (
-          <View style={styles.section}>
-            <View style={styles.sectionHeader}>
-              <Text style={[styles.sectionTitle, { color: colors.text }]}>Popular Codes</Text>
-              <TouchableOpacity>
-                <Text style={[styles.seeAllButton, { color: colors.primary }]}>See All</Text>
-              </TouchableOpacity>
-            </View>
-            {popularCodes.map((item, index) => (
-              <PopularCodeItem 
-                key={index}
-                code={item.code} 
-                description={item.description} 
-              />
-            ))}
-          </View>
-        )}
-        
-        <View style={styles.section}>
-          <Text style={[styles.sectionTitle, { color: colors.text }]}>All Categories</Text>
-          {filteredCategories.map((category, index) => (
-            <CategoryItem 
-              key={index} 
-              title={category.title} 
-              icon={category.icon}
-              subcategories={category.subcategories}
+    <View style={[styles.container, {backgroundColor: colors.background}]}>
+      <StatusBar barStyle={isDark ? 'light-content' : 'dark-content'} />
+
+      {!hasData ? (
+        <NoDataView
+          icon="folder-alert-outline"
+          title="No Data Available"
+          message={`No information is available for the ${categoryTitle} category. Please try another category.`}
+        />
+      ) : (
+        <View>
+          <View
+            style={[
+              styles.searchContainer,
+              {backgroundColor: colors.card, borderBottomColor: colors.border},
+            ]}>
+            <IconButton
+              icon="magnify"
+              size={24}
+              iconColor={colors.textTertiary}
+              style={{margin: 0}}
             />
-          ))}
-        </View>
-        
-        {filteredCategories.length === 0 && (
-          <View style={styles.emptyState}>
-            <IconButton icon="magnify" size={48} iconColor={colors.textTertiary} style={{ margin: 0 }} />
-            <Text style={[styles.emptyStateTitle, { color: colors.text }]}>No results found</Text>
-            <Text style={[styles.emptyStateDescription, { color: colors.textSecondary }]}>
-              Try adjusting your search or browse all categories
-            </Text>
+            <TextInput
+              style={[styles.searchInput, {color: colors.text}]}
+              placeholder="Search subcategories..."
+              placeholderTextColor={colors.textTertiary}
+              value={searchQuery}
+              onChangeText={setSearchQuery}
+            />
+            {searchQuery.length > 0 && (
+              <TouchableOpacity onPress={() => setSearchQuery('')}>
+                <IconButton
+                  icon="close"
+                  size={20}
+                  iconColor={colors.textTertiary}
+                  style={{margin: 0}}
+                />
+              </TouchableOpacity>
+            )}
           </View>
-        )}
-      </ScrollView>
+
+          <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
+            <View style={styles.contentContainer}>
+              {filteredSubcategories.length > 0 ? (
+                <>
+                  <Text style={[styles.sectionTitle, {color: colors.text}]}>
+                    Subcategories
+                  </Text>
+                  
+                  {filteredSubcategories.map((subcategory, index) => (
+                    <View key={index}>
+                      <SubcategoryItem
+                        title={subcategory.title}
+                        icon={subcategory.icon}
+                        categoryTitle={categoryTitle}
+                        onPress={() => handleSubcategoryPress(subcategory.title)}
+                      />
+                      
+                      {selectedSubcategory === subcategory.title && subcategory.codes && subcategory.codes.length > 0 && (
+                        <View style={styles.codesContainer}>
+                          <Text style={[styles.codesTitle, {color: colors.textSecondary}]}>
+                            Available Codes
+                          </Text>
+                          {subcategory.codes.map((code, codeIndex) => (
+                            <CodeItem
+                              key={codeIndex}
+                              code={code.code}
+                              description={code.description}
+                            />
+                          ))}
+                        </View>
+                      )}
+                      
+                      {selectedSubcategory === subcategory.title && (!subcategory.codes || subcategory.codes.length === 0) && (
+                        <View style={[styles.emptyCodesContainer, {backgroundColor: colors.card}]}>
+                          <Text style={[styles.emptyCodesText, {color: colors.textSecondary}]}>
+                            No codes available for this subcategory
+                          </Text>
+                        </View>
+                      )}
+                    </View>
+                  ))}
+                  
+                  {!hasAnySubcategoryWithCodes && (
+                    <View style={[styles.infoContainer, {backgroundColor: colors.card}]}>
+                      <IconButton
+                        icon="information"
+                        size={24}
+                        iconColor={colors.primary}
+                        style={{margin: 0}}
+                      />
+                      <Text style={[styles.infoText, {color: colors.textSecondary}]}>
+                        This category doesn't have any codes assigned yet. Check the "Codes" tab for more options.
+                      </Text>
+                      <TouchableOpacity 
+                        style={[styles.viewAllButton, {backgroundColor: colors.primaryLight}]}
+                        onPress={() => {
+                          // Navigate to the Codes tab
+                          navigation.navigate('Main');
+                        }}>
+                        <Text style={[styles.viewAllButtonText, {color: colors.primary}]}>
+                          View All Codes
+                        </Text>
+                      </TouchableOpacity>
+                    </View>
+                  )}
+                </>
+              ) : (
+                <View style={[styles.emptyContainer, {backgroundColor: colors.card}]}>
+                  <IconButton
+                    icon="magnify-off"
+                    size={48}
+                    iconColor={colors.textTertiary}
+                    style={{margin: 0}}
+                  />
+                  <Text style={[styles.emptyText, {color: colors.textSecondary}]}>
+                    No subcategories found
+                  </Text>
+                  <Text
+                    style={[
+                      styles.emptySubtext,
+                      {color: colors.textTertiary},
+                    ]}>
+                    Try a different search term
+                  </Text>
+                </View>
+              )}
+            </View>
+          </ScrollView>
+        </View>
+      )}
     </View>
   );
 };
@@ -213,81 +300,47 @@ const styles = StyleSheet.create({
   },
   header: {
     flexDirection: 'row',
-    alignItems: 'center',
     justifyContent: 'space-between',
-    padding: spacing.md,
+    alignItems: 'center',
+    paddingHorizontal: spacing.md,
+    paddingVertical: spacing.sm,
     borderBottomWidth: 1,
   },
   headerTitle: {
-    fontSize: typography.heading2,
-    fontWeight: typography.bold as any,
-  },
-  scrollView: {
-    flex: 1,
+    fontSize: typography.heading3,
+    fontWeight: typography.semiBold as any,
   },
   searchContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    margin: spacing.md,
-    paddingHorizontal: spacing.sm,
-    borderRadius: borderRadius.md,
-    borderWidth: 1,
+    paddingHorizontal: spacing.md,
+    paddingVertical: spacing.xs,
+    borderBottomWidth: 1,
   },
   searchInput: {
     flex: 1,
     height: 40,
-    paddingHorizontal: spacing.sm,
     fontSize: typography.body,
+    marginLeft: spacing.sm,
   },
-  section: {
-    marginBottom: spacing.lg,
-    paddingHorizontal: spacing.md,
+  scrollView: {
+    flex: 1,
   },
-  sectionHeader: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    marginBottom: spacing.sm,
+  contentContainer: {
+    padding: spacing.md,
   },
   sectionTitle: {
     fontSize: typography.heading3,
     fontWeight: typography.semiBold as any,
-  },
-  seeAllButton: {
-    fontSize: typography.body,
-    fontWeight: typography.medium as any,
-  },
-  categoryContainer: {
     marginBottom: spacing.sm,
-  },
-  categoryItem: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    padding: spacing.sm,
-    borderRadius: borderRadius.md,
-    borderWidth: 1,
-    ...shadows.small,
-  },
-  categoryContent: {
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  categoryTitle: {
-    fontSize: typography.body,
-    fontWeight: typography.semiBold as any,
-  },
-  subcategoriesContainer: {
-    marginLeft: spacing.xl,
-    marginTop: spacing.xs,
   },
   subcategoryItem: {
     flexDirection: 'row',
-    alignItems: 'center',
     justifyContent: 'space-between',
-    padding: spacing.sm,
-    marginTop: spacing.xs,
-    borderRadius: borderRadius.md,
+    alignItems: 'center',
+    padding: spacing.md,
+    borderRadius: borderRadius.lg,
+    marginBottom: spacing.sm,
     borderWidth: 1,
     ...shadows.small,
   },
@@ -297,50 +350,108 @@ const styles = StyleSheet.create({
   },
   subcategoryTitle: {
     fontSize: typography.body,
+    fontWeight: typography.medium as any,
   },
-  popularCodeItem: {
+  codesContainer: {
+    marginLeft: spacing.xl,
+    marginBottom: spacing.md,
+  },
+  codesTitle: {
+    fontSize: typography.caption,
+    marginBottom: spacing.xs,
+    marginLeft: spacing.xs,
+  },
+  codeItem: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
     padding: spacing.md,
+    borderRadius: borderRadius.lg,
     marginBottom: spacing.sm,
-    borderRadius: borderRadius.md,
     borderWidth: 1,
     ...shadows.small,
   },
-  popularCodeText: {
+  codeContent: {
+    flex: 1,
+  },
+  codeText: {
     fontSize: typography.body,
-    fontWeight: typography.semiBold as any,
+    fontWeight: typography.medium as any,
+    marginBottom: spacing.xs,
   },
-  popularCodeDescription: {
+  codeDescription: {
     fontSize: typography.bodySmall,
-    marginTop: spacing.xs,
   },
-  popularCodeActions: {
+  codeActions: {
     flexDirection: 'row',
-    marginTop: spacing.sm,
   },
   actionButton: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginRight: spacing.md,
+    marginLeft: spacing.xs,
   },
-  actionButtonText: {
-    fontSize: typography.caption,
-    fontWeight: typography.medium as any,
-  },
-  emptyState: {
+  emptyContainer: {
     alignItems: 'center',
     justifyContent: 'center',
     padding: spacing.xl,
-    marginTop: spacing.xxl,
+    borderRadius: borderRadius.lg,
+    marginTop: spacing.lg,
   },
-  emptyStateTitle: {
-    fontSize: typography.heading3,
-    fontWeight: typography.semiBold as any,
+  emptyText: {
+    fontSize: typography.body,
+    fontWeight: typography.medium as any,
     marginTop: spacing.md,
   },
-  emptyStateDescription: {
+  emptySubtext: {
+    fontSize: typography.bodySmall,
+    marginTop: spacing.xs,
+    textAlign: 'center',
+  },
+  emptyCodesContainer: {
+    padding: spacing.md,
+    borderRadius: borderRadius.lg,
+    marginLeft: spacing.xl,
+    marginBottom: spacing.md,
+  },
+  emptyCodesText: {
+    fontSize: typography.caption,
+    fontStyle: 'italic',
+  },
+  infoContainer: {
+    padding: spacing.md,
+    borderRadius: borderRadius.lg,
+    marginTop: spacing.lg,
+    alignItems: 'center',
+  },
+  infoText: {
     fontSize: typography.body,
     textAlign: 'center',
+    marginVertical: spacing.md,
+    paddingHorizontal: spacing.md,
+  },
+  viewAllButton: {
+    paddingVertical: spacing.sm,
+    paddingHorizontal: spacing.lg,
+    borderRadius: borderRadius.lg,
     marginTop: spacing.sm,
+  },
+  viewAllButtonText: {
+    fontSize: typography.body,
+    fontWeight: typography.medium as any,
+  },
+  subcategoryCount: {
+    fontSize: 12,
+    marginTop: 4,
+  },
+  noDataContainer: {
+    padding: 16,
+    borderRadius: 8,
+    marginBottom: 16,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  noDataText: {
+    fontSize: 14,
+    textAlign: 'center',
+    paddingVertical: 16,
   },
 });
 

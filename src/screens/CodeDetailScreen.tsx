@@ -75,7 +75,7 @@ const CodeDetailScreen = () => {
   return (
     <View style={[styles.container, { backgroundColor: colors.background }]}>
       <StatusBar barStyle={isDark ? "light-content" : "dark-content"} />
-      <View style={[styles.header, { backgroundColor: colors.card, borderBottomColor: colors.border }]}>
+      {/* <View style={[styles.header, { backgroundColor: colors.card, borderBottomColor: colors.border }]}>
         <TouchableOpacity onPress={() => navigation.goBack()}>
           <IconButton icon="arrow-left" size={24} iconColor={colors.text} style={{ margin: 0 }} />
         </TouchableOpacity>
@@ -88,7 +88,7 @@ const CodeDetailScreen = () => {
             style={{ margin: 0 }} 
           />
         </TouchableOpacity>
-      </View>
+      </View> */}
       
       <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
         <View style={[styles.codeContainer, { backgroundColor: colors.card }]}>

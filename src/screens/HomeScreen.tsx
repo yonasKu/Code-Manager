@@ -17,6 +17,7 @@ import { IconButton } from 'react-native-paper';
 import { RootStackParamList } from '../navigation/AppNavigator';
 import { spacing, typography, shadows, borderRadius } from '../theme/theme';
 import { useTheme } from '../theme/ThemeContext';
+import { categories } from '../data/categories';
 
 type HomeScreenNavigationProp = StackNavigationProp<RootStackParamList>;
 
@@ -32,14 +33,13 @@ type QuickAccessModalProps = {
   onOptionPress: (screen: keyof RootStackParamList) => void;
 };
 
-const CategoryCard = ({ title, icon }: { title: string; icon: string }) => {
-  const navigation = useNavigation<HomeScreenNavigationProp>();
+const CategoryCard = ({ title, icon, onPress }: { title: string; icon: string; onPress: () => void }) => {
   const { colors } = useTheme();
 
   return (
     <TouchableOpacity 
-      style={[styles.categoryCard, { backgroundColor: colors.card }]}
-      onPress={() => navigation.navigate('CategoryScreen', { category: title })}>
+      style={[styles.categoryCard, { backgroundColor: colors.card, borderColor: colors.border }]}
+      onPress={onPress}>
       <View style={[styles.categoryIcon, { backgroundColor: colors.primaryLight }]}>
         <IconButton icon={icon} size={28} iconColor={colors.primary} style={{ margin: 0 }} />
       </View>
@@ -91,7 +91,7 @@ const QuickAccessModal = ({ visible, onClose, onOptionPress }: QuickAccessModalP
   
   return (
     <Modal
-      animationType="fade"
+      animationType="slide"
       transparent={true}
       visible={visible}
       onRequestClose={onClose}
@@ -101,7 +101,13 @@ const QuickAccessModal = ({ visible, onClose, onOptionPress }: QuickAccessModalP
         onPress={onClose}
       >
         <View style={[styles.modalContent, { backgroundColor: colors.card }]}>
-          <Text style={[styles.modalTitle, { color: colors.text }]}>Quick Access</Text>
+          <View style={styles.modalHeader}>
+            <Text style={[styles.modalTitle, { color: colors.text }]}>Quick Access</Text>
+            <TouchableOpacity onPress={onClose}>
+              <IconButton icon="close" size={24} iconColor={colors.text} style={{ margin: 0 }} />
+            </TouchableOpacity>
+          </View>
+          
           <View style={styles.optionsContainer}>
             {options.map((option, index) => (
               <TouchableOpacity 
@@ -151,19 +157,25 @@ const HomeScreen = () => {
     }
   };
   
+  const handleCategoryPress = (category: string) => {
+    if (category === "Custom Codes") {
+      navigation.navigate('CustomCodesScreen');
+    } else {
+      navigation.navigate('CategoryScreen', { category });
+    }
+  };
+
   return (
     <View style={[styles.container, { backgroundColor: colors.background }]}>
       <StatusBar barStyle={isDark ? "light-content" : "dark-content"} />
       <View style={[styles.header, { backgroundColor: colors.card, borderBottomColor: colors.border }]}>
-        <Text style={[styles.headerTitle, { color: colors.text }]}>USSD Manager</Text>
-        <View style={styles.headerIcons}>
-          <TouchableOpacity style={styles.iconButton}>
-            <IconButton icon="magnify" size={24} iconColor={colors.text} style={{ margin: 0 }} />
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.iconButton}>
-            <IconButton icon="bell" size={24} iconColor={colors.text} style={{ margin: 0 }} />
-          </TouchableOpacity>
-        </View>
+        <Text style={[styles.headerTitle, { color: colors.text }]}>Code Manager</Text>
+        <TouchableOpacity 
+          style={styles.iconButton}
+          onPress={() => navigation.navigate('SettingsScreen')}
+        >
+          <IconButton icon="cog" size={24} iconColor={colors.text} style={{ margin: 0 }} />
+        </TouchableOpacity>
       </View>
 
       <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
@@ -198,14 +210,14 @@ const HomeScreen = () => {
         <View style={styles.section}>
           <Text style={[styles.sectionTitle, { color: colors.text }]}>Categories</Text>
           <View style={styles.categoriesGrid}>
-            <CategoryCard title="Call Management" icon="phone-settings" />
-            <CategoryCard title="Carrier Specific" icon="antenna" />
-            <CategoryCard title="Device Config" icon="cellphone-cog" />
-            <CategoryCard title="Device Diagnostics" icon="tools" />
-            <CategoryCard title="Device Info" icon="information" />
-            <CategoryCard title="Device Reset" icon="restore" />
-            <CategoryCard title="Device Specific" icon="cellphone-link" />
-            <CategoryCard title="Regional Specific" icon="map-marker" />
+            {categories.map((category, index) => (
+              <CategoryCard
+                key={index}
+                title={category.title}
+                icon={category.icon}
+                onPress={() => handleCategoryPress(category.title)}
+              />
+            ))}
           </View>
         </View>
 
@@ -266,9 +278,6 @@ const styles = StyleSheet.create({
   headerTitle: {
     fontSize: 24,
     fontWeight: 'bold',
-  },
-  headerIcons: {
-    flexDirection: 'row',
   },
   iconButton: {
     marginLeft: 8,
@@ -353,6 +362,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.05,
     shadowRadius: 8,
     elevation: 2,
+    borderWidth: 1,
   },
   categoryIcon: {
     backgroundColor: '#F0F7FF',
@@ -431,39 +441,54 @@ const styles = StyleSheet.create({
   },
   modalContent: {
     backgroundColor: '#FFFFFF',
-    borderTopLeftRadius: 16,
-    borderTopRightRadius: 16,
-    padding: 16,
-    minHeight: 300,
+    borderTopLeftRadius: 24,
+    borderTopRightRadius: 24,
+    padding: 24,
+    minHeight: 250,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: -4,
+    },
+    shadowOpacity: 0.1,
+    shadowRadius: 8,
+    elevation: 10,
   },
   modalHeader: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    marginBottom: 16,
+    marginBottom: 24,
   },
   modalTitle: {
-    fontSize: 18,
+    fontSize: 22,
     fontWeight: 'bold',
   },
   optionsContainer: {
     flexDirection: 'row',
-    flexWrap: 'wrap',
+    justifyContent: 'space-around',
     marginHorizontal: -8,
   },
   option: {
     width: '30%',
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#F5F5F5',
-    borderRadius: 12,
-    padding: 12,
+    borderRadius: 16,
+    padding: 16,
     margin: 8,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 3,
   },
   optionTitle: {
     fontSize: 14,
     fontWeight: 'bold',
-    color: '#000',
+    textAlign: 'center',
     marginTop: 8,
   },
 });
