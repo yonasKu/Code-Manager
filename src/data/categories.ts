@@ -91,6 +91,7 @@ const getIconForCategory = (category: string): string => {
 };
 
 const getIconForSubcategory = (subcategory: string): string => {
+  // First check for exact matches
   switch (subcategory) {
     case 'Call Forwarding':
       return 'phone-forward';
@@ -112,9 +113,74 @@ const getIconForSubcategory = (subcategory: string): string => {
       return 'tools';
     case 'Emergency Services':
       return 'ambulance';
-    default:
-      return 'folder';
+    case 'Balance':
+      return 'cash';
+    case 'Data':
+      return 'wifi';
+    case 'Voice':
+      return 'phone';
+    case 'SMS':
+      return 'message-text';
+    case 'Packages':
+      return 'package-variant-closed';
+    case 'Promotions':
+      return 'tag';
+    case 'Roaming':
+      return 'earth';
+    case 'Customer Service':
+      return 'headset';
+    case 'Settings':
+      return 'cog';
+    case 'Custom Codes':
+      return 'code-tags';
+    case 'My Codes':
+      return 'code-braces';
+    case 'User Created':
+      return 'account-edit';
   }
+  
+  // If no exact match, check for keywords in the subcategory name
+  const subcategoryLower = subcategory.toLowerCase();
+  
+  if (subcategoryLower.includes('call') || subcategoryLower.includes('phone')) {
+    return 'phone';
+  }
+  if (subcategoryLower.includes('data') || subcategoryLower.includes('internet') || subcategoryLower.includes('mb')) {
+    return 'wifi';
+  }
+  if (subcategoryLower.includes('balance') || subcategoryLower.includes('credit') || subcategoryLower.includes('payment')) {
+    return 'cash';
+  }
+  if (subcategoryLower.includes('sms') || subcategoryLower.includes('message')) {
+    return 'message-text';
+  }
+  if (subcategoryLower.includes('bundle') || subcategoryLower.includes('package')) {
+    return 'package-variant-closed';
+  }
+  if (subcategoryLower.includes('service') || subcategoryLower.includes('support') || subcategoryLower.includes('help')) {
+    return 'headset';
+  }
+  if (subcategoryLower.includes('setting') || subcategoryLower.includes('config')) {
+    return 'cog';
+  }
+  if (subcategoryLower.includes('custom') || subcategoryLower.includes('user') || subcategoryLower.includes('my')) {
+    return 'code-tags';
+  }
+  if (subcategoryLower.includes('promo') || subcategoryLower.includes('offer')) {
+    return 'tag';
+  }
+  if (subcategoryLower.includes('roam') || subcategoryLower.includes('international')) {
+    return 'earth';
+  }
+  if (subcategoryLower.includes('emergency') || subcategoryLower.includes('sos')) {
+    return 'ambulance';
+  }
+  if (subcategoryLower.includes('security') || subcategoryLower.includes('protect')) {
+    return 'shield';
+  }
+  
+  // Default icon based on category if possible
+  return 'apps';
 };
 
 const jsonCategories = processJsonData();

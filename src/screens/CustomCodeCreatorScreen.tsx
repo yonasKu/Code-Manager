@@ -236,11 +236,11 @@ const CustomCodeCreatorScreen = () => {
     <View style={[styles.container, { backgroundColor: colors.background }]}>
       <StatusBar barStyle={isDark ? "light-content" : "dark-content"} />
       
-      <AppHeader 
+      {/* <AppHeader 
         title={currentParameterIndex !== null ? "Edit Parameter" : "Create Custom Code"} 
         showBackButton={true}
         onRightIconPress={() => navigation.goBack()}
-      />
+      /> */}
       
       <ScrollView style={styles.scrollView}>
         <View style={styles.section}>
