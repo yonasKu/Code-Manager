@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {
   View,
   Text,
@@ -73,6 +73,16 @@ const SubcategoryItem = ({
   onPress: () => void;
 }) => {
   const {colors} = useTheme();
+  const navigation = useNavigation<AllCodesScreenNavigationProp>();
+  
+  // Check if this is a custom codes subcategory
+  const isCustomCodesSubcategory = title.toLowerCase().includes('custom') || 
+                                  title === 'My Codes' || 
+                                  title === 'User Created';
+
+  const handleCreateCustomCode = () => {
+    navigation.navigate('CustomCodeCreatorScreen', { category: title });
+  };
 
   return (
     <View style={styles.subcategoryContainer}>
@@ -122,6 +132,20 @@ const SubcategoryItem = ({
           <Text style={[styles.emptyCodesText, {color: colors.textSecondary}]}>
             No codes available for this subcategory
           </Text>
+          
+          {isCustomCodesSubcategory && (
+            <TouchableOpacity
+              style={[styles.createCodeButton, {backgroundColor: colors.primary}]}
+              onPress={handleCreateCustomCode}>
+              <IconButton
+                icon="plus"
+                size={18}
+                iconColor="#FFFFFF"
+                style={{margin: 0}}
+              />
+              <Text style={styles.createCodeButtonText}>Create Custom Code</Text>
+            </TouchableOpacity>
+          )}
         </View>
       )}
     </View>
@@ -150,6 +174,13 @@ const CategoryItem = ({
       [subcategoryTitle]: !prev[subcategoryTitle],
     }));
   };
+  
+  // Check if this is the Custom Codes category
+  const isCustomCodesCategory = title === 'Custom Codes' || title === 'My Codes' || title.toLowerCase().includes('custom');
+  
+  const handleCreateCustomCode = () => {
+    navigation.navigate('CustomCodeCreatorScreen', {});
+  };
 
   return (
     <View style={styles.categoryContainer}>
@@ -173,6 +204,20 @@ const CategoryItem = ({
             {title}
           </Text>
         </View>
+        
+        {isCustomCodesCategory && (
+          <TouchableOpacity
+            style={styles.addCustomCodeButton}
+            onPress={handleCreateCustomCode}>
+            <IconButton
+              icon="plus"
+              size={20}
+              iconColor={colors.primary}
+              style={{margin: 0}}
+            />
+          </TouchableOpacity>
+        )}
+        
         <IconButton
           icon={expanded ? 'chevron-up' : 'chevron-down'}
           size={24}
@@ -193,13 +238,28 @@ const CategoryItem = ({
               onPress={() => toggleSubcategory(subcategory.title)}
             />
           ))}
+          
+          {isCustomCodesCategory && (
+            <TouchableOpacity
+              style={[styles.addCustomCodeCard, {backgroundColor: colors.card}]}
+              onPress={handleCreateCustomCode}>
+              <IconButton
+                icon="plus-circle"
+                size={24}
+                iconColor={colors.primary}
+                style={{margin: 0}}
+              />
+              <Text style={[styles.addCustomCodeText, {color: colors.text}]}>
+                Add New Custom Code
+              </Text>
+            </TouchableOpacity>
+          )}
         </View>
       )}
     </View>
   );
 };
 
-// Helper function to get all codes from all categories
 const getAllCodes = (): {
   code: string;
   description: string;
@@ -239,6 +299,7 @@ const AllCodesScreen = () => {
   const {colors, isDark} = useTheme();
   const [searchQuery, setSearchQuery] = useState('');
   const searchInputRef = React.useRef<TextInput>(null);
+  const [activeTab, setActiveTab] = useState<'categories' | 'all'>('categories');
 
   // Filter categories based on search query
   const filteredCategories = searchQuery
@@ -259,7 +320,67 @@ const AllCodesScreen = () => {
       )
     : categories;
 
-  const hasData = filteredCategories && filteredCategories.length > 0;
+  // Get all codes for the "All" tab
+  const allCodes = getAllCodes().filter(
+    code =>
+      !searchQuery ||
+      code.code.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      code.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      code.category.toLowerCase().includes(searchQuery.toLowerCase()),
+  );
+
+  const hasData = 
+    (activeTab === 'categories' && filteredCategories && filteredCategories.length > 0) ||
+    (activeTab === 'all' && allCodes && allCodes.length > 0);
+
+  const renderAllCodesList = () => {
+    return (
+      <FlatList
+        data={allCodes}
+        keyExtractor={(item, index) => `${item.code}-${index}`}
+        renderItem={({item}) => (
+          <TouchableOpacity
+            style={[
+              styles.allCodeItem,
+              {backgroundColor: colors.card, borderColor: colors.border},
+            ]}
+            onPress={() =>
+              navigation.navigate('CodeDetailScreen', {
+                code: item.code,
+                title: item.description,
+              })
+            }>
+            <View style={styles.codeContent}>
+              <Text style={[styles.codeText, {color: colors.primary}]}>
+                {item.code}
+              </Text>
+              <Text style={[styles.codeDescription, {color: colors.text}]}>
+                {item.description}
+              </Text>
+              <Text style={[styles.codeCategory, {color: colors.textSecondary}]}>
+                {item.category}
+              </Text>
+            </View>
+            <View style={styles.codeActions}>
+              <TouchableOpacity
+                style={styles.actionButton}
+                onPress={() =>
+                  navigation.navigate('CodeExecutionScreen', {code: item.code})
+                }>
+                <IconButton
+                  icon="play"
+                  size={20}
+                  iconColor={colors.primary}
+                  style={{margin: 0}}
+                />
+              </TouchableOpacity>
+            </View>
+          </TouchableOpacity>
+        )}
+        contentContainerStyle={styles.allCodesContainer}
+      />
+    );
+  };
 
   return (
     <View style={[styles.container, {backgroundColor: colors.background}]}>
@@ -308,13 +429,63 @@ const AllCodesScreen = () => {
         )}
       </View>
 
+      {/* Tab Navigation */}
+      <View
+        style={[
+          styles.tabContainer,
+          {borderBottomColor: colors.border},
+        ]}>
+        <TouchableOpacity
+          style={[
+            styles.tab,
+            activeTab === 'categories' && {
+              borderBottomWidth: 2,
+              borderBottomColor: colors.primary,
+            },
+          ]}
+          onPress={() => setActiveTab('categories')}>
+          <Text
+            style={[
+              styles.tabText,
+              {
+                color:
+                  activeTab === 'categories'
+                    ? colors.primary
+                    : colors.textSecondary,
+              },
+            ]}>
+            Categories
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={[
+            styles.tab,
+            activeTab === 'all' && {
+              borderBottomWidth: 2,
+              borderBottomColor: colors.primary,
+            },
+          ]}
+          onPress={() => setActiveTab('all')}>
+          <Text
+            style={[
+              styles.tabText,
+              {
+                color:
+                  activeTab === 'all' ? colors.primary : colors.textSecondary,
+              },
+            ]}>
+            All Codes
+          </Text>
+        </TouchableOpacity>
+      </View>
+
       {!hasData ? (
         <NoDataView
           icon="code-braces-off"
           title="No Codes Available"
           message={searchQuery ? "No codes match your search criteria. Try a different search term." : "No USSD codes are available at this time."}
         />
-      ) : (
+      ) : activeTab === 'categories' ? (
         <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
           <View style={styles.contentContainer}>
             {filteredCategories.map((category, index) => (
@@ -327,6 +498,8 @@ const AllCodesScreen = () => {
             ))}
           </View>
         </ScrollView>
+      ) : (
+        renderAllCodesList()
       )}
     </View>
   );
@@ -400,7 +573,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   categoryTitle: {
-    fontSize: typography.body,
+    fontSize: typography.heading3,
     fontWeight: typography.semiBold as any,
   },
   categoryActions: {
@@ -454,6 +627,10 @@ const styles = StyleSheet.create({
   codeDescription: {
     fontSize: typography.body,
   },
+  codeCategory: {
+    fontSize: typography.caption,
+    marginTop: spacing.xs,
+  },
   codeActions: {
     flexDirection: 'row',
   },
@@ -479,13 +656,43 @@ const styles = StyleSheet.create({
   },
   emptyCodesContainer: {
     padding: spacing.md,
-    borderRadius: borderRadius.lg,
-    marginTop: spacing.sm,
+    marginHorizontal: spacing.md,
+    marginBottom: spacing.md,
+    borderRadius: borderRadius.md,
+    alignItems: 'center',
   },
   emptyCodesText: {
     fontSize: typography.body,
     textAlign: 'center',
+    marginBottom: spacing.md,
+  },
+  createCodeButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: spacing.sm,
+    paddingHorizontal: spacing.md,
+    borderRadius: borderRadius.md,
+    marginTop: spacing.sm,
+    ...shadows.small,
+  },
+  createCodeButtonText: {
+    color: '#FFFFFF',
+    fontSize: typography.body,
+    fontWeight: typography.semiBold as any,
+    marginLeft: spacing.xs,
+  },
+  allCodesContainer: {
     padding: spacing.md,
+  },
+  allCodeItem: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    padding: spacing.md,
+    borderRadius: borderRadius.lg,
+    marginBottom: spacing.sm,
+    borderWidth: 1,
   },
   noDataContainer: {
     padding: 16,
@@ -499,6 +706,26 @@ const styles = StyleSheet.create({
     fontSize: 14,
     textAlign: 'center',
     paddingVertical: 16,
+  },
+  addCustomCodeButton: {
+    marginRight: spacing.xs,
+  },
+  addCustomCodeCard: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: spacing.md,
+    marginHorizontal: spacing.md,
+    marginBottom: spacing.md,
+    borderRadius: borderRadius.md,
+    borderWidth: 1,
+    borderStyle: 'dashed',
+    borderColor: '#ccc',
+  },
+  addCustomCodeText: {
+    fontSize: typography.body,
+    fontWeight: typography.medium as any,
+    marginLeft: spacing.sm,
   },
 });
 

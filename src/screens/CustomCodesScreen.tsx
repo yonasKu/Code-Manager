@@ -157,12 +157,12 @@ const CustomCodesScreen = () => {
     <View style={[styles.container, { backgroundColor: colors.background }]}>
       <StatusBar barStyle={isDark ? "light-content" : "dark-content"} />
       
-      <AppHeader 
+      {/* <AppHeader 
         title="Custom Codes" 
         showBackButton={false}
         rightIcon="plus"
         onRightIconPress={() => navigation.navigate('CustomCodeCreatorScreen', {})}
-      />
+      /> */}
       
       {renderContent()}
     </View>

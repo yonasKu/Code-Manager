@@ -6,6 +6,11 @@ import {
   TouchableOpacity,
   ActivityIndicator,
   StatusBar,
+  Clipboard,
+  ToastAndroid,
+  Platform,
+  Alert,
+  Share,
 } from 'react-native';
 import { useNavigation, useRoute, RouteProp } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
@@ -13,6 +18,7 @@ import { IconButton } from 'react-native-paper';
 import { RootStackParamList } from '../navigation/AppNavigator';
 import { spacing, typography, shadows, borderRadius } from '../theme/theme';
 import { useTheme } from '../theme/ThemeContext';
+import { SavedCode, addToRecent } from '../utils/storageUtils';
 
 type CodeExecutionScreenRouteProp = RouteProp<RootStackParamList, 'CodeExecutionScreen'>;
 type CodeExecutionScreenNavigationProp = StackNavigationProp<RootStackParamList>;
@@ -29,6 +35,24 @@ const CodeExecutionScreen = () => {
   // This would be replaced with actual code execution logic
   const executeCode = () => {
     setExecutionState('processing');
+    
+    // Save to recent codes when executed
+    const saveToRecent = async () => {
+      try {
+        const recentCode: SavedCode = {
+          code,
+          description: getActionDescription(),
+          category: 'Executed',
+          timestamp: Date.now()
+        };
+        
+        await addToRecent(recentCode);
+      } catch (error) {
+        console.error('Error saving to recent codes:', error);
+      }
+    };
+    
+    saveToRecent();
     
     // Simulate processing delay
     setTimeout(() => {
@@ -59,6 +83,30 @@ const CodeExecutionScreen = () => {
     }
   };
   
+  const copyToClipboard = () => {
+    Clipboard.setString(code);
+    
+    // Show toast or alert based on platform
+    if (Platform.OS === 'android') {
+      ToastAndroid.show('Code copied to clipboard', ToastAndroid.SHORT);
+    } else {
+      Alert.alert('Copied', 'Code copied to clipboard');
+    }
+  };
+  
+  const shareCode = async () => {
+    try {
+      const shareMessage = `USSD Code: ${code}\n${getActionDescription()}\n\nShared from USSD Code Manager App`;
+      
+      await Share.share({
+        message: shareMessage,
+        title: 'Share USSD Code',
+      });
+    } catch (error) {
+      console.error('Error sharing code:', error);
+    }
+  };
+  
   return (
     <View style={[styles.container, { backgroundColor: colors.background }]}>
       <StatusBar barStyle={isDark ? "light-content" : "dark-content"} />
@@ -75,7 +123,12 @@ const CodeExecutionScreen = () => {
           
           <View style={styles.content}>
             <View style={[styles.codeContainer, { backgroundColor: colors.card }]}>
-              <Text style={[styles.codeText, { color: colors.primary }]}>{code}</Text>
+              <View style={styles.codeWrapper}>
+                <Text style={[styles.codeText, { color: colors.primary }]}>{code}</Text>
+                <TouchableOpacity onPress={copyToClipboard} style={styles.copyButton}>
+                  <IconButton icon="content-copy" size={20} iconColor={colors.primary} style={{ margin: 0 }} />
+                </TouchableOpacity>
+              </View>
             </View>
             
             <View style={[styles.infoCard, { backgroundColor: colors.card }]}>
@@ -100,9 +153,17 @@ const CodeExecutionScreen = () => {
                 style={[styles.button, styles.executeButton, { backgroundColor: colors.primary }]}
                 onPress={executeCode}
               >
-                <Text style={styles.executeButtonText}>Execute Now</Text>
+                <Text style={[styles.executeButtonText, { color: colors.background }]}>Execute Now</Text>
               </TouchableOpacity>
             </View>
+            
+            <TouchableOpacity 
+              style={[styles.shareButton, { backgroundColor: colors.card }]}
+              onPress={shareCode}
+            >
+              <IconButton icon="share-variant" size={20} iconColor={colors.text} style={{ margin: 0 }} />
+              <Text style={[styles.shareButtonText, { color: colors.text }]}>Share this code</Text>
+            </TouchableOpacity>
           </View>
         </>
       )}
@@ -133,7 +194,12 @@ const CodeExecutionScreen = () => {
                 <IconButton icon="check-circle" size={64} iconColor={colors.success} style={{ margin: 0 }} />
               </View>
               <Text style={[styles.successTitle, { color: colors.success }]}>Success</Text>
-              <Text style={[styles.codeText, { color: colors.primary }]}>{code}</Text>
+              <View style={styles.codeWrapper}>
+                <Text style={[styles.codeText, { color: colors.primary }]}>{code}</Text>
+                <TouchableOpacity onPress={copyToClipboard} style={styles.copyButton}>
+                  <IconButton icon="content-copy" size={20} iconColor={colors.primary} style={{ margin: 0 }} />
+                </TouchableOpacity>
+              </View>
               <Text style={[styles.successMessage, { color: colors.textSecondary }]}>
                 The code was executed successfully.
               </Text>
@@ -143,7 +209,15 @@ const CodeExecutionScreen = () => {
               style={[styles.button, styles.doneButton, { backgroundColor: colors.success }]}
               onPress={() => navigation.goBack()}
             >
-              <Text style={styles.doneButtonText}>Done</Text>
+              <Text style={[styles.doneButtonText, { color: '#FFFFFF' }]}>Done</Text>
+            </TouchableOpacity>
+            
+            <TouchableOpacity 
+              style={[styles.shareButton, { backgroundColor: colors.card, marginTop: spacing.md }]}
+              onPress={shareCode}
+            >
+              <IconButton icon="share-variant" size={20} iconColor={colors.text} style={{ margin: 0 }} />
+              <Text style={[styles.shareButtonText, { color: colors.text }]}>Share this code</Text>
             </TouchableOpacity>
           </View>
         </>
@@ -165,7 +239,12 @@ const CodeExecutionScreen = () => {
                 <IconButton icon="alert-circle" size={64} iconColor={colors.error} style={{ margin: 0 }} />
               </View>
               <Text style={[styles.errorTitle, { color: colors.error }]}>Execution Failed</Text>
-              <Text style={[styles.codeText, { color: colors.primary }]}>{code}</Text>
+              <View style={styles.codeWrapper}>
+                <Text style={[styles.codeText, { color: colors.primary }]}>{code}</Text>
+                <TouchableOpacity onPress={copyToClipboard} style={styles.copyButton}>
+                  <IconButton icon="content-copy" size={20} iconColor={colors.primary} style={{ margin: 0 }} />
+                </TouchableOpacity>
+              </View>
               <Text style={[styles.errorMessage, { color: colors.textSecondary }]}>
                 {errorMessage || 'An error occurred while executing the code.'}
               </Text>
@@ -175,7 +254,15 @@ const CodeExecutionScreen = () => {
               style={[styles.button, styles.retryButton, { backgroundColor: colors.error }]}
               onPress={executeCode}
             >
-              <Text style={styles.retryButtonText}>Retry</Text>
+              <Text style={[styles.retryButtonText, { color: '#FFFFFF' }]}>Retry</Text>
+            </TouchableOpacity>
+            
+            <TouchableOpacity 
+              style={[styles.shareButton, { backgroundColor: colors.card, marginTop: spacing.md }]}
+              onPress={shareCode}
+            >
+              <IconButton icon="share-variant" size={20} iconColor={colors.text} style={{ margin: 0 }} />
+              <Text style={[styles.shareButtonText, { color: colors.text }]}>Share this code</Text>
             </TouchableOpacity>
           </View>
         </>
@@ -190,11 +277,10 @@ const styles = StyleSheet.create({
   },
   header: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
     alignItems: 'center',
+    justifyContent: 'space-between',
     paddingHorizontal: spacing.md,
-    paddingTop: spacing.md,
-    paddingBottom: spacing.sm,
+    paddingVertical: spacing.md,
     borderBottomWidth: 1,
   },
   headerTitle: {
@@ -205,35 +291,36 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: spacing.md,
   },
-  centeredContent: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: spacing.md,
-  },
   codeContainer: {
-    alignItems: 'center',
-    justifyContent: 'center',
     padding: spacing.lg,
-    marginBottom: spacing.lg,
     borderRadius: borderRadius.lg,
+    marginBottom: spacing.lg,
+    alignItems: 'center',
     ...shadows.medium,
   },
+  codeWrapper: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   codeText: {
-    fontSize: 24,
+    fontSize: typography.heading2,
     fontWeight: typography.bold as any,
     textAlign: 'center',
   },
+  copyButton: {
+    marginLeft: spacing.sm,
+  },
   infoCard: {
-    padding: spacing.md,
-    marginBottom: spacing.lg,
+    padding: spacing.lg,
     borderRadius: borderRadius.lg,
-    ...shadows.small,
+    marginBottom: spacing.lg,
+    ...shadows.medium,
   },
   descriptionTitle: {
-    fontSize: typography.body,
+    fontSize: typography.heading3,
     fontWeight: typography.semiBold as any,
-    marginBottom: spacing.xs,
+    marginBottom: spacing.sm,
   },
   descriptionText: {
     fontSize: typography.body,
@@ -243,34 +330,41 @@ const styles = StyleSheet.create({
     fontSize: typography.body,
     fontWeight: typography.medium as any,
     textAlign: 'center',
-    marginBottom: spacing.lg,
+    marginVertical: spacing.lg,
   },
   buttonContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
+    marginTop: spacing.md,
   },
   button: {
     flex: 1,
     padding: spacing.md,
-    borderRadius: borderRadius.lg,
+    borderRadius: borderRadius.md,
     alignItems: 'center',
     justifyContent: 'center',
+    marginHorizontal: spacing.sm,
+    ...shadows.small,
   },
   cancelButton: {
-    marginRight: spacing.sm,
     borderWidth: 1,
+  },
+  executeButton: {
   },
   cancelButtonText: {
     fontSize: typography.body,
-    fontWeight: typography.medium as any,
-  },
-  executeButton: {
-    marginLeft: spacing.sm,
+    fontWeight: typography.semiBold as any,
   },
   executeButtonText: {
-    color: '#FFFFFF',
     fontSize: typography.body,
     fontWeight: typography.semiBold as any,
+    color: '#FFFFFF',
+  },
+  centeredContent: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: spacing.md,
   },
   processingContainer: {
     width: '100%',
@@ -280,12 +374,12 @@ const styles = StyleSheet.create({
     ...shadows.medium,
   },
   loader: {
-    marginBottom: spacing.md,
+    marginBottom: spacing.lg,
   },
   processingTitle: {
     fontSize: typography.heading3,
     fontWeight: typography.semiBold as any,
-    marginBottom: spacing.sm,
+    marginBottom: spacing.md,
     textAlign: 'center',
   },
   processingDescription: {
@@ -298,32 +392,32 @@ const styles = StyleSheet.create({
     padding: spacing.xl,
     borderRadius: borderRadius.lg,
     alignItems: 'center',
-    marginBottom: spacing.xl,
     ...shadows.medium,
+    marginBottom: spacing.xl,
   },
   statusIconContainer: {
-    width: 100,
-    height: 100,
-    borderRadius: 50,
-    alignItems: 'center',
+    width: 120,
+    height: 120,
+    borderRadius: 60,
     justifyContent: 'center',
-    marginBottom: spacing.md,
+    alignItems: 'center',
+    marginBottom: spacing.lg,
   },
   successTitle: {
     fontSize: typography.heading2,
     fontWeight: typography.bold as any,
-    marginBottom: spacing.sm,
+    marginBottom: spacing.md,
+  },
+  errorTitle: {
+    fontSize: typography.heading2,
+    fontWeight: typography.bold as any,
+    marginBottom: spacing.md,
   },
   successMessage: {
     fontSize: typography.body,
     textAlign: 'center',
     marginTop: spacing.md,
     lineHeight: 22,
-  },
-  errorTitle: {
-    fontSize: typography.heading2,
-    fontWeight: typography.bold as any,
-    marginBottom: spacing.sm,
   },
   errorMessage: {
     fontSize: typography.body,
@@ -332,20 +426,32 @@ const styles = StyleSheet.create({
     lineHeight: 22,
   },
   doneButton: {
-    width: '100%',
+    width: '80%',
   },
   doneButtonText: {
-    color: '#FFFFFF',
     fontSize: typography.body,
     fontWeight: typography.semiBold as any,
   },
   retryButton: {
-    width: '100%',
+    width: '80%',
   },
   retryButtonText: {
-    color: '#FFFFFF',
     fontSize: typography.body,
     fontWeight: typography.semiBold as any,
+  },
+  shareButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: spacing.sm,
+    borderRadius: borderRadius.md,
+    marginTop: spacing.lg,
+    ...shadows.small,
+  },
+  shareButtonText: {
+    fontSize: typography.body,
+    fontWeight: typography.medium as any,
+    marginLeft: spacing.xs,
   },
 });
 

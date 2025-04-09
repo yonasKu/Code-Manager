@@ -1,15 +1,34 @@
-import React, { useState } from 'react';
-import { View, Text, StyleSheet, ScrollView, TouchableOpacity, StatusBar } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import React, { useState, useEffect, useCallback } from 'react';
+import { View, Text, StyleSheet, ScrollView, TouchableOpacity, StatusBar, Alert } from 'react-native';
+import { useNavigation, useFocusEffect } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import { RootStackParamList } from '../navigation/AppNavigator';
 import { spacing, typography, shadows, borderRadius } from '../theme/theme';
 import { useTheme } from '../theme/ThemeContext';
+import { 
+  SavedCode, 
+  getFavorites, 
+  getRecentCodes, 
+  removeFromFavorites,
+  clearRecentCodes,
+  clearFavorites
+} from '../utils/storageUtils';
+import NoDataView from '../components/NoDataView';
 
 type FavoritesScreenNavigationProp = StackNavigationProp<RootStackParamList>;
 
-const FavoriteCodeItem = ({ code, description, category }: { code: string; description: string; category: string }) => {
+const FavoriteCodeItem = ({ 
+  code, 
+  description, 
+  category,
+  onRemove
+}: { 
+  code: string; 
+  description: string; 
+  category: string;
+  onRemove: () => void;
+}) => {
   const navigation = useNavigation<FavoritesScreenNavigationProp>();
   const { colors } = useTheme();
   
@@ -33,7 +52,10 @@ const FavoriteCodeItem = ({ code, description, category }: { code: string; descr
         >
           <Icon name="play-arrow" size={20} color={colors.primary} />
         </TouchableOpacity>
-        <TouchableOpacity style={styles.codeButton}>
+        <TouchableOpacity 
+          style={styles.codeButton}
+          onPress={onRemove}
+        >
           <Icon name="star" size={20} color="#FFC107" />
         </TouchableOpacity>
       </View>
@@ -41,9 +63,40 @@ const FavoriteCodeItem = ({ code, description, category }: { code: string; descr
   );
 };
 
-const RecentCodeItem = ({ code, description, time, status }: { code: string; description: string; time: string; status: 'Success' | 'Failed' }) => {
+const RecentCodeItem = ({ 
+  code, 
+  description, 
+  timestamp,
+  category
+}: { 
+  code: string; 
+  description: string; 
+  timestamp: number;
+  category: string;
+}) => {
   const navigation = useNavigation<FavoritesScreenNavigationProp>();
   const { colors } = useTheme();
+  
+  // Format the timestamp to a relative time string
+  const getRelativeTime = (timestamp: number): string => {
+    const now = Date.now();
+    const diff = now - timestamp;
+    
+    const seconds = Math.floor(diff / 1000);
+    const minutes = Math.floor(seconds / 60);
+    const hours = Math.floor(minutes / 60);
+    const days = Math.floor(hours / 24);
+    
+    if (days > 0) {
+      return days === 1 ? 'Yesterday' : `${days} days ago`;
+    } else if (hours > 0) {
+      return `${hours} ${hours === 1 ? 'hour' : 'hours'} ago`;
+    } else if (minutes > 0) {
+      return `${minutes} ${minutes === 1 ? 'minute' : 'minutes'} ago`;
+    } else {
+      return 'Just now';
+    }
+  };
   
   return (
     <TouchableOpacity 
@@ -57,10 +110,8 @@ const RecentCodeItem = ({ code, description, time, status }: { code: string; des
         <Text style={[styles.codeText, { color: colors.text }]}>{code}</Text>
         <Text style={[styles.codeDescription, { color: colors.textSecondary }]}>{description}</Text>
         <View style={styles.recentActivityMeta}>
-          <Text style={[styles.timeText, { color: colors.textTertiary }]}>{time}</Text>
-          <View style={[styles.statusBadge, { backgroundColor: status === 'Success' ? colors.success : colors.error }]}>
-            <Text style={[styles.statusText, { color: '#FFFFFF' }]}>{status}</Text>
-          </View>
+          <Text style={[styles.timeText, { color: colors.textTertiary }]}>{getRelativeTime(timestamp)}</Text>
+          <Text style={[styles.categoryText, { color: colors.textTertiary }]}>{category}</Text>
         </View>
       </View>
       <View style={styles.codeActions}>
@@ -78,22 +129,98 @@ const RecentCodeItem = ({ code, description, time, status }: { code: string; des
 const FavoritesScreen = () => {
   const { colors, isDark } = useTheme();
   const [activeTab, setActiveTab] = useState<'favorites' | 'recent'>('favorites');
+  const [favorites, setFavorites] = useState<SavedCode[]>([]);
+  const [recentCodes, setRecentCodes] = useState<SavedCode[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
   
-  // This would be replaced with actual favorites data from storage
-  const favoritesData = [
-    { code: '*123#', description: 'Balance Check', category: 'Account' },
-    { code: '*131*4#', description: 'Data Balance', category: 'Data Services' },
-    { code: '**21*7025551234#', description: 'Forward All Calls', category: 'Call Management' },
-    { code: '#31#', description: 'Hide Caller ID', category: 'Call Management' },
-  ];
+  // Load data when the screen is focused
+  useFocusEffect(
+    useCallback(() => {
+      const loadData = async () => {
+        setIsLoading(true);
+        try {
+          const favoritesData = await getFavorites();
+          const recentData = await getRecentCodes();
+          
+          setFavorites(favoritesData);
+          setRecentCodes(recentData);
+        } catch (error) {
+          console.error('Error loading data:', error);
+        } finally {
+          setIsLoading(false);
+        }
+      };
+      
+      loadData();
+      
+      return () => {
+        // Cleanup if needed
+      };
+    }, [])
+  );
   
-  // This would be replaced with actual recent codes data from storage
-  const recentCodesData = [
-    { code: '*123#', description: 'Balance Check', time: '2 hours ago', status: 'Success' as const },
-    { code: '*131*4#', description: 'Data Balance', time: 'Yesterday', status: 'Failed' as const },
-    { code: '**21*7025551234#', description: 'Forward All Calls', time: '3 days ago', status: 'Success' as const },
-    { code: '#31#', description: 'Hide Caller ID', time: '1 week ago', status: 'Success' as const },
-  ];
+  // Handle removing a code from favorites
+  const handleRemoveFromFavorites = async (code: string) => {
+    try {
+      await removeFromFavorites(code);
+      // Update the local state
+      setFavorites(prevFavorites => prevFavorites.filter(fav => fav.code !== code));
+    } catch (error) {
+      console.error('Error removing from favorites:', error);
+    }
+  };
+  
+  // Handle clearing all recent codes
+  const handleClearRecent = () => {
+    Alert.alert(
+      'Clear Recent Codes',
+      'Are you sure you want to clear all recent codes?',
+      [
+        {
+          text: 'Cancel',
+          style: 'cancel',
+        },
+        {
+          text: 'Clear',
+          style: 'destructive',
+          onPress: async () => {
+            try {
+              await clearRecentCodes();
+              setRecentCodes([]);
+            } catch (error) {
+              console.error('Error clearing recent codes:', error);
+            }
+          },
+        },
+      ]
+    );
+  };
+  
+  // Handle clearing all favorites
+  const handleClearFavorites = () => {
+    Alert.alert(
+      'Clear Favorites',
+      'Are you sure you want to clear all favorites?',
+      [
+        {
+          text: 'Cancel',
+          style: 'cancel',
+        },
+        {
+          text: 'Clear',
+          style: 'destructive',
+          onPress: async () => {
+            try {
+              await clearFavorites();
+              setFavorites([]);
+            } catch (error) {
+              console.error('Error clearing favorites:', error);
+            }
+          },
+        },
+      ]
+    );
+  };
   
   return (
     <View style={[styles.container, { backgroundColor: colors.background }]}>
@@ -105,7 +232,7 @@ const FavoritesScreen = () => {
         <Text style={[styles.headerTitle, { color: colors.text }]}>My Codes</Text>
       </View>
       
-      <View style={[styles.tabContainer, { backgroundColor: colors.card, borderBottomColor: colors.border }]}>
+      <View style={[styles.tabContainer, { borderBottomColor: colors.border }]}>
         <TouchableOpacity 
           style={[
             styles.tab, 
@@ -132,50 +259,63 @@ const FavoritesScreen = () => {
         </TouchableOpacity>
       </View>
       
-      <ScrollView style={styles.scrollView}>
+      <ScrollView style={styles.content}>
         {activeTab === 'favorites' && (
-          <View style={styles.codesContainer}>
-            {favoritesData.length > 0 ? (
-              favoritesData.map((favorite, index) => (
-                <FavoriteCodeItem 
-                  key={index}
-                  code={favorite.code} 
-                  description={favorite.description} 
-                  category={favorite.category} 
-                />
-              ))
+          <View>
+            {favorites.length > 0 ? (
+              <>
+                <View style={styles.sectionHeader}>
+                  <Text style={[styles.sectionTitle, { color: colors.text }]}>Favorite Codes</Text>
+                  <TouchableOpacity onPress={handleClearFavorites}>
+                    <Text style={[styles.clearText, { color: colors.error }]}>Clear All</Text>
+                  </TouchableOpacity>
+                </View>
+                {favorites.map((item, index) => (
+                  <FavoriteCodeItem 
+                    key={`${item.code}-${index}`}
+                    code={item.code}
+                    description={item.description}
+                    category={item.category}
+                    onRemove={() => handleRemoveFromFavorites(item.code)}
+                  />
+                ))}
+              </>
             ) : (
-              <View style={styles.emptyContainer}>
-                <Icon name="star-border" size={64} color={colors.textTertiary} />
-                <Text style={[styles.emptyText, { color: colors.textSecondary }]}>No favorites yet</Text>
-                <Text style={[styles.emptySubtext, { color: colors.textTertiary }]}>
-                  Star your favorite USSD codes to access them quickly
-                </Text>
-              </View>
+              <NoDataView
+                icon="star-off"
+                title="No Favorites"
+                message="You haven't added any codes to your favorites yet."
+              />
             )}
           </View>
         )}
         
         {activeTab === 'recent' && (
-          <View style={styles.codesContainer}>
-            {recentCodesData.length > 0 ? (
-              recentCodesData.map((recent, index) => (
-                <RecentCodeItem 
-                  key={index}
-                  code={recent.code} 
-                  description={recent.description} 
-                  time={recent.time}
-                  status={recent.status}
-                />
-              ))
+          <View>
+            {recentCodes.length > 0 ? (
+              <>
+                <View style={styles.sectionHeader}>
+                  <Text style={[styles.sectionTitle, { color: colors.text }]}>Recent Activity</Text>
+                  <TouchableOpacity onPress={handleClearRecent}>
+                    <Text style={[styles.clearText, { color: colors.error }]}>Clear All</Text>
+                  </TouchableOpacity>
+                </View>
+                {recentCodes.map((item, index) => (
+                  <RecentCodeItem 
+                    key={`${item.code}-${index}`}
+                    code={item.code}
+                    description={item.description}
+                    timestamp={item.timestamp}
+                    category={item.category}
+                  />
+                ))}
+              </>
             ) : (
-              <View style={styles.emptyContainer}>
-                <Icon name="history" size={64} color={colors.textTertiary} />
-                <Text style={[styles.emptyText, { color: colors.textSecondary }]}>No recent activity</Text>
-                <Text style={[styles.emptySubtext, { color: colors.textTertiary }]}>
-                  Your recently used USSD codes will appear here
-                </Text>
-              </View>
+              <NoDataView
+                icon="history"
+                title="No Recent Activity"
+                message="You haven't used any USSD codes recently."
+              />
             )}
           </View>
         )}
@@ -189,12 +329,15 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   header: {
-    padding: spacing.md,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: spacing.md,
     borderBottomWidth: 1,
   },
   headerTitle: {
-    fontSize: typography.heading2,
-    fontWeight: typography.bold as any,
+    fontSize: typography.heading3,
+    fontWeight: typography.semiBold as any,
   },
   tabContainer: {
     flexDirection: 'row',
@@ -202,30 +345,39 @@ const styles = StyleSheet.create({
   },
   tab: {
     flex: 1,
+    paddingVertical: spacing.sm,
     alignItems: 'center',
-    justifyContent: 'center',
-    paddingVertical: spacing.md,
   },
   activeTab: {
     borderBottomWidth: 2,
   },
   tabText: {
     fontSize: typography.body,
-    fontWeight: typography.medium as any,
+    fontWeight: typography.semiBold as any,
   },
-  scrollView: {
+  content: {
     flex: 1,
-  },
-  codesContainer: {
     padding: spacing.md,
+  },
+  sectionHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: spacing.sm,
+  },
+  sectionTitle: {
+    fontSize: typography.body,
+    fontWeight: typography.semiBold as any,
+  },
+  clearText: {
+    fontSize: typography.caption,
   },
   codeItem: {
     flexDirection: 'row',
-    alignItems: 'center',
     justifyContent: 'space-between',
-    borderRadius: borderRadius.lg,
     padding: spacing.md,
-    marginBottom: spacing.sm,
+    borderRadius: borderRadius.md,
+    marginBottom: spacing.md,
     borderWidth: 1,
     ...shadows.small,
   },
@@ -235,60 +387,42 @@ const styles = StyleSheet.create({
   codeText: {
     fontSize: typography.body,
     fontWeight: typography.semiBold as any,
+    marginBottom: spacing.xs,
   },
   codeDescription: {
-    fontSize: typography.bodySmall,
-    marginTop: spacing.xs,
+    fontSize: typography.body,
+    marginBottom: spacing.xs,
   },
   codeCategory: {
     fontSize: typography.caption,
-    marginTop: spacing.xs,
   },
   codeActions: {
     flexDirection: 'row',
     alignItems: 'center',
   },
   codeButton: {
-    width: 40,
-    height: 40,
-    alignItems: 'center',
-    justifyContent: 'center',
     marginLeft: spacing.sm,
   },
   recentActivityMeta: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
     alignItems: 'center',
     marginTop: spacing.xs,
   },
   timeText: {
     fontSize: typography.caption,
+    marginRight: spacing.sm,
+  },
+  categoryText: {
+    fontSize: typography.caption,
   },
   statusBadge: {
-    paddingHorizontal: spacing.sm,
+    paddingHorizontal: spacing.xs,
     paddingVertical: 2,
-    borderRadius: 6,
+    borderRadius: borderRadius.sm,
   },
   statusText: {
     fontSize: typography.caption,
     fontWeight: typography.medium as any,
-  },
-  emptyContainer: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: spacing.xl,
-    marginTop: spacing.xxl,
-  },
-  emptyText: {
-    fontSize: typography.heading3,
-    fontWeight: typography.semiBold as any,
-    marginTop: spacing.md,
-  },
-  emptySubtext: {
-    fontSize: typography.body,
-    textAlign: 'center',
-    marginTop: spacing.sm,
   },
 });
 

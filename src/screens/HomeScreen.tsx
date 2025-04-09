@@ -24,13 +24,13 @@ type HomeScreenNavigationProp = StackNavigationProp<RootStackParamList>;
 interface QuickAccessOption {
   title: string;
   icon: string;
-  screen: keyof RootStackParamList;
+  screen: string;
 }
 
 type QuickAccessModalProps = {
   visible: boolean;
   onClose: () => void;
-  onOptionPress: (screen: keyof RootStackParamList) => void;
+  onOptionPress: (screen: string) => void;
 };
 
 const CategoryCard = ({ title, icon, onPress }: { title: string; icon: string; onPress: () => void }) => {
@@ -136,27 +136,35 @@ const HomeScreen = () => {
   const navigation = useNavigation<HomeScreenNavigationProp>();
   const { colors, isDark } = useTheme();
   
-  const handleQuickAccessOptionPress = (screen: keyof RootStackParamList) => {
-    setQuickAccessVisible(false);
-    
-    // Handle navigation with appropriate params based on the screen
+  const handleMenuItemPress = (screen: string) => {
     switch (screen) {
-      case 'CategoryScreen':
-        navigation.navigate('CategoryScreen', { category: 'Call Management' });
+      case 'DeviceSpecsScreen':
+        navigation.navigate('DeviceSpecsScreen');
         break;
-      case 'CodeDetailScreen':
-        navigation.navigate('CodeDetailScreen', { code: '*#06#', title: 'Show IMEI' });
+      case 'EmergencyServicesScreen':
+        navigation.navigate('EmergencyServicesScreen');
         break;
-      case 'CodeExecutionScreen':
+      case 'CustomCodeCreatorScreen':
+        navigation.navigate('CustomCodeCreatorScreen', { category: undefined });
+        break;
+      case 'CustomCodesScreen':
+        navigation.navigate('CustomCodesScreen');
+        break;
+      case 'SettingsScreen':
+        navigation.navigate('SettingsScreen');
+        break;
+      case 'IMEI':
         navigation.navigate('CodeExecutionScreen', { code: '*#06#' });
         break;
       default:
         // For screens that don't require params
-        navigation.navigate(screen);
+        if (screen === 'Main') {
+          navigation.navigate('Main');
+        }
         break;
     }
   };
-  
+
   const handleCategoryPress = (category: string) => {
     if (category === "Custom Codes") {
       navigation.navigate('CustomCodesScreen');
@@ -257,7 +265,7 @@ const HomeScreen = () => {
       <QuickAccessModal 
         visible={quickAccessVisible} 
         onClose={() => setQuickAccessVisible(false)}
-        onOptionPress={handleQuickAccessOptionPress}
+        onOptionPress={handleMenuItemPress}
       />
     </View>
   );
