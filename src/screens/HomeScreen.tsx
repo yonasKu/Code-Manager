@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   View,
   Text,
@@ -11,13 +11,14 @@ import {
   StatusBar,
   Platform,
 } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, useFocusEffect } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
-import { IconButton } from 'react-native-paper';
+import { IconButton, FAB } from 'react-native-paper';
 import { RootStackParamList } from '../navigation/AppNavigator';
 import { spacing, typography, shadows, borderRadius } from '../theme/theme';
 import { useTheme } from '../theme/ThemeContext';
 import { categories } from '../data/categories';
+import { getRecentActivities, RecentActivity } from '../utils/recentActivityStorage';
 
 type HomeScreenNavigationProp = StackNavigationProp<RootStackParamList>;
 
@@ -133,9 +134,25 @@ const QuickAccessModal = ({ visible, onClose, onOptionPress }: QuickAccessModalP
 
 const HomeScreen = () => {
   const [quickAccessVisible, setQuickAccessVisible] = useState(false);
+  const [recentActivities, setRecentActivities] = useState<RecentActivity[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
   const navigation = useNavigation<HomeScreenNavigationProp>();
   const { colors, isDark } = useTheme();
   
+  // Load recent activities when the screen comes into focus
+  useFocusEffect(
+    React.useCallback(() => {
+      const loadRecentActivities = async () => {
+        setIsLoading(true);
+        const activities = await getRecentActivities();
+        setRecentActivities(activities);
+        setIsLoading(false);
+      };
+      
+      loadRecentActivities();
+    }, [])
+  );
+
   const handleMenuItemPress = (screen: string) => {
     switch (screen) {
       case 'DeviceSpecsScreen':
@@ -232,26 +249,43 @@ const HomeScreen = () => {
         <View style={styles.section}>
           <View style={styles.sectionHeader}>
             <Text style={[styles.sectionTitle, { color: colors.text }]}>Recent Activity</Text>
-            <TouchableOpacity onPress={() => {
-              // Navigate to the MyCodes tab
-              const jumpToAction = { type: 'JUMP_TO', payload: { name: 'MyCodes' } };
-              navigation.dispatch(jumpToAction);
-            }}>
-              <Text style={[styles.seeAllButton, { color: colors.primary }]}>See All</Text>
-            </TouchableOpacity>
+            {recentActivities.length > 0 && (
+              <TouchableOpacity onPress={() => {
+                // Navigate to the MyCodes tab
+                const jumpToAction = { type: 'JUMP_TO', payload: { name: 'MyCodes' } };
+                navigation.dispatch(jumpToAction);
+              }}>
+                <Text style={[styles.seeAllButton, { color: colors.primary }]}>See All</Text>
+              </TouchableOpacity>
+            )}
           </View>
-          <RecentActivityItem 
-            code="*123#" 
-            description="Balance Check" 
-            time="12:34 PM" 
-            status="Success" 
-          />
-          <RecentActivityItem 
-            code="*131*4#" 
-            description="Data Balance" 
-            time="Yesterday" 
-            status="Success" 
-          />
+          
+          {isLoading ? (
+            <View style={[styles.emptyStateContainer, { backgroundColor: colors.card }]}>
+              <IconButton icon="loading" size={24} iconColor={colors.textSecondary} />
+              <Text style={[styles.emptyStateText, { color: colors.textSecondary }]}>Loading recent activity...</Text>
+            </View>
+          ) : recentActivities.length > 0 ? (
+            // Show recent activities if available
+            recentActivities.slice(0, 2).map((activity, index) => (
+              <RecentActivityItem 
+                key={`${activity.code}-${index}`}
+                code={activity.code} 
+                description={activity.description} 
+                time={activity.time} 
+                status={activity.status} 
+              />
+            ))
+          ) : (
+            // Show empty state if no recent activities
+            <View style={[styles.emptyStateContainer, { backgroundColor: colors.card }]}>
+              <IconButton icon="history" size={24} iconColor={colors.textSecondary} />
+              <Text style={[styles.emptyStateText, { color: colors.textSecondary }]}>No recent activity</Text>
+              <Text style={[styles.emptyStateSubtext, { color: colors.textTertiary }]}>
+                Your recent USSD codes will appear here
+              </Text>
+            </View>
+          )}
         </View>
       </ScrollView>
 
@@ -282,46 +316,42 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    paddingHorizontal: 16,
-    paddingTop: 16,
-    paddingBottom: 8,
+    paddingHorizontal: spacing.md,
+    paddingTop: spacing.lg,
+    paddingBottom: spacing.md,
     borderBottomWidth: 1,
   },
   headerTitle: {
-    fontSize: 24,
-    fontWeight: 'bold',
+    fontSize: typography.heading1,
+    fontWeight: typography.bold as any,
   },
   iconButton: {
-    marginLeft: 8,
+    marginLeft: spacing.sm,
   },
   carrierCard: {
-    margin: 16,
-    padding: 16,
-    borderRadius: 16,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.05,
-    shadowRadius: 8,
-    elevation: 2,
+    margin: spacing.md,
+    padding: spacing.md,
+    borderRadius: borderRadius.lg,
+    ...shadows.medium,
   },
   carrierHeader: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    marginBottom: 16,
+    marginBottom: spacing.md,
   },
   carrierName: {
-    fontSize: 18,
-    fontWeight: '600',
+    fontSize: typography.heading3,
+    fontWeight: typography.bold as any,
   },
   refreshButton: {
-    paddingHorizontal: 12,
-    paddingVertical: 6,
-    borderRadius: 8,
+    paddingVertical: spacing.xs,
+    paddingHorizontal: spacing.sm,
+    borderRadius: borderRadius.md,
   },
   refreshButtonText: {
-    fontSize: 14,
-    fontWeight: '500',
+    fontSize: typography.bodySmall,
+    fontWeight: typography.medium as any,
   },
   carrierStats: {
     flexDirection: 'row',
@@ -332,82 +362,73 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   statLabel: {
-    fontSize: 12,
-    marginBottom: 2,
+    fontSize: typography.caption,
   },
   statValue: {
-    fontSize: 16,
-    fontWeight: '600',
+    fontSize: typography.body,
+    fontWeight: typography.medium as any,
   },
   section: {
-    marginBottom: 24,
+    padding: spacing.md,
   },
   sectionHeader: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    paddingHorizontal: 16,
-    marginBottom: 12,
+    marginBottom: spacing.md,
   },
   sectionTitle: {
-    fontSize: 18,
-    fontWeight: '600',
-    marginLeft: 16,
-    marginBottom: 16,
+    fontSize: typography.heading3,
+    fontWeight: typography.bold as any,
+    marginBottom: spacing.md,
   },
   seeAllButton: {
-    fontSize: 14,
-    fontWeight: '500',
+    fontSize: typography.body,
+    fontWeight: typography.medium as any,
   },
   categoriesGrid: {
     flexDirection: 'row',
     flexWrap: 'wrap',
-    paddingHorizontal: 8,
+    justifyContent: 'space-between',
   },
   categoryCard: {
-    width: '44%',
-    padding: 16,
-    margin: 8,
+    width: '48%',
+    padding: spacing.md,
+    borderRadius: borderRadius.lg,
+    marginBottom: spacing.md,
     alignItems: 'center',
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.05,
-    shadowRadius: 8,
-    elevation: 2,
     borderWidth: 1,
+    ...shadows.small,
   },
   categoryIcon: {
-    backgroundColor: '#F0F7FF',
-    borderRadius: 12,
-    margin: 0,
-    marginBottom: 8,
+    width: 56,
+    height: 56,
+    borderRadius: 28,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: spacing.sm,
   },
   categoryTitle: {
-    fontSize: 14,
-    fontWeight: '500',
+    fontSize: typography.body,
+    fontWeight: typography.medium as any,
     textAlign: 'center',
   },
   recentActivityItem: {
-    marginHorizontal: 16,
-    marginBottom: 8,
-    padding: 16,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 1 },
-    shadowOpacity: 0.05,
-    shadowRadius: 4,
-    elevation: 1,
+    marginBottom: spacing.md,
+    borderRadius: borderRadius.lg,
+    ...shadows.small,
   },
   recentActivityContent: {
-    flex: 1,
+    padding: spacing.md,
   },
   recentActivityCode: {
-    fontSize: 16,
-    fontWeight: '600',
-    marginBottom: 4,
+    fontSize: typography.heading3,
+    fontWeight: typography.bold as any,
+    marginBottom: spacing.xs,
   },
   recentActivityDescription: {
-    fontSize: 14,
-    marginBottom: 8,
+    fontSize: typography.body,
+    marginBottom: spacing.sm,
   },
   recentActivityMeta: {
     flexDirection: 'row',
@@ -415,36 +436,28 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   recentActivityTime: {
-    fontSize: 12,
+    fontSize: typography.bodySmall,
   },
   statusBadge: {
-    paddingHorizontal: 8,
-    paddingVertical: 4,
-    borderRadius: 6,
+    paddingVertical: spacing.xxs,
+    paddingHorizontal: spacing.sm,
+    borderRadius: borderRadius.sm,
   },
   statusText: {
-    // color: '#FFFFFF',
-    fontSize: 12,
-    fontWeight: '500',
+    fontSize: typography.caption,
+    fontWeight: typography.medium as any,
   },
   fab: {
     position: 'absolute',
-    bottom: 16,
-    right: 16,
-    backgroundColor: '#007AFF',
-    borderRadius: 28,
+    margin: 16,
+    right: 0,
+    bottom: 0,
     width: 56,
     height: 56,
+    borderRadius: 28,
     justifyContent: 'center',
     alignItems: 'center',
-    elevation: 4,
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 4,
+    ...shadows.medium,
   },
   modalOverlay: {
     flex: 1,
@@ -452,19 +465,11 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
   },
   modalContent: {
-    backgroundColor: '#FFFFFF',
     borderTopLeftRadius: 24,
     borderTopRightRadius: 24,
     padding: 24,
     minHeight: 250,
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: -4,
-    },
-    shadowOpacity: 0.1,
-    shadowRadius: 8,
-    elevation: 10,
+    ...shadows.large,
   },
   modalHeader: {
     flexDirection: 'row',
@@ -488,20 +493,30 @@ const styles = StyleSheet.create({
     borderRadius: 16,
     padding: 16,
     margin: 8,
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
-    elevation: 3,
+    ...shadows.small,
   },
   optionTitle: {
     fontSize: 14,
     fontWeight: 'bold',
     textAlign: 'center',
     marginTop: 8,
+  },
+  emptyStateContainer: {
+    padding: spacing.lg,
+    borderRadius: borderRadius.lg,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: spacing.md,
+  },
+  emptyStateText: {
+    fontSize: typography.body,
+    fontWeight: typography.medium as any,
+    marginTop: spacing.sm,
+  },
+  emptyStateSubtext: {
+    fontSize: typography.bodySmall,
+    textAlign: 'center',
+    marginTop: spacing.xs,
   },
 });
 

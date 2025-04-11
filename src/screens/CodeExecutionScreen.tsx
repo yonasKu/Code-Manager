@@ -11,6 +11,8 @@ import {
   Platform,
   Alert,
   Share,
+  Linking,
+  PermissionsAndroid,
 } from 'react-native';
 import { useNavigation, useRoute, RouteProp } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
@@ -19,6 +21,7 @@ import { RootStackParamList } from '../navigation/AppNavigator';
 import { spacing, typography, shadows, borderRadius } from '../theme/theme';
 import { useTheme } from '../theme/ThemeContext';
 import { SavedCode, addToRecent } from '../utils/storageUtils';
+import { saveRecentActivity } from '../utils/recentActivityStorage';
 
 type CodeExecutionScreenRouteProp = RouteProp<RootStackParamList, 'CodeExecutionScreen'>;
 type CodeExecutionScreenNavigationProp = StackNavigationProp<RootStackParamList>;
@@ -31,39 +34,91 @@ const CodeExecutionScreen = () => {
   
   const [executionState, setExecutionState] = useState<'confirmation' | 'processing' | 'success' | 'error'>('confirmation');
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [hasPermission, setHasPermission] = useState(false);
+
+  useEffect(() => {
+    requestCallPermission();
+  }, []);
+
+  const requestCallPermission = async () => {
+    try {
+      if (Platform.OS === 'android') {
+        const granted = await PermissionsAndroid.request(
+          PermissionsAndroid.PERMISSIONS.CALL_PHONE,
+          {
+            title: 'Phone Call Permission',
+            message: 'This app needs access to make phone calls ' +
+              'to execute USSD codes.',
+            buttonNeutral: 'Ask Me Later',
+            buttonNegative: 'Cancel',
+            buttonPositive: 'OK',
+          },
+        );
+        setHasPermission(granted === PermissionsAndroid.RESULTS.GRANTED);
+      } else {
+        setHasPermission(true);
+      }
+    } catch (err) {
+      console.warn(err);
+      setHasPermission(false);
+    }
+  };
   
-  // This would be replaced with actual code execution logic
-  const executeCode = () => {
+  const executeCode = async () => {
+    if (!hasPermission) {
+      setErrorMessage('Phone call permission is required to execute USSD codes');
+      setExecutionState('error');
+      return;
+    }
+
     setExecutionState('processing');
     
-    // Save to recent codes when executed
-    const saveToRecent = async () => {
-      try {
-        const recentCode: SavedCode = {
-          code,
-          description: getActionDescription(),
-          category: 'Executed',
-          timestamp: Date.now()
-        };
-        
-        await addToRecent(recentCode);
-      } catch (error) {
-        console.error('Error saving to recent codes:', error);
+    try {
+      // Save to recent codes
+      const recentCode: SavedCode = {
+        code,
+        description: getActionDescription(),
+        category: 'Executed',
+        timestamp: Date.now()
+      };
+      
+      await addToRecent(recentCode);
+
+      // Also save to recent activity for HomeScreen
+      await saveRecentActivity({
+        code,
+        description: getActionDescription(),
+        time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+        status: 'Success'
+      });
+
+      // Format the USSD code for dialing
+      const formattedCode = code.replace('#', encodeURIComponent('#'));
+      const dialUrl = `tel:${formattedCode}`;
+
+      // Check if the device can handle the dial URL
+      const canOpen = await Linking.canOpenURL(dialUrl);
+      
+      if (!canOpen) {
+        throw new Error('Device cannot handle USSD codes');
       }
-    };
-    
-    saveToRecent();
-    
-    // Simulate processing delay
-    setTimeout(() => {
-      // 80% chance of success for demo purposes
-      if (Math.random() > 0.2) {
-        setExecutionState('success');
-      } else {
-        setExecutionState('error');
-        setErrorMessage('Network error. Please try again.');
-      }
-    }, 3000);
+
+      // Execute the USSD code
+      await Linking.openURL(dialUrl);
+      setExecutionState('success');
+    } catch (error) {
+      console.error('Error executing USSD code:', error);
+      setErrorMessage(error instanceof Error ? error.message : 'Unknown error occurred');
+      setExecutionState('error');
+      
+      // Save failed attempt to recent activity
+      saveRecentActivity({
+        code,
+        description: getActionDescription(),
+        time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+        status: 'Failed'
+      }).catch(err => console.error('Error saving failed activity:', err));
+    }
   };
   
   // Extract phone number from code if it exists

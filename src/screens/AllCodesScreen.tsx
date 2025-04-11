@@ -8,8 +8,9 @@ import {
   TextInput,
   StatusBar,
   FlatList,
+  Alert,
 } from 'react-native';
-import {useNavigation} from '@react-navigation/native';
+import {useNavigation, useFocusEffect} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
 import {IconButton} from 'react-native-paper';
 import {RootStackParamList} from '../navigation/AppNavigator';
@@ -18,6 +19,7 @@ import {typography, spacing, shadows, borderRadius} from '../theme/theme';
 import {useTheme} from '../theme/ThemeContext';
 import NoDataView from '../components/NoDataView';
 import AppHeader from '../components/AppHeader';
+import StorageService, {CustomCode} from '../services/StorageService';
 
 type AllCodesScreenNavigationProp = StackNavigationProp<RootStackParamList>;
 
@@ -56,6 +58,70 @@ const CodeItem = ({code, description}: {code: string; description: string}) => {
         </TouchableOpacity>
       </View>
     </TouchableOpacity>
+  );
+};
+
+const CustomCodeItem = ({
+  customCode,
+  onEdit,
+  onDelete,
+}: {
+  customCode: CustomCode;
+  onEdit: () => void;
+  onDelete: () => void;
+}) => {
+  const navigation = useNavigation<AllCodesScreenNavigationProp>();
+  const {colors} = useTheme();
+
+  // Generate the final code from the pattern and parameters
+  const finalCode = StorageService.generateFinalCode(customCode);
+
+  return (
+    <View
+      style={[
+        styles.codeItem,
+        {
+          backgroundColor: colors.card,
+          borderColor: colors.border,
+        },
+      ]}>
+      <View style={styles.codeContent}>
+        <Text style={[styles.codeText, {color: colors.primary}]}>{finalCode}</Text>
+        <Text style={[styles.codeDescription, {color: colors.text}]}>
+          {customCode.name}
+        </Text>
+      </View>
+      <View style={styles.codeActions}>
+        <TouchableOpacity
+          style={styles.actionButton}
+          onPress={() =>
+            navigation.navigate('CodeExecutionScreen', {code: finalCode})
+          }>
+          <IconButton
+            icon="play"
+            size={20}
+            iconColor={colors.primary}
+            style={{margin: 0}}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.actionButton} onPress={onEdit}>
+          <IconButton
+            icon="pencil"
+            size={20}
+            iconColor={colors.primary}
+            style={{margin: 0}}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.actionButton} onPress={onDelete}>
+          <IconButton
+            icon="delete"
+            size={20}
+            iconColor={colors.error}
+            style={{margin: 0}}
+          />
+        </TouchableOpacity>
+      </View>
+    </View>
   );
 };
 
@@ -167,19 +233,76 @@ const CategoryItem = ({
   >({});
   const {colors} = useTheme();
   const navigation = useNavigation<AllCodesScreenNavigationProp>();
-
-  const toggleSubcategory = (subcategoryTitle: string) => {
-    setExpandedSubcategories(prev => ({
-      ...prev,
-      [subcategoryTitle]: !prev[subcategoryTitle],
-    }));
-  };
+  const [customCodes, setCustomCodes] = useState<CustomCode[]>([]);
   
   // Check if this is the Custom Codes category
   const isCustomCodesCategory = title === 'Custom Codes' || title === 'My Codes' || title.toLowerCase().includes('custom');
   
   const handleCreateCustomCode = () => {
     navigation.navigate('CustomCodeCreatorScreen', {});
+  };
+  
+  const handleEditCustomCode = (code: CustomCode) => {
+    navigation.navigate('CustomCodeCreatorScreen', { codeToEdit: code });
+  };
+  
+  const handleDeleteCustomCode = (codeId: string) => {
+    Alert.alert(
+      'Delete Code',
+      'Are you sure you want to delete this custom code?',
+      [
+        {
+          text: 'Cancel',
+          style: 'cancel',
+        },
+        {
+          text: 'Delete',
+          style: 'destructive',
+          onPress: async () => {
+            const success = await StorageService.deleteCustomCode(codeId);
+            if (success) {
+              // Refresh custom codes
+              loadCustomCodes();
+            } else {
+              Alert.alert('Error', 'Failed to delete custom code');
+            }
+          },
+        },
+      ]
+    );
+  };
+  
+  // Load custom codes when the category is expanded
+  const loadCustomCodes = async () => {
+    if (isCustomCodesCategory && expanded) {
+      try {
+        const codes = await StorageService.getCustomCodes();
+        setCustomCodes(codes);
+      } catch (error) {
+        console.error('Error loading custom codes:', error);
+      }
+    }
+  };
+  
+  // Load custom codes when the component mounts or when expanded changes
+  useEffect(() => {
+    loadCustomCodes();
+  }, [expanded, isCustomCodesCategory]);
+  
+  // Refresh custom codes when the screen is focused
+  useFocusEffect(
+    React.useCallback(() => {
+      if (isCustomCodesCategory && expanded) {
+        loadCustomCodes();
+      }
+    }, [isCustomCodesCategory, expanded])
+  );
+
+  const toggleSubcategory = (subcategoryTitle: string) => {
+    setExpandedSubcategories(prev => ({
+      ...prev,
+      [subcategoryTitle]: !prev[subcategoryTitle],
+    }));
   };
 
   return (
@@ -228,6 +351,7 @@ const CategoryItem = ({
 
       {expanded && (
         <View style={styles.subcategoriesContainer}>
+          {/* Display regular subcategories */}
           {subcategories.map((subcategory, index) => (
             <SubcategoryItem
               key={index}
@@ -239,6 +363,21 @@ const CategoryItem = ({
             />
           ))}
           
+          {/* Display custom codes if this is the Custom Codes category */}
+          {isCustomCodesCategory && customCodes.length > 0 && (
+            <View style={styles.customCodesContainer}>
+              {customCodes.map((code) => (
+                <CustomCodeItem
+                  key={code.id}
+                  customCode={code}
+                  onEdit={() => handleEditCustomCode(code)}
+                  onDelete={() => handleDeleteCustomCode(code.id)}
+                />
+              ))}
+            </View>
+          )}
+          
+          {/* Add custom code button */}
           {isCustomCodesCategory && (
             <TouchableOpacity
               style={[styles.addCustomCodeCard, {backgroundColor: colors.card}]}
@@ -726,6 +865,10 @@ const styles = StyleSheet.create({
     fontSize: typography.body,
     fontWeight: typography.medium as any,
     marginLeft: spacing.sm,
+  },
+  customCodesContainer: {
+    marginHorizontal: spacing.md,
+    marginBottom: spacing.md,
   },
 });
 

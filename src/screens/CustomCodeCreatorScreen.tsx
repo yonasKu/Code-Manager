@@ -18,16 +18,8 @@ import { spacing, typography, shadows, borderRadius } from '../theme/theme';
 import { useTheme } from '../theme/ThemeContext';
 import { RootStackParamList } from '../navigation/AppNavigator';
 import { categories } from '../data/categories';
-import { saveCustomCode } from '../utils/storageUtils';
+import StorageService, { CustomCode, ParameterType } from '../services/StorageService';
 import AppHeader from '../components/AppHeader';
-
-type ParameterType = {
-  name: string;
-  type: 'fixed' | 'variable';
-  value: string;
-  placeholder?: string;
-  description?: string;
-};
 
 type ParameterTypeOption = 'number' | 'password' | 'text' | 'custom';
 
@@ -70,12 +62,14 @@ const CustomCodeCreatorScreen = () => {
   
   // Get category from route params if available
   const categoryFromParams = route.params?.category;
+  const codeToEdit = route.params?.codeToEdit;
   
-  const [name, setName] = useState('');
-  const [codePattern, setCodePattern] = useState('');
-  const [parameters, setParameters] = useState<ParameterType[]>([]);
-  const [category, setCategory] = useState<string>(categoryFromParams || 'Custom Codes');
-  const [description, setDescription] = useState('');
+  const [name, setName] = useState(codeToEdit?.name || '');
+  const [codePattern, setCodePattern] = useState(codeToEdit?.codePattern || '');
+  const [parameters, setParameters] = useState<ParameterType[]>(codeToEdit?.parameters || []);
+  const [category, setCategory] = useState<string>(categoryFromParams || codeToEdit?.category || 'Custom Codes');
+  const [description, setDescription] = useState(codeToEdit?.description || '');
+  const [codeId, setCodeId] = useState<string | undefined>(codeToEdit?.id);
   
   // Modal states
   const [showCategoryModal, setShowCategoryModal] = useState(false);
@@ -119,18 +113,19 @@ const CustomCodeCreatorScreen = () => {
     setParameterName(parameter.name);
     setParameterType(parameter.type);
     setParameterValue(parameter.value);
-    setParameterPlaceholder(parameter.placeholder || '');
-    setParameterDescription(parameter.description || '');
+    
+    // StorageService parameters don't have placeholder or description
+    // but we'll keep the UI for them
+    setParameterPlaceholder('');
+    setParameterDescription('');
     
     // Determine parameter type option
-    if (parameter.placeholder === 'Enter password') {
+    if (parameter.value.toLowerCase().includes('password')) {
       setParameterTypeOption('password');
-    } else if (parameter.placeholder === 'Enter number') {
+    } else if (!isNaN(Number(parameter.value))) {
       setParameterTypeOption('number');
-    } else if (parameter.placeholder === 'Enter text') {
-      setParameterTypeOption('text');
     } else {
-      setParameterTypeOption('custom');
+      setParameterTypeOption('text');
     }
     
     setShowParameterModal(true);
@@ -142,22 +137,10 @@ const CustomCodeCreatorScreen = () => {
       return;
     }
     
-    // Set placeholder based on parameter type option
-    let placeholder = parameterPlaceholder;
-    if (parameterTypeOption === 'number') {
-      placeholder = 'Enter number';
-    } else if (parameterTypeOption === 'password') {
-      placeholder = 'Enter password';
-    } else if (parameterTypeOption === 'text') {
-      placeholder = 'Enter text';
-    }
-    
     const newParameter: ParameterType = {
       name: parameterName,
       type: parameterType,
       value: parameterValue,
-      placeholder,
-      description: parameterDescription,
     };
     
     const updatedParameters = [...parameters];
@@ -178,19 +161,29 @@ const CustomCodeCreatorScreen = () => {
     }
     
     try {
-      let finalCode = codePattern;
-      parameters.forEach(param => {
-        const placeholder = param.type === 'fixed' ? param.value : (param.placeholder || 'value');
-        finalCode = finalCode.replace(`{${param.name}}`, param.type === 'fixed' ? param.value : placeholder);
-      });
+      // Create a temporary custom code object
+      const tempCode: CustomCode = {
+        id: 'temp',
+        name: name || 'Test Code',
+        codePattern: codePattern,
+        parameters: parameters,
+        category: category,
+        description: description || 'Test Description',
+        createdAt: Date.now(),
+        updatedAt: Date.now()
+      };
       
+      // Generate the final code
+      const finalCode = StorageService.generateFinalCode(tempCode);
+      
+      // Navigate to the code execution screen
       navigation.navigate('CodeExecutionScreen', { code: finalCode });
     } catch (error) {
       Alert.alert('Error', 'Failed to generate code. Please check your pattern and parameters.');
     }
   };
   
-  const saveCode = () => {
+  const saveCode = async () => {
     if (!name.trim()) {
       Alert.alert('Error', 'Name is required');
       return;
@@ -206,41 +199,49 @@ const CustomCodeCreatorScreen = () => {
       return;
     }
     
-    // Generate a unique ID for the custom code
-    const id = Date.now().toString();
-    
     // Create the custom code object
-    const customCode = {
-      id,
+    const customCode: CustomCode = {
+      id: codeId || '',  // If editing, use existing ID, otherwise StorageService will generate one
       name,
-      pattern: codePattern,
+      codePattern,
       parameters,
-      category,
       description,
-      createdAt: new Date().toISOString(),
+      category,
+      createdAt: codeToEdit?.createdAt || Date.now(),
+      updatedAt: Date.now()
     };
     
-    // Save the custom code
-    saveCustomCode(customCode)
-      .then(() => {
-        Alert.alert('Success', 'Custom code saved successfully', [
-          { text: 'OK', onPress: () => navigation.goBack() }
-        ]);
-      })
-      .catch((error: any) => {
+    try {
+      // Save the custom code
+      const success = await StorageService.saveCustomCode(customCode);
+      
+      if (success) {
+        Alert.alert(
+          'Success', 
+          codeId ? 'Custom code updated successfully' : 'Custom code created successfully',
+          [
+            { 
+              text: 'OK', 
+              onPress: () => navigation.goBack() 
+            }
+          ]
+        );
+      } else {
         Alert.alert('Error', 'Failed to save custom code');
-      });
+      }
+    } catch (error) {
+      console.error('Error saving custom code:', error);
+      Alert.alert('Error', 'An unexpected error occurred while saving the custom code');
+    }
   };
   
   return (
     <View style={[styles.container, { backgroundColor: colors.background }]}>
-      <StatusBar barStyle={isDark ? "light-content" : "dark-content"} />
+      <StatusBar
+        barStyle={isDark ? 'light-content' : 'dark-content'}
+        backgroundColor={colors.background}
+      />
       
-      {/* <AppHeader 
-        title={currentParameterIndex !== null ? "Edit Parameter" : "Create Custom Code"} 
-        showBackButton={true}
-        onRightIconPress={() => navigation.goBack()}
-      /> */}
       
       <ScrollView style={styles.scrollView}>
         <View style={styles.section}>
@@ -494,7 +495,10 @@ const CustomCodeCreatorScreen = () => {
                           styles.chip,
                           parameterTypeOption === 'number' && { backgroundColor: colors.primary }
                         ]}
-                        onPress={() => setParameterTypeOption('number')}
+                        onPress={() => {
+                          setParameterTypeOption('number');
+                          setParameterValue('Enter a number');
+                        }}
                       >
                         <Text style={[
                           styles.chipText,
@@ -507,7 +511,10 @@ const CustomCodeCreatorScreen = () => {
                           styles.chip,
                           parameterTypeOption === 'password' && { backgroundColor: colors.primary }
                         ]}
-                        onPress={() => setParameterTypeOption('password')}
+                        onPress={() => {
+                          setParameterTypeOption('password');
+                          setParameterValue('Enter your password');
+                        }}
                       >
                         <Text style={[
                           styles.chipText,
@@ -520,7 +527,10 @@ const CustomCodeCreatorScreen = () => {
                           styles.chip,
                           parameterTypeOption === 'text' && { backgroundColor: colors.primary }
                         ]}
-                        onPress={() => setParameterTypeOption('text')}
+                        onPress={() => {
+                          setParameterTypeOption('text');
+                          setParameterValue('Enter text');
+                        }}
                       >
                         <Text style={[
                           styles.chipText,
@@ -533,7 +543,10 @@ const CustomCodeCreatorScreen = () => {
                           styles.chip,
                           parameterTypeOption === 'custom' && { backgroundColor: colors.primary }
                         ]}
-                        onPress={() => setParameterTypeOption('custom')}
+                        onPress={() => {
+                          setParameterTypeOption('custom');
+                          setParameterValue('');
+                        }}
                       >
                         <Text style={[
                           styles.chipText,
@@ -545,7 +558,7 @@ const CustomCodeCreatorScreen = () => {
                   
                   {parameterTypeOption === 'custom' && (
                     <View style={styles.modalSection}>
-                      <Text style={[styles.modalSectionTitle, { color: colors.text }]}>Custom Placeholder</Text>
+                      <Text style={[styles.modalSectionTitle, { color: colors.text }]}>Custom Value</Text>
                       <TextInput
                         style={[styles.modalInput, { 
                           backgroundColor: colors.background,
@@ -554,28 +567,11 @@ const CustomCodeCreatorScreen = () => {
                         }]}
                         placeholder="e.g. Enter your phone number"
                         placeholderTextColor={colors.textTertiary}
-                        value={parameterPlaceholder}
-                        onChangeText={setParameterPlaceholder}
+                        value={parameterValue}
+                        onChangeText={setParameterValue}
                       />
                     </View>
                   )}
-                  
-                  <View style={styles.modalSection}>
-                    <Text style={[styles.modalSectionTitle, { color: colors.text }]}>Description (Optional)</Text>
-                    <TextInput
-                      style={[styles.modalInput, { 
-                        backgroundColor: colors.background,
-                        borderColor: colors.border,
-                        color: colors.text
-                      }]}
-                      placeholder="e.g. Enter the amount in dollars"
-                      placeholderTextColor={colors.textTertiary}
-                      value={parameterDescription}
-                      onChangeText={setParameterDescription}
-                      multiline
-                      numberOfLines={2}
-                    />
-                  </View>
                 </>
               )}
               

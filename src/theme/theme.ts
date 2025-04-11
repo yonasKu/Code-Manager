@@ -3,7 +3,42 @@
 
 export type ThemeMode = 'light' | 'dark';
 
-export const lightColors = {
+export interface ThemeColors {
+  // Primary colors
+  primary: string;
+  primaryLight: string;
+  primaryDark: string;
+  
+  // UI colors
+  background: string;
+  card: string;
+  text: string;
+  textSecondary: string;
+  textTertiary: string;
+  border: string;
+  
+  // Status colors
+  success: string;
+  successLight: string;
+  successText: string;
+  error: string;
+  errorLight: string;
+  errorText: string;
+  warning: string;
+  warningLight: string;
+  warningText: string;
+  info: string;
+  infoLight: string;
+  infoText: string;
+  
+  // Emergency services colors
+  surface: string;
+  policeColor: string;
+  ambulanceColor: string;
+  fireColor: string;
+}
+
+export const lightColors: ThemeColors = {
   // Primary colors
   primary: '#007AFF',
   primaryLight: '#F0F7FF',
@@ -30,9 +65,15 @@ export const lightColors = {
   info: '#2196F3',
   infoLight: '#E3F2FD',
   infoText: '#0D47A1',
+  
+  // Emergency services colors
+  surface: '#F5F5F5',
+  policeColor: '#3F51B5',
+  ambulanceColor: '#E91E63',
+  fireColor: '#FF5722',
 };
 
-export const darkColors = {
+export const darkColors: ThemeColors = {
   // Primary colors
   primary: '#0A84FF',
   primaryLight: '#1C2834',
@@ -59,10 +100,16 @@ export const darkColors = {
   info: '#2196F3',
   infoLight: '#162A3D',
   infoText: '#64B5F6',
+  
+  // Emergency services colors
+  surface: '#252525',
+  policeColor: '#5C6BC0',
+  ambulanceColor: '#EC407A',
+  fireColor: '#FF7043',
 };
 
 // Enhanced dark theme with more attractive colors
-export const enhancedDarkColors = {
+export const enhancedDarkColors: ThemeColors = {
   // Primary colors - More vibrant blue
   primary: '#2196F3',
   primaryLight: '#1A2733',
@@ -89,10 +136,16 @@ export const enhancedDarkColors = {
   info: '#40C4FF',
   infoLight: '#162C3D',
   infoText: '#80D8FF',
+  
+  // Emergency services colors
+  surface: '#222222',
+  policeColor: '#7986CB',
+  ambulanceColor: '#F06292',
+  fireColor: '#FF8A65',
 };
 
 // Use enhanced dark colors instead of the original dark colors
-export const colors = lightColors;
+export const colors: ThemeColors = lightColors;
 
 export const typography = {
   // Font sizes
@@ -112,6 +165,7 @@ export const typography = {
 
 export const spacing = {
   // Spacing values
+  xxs: 2,
   xs: 4,
   sm: 8,
   md: 16,

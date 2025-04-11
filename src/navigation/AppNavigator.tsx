@@ -157,8 +157,6 @@ const AppNavigator = () => {
             component={EmergencyServicesScreen}
             options={{
               title: 'Emergency Services',
-              headerStyle: {backgroundColor: '#F44336'},
-              headerTintColor: '#FFFFFF',
             }}
           />
           <Stack.Screen

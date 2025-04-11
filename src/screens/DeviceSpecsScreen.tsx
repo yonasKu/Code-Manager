@@ -8,9 +8,11 @@ import {
   StatusBar,
   Platform,
   FlatList,
+  PermissionsAndroid,
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { IconButton } from 'react-native-paper';
+import DeviceInfo from 'react-native-device-info';
 import { typography, spacing, shadows, borderRadius } from '../theme/theme';
 import { useTheme } from '../theme/ThemeContext';
 import { categories, UssdCode } from '../data/categories';
@@ -21,55 +23,132 @@ const DeviceSpecsScreen = () => {
   const navigation = useNavigation<any>();
   const { colors, isDark } = useTheme();
   
-  // State to track if device data is available
-  const [hasDeviceData, setHasDeviceData] = useState(true);
+  const [hasDeviceData, setHasDeviceData] = useState(false);
+  const [hasPermissions, setHasPermissions] = useState(false);
   
   const [deviceInfo, setDeviceInfo] = useState({
-    model: Platform.OS === 'ios' ? 'iPhone' : 'Samsung',
-    os: Platform.OS === 'ios' ? 'iOS' : 'Android',
-    version: Platform.Version,
-    manufacturer: Platform.OS === 'ios' ? 'Apple' : 'Samsung',
-    carrier: 'T-Mobile',
-    imei: '123456789012345',
-    serialNumber: 'SN12345678',
-    batteryLevel: '85%',
+    model: '',
+    os: Platform.OS,
+    version: '',
+    manufacturer: '',
+    carrier: '',
+    imei: '',
+    serialNumber: '',
+    batteryLevel: '',
     storage: {
-      total: '128 GB',
-      used: '64 GB',
-      free: '64 GB',
+      total: '',
+      used: '',
+      free: '',
     },
     memory: {
-      total: '8 GB',
-      used: '3.5 GB',
-      free: '4.5 GB',
+      total: '',
+      used: '',
+      free: '',
     },
     network: {
-      type: '5G',
-      strength: 'Excellent',
+      type: '',
+      strength: '',
     },
   });
+
+  // Request required permissions
+  const requestPermissions = async () => {
+    try {
+      if (Platform.OS === 'android') {
+        const permissions = [
+          PermissionsAndroid.PERMISSIONS.READ_PHONE_STATE,
+          PermissionsAndroid.PERMISSIONS.READ_PHONE_NUMBERS,
+        ];
+
+        const results = await PermissionsAndroid.requestMultiple(permissions);
+        
+        const allGranted = Object.values(results).every(
+          result => result === PermissionsAndroid.RESULTS.GRANTED
+        );
+        
+        setHasPermissions(allGranted);
+        return allGranted;
+      }
+      return true;
+    } catch (error) {
+      console.error('Error requesting permissions:', error);
+      return false;
+    }
+  };
+
+  // Get device information
+  const getDeviceInformation = async () => {
+    try {
+      const [
+        model,
+        manufacturer,
+        carrier,
+        batteryLevel,
+        totalMemory,
+        usedMemory,
+        totalStorage,
+        freeStorage,
+      ] = await Promise.all([
+        DeviceInfo.getModel(),
+        DeviceInfo.getManufacturer(),
+        DeviceInfo.getCarrier(),
+        DeviceInfo.getBatteryLevel(),
+        DeviceInfo.getTotalMemory(),
+        DeviceInfo.getUsedMemory(),
+        DeviceInfo.getTotalDiskCapacity(),
+        DeviceInfo.getFreeDiskStorage(),
+      ]);
+
+      const networkType = await DeviceInfo.getPhoneNumber();
+      const imei = await DeviceInfo.getUniqueId();
+
+      setDeviceInfo({
+        model,
+        os: Platform.OS,
+        version: Platform.Version.toString(),
+        manufacturer,
+        carrier,
+        imei,
+        serialNumber: await DeviceInfo.getSerialNumber(),
+        batteryLevel: `${Math.round(batteryLevel * 100)}%`,
+        storage: {
+          total: `${Math.round(totalStorage / 1024 / 1024 / 1024)} GB`,
+          used: `${Math.round((totalStorage - freeStorage) / 1024 / 1024 / 1024)} GB`,
+          free: `${Math.round(freeStorage / 1024 / 1024 / 1024)} GB`,
+        },
+        memory: {
+          total: `${Math.round(totalMemory / 1024 / 1024 / 1024)} GB`,
+          used: `${Math.round(usedMemory / 1024 / 1024 / 1024)} GB`,
+          free: `${Math.round((totalMemory - usedMemory) / 1024 / 1024 / 1024)} GB`,
+        },
+        network: {
+          type: networkType || 'Unknown',
+          strength: 'N/A', // Requires additional APIs for signal strength
+        },
+      });
+      
+      setHasDeviceData(true);
+    } catch (error) {
+      console.error('Error getting device info:', error);
+      setHasDeviceData(false);
+    }
+  };
+
+  useEffect(() => {
+    const initializeDeviceInfo = async () => {
+      const hasPerms = await requestPermissions();
+      if (hasPerms) {
+        await getDeviceInformation();
+      }
+    };
+
+    initializeDeviceInfo();
+  }, []);
 
   // State for expandable sections
   const [deviceSpecsExpanded, setDeviceSpecsExpanded] = useState(false);
   const [deviceCodesExpanded, setDeviceCodesExpanded] = useState(false);
   const [carrierCodesExpanded, setCarrierCodesExpanded] = useState(false);
-
-  // Simulate checking for device data availability
-  useEffect(() => {
-    // In a real app, this would check for actual device data
-    // For demo purposes, we'll use a mock check
-    const checkDeviceData = async () => {
-      try {
-        // Mock check - in a real app, this would be actual device data retrieval
-        // For testing purposes, you can set this to false to see the no data view
-        setHasDeviceData(true);
-      } catch (error) {
-        setHasDeviceData(false);
-      }
-    };
-
-    checkDeviceData();
-  }, []);
 
   // Get device-specific USSD codes based on the device model
   const getDeviceSpecificCodes = (): UssdCode[] => {

@@ -121,175 +121,166 @@ const SubcategoryItem = ({
 const CategoryScreen = () => {
   const route = useRoute<CategoryScreenRouteProp>();
   const navigation = useNavigation<CategoryScreenNavigationProp>();
+  const {colors, isDark} = useTheme();
+  const {category} = route.params;
+
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedSubcategory, setSelectedSubcategory] = useState<string | null>(null);
-  const {colors, isDark} = useTheme();
-  const categoryTitle = route.params?.category || '';
-  const category = getCategoryByTitle(categoryTitle);
-  const subcategories = category ? category.subcategories : [];
+  const [expandedSubcategories, setExpandedSubcategories] = useState<string[]>([]);
 
-  const handleSubcategoryPress = (subcategoryTitle: string) => {
-    if (selectedSubcategory === subcategoryTitle) {
-      // If the same subcategory is tapped again, collapse it
-      setSelectedSubcategory(null);
-    } else {
-      // Otherwise, expand the tapped subcategory
-      setSelectedSubcategory(subcategoryTitle);
+  // Get the category data
+  const categoryData = getCategoryByTitle(category);
+  const subcategories = getSubcategoriesByCategory(category);
+
+  // Get all codes for the category
+  const getAllCategoryCodes = () => {
+    let allCodes: UssdCode[] = [];
+    subcategories.forEach(subcategory => {
+      const subcategoryCodes = getCodesBySubcategory(category, subcategory.title);
+      allCodes = [...allCodes, ...subcategoryCodes];
+    });
+    return allCodes;
+  };
+
+  // Filter codes based on search query
+  const filterCodes = (codes: UssdCode[]) => {
+    if (!searchQuery) return codes;
+    const query = searchQuery.toLowerCase();
+    return codes.filter(
+      code =>
+        code.code.toLowerCase().includes(query) ||
+        code.description.toLowerCase().includes(query),
+    );
+  };
+
+  // Get codes to display
+  const getDisplayCodes = () => {
+    if (selectedSubcategory) {
+      return filterCodes(getCodesBySubcategory(category, selectedSubcategory));
     }
+    return filterCodes(getAllCategoryCodes());
   };
 
-  // Filter subcategories based on search query
-  const filteredSubcategories = searchQuery
-    ? subcategories.filter(subcategory =>
-        subcategory.title.toLowerCase().includes(searchQuery.toLowerCase()),
-      )
-    : subcategories;
-
-  // Get codes for the selected subcategory
-  const getCodesForSubcategory = (subcategoryTitle: string): UssdCode[] => {
-    if (!category) return [];
-    
-    const subcategory = category.subcategories.find(sub => sub.title === subcategoryTitle);
-    return subcategory?.codes || [];
+  const toggleSubcategory = (subcategoryTitle: string) => {
+    setSelectedSubcategory(
+      selectedSubcategory === subcategoryTitle ? null : subcategoryTitle,
+    );
+    setExpandedSubcategories(prev =>
+      prev.includes(subcategoryTitle)
+        ? prev.filter(title => title !== subcategoryTitle)
+        : [...prev, subcategoryTitle],
+    );
   };
 
-  // Check if any subcategories have codes
-  const hasAnySubcategoryWithCodes = subcategories.some(sub => sub.codes && sub.codes.length > 0);
+  const renderContent = () => {
+    const displayCodes = getDisplayCodes();
 
-  const hasData = category && subcategories && subcategories.length > 0;
-
-  return (
-    <View style={[styles.container, {backgroundColor: colors.background}]}>
-      <StatusBar barStyle={isDark ? 'light-content' : 'dark-content'} />
-
-      {!hasData ? (
+    if (!categoryData) {
+      return (
         <NoDataView
-          icon="folder-alert-outline"
-          title="No Data Available"
-          message={`No information is available for the ${categoryTitle} category. Please try another category.`}
+          icon="folder-off"
+          title="Category Not Found"
+          message="The selected category could not be found."
         />
-      ) : (
-        <View>
+      );
+    }
+
+    return (
+      <ScrollView style={styles.content}>
+        <View style={styles.searchContainer}>
           <View
             style={[
-              styles.searchContainer,
-              {backgroundColor: colors.card, borderBottomColor: colors.border},
+              styles.searchBox,
+              {
+                backgroundColor: colors.card,
+                borderColor: colors.border,
+              },
             ]}>
             <IconButton
               icon="magnify"
-              size={24}
-              iconColor={colors.textTertiary}
+              size={20}
+              iconColor={colors.textSecondary}
               style={{margin: 0}}
             />
             <TextInput
               style={[styles.searchInput, {color: colors.text}]}
-              placeholder="Search subcategories..."
-              placeholderTextColor={colors.textTertiary}
+              placeholder="Search codes..."
+              placeholderTextColor={colors.textSecondary}
               value={searchQuery}
               onChangeText={setSearchQuery}
             />
-            {searchQuery.length > 0 && (
-              <TouchableOpacity onPress={() => setSearchQuery('')}>
-                <IconButton
-                  icon="close"
-                  size={20}
-                  iconColor={colors.textTertiary}
-                  style={{margin: 0}}
-                />
-              </TouchableOpacity>
-            )}
           </View>
+        </View>
 
-          <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
-            <View style={styles.contentContainer}>
-              {filteredSubcategories.length > 0 ? (
-                <>
-                  <Text style={[styles.sectionTitle, {color: colors.text}]}>
-                    Subcategories
-                  </Text>
-                  
-                  {filteredSubcategories.map((subcategory, index) => (
-                    <View key={index}>
-                      <SubcategoryItem
-                        title={subcategory.title}
-                        icon={subcategory.icon}
-                        categoryTitle={categoryTitle}
-                        onPress={() => handleSubcategoryPress(subcategory.title)}
-                      />
-                      
-                      {selectedSubcategory === subcategory.title && subcategory.codes && subcategory.codes.length > 0 && (
-                        <View style={styles.codesContainer}>
-                          <Text style={[styles.codesTitle, {color: colors.textSecondary}]}>
-                            Available Codes
-                          </Text>
-                          {subcategory.codes.map((code, codeIndex) => (
-                            <CodeItem
-                              key={codeIndex}
-                              code={code.code}
-                              description={code.description}
-                            />
-                          ))}
-                        </View>
+        {displayCodes.length === 0 && searchQuery ? (
+          <NoDataView
+            icon="text-search"
+            title="No Results"
+            message="No codes match your search criteria."
+          />
+        ) : (
+          <>
+            {/* Show all codes first */}
+            <View style={styles.codesContainer}>
+              {displayCodes.map((code, index) => (
+                <CodeItem
+                  key={`${code.code}-${index}`}
+                  code={code.code}
+                  description={code.description}
+                />
+              ))}
+            </View>
+
+            {/* Show subcategories after codes */}
+            <View style={styles.subcategoriesContainer}>
+              <Text style={[styles.sectionTitle, { color: colors.text }]}>Categories</Text>
+              {subcategories.map(subcategory => (
+                <View key={subcategory.title}>
+                  <SubcategoryItem
+                    title={subcategory.title}
+                    icon={subcategory.icon}
+                    categoryTitle={category}
+                    onPress={() => toggleSubcategory(subcategory.title)}
+                  />
+                  {expandedSubcategories.includes(subcategory.title) && (
+                    <View style={styles.subcategoryCodes}>
+                      {getCodesBySubcategory(category, subcategory.title).map(
+                        (code, index) => (
+                          <CodeItem
+                            key={`${code.code}-${index}`}
+                            code={code.code}
+                            description={code.description}
+                          />
+                        ),
                       )}
-                      
-                      {selectedSubcategory === subcategory.title && (!subcategory.codes || subcategory.codes.length === 0) && (
-                        <View style={[styles.emptyCodesContainer, {backgroundColor: colors.card}]}>
-                          <Text style={[styles.emptyCodesText, {color: colors.textSecondary}]}>
-                            No codes available for this subcategory
-                          </Text>
-                        </View>
-                      )}
-                    </View>
-                  ))}
-                  
-                  {!hasAnySubcategoryWithCodes && (
-                    <View style={[styles.infoContainer, {backgroundColor: colors.card}]}>
-                      <IconButton
-                        icon="information"
-                        size={24}
-                        iconColor={colors.primary}
-                        style={{margin: 0}}
-                      />
-                      <Text style={[styles.infoText, {color: colors.textSecondary}]}>
-                        This category doesn't have any codes assigned yet. Check the "Codes" tab for more options.
-                      </Text>
-                      <TouchableOpacity 
-                        style={[styles.viewAllButton, {backgroundColor: colors.primaryLight}]}
-                        onPress={() => {
-                          // Navigate to the Codes tab
-                          navigation.navigate('Main');
-                        }}>
-                        <Text style={[styles.viewAllButtonText, {color: colors.primary}]}>
-                          View All Codes
-                        </Text>
-                      </TouchableOpacity>
                     </View>
                   )}
-                </>
-              ) : (
-                <View style={[styles.emptyContainer, {backgroundColor: colors.card}]}>
-                  <IconButton
-                    icon="magnify-off"
-                    size={48}
-                    iconColor={colors.textTertiary}
-                    style={{margin: 0}}
-                  />
-                  <Text style={[styles.emptyText, {color: colors.textSecondary}]}>
-                    No subcategories found
-                  </Text>
-                  <Text
-                    style={[
-                      styles.emptySubtext,
-                      {color: colors.textTertiary},
-                    ]}>
-                    Try a different search term
-                  </Text>
                 </View>
-              )}
+              ))}
             </View>
-          </ScrollView>
-        </View>
-      )}
+          </>
+        )}
+      </ScrollView>
+    );
+  };
+
+  return (
+    <View style={[styles.container, {backgroundColor: colors.background}]}>
+      <StatusBar barStyle={isDark ? 'light-content' : 'dark-content'} />
+      {/* <View
+        style={[
+          styles.header,
+          {backgroundColor: colors.card, borderBottomColor: colors.border},
+        ]}>
+        <IconButton
+          icon="arrow-left"
+          size={24}
+          iconColor={colors.text}
+          onPress={() => navigation.goBack()}
+        />
+        <Text style={[styles.headerTitle, {color: colors.text}]}>{category}</Text>
+      </View> */}
+      {renderContent()}
     </View>
   );
 };
@@ -317,17 +308,28 @@ const styles = StyleSheet.create({
     paddingVertical: spacing.xs,
     borderBottomWidth: 1,
   },
+  searchBox: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    padding: spacing.md,
+    borderRadius: borderRadius.lg,
+    borderWidth: 1,
+  },
   searchInput: {
     flex: 1,
     height: 40,
     fontSize: typography.body,
     marginLeft: spacing.sm,
   },
-  scrollView: {
+  content: {
     flex: 1,
-  },
-  contentContainer: {
     padding: spacing.md,
+  },
+  codesContainer: {
+    marginBottom: spacing.md,
+  },
+  subcategoriesContainer: {
+    marginTop: spacing.md,
   },
   sectionTitle: {
     fontSize: typography.heading3,
@@ -352,14 +354,9 @@ const styles = StyleSheet.create({
     fontSize: typography.body,
     fontWeight: typography.medium as any,
   },
-  codesContainer: {
+  subcategoryCodes: {
     marginLeft: spacing.xl,
     marginBottom: spacing.md,
-  },
-  codesTitle: {
-    fontSize: typography.caption,
-    marginBottom: spacing.xs,
-    marginLeft: spacing.xs,
   },
   codeItem: {
     flexDirection: 'row',
@@ -387,71 +384,6 @@ const styles = StyleSheet.create({
   },
   actionButton: {
     marginLeft: spacing.xs,
-  },
-  emptyContainer: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: spacing.xl,
-    borderRadius: borderRadius.lg,
-    marginTop: spacing.lg,
-  },
-  emptyText: {
-    fontSize: typography.body,
-    fontWeight: typography.medium as any,
-    marginTop: spacing.md,
-  },
-  emptySubtext: {
-    fontSize: typography.bodySmall,
-    marginTop: spacing.xs,
-    textAlign: 'center',
-  },
-  emptyCodesContainer: {
-    padding: spacing.md,
-    borderRadius: borderRadius.lg,
-    marginLeft: spacing.xl,
-    marginBottom: spacing.md,
-  },
-  emptyCodesText: {
-    fontSize: typography.caption,
-    fontStyle: 'italic',
-  },
-  infoContainer: {
-    padding: spacing.md,
-    borderRadius: borderRadius.lg,
-    marginTop: spacing.lg,
-    alignItems: 'center',
-  },
-  infoText: {
-    fontSize: typography.body,
-    textAlign: 'center',
-    marginVertical: spacing.md,
-    paddingHorizontal: spacing.md,
-  },
-  viewAllButton: {
-    paddingVertical: spacing.sm,
-    paddingHorizontal: spacing.lg,
-    borderRadius: borderRadius.lg,
-    marginTop: spacing.sm,
-  },
-  viewAllButtonText: {
-    fontSize: typography.body,
-    fontWeight: typography.medium as any,
-  },
-  subcategoryCount: {
-    fontSize: 12,
-    marginTop: 4,
-  },
-  noDataContainer: {
-    padding: 16,
-    borderRadius: 8,
-    marginBottom: 16,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  noDataText: {
-    fontSize: 14,
-    textAlign: 'center',
-    paddingVertical: 16,
   },
 });
 
