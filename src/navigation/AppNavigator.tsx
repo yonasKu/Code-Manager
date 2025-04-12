@@ -20,6 +20,7 @@ import CodeDetailScreen from '../screens/CodeDetailScreen';
 import CodeExecutionScreen from '../screens/CodeExecutionScreen';
 import DeviceSpecsScreen from '../screens/DeviceSpecsScreen';
 import AllCodesScreen from '../screens/AllCodesScreen';
+import PrivacyPolicyScreen from '../screens/PrivacyPolicyScreen';
 
 // Define stack navigator types
 export type RootStackParamList = {
@@ -32,6 +33,7 @@ export type RootStackParamList = {
   CustomCodesScreen: undefined;
   SettingsScreen: undefined;
   DeviceSpecsScreen: undefined;
+  PrivacyPolicyScreen: undefined;
 };
 
 export type TabParamList = {
@@ -197,6 +199,11 @@ const AppNavigator = () => {
             name="DeviceSpecsScreen"
             component={DeviceSpecsScreen}
             options={{title: 'Device Specs'}}
+          />
+          <Stack.Screen
+            name="PrivacyPolicyScreen"
+            component={PrivacyPolicyScreen}
+            options={{title: 'Privacy Policy'}}
           />
         </Stack.Navigator>
       </NavigationContainer>

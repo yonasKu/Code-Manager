@@ -1,0 +1,251 @@
+# USSD CODE MANAGER - DATA MODEL DOCUMENTATION
+
+## OVERVIEW
+
+This document outlines the data structures, relationships, and storage mechanisms used in the USSD Code Manager application. The app uses a combination of JSON data files for static content and AsyncStorage for dynamic user data.
+
+## DATA STRUCTURES
+
+### 1. USSD Code
+
+```typescript
+interface UssdCode {
+  id: string;           // Unique identifier for the code
+  name: string;         // Display name of the code
+  code: string;         // The actual USSD code string (e.g., "*123#")
+  description: string;  // Detailed description of what the code does
+  parameters?: {        // Optional parameters that can be included in the code
+    name: string;       // Parameter name
+    description: string;// Parameter description
+    placeholder: string;// Placeholder text for input
+    required: boolean;  // Whether the parameter is required
+  }[];
+  instructions?: string;// Usage instructions
+  categoryId: string;   // Reference to parent category
+  subcategoryId: string;// Reference to parent subcategory
+  carrier?: string;     // Optional carrier specificity
+  region?: string;      // Optional region specificity
+  tags?: string[];      // Optional tags for improved searchability
+}
+```
+
+### 2. Category
+
+```typescript
+interface Category {
+  id: string;           // Unique identifier for the category
+  name: string;         // Display name of the category
+  icon: string;         // Icon name for the category
+  description?: string; // Optional description of the category
+  subcategories: Subcategory[]; // Array of subcategories
+}
+```
+
+### 3. Subcategory
+
+```typescript
+interface Subcategory {
+  id: string;           // Unique identifier for the subcategory
+  name: string;         // Display name of the subcategory
+  description?: string; // Optional description of the subcategory
+  parentCategoryId: string; // Reference to parent category
+}
+```
+
+### 4. Custom Code
+
+```typescript
+interface CustomCode {
+  id: string;           // Unique identifier for the custom code
+  name: string;         // Display name of the code
+  code: string;         // The actual USSD code string
+  description: string;  // User-provided description
+  dateCreated: number;  // Timestamp of creation
+  dateModified: number; // Timestamp of last modification
+  categoryId?: string;  // Optional category assignment
+  subcategoryId?: string; // Optional subcategory assignment
+  parameters?: {        // Optional parameters defined by user
+    name: string;
+    description: string;
+    placeholder: string;
+  }[];
+}
+```
+
+### 5. Recent Activity
+
+```typescript
+interface RecentActivity {
+  id: string;           // Unique identifier for the activity
+  codeId: string;       // Reference to the executed code (custom or predefined)
+  code: string;         // The actual USSD code string that was executed
+  name: string;         // Name of the code
+  timestamp: number;    // When the code was executed
+  isCustom: boolean;    // Whether it was a custom code
+  status: 'success' | 'failed' | 'unknown'; // Execution status
+  parameters?: {        // Parameters used in execution, if any
+    [key: string]: string;
+  };
+}
+```
+
+### 6. Favorite Code
+
+```typescript
+interface FavoriteCode {
+  id: string;           // Unique identifier for the favorite entry
+  codeId: string;       // Reference to the favorited code
+  isCustom: boolean;    // Whether it's a custom code
+  dateAdded: number;    // When it was added to favorites
+}
+```
+
+### 7. Emergency Service
+
+```typescript
+interface EmergencyService {
+  id: string;           // Unique identifier for the service
+  country: string;      // Country name
+  countryCode: string;  // ISO country code
+  services: {
+    name: string;       // Service name (e.g., "Police")
+    number: string;     // Emergency number
+    description?: string; // Optional description
+  }[];
+  generalEmergency?: {  // General emergency number if applicable
+    number: string;
+    description?: string;
+  };
+}
+```
+
+### 8. User Preferences
+
+```typescript
+interface UserPreferences {
+  theme: 'light' | 'dark' | 'system'; // Theme preference
+  recentActivityLimit: number;        // Max number of recent activities to store
+  defaultCountry?: string;            // Default country for emergency services
+  executionConfirmation: boolean;     // Whether to confirm before executing codes
+}
+```
+
+## DATA RELATIONSHIPS
+
+```
+┌─────────────┐       ┌─────────────┐       ┌─────────────┐
+│  Category   │1     *│ Subcategory │1     *│  USSD Code  │
+└─────────────┘       └─────────────┘       └─────────────┘
+      │                                            │
+      │                                            │
+      │                                            │
+      │                                            │
+      │                                            │
+      ▼                                            ▼
+┌─────────────┐                           ┌─────────────┐
+│ Custom Code │◄──────────────────────────┤   Recent    │
+└─────────────┘                           │  Activity   │
+      │                                   └─────────────┘
+      │                                          ▲
+      │                                          │
+      │                                          │
+      ▼                                          │
+┌─────────────┐                           ┌─────────────┐
+│  Favorite   │◄──────────────────────────┤ Emergency   │
+│    Code     │                           │  Service    │
+└─────────────┘                           └─────────────┘
+```
+
+## STORAGE MECHANISMS
+
+### 1. Static Data Files
+
+The application uses JSON files to store predefined data:
+
+- **ussd_codes.json**: Contains all predefined USSD codes
+- **categories.ts**: Contains categories and subcategories
+- **emergencyServices.json**: Contains emergency service information by country
+
+### 2. AsyncStorage
+
+User-generated and dynamic data is stored using AsyncStorage:
+
+- **@ussd_manager/custom_codes**: Custom codes created by the user
+- **@ussd_manager/recent_activity**: Recent code executions
+- **@ussd_manager/favorites**: User's favorite codes
+- **@ussd_manager/user_preferences**: User preferences and settings
+
+## DATA ACCESS PATTERNS
+
+### 1. Code Browsing Flow
+
+1. Load categories and subcategories from categories.ts
+2. When a category is selected, filter codes from ussd_codes.json by categoryId
+3. When a subcategory is selected, further filter by subcategoryId
+4. Display filtered codes to the user
+
+### 2. Code Execution Flow
+
+1. User selects a code (predefined or custom)
+2. App retrieves full code details
+3. User provides any required parameters
+4. App executes the code
+5. App creates a RecentActivity entry and stores it in AsyncStorage
+6. Recent activity is displayed on the home screen
+
+### 3. Favorites Management Flow
+
+1. User marks a code as favorite
+2. App creates a FavoriteCode entry and stores it in AsyncStorage
+3. When viewing favorites, app retrieves favorite IDs and loads corresponding code details
+4. Favorites are displayed in the My Codes screen
+
+### 4. Custom Code Creation Flow
+
+1. User enters custom code details
+2. App validates the input
+3. App creates a CustomCode entry and stores it in AsyncStorage
+4. Custom codes are displayed in the My Codes screen
+
+### 5. Emergency Services Flow
+
+1. App detects user's country based on device settings
+2. App loads emergency services for the detected country from emergencyServices.json
+3. User can manually select a different country if needed
+4. Emergency services are displayed with direct call options
+
+## DATA MIGRATION & VERSIONING
+
+The app includes a versioning system for data structures to handle migrations:
+
+```typescript
+interface DataVersion {
+  version: string;      // Semantic version of the data structure
+  lastUpdated: number;  // Timestamp of last update
+}
+```
+
+When the app starts, it checks the stored data version against the current version and performs migrations if necessary.
+
+## DATA SECURITY
+
+1. All sensitive data is stored locally on the device only
+2. No user data is transmitted to external servers
+3. AsyncStorage is used with appropriate encryption for sensitive information
+4. Users can clear all stored data through the Settings screen
+
+## PERFORMANCE CONSIDERATIONS
+
+1. Pagination is implemented for large data sets
+2. Memoization is used to optimize repeated data access
+3. Data is loaded lazily when needed to improve startup time
+4. Indexes are created for frequently queried fields
+
+## OFFLINE CAPABILITY
+
+The app is designed to work fully offline:
+
+1. All predefined data is bundled with the app
+2. User-generated data is stored locally
+3. No network connection is required for core functionality
+4. Emergency services are available offline

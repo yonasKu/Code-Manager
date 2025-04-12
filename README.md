@@ -1,97 +1,106 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# USSD Code Manager
 
-# Getting Started
+<p align="center">
+  <img src="./src/assets/logo.png" alt="USSD Code Manager Logo" width="200"/>
+</p>
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+## Overview
 
-## Step 1: Start Metro
+USSD Code Manager is a powerful mobile application designed to help users organize, save, and execute USSD (Unstructured Supplementary Service Data) codes. The app provides a user-friendly interface for managing service codes across different categories, making it easier to access essential mobile services without having to remember complex code combinations.
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+## Features
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+### Core Functionality
+- **USSD Code Execution**: Execute USSD codes directly from the app
+- **Category Organization**: Browse codes organized by categories and subcategories
+- **Recent Activity Tracking**: View history of recently executed codes
+- **Favorites System**: Save frequently used codes for quick access
+- **Custom Codes**: Create and manage your own custom USSD codes
 
+### Additional Features
+- **Emergency Services**: Quick access to emergency service numbers with location awareness
+- **Dark Mode Support**: Comfortable viewing in any lighting condition
+- **Performance Optimized**: Fast and responsive, even with large datasets
+- **Privacy Focused**: All data stored locally on device with no data collection
+
+## Screenshots
+
+<p align="center">
+  <img src="./src/assets/screenshots/Home.png" alt="Home Screen" width="200"/>
+  <img src="./src/assets/screenshots/Codes.png" alt="Codes Screen" width="200"/>
+  <img src="./src/assets/screenshots/Emergency.png" alt="Emergency Services" width="200"/>
+</p>
+
+## Technical Details
+
+### Built With
+- **React Native**: Cross-platform mobile framework
+- **React Navigation**: For screen navigation and routing
+- **AsyncStorage**: For local data persistence
+- **React Native Paper**: UI component library
+
+### Architecture
+The app follows a modular architecture with:
+- Screen components for different views
+- Utility services for data management
+- Context providers for theme and state management
+- Local storage for data persistence
+
+## Installation
+
+### Prerequisites
+- Node.js (v18 or higher)
+- React Native CLI
+- Android Studio (for Android development)
+- Xcode (for iOS development, macOS only)
+
+### Setup
+1. Clone the repository:
 ```sh
-# Using npm
-npm start
-
-# OR using Yarn
-yarn start
+git clone https://github.com/yonasKu/Code-Manager.git
 ```
 
-## Step 2: Build and run your app
-
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
-
-### Android
-
+2. Install dependencies:
 ```sh
-# Using npm
+cd Code-Manager
+npm install
+```
+
+3. Run the app:
+```sh
+# For Android
 npm run android
 
-# OR using Yarn
-yarn android
-```
-
-### iOS
-
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
-
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
-
-```sh
-bundle install
-```
-
-Then, and every time you update your native dependencies, run:
-
-```sh
-bundle exec pod install
-```
-
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
-
-```sh
-# Using npm
+# For iOS
 npm run ios
-
-# OR using Yarn
-yarn ios
 ```
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+## Usage
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+1. **Home Screen**: Access recent activities and category shortcuts
+2. **Codes Tab**: Browse all available USSD codes by category
+3. **My Codes Tab**: View and manage your custom USSD codes
+4. **Emergency Services**: Access emergency numbers for different countries
+5. **Settings**: Customize app behavior and appearance
 
-## Step 3: Modify your app
+## Privacy
 
-Now that you have successfully run the app, let's make changes!
+USSD Code Manager respects your privacy:
+- No data collection or transmission
+- All information stored locally on your device
+- No analytics or tracking
+- Minimal permissions required
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+## Contributing
 
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
+## License
 
-## Congratulations! :tada:
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-You've successfully run and modified your React Native App. :partying_face:
+## Contact
 
-### Now what?
+Yonas Kumelachew - [Yonijonahphineas0@gmail.com](mailto:Yonijonahphineas0@gmail.com)
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+Project Link: [https://github.com/yonasKu/Code-Manager](https://github.com/yonasKu/Code-Manager)
