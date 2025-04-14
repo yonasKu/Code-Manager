@@ -21,6 +21,10 @@ import CodeExecutionScreen from '../screens/CodeExecutionScreen';
 import DeviceSpecsScreen from '../screens/DeviceSpecsScreen';
 import AllCodesScreen from '../screens/AllCodesScreen';
 import PrivacyPolicyScreen from '../screens/PrivacyPolicyScreen';
+import OtherServicesScreen from '../screens/OtherServicesScreen';
+import CarriersScreen from '../screens/CarriersScreen';
+import BanksScreen from '../screens/BanksScreen';
+import PhoneCodesScreen from '../screens/PhoneCodesScreen';
 
 // Define stack navigator types
 export type RootStackParamList = {
@@ -34,13 +38,18 @@ export type RootStackParamList = {
   SettingsScreen: undefined;
   DeviceSpecsScreen: undefined;
   PrivacyPolicyScreen: undefined;
+  OtherServicesScreen: undefined;
+  CarriersScreen: undefined;
+  BanksScreen: undefined;
+  PhoneCodesScreen: undefined;
 };
 
 export type TabParamList = {
   Home: undefined;
   Codes: undefined;
   MyCodes: undefined;
-  DeviceSpecs: undefined;
+  Other: undefined;
+  Settings: undefined;
 };
 
 const Stack = createStackNavigator<RootStackParamList>();
@@ -61,8 +70,10 @@ const MainTabs = () => {
             iconName = 'folder';
           } else if (route.name === 'MyCodes') {
             iconName = 'star';
-          } else if (route.name === 'DeviceSpecs') {
-            iconName = 'cellphone-check';
+          } else if (route.name === 'Other') {
+            iconName = 'dots-horizontal-circle';
+          } else if (route.name === 'Settings') {
+            iconName = 'cog';
           } else {
             iconName = 'help';
           }
@@ -87,7 +98,8 @@ const MainTabs = () => {
       <Tab.Screen name="Home" component={HomeScreen} />
       <Tab.Screen name="Codes" component={AllCodesScreen} />
       <Tab.Screen name="MyCodes" component={FavoritesScreen} />
-      <Tab.Screen name="DeviceSpecs" component={DeviceSpecsScreen} />
+      <Tab.Screen name="Other" component={OtherServicesScreen} />
+      <Tab.Screen name="Settings" component={SettingsScreen} />
     </Tab.Navigator>
   );
 };
@@ -102,20 +114,16 @@ const AppNavigator = () => {
           screenOptions={{
             headerStyle: {
               backgroundColor: colors.card,
+              elevation: 0,
+              shadowOpacity: 0,
+              borderBottomWidth: 1,
+              borderBottomColor: colors.border,
             },
             headerTintColor: colors.text,
             headerTitleStyle: {
-              fontWeight: 'bold',
+              fontWeight: '500',
             },
-            cardStyle: {
-              backgroundColor: colors.background,
-            },
-            headerLeftContainerStyle: {
-              paddingLeft: 8,
-            },
-            headerRightContainerStyle: {
-              paddingRight: 8,
-            },
+            cardStyle: {backgroundColor: colors.background},
           }}>
           <Stack.Screen
             name="Main"
@@ -125,29 +133,16 @@ const AppNavigator = () => {
           <Stack.Screen
             name="CategoryScreen"
             component={CategoryScreen}
-            options={({route, navigation}: any) => ({
-              title: route.params.category,
-              headerRight: () => (
-                <TouchableOpacity
-                  onPress={() =>
-                    navigation.navigate('CustomCodeCreatorScreen', {
-                      category: route.params.category,
-                    })
-                  }>
-                  <IconButton
-                    icon="plus"
-                    size={24}
-                    iconColor={colors.primary}
-                    style={{margin: 0}}
-                  />
-                </TouchableOpacity>
-              ),
+            options={({route}: any) => ({
+              title: route.params?.category || 'Category',
             })}
           />
           <Stack.Screen
             name="CodeDetailScreen"
             component={CodeDetailScreen}
-            options={({route}: any) => ({title: route.params.title})}
+            options={({route}: any) => ({
+              title: route.params?.title || 'Code Details',
+            })}
           />
           <Stack.Screen
             name="CodeExecutionScreen"
@@ -157,38 +152,17 @@ const AppNavigator = () => {
           <Stack.Screen
             name="EmergencyServicesScreen"
             component={EmergencyServicesScreen}
-            options={{
-              title: 'Emergency Services',
-            }}
+            options={{title: 'Emergency Services'}}
           />
           <Stack.Screen
             name="CustomCodeCreatorScreen"
             component={CustomCodeCreatorScreen}
-            options={({route}: any) => ({
-              title: route.params?.codeToEdit
-                ? 'Edit Custom Code'
-                : 'Create Custom Code',
-            })}
+            options={{title: 'Create Custom Code'}}
           />
           <Stack.Screen
             name="CustomCodesScreen"
             component={CustomCodesScreen}
-            options={({navigation}: any) => ({
-              title: 'Custom Codes',
-              headerRight: () => (
-                <TouchableOpacity
-                  onPress={() =>
-                    navigation.navigate('CustomCodeCreatorScreen', {})
-                  }>
-                  <IconButton
-                    icon="plus"
-                    size={24}
-                    iconColor={colors.primary}
-                    style={{margin: 0}}
-                  />
-                </TouchableOpacity>
-              ),
-            })}
+            options={{title: 'Custom Codes'}}
           />
           <Stack.Screen
             name="SettingsScreen"
@@ -198,12 +172,32 @@ const AppNavigator = () => {
           <Stack.Screen
             name="DeviceSpecsScreen"
             component={DeviceSpecsScreen}
-            options={{title: 'Device Specs'}}
+            options={{title: 'Device Information'}}
           />
           <Stack.Screen
             name="PrivacyPolicyScreen"
             component={PrivacyPolicyScreen}
             options={{title: 'Privacy Policy'}}
+          />
+          <Stack.Screen
+            name="OtherServicesScreen"
+            component={OtherServicesScreen}
+            options={{title: 'Additional Services'}}
+          />
+          <Stack.Screen
+            name="CarriersScreen"
+            component={CarriersScreen}
+            options={{title: 'Mobile Carriers'}}
+          />
+          <Stack.Screen
+            name="BanksScreen"
+            component={BanksScreen}
+            options={{title: 'Financial Institutions'}}
+          />
+          <Stack.Screen
+            name="PhoneCodesScreen"
+            component={PhoneCodesScreen}
+            options={{title: 'Phone Codes'}}
           />
         </Stack.Navigator>
       </NavigationContainer>

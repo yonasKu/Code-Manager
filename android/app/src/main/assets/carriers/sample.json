@@ -1,0 +1,162 @@
+[
+  {
+    "region": "Africa",
+    "countries": [
+      {
+        "country": "South Africa",
+        "iso": "ZA",
+        "carriers": [
+          {
+            "name": "Vodacom",
+            "type": "MNO",
+            "ussd_codes": [
+              {
+                "code": "*100#",
+                "description": "Check Balance"
+              },
+              {
+                "code": "*135#",
+                "description": "Voicemail"
+              }
+            ]
+          },
+          {
+            "name": "MTN",
+            "type": "MNO",
+            "ussd_codes": [
+              {
+                "code": "*136#",
+                "description": "Check Balance"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "country": "Kenya",
+        "iso": "KE",
+        "carriers": [
+          {
+            "name": "Safaricom",
+            "type": "MNO",
+            "ussd_codes": [
+              {
+                "code": "*144#",
+                "description": "Check Balance"
+              },
+              {
+                "code": "*234#",
+                "description": "M-Pesa Menu"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "region": "Asia",
+    "countries": [
+      {
+        "country": "India",
+        "iso": "IN",
+        "carriers": [
+          {
+            "name": "Jio",
+            "type": "MNO",
+            "ussd_codes": [
+              {
+                "code": "*333#",
+                "description": "Check Balance"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "region": "Europe",
+    "countries": [
+      {
+        "country": "United Kingdom",
+        "iso": "GB",
+        "carriers": [
+          {
+            "name": "Vodafone UK",
+            "type": "MNO",
+            "ussd_codes": [
+              {
+                "code": "*100#",
+                "description": "Check Balance"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "region": "North America",
+    "countries": [
+      {
+        "country": "United States",
+        "iso": "US",
+        "carriers": [
+          {
+            "name": "Verizon",
+            "type": "MNO",
+            "ussd_codes": [
+              {
+                "code": "#BAL",
+                "description": "Check Balance"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "region": "South America & Caribbean",
+    "countries": [
+      {
+        "country": "Brazil",
+        "iso": "BR",
+        "carriers": [
+          {
+            "name": "Vivo",
+            "type": "MNO",
+            "ussd_codes": [
+              {
+                "code": "*8000",
+                "description": "Customer Service"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "region": "Oceania & Pacific",
+    "countries": [
+      {
+        "country": "Australia",
+        "iso": "AU",
+        "carriers": [
+          {
+            "name": "Telstra",
+            "type": "MNO",
+            "ussd_codes": [
+              {
+                "code": "#125#",
+                "description": "Check Balance"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]
