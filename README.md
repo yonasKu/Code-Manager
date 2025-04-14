@@ -19,6 +19,9 @@ USSD Code Manager is a powerful mobile application designed to help users organi
 
 ### Additional Features
 - **Emergency Services**: Quick access to emergency service numbers with location awareness
+- **Mobile Carriers Database**: Browse carriers by region and country to find USSD codes
+- **Country Phone Codes**: Access international dialing codes for countries around the world
+- **Financial Institutions Directory**: Find contact information for banks worldwide
 - **Dark Mode Support**: Comfortable viewing in any lighting condition
 - **Performance Optimized**: Fast and responsive, even with large datasets
 - **Privacy Focused**: All data stored locally on device with no data collection
@@ -29,6 +32,7 @@ USSD Code Manager is a powerful mobile application designed to help users organi
   <img src="./src/assets/screenshots/Home.png" alt="Home Screen" width="200"/>
   <img src="./src/assets/screenshots/Codes.png" alt="Codes Screen" width="200"/>
   <img src="./src/assets/screenshots/Emergency.png" alt="Emergency Services" width="200"/>
+  <img src="./src/assets/screenshots/OtherServices.png" alt="Other Services" width="200"/>
 </p>
 
 ## Technical Details
@@ -80,8 +84,9 @@ npm run ios
 1. **Home Screen**: Access recent activities and category shortcuts
 2. **Codes Tab**: Browse all available USSD codes by category
 3. **My Codes Tab**: View and manage your custom USSD codes
-4. **Emergency Services**: Access emergency numbers for different countries
-5. **Settings**: Customize app behavior and appearance
+4. **Other Services**: Access carriers, phone codes, and financial institutions information
+5. **Emergency Services**: Access emergency numbers for different countries
+6. **Settings**: Customize app behavior and appearance
 
 ## Privacy
 
