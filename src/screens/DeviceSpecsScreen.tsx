@@ -15,9 +15,34 @@ import { IconButton } from 'react-native-paper';
 import DeviceInfo from 'react-native-device-info';
 import { typography, spacing, shadows, borderRadius } from '../theme/theme';
 import { useTheme } from '../theme/ThemeContext';
-import { categories, UssdCode } from '../data/categories';
 import NoDataView from '../components/NoDataView';
 import AppHeader from '../components/AppHeader';
+
+// Define types for carrier data
+interface UssdCode {
+  code: string;
+  description: string;
+  notes?: string;
+}
+
+interface Carrier {
+  name: string;
+  type: string;
+  ussd_codes: UssdCode[];
+  notes?: string;
+}
+
+interface Country {
+  country: string;
+  iso: string;
+  carriers: Carrier[];
+  notes?: string;
+}
+
+interface Region {
+  region: string;
+  countries: Country[];
+}
 
 const DeviceSpecsScreen = () => {
   const navigation = useNavigation<any>();
@@ -146,101 +171,77 @@ const DeviceSpecsScreen = () => {
   }, []);
 
   // State for expandable sections
-  const [deviceSpecsExpanded, setDeviceSpecsExpanded] = useState(false);
-  const [deviceCodesExpanded, setDeviceCodesExpanded] = useState(false);
+  // Device specs are always expanded now
   const [carrierCodesExpanded, setCarrierCodesExpanded] = useState(false);
 
-  // Get device-specific USSD codes based on the device model
-  const getDeviceSpecificCodes = (): UssdCode[] => {
-    // Find the Device Diagnostics category
-    const diagnosticsCategory = categories.find(cat => cat.title === 'Device Diagnostics');
-    if (!diagnosticsCategory) return [];
 
-    // Find subcategories specific to the device manufacturer
-    const manufacturerSpecificSubcategories = diagnosticsCategory.subcategories.filter(subcat => 
-      subcat.title.toLowerCase().includes(deviceInfo.manufacturer.toLowerCase())
-    );
 
-    // Get all codes from these subcategories
-    let deviceCodes: UssdCode[] = [];
-    manufacturerSpecificSubcategories.forEach(subcat => {
-      if (subcat.codes) {
-        deviceCodes = [...deviceCodes, ...subcat.codes];
+  // State for carrier data
+  const [carrierData, setCarrierData] = useState<Region[]>([]);
+  const [loading, setLoading] = useState(true);
+  
+  // Load carrier data from the database
+  useEffect(() => {
+    const loadCarrierData = async () => {
+      try {
+        // Load the combined carriers data file
+        const allCarriersData = require('../data/carriers/all_carriers.json');
+        setCarrierData(allCarriersData);
+        setLoading(false);
+      } catch (error) {
+        console.error('Error loading carrier data:', error);
+        setLoading(false);
       }
-    });
+    };
 
-    // Also add general diagnostic codes
-    const fieldTestSubcategory = diagnosticsCategory.subcategories.find(subcat => 
-      subcat.title === 'Field Test Mode'
-    );
-    
-    if (fieldTestSubcategory && fieldTestSubcategory.codes) {
-      // Add platform-specific field test codes
-      const platformSpecificCodes = fieldTestSubcategory.codes.filter(code => 
-        Platform.OS === 'ios' ? 
-          code.description.toLowerCase().includes('iphone') : 
-          code.description.toLowerCase().includes('android')
-      );
-      deviceCodes = [...deviceCodes, ...platformSpecificCodes];
-    }
+    loadCarrierData();
+  }, []);
 
-    // Add device configuration codes
-    const configCategory = categories.find(cat => cat.title === 'Device Configuration');
-    if (configCategory) {
-      configCategory.subcategories.forEach(subcat => {
-        if (subcat.codes) {
-          // Filter for platform-specific codes
-          const platformCodes = subcat.codes.filter(code => 
-            Platform.OS === 'ios' ? 
-              !code.description.toLowerCase().includes('android') : 
-              !code.description.toLowerCase().includes('iphone')
-          );
-          deviceCodes = [...deviceCodes, ...platformCodes];
-        }
-      });
-    }
-
-    return deviceCodes;
-  };
-
-  // Get carrier/SIM-specific USSD codes
+  // Get carrier/SIM-specific USSD codes based on the device's carrier
   const getCarrierSpecificCodes = (): UssdCode[] => {
-    // Find the Carrier Specific category
-    const carrierCategory = categories.find(cat => cat.title === 'Carrier Specific');
-    if (!carrierCategory) return [];
-
-    // Get all codes from carrier subcategories
+    if (!deviceInfo.carrier || carrierData.length === 0) return [];
+    
+    const currentCarrierName = deviceInfo.carrier.toLowerCase();
     let carrierCodes: UssdCode[] = [];
     
-    carrierCategory.subcategories.forEach(subcat => {
-      if (subcat.codes) {
-        // Add all carrier codes, potentially filter by carrier name in the future
-        carrierCodes = [...carrierCodes, ...subcat.codes];
-      }
+    // Search through all regions and countries to find matching carrier
+    carrierData.forEach(region => {
+      region.countries.forEach(country => {
+        const matchingCarriers = country.carriers.filter(carrier => 
+          carrier.name.toLowerCase().includes(currentCarrierName) ||
+          currentCarrierName.includes(carrier.name.toLowerCase())
+        );
+        
+        // Add codes from matching carriers
+        matchingCarriers.forEach(carrier => {
+          if (carrier.ussd_codes && carrier.ussd_codes.length > 0) {
+            carrierCodes = [...carrierCodes, ...carrier.ussd_codes];
+          }
+        });
+      });
     });
-
-    // Add any direct codes from the category
-    if (carrierCategory.codes) {
-      carrierCodes = [...carrierCodes, ...carrierCategory.codes];
+    
+    // If no carrier-specific codes found, return general carrier codes
+    if (carrierCodes.length === 0) {
+      // Get general carrier codes that work across most carriers
+      carrierData.forEach(region => {
+        region.countries.forEach(country => {
+          const generalCarrier = country.carriers.find(carrier => 
+            carrier.name.toLowerCase() === 'general' || 
+            carrier.name.toLowerCase() === 'all carriers'
+          );
+          
+          if (generalCarrier && generalCarrier.ussd_codes) {
+            carrierCodes = [...carrierCodes, ...generalCarrier.ussd_codes];
+          }
+        });
+      });
     }
-
-    // Add SIM-related codes from other categories
-    const configCategory = categories.find(cat => cat.title === 'Device Configuration');
-    if (configCategory) {
-      const simSubcategory = configCategory.subcategories.find(
-        subcat => subcat.title.toLowerCase().includes('sim')
-      );
-      
-      if (simSubcategory && simSubcategory.codes) {
-        carrierCodes = [...carrierCodes, ...simSubcategory.codes];
-      }
-    }
-
+    
     return carrierCodes;
   };
 
-  const deviceSpecificCodes = getDeviceSpecificCodes();
-  const carrierSpecificCodes = getCarrierSpecificCodes();
+  const carrierSpecificCodes = loading ? [] : getCarrierSpecificCodes();
 
   const handleCodePress = (code: UssdCode) => {
     navigation.navigate('CodeExecutionScreen', { 
@@ -297,24 +298,15 @@ const DeviceSpecsScreen = () => {
             <Text style={[styles.deviceOS, { color: colors.textSecondary }]}>{deviceInfo.os} {deviceInfo.version}</Text>
           </View>
 
-          {/* Collapsible Device Specs Section */}
+          {/* Device Specs Section (Always Expanded) */}
           <View style={styles.section}>
-            <TouchableOpacity 
-              style={[styles.dropdownHeader, { backgroundColor: colors.card }]}
-              onPress={() => setDeviceSpecsExpanded(!deviceSpecsExpanded)}
-            >
-              <Text style={[styles.dropdownTitle, { color: colors.text }]}>
+            <View style={[styles.sectionHeader, { backgroundColor: colors.card }]}>
+              <Text style={[styles.sectionTitle, { color: colors.text }]}>
                 Device Specifications
               </Text>
-              <IconButton 
-                icon={deviceSpecsExpanded ? 'chevron-up' : 'chevron-down'} 
-                size={24} 
-                iconColor={colors.textTertiary} 
-                style={{ margin: 0 }} 
-              />
-            </TouchableOpacity>
+            </View>
             
-            {/* Always show basic info */}
+            {/* Basic Info */}
             <View style={[styles.card, { backgroundColor: colors.card, marginTop: spacing.sm, marginHorizontal: spacing.md }]}>
               <InfoRow label="Manufacturer" value={deviceInfo.manufacturer} colors={colors} />
               <InfoRow label="Model" value={deviceInfo.model} colors={colors} />
@@ -322,82 +314,46 @@ const DeviceSpecsScreen = () => {
               <InfoRow label="Carrier" value={deviceInfo.carrier} colors={colors} />
             </View>
             
-            {/* Show additional specs when expanded */}
-            {deviceSpecsExpanded && (
-              <View style={styles.dropdownContent}>
-                <View style={styles.section}>
-                  <Text style={[styles.sectionTitle, { color: colors.text }]}>Hardware</Text>
-                  <View style={[styles.card, { backgroundColor: colors.card }]}>
-                    <InfoRow label="IMEI" value={deviceInfo.imei} colors={colors} />
-                    <InfoRow label="Serial Number" value={deviceInfo.serialNumber} colors={colors} />
-                    <InfoRow label="Battery" value={deviceInfo.batteryLevel} colors={colors} />
-                  </View>
-                </View>
-
-                <View style={styles.section}>
-                  <Text style={[styles.sectionTitle, { color: colors.text }]}>Storage</Text>
-                  <View style={[styles.card, { backgroundColor: colors.card }]}>
-                    <InfoRow label="Total Storage" value={deviceInfo.storage.total} colors={colors} />
-                    <InfoRow label="Used Storage" value={deviceInfo.storage.used} colors={colors} />
-                    <InfoRow label="Free Storage" value={deviceInfo.storage.free} colors={colors} />
-                  </View>
-                </View>
-
-                <View style={styles.section}>
-                  <Text style={[styles.sectionTitle, { color: colors.text }]}>Memory</Text>
-                  <View style={[styles.card, { backgroundColor: colors.card }]}>
-                    <InfoRow label="Total RAM" value={deviceInfo.memory.total} colors={colors} />
-                    <InfoRow label="Used RAM" value={deviceInfo.memory.used} colors={colors} />
-                    <InfoRow label="Free RAM" value={deviceInfo.memory.free} colors={colors} />
-                  </View>
-                </View>
-
-                <View style={styles.section}>
-                  <Text style={[styles.sectionTitle, { color: colors.text }]}>Network</Text>
-                  <View style={[styles.card, { backgroundColor: colors.card }]}>
-                    <InfoRow label="Network Type" value={deviceInfo.network.type} colors={colors} />
-                    <InfoRow label="Signal Strength" value={deviceInfo.network.strength} colors={colors} />
-                  </View>
+            {/* Additional specs always shown */}
+            <View style={styles.dropdownContent}>
+              <View style={styles.section}>
+                <Text style={[styles.sectionTitle, { color: colors.text }]}>Hardware</Text>
+                <View style={[styles.card, { backgroundColor: colors.card }]}>
+                  <InfoRow label="IMEI" value={deviceInfo.imei} colors={colors} />
+                  <InfoRow label="Serial Number" value={deviceInfo.serialNumber} colors={colors} />
+                  <InfoRow label="Battery" value={deviceInfo.batteryLevel} colors={colors} />
                 </View>
               </View>
-            )}
+
+              <View style={styles.section}>
+                <Text style={[styles.sectionTitle, { color: colors.text }]}>Storage</Text>
+                <View style={[styles.card, { backgroundColor: colors.card }]}>
+                  <InfoRow label="Total Storage" value={deviceInfo.storage.total} colors={colors} />
+                  <InfoRow label="Used Storage" value={deviceInfo.storage.used} colors={colors} />
+                  <InfoRow label="Free Storage" value={deviceInfo.storage.free} colors={colors} />
+                </View>
+              </View>
+
+              <View style={styles.section}>
+                <Text style={[styles.sectionTitle, { color: colors.text }]}>Memory</Text>
+                <View style={[styles.card, { backgroundColor: colors.card }]}>
+                  <InfoRow label="Total RAM" value={deviceInfo.memory.total} colors={colors} />
+                  <InfoRow label="Used RAM" value={deviceInfo.memory.used} colors={colors} />
+                  <InfoRow label="Free RAM" value={deviceInfo.memory.free} colors={colors} />
+                </View>
+              </View>
+
+              <View style={styles.section}>
+                <Text style={[styles.sectionTitle, { color: colors.text }]}>Network</Text>
+                <View style={[styles.card, { backgroundColor: colors.card }]}>
+                  <InfoRow label="Network Type" value={deviceInfo.network.type} colors={colors} />
+                  <InfoRow label="Signal Strength" value={deviceInfo.network.strength} colors={colors} />
+                </View>
+              </View>
+            </View>
           </View>
 
-          {/* Collapsible Device-Specific USSD Codes Section */}
-          <View style={styles.section}>
-            <TouchableOpacity 
-              style={[styles.dropdownHeader, { backgroundColor: colors.card }]}
-              onPress={() => setDeviceCodesExpanded(!deviceCodesExpanded)}
-            >
-              <Text style={[styles.dropdownTitle, { color: colors.text }]}>
-                Device-Specific USSD Codes
-              </Text>
-              <IconButton 
-                icon={deviceCodesExpanded ? 'chevron-up' : 'chevron-down'} 
-                size={24} 
-                iconColor={colors.textTertiary} 
-                style={{ margin: 0 }} 
-              />
-            </TouchableOpacity>
-            
-            {deviceCodesExpanded && (
-              deviceSpecificCodes.length > 0 ? (
-                <FlatList
-                  data={deviceSpecificCodes}
-                  keyExtractor={(item, index) => `device-code-${index}`}
-                  renderItem={renderCodeItem}
-                  scrollEnabled={false}
-                  contentContainerStyle={styles.codesList}
-                />
-              ) : (
-                <View style={[styles.noDataContainer, { backgroundColor: colors.card }]}>
-                  <Text style={[styles.noDataText, { color: colors.textSecondary }]}>
-                    No device-specific codes available for this device.
-                  </Text>
-                </View>
-              )
-            )}
-          </View>
+
 
           {/* Collapsible Carrier & SIM Codes Section */}
           <View style={styles.section}>
@@ -417,7 +373,13 @@ const DeviceSpecsScreen = () => {
             </TouchableOpacity>
             
             {carrierCodesExpanded && (
-              carrierSpecificCodes.length > 0 ? (
+              loading ? (
+                <View style={[styles.loadingContainer, { backgroundColor: colors.card }]}>
+                  <Text style={[styles.noDataText, { color: colors.textSecondary }]}>
+                    Loading carrier codes...
+                  </Text>
+                </View>
+              ) : carrierSpecificCodes.length > 0 ? (
                 <FlatList
                   data={carrierSpecificCodes}
                   keyExtractor={(item, index) => `carrier-code-${index}`}
@@ -428,7 +390,7 @@ const DeviceSpecsScreen = () => {
               ) : (
                 <View style={[styles.noDataContainer, { backgroundColor: colors.card }]}>
                   <Text style={[styles.noDataText, { color: colors.textSecondary }]}>
-                    No carrier-specific codes available for your current carrier.
+                    No carrier-specific codes available for {deviceInfo.carrier || 'your current carrier'}.
                   </Text>
                 </View>
               )
@@ -450,6 +412,14 @@ const InfoRow = ({ label, value, colors }: { label: string; value: string; color
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+  },
+  loadingContainer: {
+    padding: spacing.md,
+    borderRadius: borderRadius.md,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginHorizontal: spacing.md,
+    marginTop: spacing.sm,
   },
   header: {
     flexDirection: 'row',
@@ -492,9 +462,18 @@ const styles = StyleSheet.create({
   },
   sectionTitle: {
     fontSize: typography.heading3,
-    fontWeight: typography.semiBold as any,
-    marginLeft: spacing.md,
-    marginBottom: spacing.md,
+    fontWeight: typography.medium as any,
+    marginBottom: spacing.sm,
+    marginHorizontal: spacing.md,
+  },
+  sectionHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingVertical: spacing.md,
+    paddingHorizontal: spacing.md,
+    borderRadius: borderRadius.md,
+    marginBottom: spacing.xs,
   },
   card: {
     borderRadius: borderRadius.xl,

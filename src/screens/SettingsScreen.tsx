@@ -218,7 +218,7 @@ const SettingsScreen = () => {
             }}
             rightContent={
               <Image 
-                source={require('../assets/Logo (1).png')} 
+                source={require('../assets/Logo1.png')} 
                 style={{ width: 30, height: 30, borderRadius: 15, marginRight: spacing.sm }}
               />
             }

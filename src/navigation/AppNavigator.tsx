@@ -49,7 +49,7 @@ export type TabParamList = {
   Codes: undefined;
   MyCodes: undefined;
   Other: undefined;
-  Settings: undefined;
+  DeviceSpecs: undefined;
 };
 
 const Stack = createStackNavigator<RootStackParamList>();
@@ -72,8 +72,8 @@ const MainTabs = () => {
             iconName = 'star';
           } else if (route.name === 'Other') {
             iconName = 'dots-horizontal-circle';
-          } else if (route.name === 'Settings') {
-            iconName = 'cog';
+          } else if (route.name === 'DeviceSpecs') {
+            iconName = 'cellphone-information';
           } else {
             iconName = 'help';
           }
@@ -99,7 +99,7 @@ const MainTabs = () => {
       <Tab.Screen name="Codes" component={AllCodesScreen} />
       <Tab.Screen name="MyCodes" component={FavoritesScreen} />
       <Tab.Screen name="Other" component={OtherServicesScreen} />
-      <Tab.Screen name="Settings" component={SettingsScreen} />
+      <Tab.Screen name="DeviceSpecs" component={DeviceSpecsScreen} />
     </Tab.Navigator>
   );
 };

@@ -88,6 +88,44 @@ npm run ios
 5. **Emergency Services**: Access emergency numbers for different countries
 6. **Settings**: Customize app behavior and appearance
 
+## Publishing to Google Play Store
+
+### Prerequisites
+- Completed app development and testing
+- Generated release signing key (stored in `android/app/keystore/release-key.keystore`)
+- Updated `android/keystore.properties` with your keystore credentials
+- Created a privacy policy document (see `PRIVACY_POLICY.md`)
+
+### Building a Release Version
+```bash
+# Navigate to the android directory
+cd android
+
+# Build the release AAB (Android App Bundle)
+./gradlew bundleRelease
+
+# Alternatively, build an APK
+./gradlew assembleRelease
+```
+
+The release AAB will be generated at `android/app/build/outputs/bundle/release/app-release.aab`
+
+### Play Store Submission Checklist
+- [ ] Google Play Developer account ($25 one-time fee)
+- [ ] App icon (512x512 PNG)
+- [ ] Feature graphic (1024x500 PNG)
+- [ ] At least 2 screenshots for each supported device type
+- [ ] App description (short and full)
+- [ ] Privacy policy URL
+- [ ] Content rating questionnaire completed
+- [ ] App category selected (Utilities or Tools recommended)
+
+### Permission Justification
+Be prepared to explain why the app needs these permissions:
+- `CALL_PHONE`: Required to execute USSD codes
+- `READ_PHONE_STATE`: Required to monitor call state during USSD code execution
+- `READ_PHONE_NUMBERS`: Required to access device phone number for certain USSD operations
+
 ## Privacy
 
 USSD Code Manager respects your privacy:

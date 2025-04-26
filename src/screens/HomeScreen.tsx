@@ -72,9 +72,7 @@ const RecentActivityItem = ({
         <Text style={[styles.recentActivityDescription, { color: colors.text }]}>{description}</Text>
         <View style={styles.recentActivityMeta}>
           <Text style={[styles.recentActivityTime, { color: colors.textSecondary }]}>{time}</Text>
-          <View style={[styles.statusBadge, { backgroundColor: status === 'Success' ? colors.success : colors.error }]}>
-            <Text style={[styles.statusText, { color: status === 'Success' ? '#fff' : colors.errorText }]}>{status}</Text>
-          </View>
+          {/* Status badge removed as requested */}
         </View>
       </View>
     </TouchableOpacity>
@@ -438,15 +436,7 @@ const styles = StyleSheet.create({
   recentActivityTime: {
     fontSize: typography.bodySmall,
   },
-  statusBadge: {
-    paddingVertical: spacing.xxs,
-    paddingHorizontal: spacing.sm,
-    borderRadius: borderRadius.sm,
-  },
-  statusText: {
-    fontSize: typography.caption,
-    fontWeight: typography.medium as any,
-  },
+  // Status badge styles removed as requested
   fab: {
     position: 'absolute',
     margin: 16,

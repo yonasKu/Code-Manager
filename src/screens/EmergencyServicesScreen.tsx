@@ -10,6 +10,8 @@ import {
   ActivityIndicator,
   StatusBar,
   Dimensions,
+  PermissionsAndroid,
+  Platform,
 } from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import {SafeAreaView} from 'react-native-safe-area-context';
@@ -139,7 +141,7 @@ const CountryEmergencyCard = ({
               <EmergencyServiceButton
                 title="Police"
                 number={service.police}
-                onPress={() => handleCall(service.police)}
+                onPress={() => handleCall(service.police || '')}
               />
             )}
 
@@ -147,7 +149,7 @@ const CountryEmergencyCard = ({
               <EmergencyServiceButton
                 title="Ambulance"
                 number={service.ambulance}
-                onPress={() => handleCall(service.ambulance)}
+                onPress={() => handleCall(service.ambulance || '')}
               />
             )}
 
@@ -155,7 +157,7 @@ const CountryEmergencyCard = ({
               <EmergencyServiceButton
                 title="Fire Service"
                 number={service.fire}
-                onPress={() => handleCall(service.fire)}
+                onPress={() => handleCall(service.fire || '')}
               />
             )}
           </View>
@@ -236,20 +238,104 @@ const EmergencyServicesScreen = () => {
   const [loading, setLoading] = useState(false);
   const windowHeight = Dimensions.get('window').height;
 
-  // ... (Keep useEffect for location detection) ...
+  // Updated useEffect for proper location detection using React Native's built-in Geolocation
   useEffect(() => {
     const detectCountry = async () => {
       setLoading(true);
       try {
-        setTimeout(() => {
-          setCurrentCountry('United Kingdom'); // Example
+        // Request location permission on Android
+        if (Platform.OS === 'android') {
+          const granted = await PermissionsAndroid.request(
+            PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
+            {
+              title: 'Location Permission',
+              message: 'This app needs access to your location to show relevant emergency services.',
+              buttonNeutral: 'Ask Me Later',
+              buttonNegative: 'Cancel',
+              buttonPositive: 'OK',
+            },
+          );
+          if (granted !== PermissionsAndroid.RESULTS.GRANTED) {
+            console.log('Location permission denied');
+            setLoading(false);
+            return;
+          }
+        }
+
+        // Use React Native's geolocation API
+        const getPosition = async (): Promise<{latitude: number; longitude: number}> => {
+          return new Promise((resolve, reject) => {
+            // @ts-ignore - React Native's geolocation is globally available
+            navigator.geolocation.getCurrentPosition(
+              (position: any) => {
+                resolve({
+                  latitude: position.coords.latitude,
+                  longitude: position.coords.longitude,
+                });
+              },
+              (error: any) => {
+                reject(error);
+              },
+              {
+                enableHighAccuracy: false,
+                timeout: 15000,
+                maximumAge: 10000,
+              },
+            );
+          });
+        };
+
+        try {
+          // Get position
+          const {latitude, longitude} = await getPosition();
+          
+          // Use reverse geocoding to get country from coordinates
+          const response = await fetch(
+            `https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}&zoom=3`,
+            {
+              headers: {
+                'Accept-Language': 'en', // Request English results
+                'User-Agent': 'CodeManager-App', // Identify our app as required by Nominatim ToS
+              },
+            }
+          );
+          
+          if (!response.ok) {
+            throw new Error('Geocoding request failed');
+          }
+          
+          const data = await response.json();
+          
+          if (data && data.address && data.address.country) {
+            // Find the matching country in our emergency services data
+            const matchingCountry = emergencyServices.find(
+              service => 
+                service.country.toLowerCase() === data.address.country.toLowerCase()
+            );
+            
+            if (matchingCountry) {
+              setCurrentCountry(matchingCountry.country);
+            } else {
+              // If country not found in our data, just display the name
+              setCurrentCountry(data.address.country);
+            }
+          } else {
+            // Fallback if country not found in geocoding response
+            setCurrentCountry(null);
+          }
+        } catch (error) {
+          console.error('Error in geolocation or geocoding:', error);
+          setCurrentCountry(null);
+        } finally {
           setLoading(false);
-        }, 500);
+        }
       } catch (error) {
         console.error('Error detecting location:', error);
+        setCurrentCountry(null);
         setLoading(false);
       }
     };
+    
     detectCountry();
   }, []);
 

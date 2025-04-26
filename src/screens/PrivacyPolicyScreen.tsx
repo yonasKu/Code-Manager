@@ -88,7 +88,7 @@ const PrivacyPolicyScreen = () => {
         </Text>
         <View style={styles.developerContainer}>
           <Image 
-            source={require('../assets/Logo (1).png')} 
+            source={require('../assets/Logo1.png')} 
             style={styles.developerLogo}
           />
           <View style={styles.developerInfo}>
